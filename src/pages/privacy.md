@@ -5,7 +5,7 @@ title: 'Privacy Policy'
 
 Last updated: March 20, 2026
 
-At **English Support Japan**, we value your privacy.
+At **Hanei JP**, we value your privacy.
 
 ### 1. Information We Collect
 We collect your name, email address, and salon business details when you purchase a license. We also access public Instagram data via authorized APIs to synchronize your homepage gallery.
@@ -17,4 +17,4 @@ We use your information to set up your digital address, provide tech support, an
 We implement standard industry security measures to protect your account details and payment information.
 
 ### 4. Contact Us
-If you have questions about your data, please visit [https://englishsupport.jp/contact](https://englishsupport.jp/contact).
+If you have questions about your data, please visit [https://hanei.jp/contact](https://hanei.jp/contact).

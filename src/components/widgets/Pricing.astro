@@ -40,7 +40,7 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
           <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
-            <input type="hidden" id="paypal-item-name" name="item_name" value="English Support Japan Professional Vanity URL Setup" />
+            <input type="hidden" id="paypal-item-name" name="item_name" value="Hanei JP Professional Vanity URL Setup" />
             <input type="hidden" name="item_number" value="AHURL99" />
             <input type="hidden" name="amount" value="99.00" />
             <input type="hidden" name="currency_code" value="USD" />
@@ -71,7 +71,7 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
                   <Icon name="tabler:world" class="w-4 h-4 text-white animate-pulse" />
                 </div>
                 <span class="text-base font-mono truncate leading-none">
-                    <span class="text-slate-500 dark:text-slate-400 font-medium">https://</span><span id="vanity-preview" class="text-primary dark:text-blue-400 font-black text-lg underline decoration-accent/30 decoration-2 underline-offset-4">yoursalon</span><span class="text-slate-500 dark:text-slate-400 font-medium">.englishsupport.jp</span>
+                    <span class="text-slate-500 dark:text-slate-400 font-medium">https://</span><span id="vanity-preview" class="text-primary dark:text-blue-400 font-black text-lg underline decoration-accent/30 decoration-2 underline-offset-4">yoursalon</span><span class="text-slate-500 dark:text-slate-400 font-medium">.hanei.jp</span>
                 </span>
               </div>
             </div>
@@ -121,7 +121,7 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
         const salonVal = salonInput.value || 'New Salon';
         const displayVanity = vVal || 'yoursalon';
         
-        paypalItemName.value = `English Support Japan: ${displayVanity}.englishsupport.jp (${salonVal})`;
+        paypalItemName.value = `Hanei JP: ${displayVanity}.hanei.jp (${salonVal})`;
       };
 
       vanityInput.addEventListener('input', update);

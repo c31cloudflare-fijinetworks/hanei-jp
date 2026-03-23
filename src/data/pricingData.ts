@@ -4,7 +4,7 @@ export const lifetimeDeal = {
   price: 99,
   period: 'One-time payment',
   items: [
-    { description: 'Premium Vanity URL (englishsupport.jp/yoursalon)' },
+    { description: 'Premium Vanity URL (hanei.jp/yoursalon)' },
     { description: 'Real-time Instagram Content Sync' },
     { description: 'Aesthetic Boutique Design' },
     { description: 'Mobile-First User Experience' },
@@ -21,7 +21,7 @@ export const lifetimeDealJp = {
   price: 99,
   period: '一括払い（買い切り）',
   items: [
-    { description: 'プレミアム専用URL (englishsupport.jp/yoursalon)' },
+    { description: 'プレミアム専用URL (hanei.jp/yoursalon)' },
     { description: 'Instagramコンテンツのリアルタイム同期' },
     { description: '洗練されたブティック・デザイン' },
     { description: 'モバイルファーストのユーザー体験' },

@@ -5,19 +5,19 @@ title: 'Terms of Service'
 
 Last updated: March 20, 2026
 
-Welcome to **English Support Japan**. By using our services, you agree to these terms. Please read them carefully.
+Welcome to **Hanei JP**. By using our services, you agree to these terms. Please read them carefully.
 
 ### 1. Services
-English Support Japan provides vanity URLs and salon homepage hosting services. Our lifetime deal includes setup, hosting, and social media synchronization for a one-time fee.
+Hanei JP provides vanity URLs and salon homepage hosting services. Our lifetime deal includes setup, hosting, and social media synchronization for a one-time fee.
 
 ### 2. Fees and Payments
 All payments are one-time fees as specified at the time of purchase. There are no recurring monthly subscriptions for our standard hosting and vanity URL package. Custom domain renewals (.com, .salon, etc.) are billed annually.
 
 ### 3. Content
-You retain all rights to the content synced from your social media accounts. You grant English Support Japan a license to display that content on your provided vanity URL.
+You retain all rights to the content synced from your social media accounts. You grant Hanei JP a license to display that content on your provided vanity URL.
 
 ### 4. Termination
 We reserve the right to suspend or terminate services for accounts that violate local laws or engage in fraudulent activity.
 
 ### 5. Contact
-If you have any questions about these Terms, please contact us at [https://englishsupport.jp/contact](https://englishsupport.jp/contact).
+If you have any questions about these Terms, please contact us at [https://hanei.jp/contact](https://hanei.jp/contact).
