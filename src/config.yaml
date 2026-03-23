@@ -1,6 +1,6 @@
 site:
-  name: English Support Japan
-  site: 'https://englishsupport.jp'
+  name: Hanei JP
+  site: 'https://hanei.jp'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: English Support Japan - Effortless Salon Testimonials
-    template: '%s — English Support Japan'
+    default: Hanei JP - Effortless Salon Testimonials
+    template: '%s — Hanei JP'
   description: "Capture salon client reviews instantly. Turn happy clients into powerful testimonials before they leave."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: English Support Japan
+    site_name: Hanei JP
     images:
       - url: '~/assets/images/default.png'
         width: 1200
