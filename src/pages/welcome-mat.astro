@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The Welcome Mat | English Extension for Inbound', 
+  description: 'Eradicating Information Asymmetry and the Anxiety of Entry.',
+};
+
+const pricingData = {
+  title: 'The Welcome Mat Plan',
+  subtitle: 'Inbound Customer Foundation',
+  price: '68,500',
+  period: 'One-time CapEx',
+  items: [
+    { description: 'Executive-Level English Copywriting' },
+    { description: 'Ultra-Fast modern architecture Deployment' },
+    { description: 'Cloudflare Global Edge Network Delivery' },
+    { description: 'Zero-Friction / Decoupled Architecture' },
+    { description: 'Same-Day Production Launch' },
+  ],
+  callToAction: { target: '_blank', text: 'Deploy to Production Now', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 1: The Welcome Mat"
+    title='Eradicating Information Asymmetry and the <br/><span class="text-accent">Anxiety of Entry</span>'
+    subtitle="Stop losing foreign market share at your doorstep. A high-velocity English extension that clarifies your operational rules and local nuances, converting foot traffic into confirmed revenue."
+    actions={[{ variant: 'primary', text: 'Start Your 5-Minute Brief', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', alt: 'Hospitality Management' }}
+  />
+  
+  <!-- BLOCK 2: STRATEGIC ADVANTAGE (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Frictionless Operations', 
+          description: 'Preemptively answering core questions standard to Western consumers, reducing the need for translation apps.', 
+          icon: 'tabler:clock-stop' 
+        },
+        { 
+          title: 'Visual-First UI', 
+          description: 'Clear iconography for ordering, seating, and payment protocols. Bypassing the language barrier entirely.', 
+          icon: 'tabler:eye' 
+        },
+        { 
+          title: 'MEO Algorithm Optimization', 
+          description: "Ensuring that when high-intent tourists search 'near me', your business is algorithmically favored on Google Maps.", 
+          icon: 'tabler:brand-google' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Strategic Advantage: <br/>Closing the Inbound Gap.</h3>
+      <p class="text-lg text-muted mb-6">
+        Foreign guests diverted to competitors when operational unknowns exist. The "Welcome Mat" is a singular, high-velocity asset that converts passersby into revenue by removing the "Anxiety of Entry."
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Hospitality Excellence" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH & RISK (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Performance Stack', 
+          description: 'Sub-second rendering performance, delivered from Cloudflare edge nodes spanning 275+ global cities.', 
+          icon: 'tabler:rocket' 
+        },
+        { 
+          title: 'Risk Mitigation', 
+          description: 'Zero dependency on your legacy CMS. No passwords required. Your core systems remain 100% untouched.', 
+          icon: 'tabler:shield-check' 
+        },
+        { 
+          title: 'Automated Workflow', 
+          description: 'streamlined setup model powered by Python, eliminating human error and ensuring same-day velocity.', 
+          icon: 'tabler:settings-automation' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Enterprise-Grade Performance. <br/>Zero-Friction Integration.</h3>
+      <p class="text-lg text-muted">Designed specifically for tourist eSIM environments where latency equals failure. An investment in infrastructure that converts lost opportunities into verified profit.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Edge Computing" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Secure Verifiable Return on Investment" 
+    subtitle="Eradicate Information Asymmetry Today"
+    prices={[pricingData]} 
+  />
+</Layout>

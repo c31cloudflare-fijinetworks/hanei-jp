@@ -1,0 +1,111 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The Inbound Trust Kit | Drive Foreign Customers', 
+  description: 'Turn Google Maps into your #1 Foreign Customer Driver with professional SEO.',
+};
+
+const pricingData = {
+  title: 'Inbound Trust Kit',
+  subtitle: 'Essential setup for global reach',
+  price: '99,000',
+  period: 'One-time (No Monthly Fees)',
+  items: [
+    { description: 'Full English SEO Setup for Google Maps' },
+    { description: 'Branded QR "Review Magnet" Stand' },
+    { description: 'AI-Optimized Professional English Copy' },
+    { description: 'Guaranteed Deployment in 24 Hours' },
+  ],
+  callToAction: { target: '_blank', text: 'Start Attracting Tourists Now', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="The Inbound Trust Kit"
+    title='Why Your Business is <br/><span class="text-accent">Invisible</span> to Foreign Tourists'
+    subtitle="92% of tourists in Japan use Google Maps to find their next stop. If you aren't optimized, you don't exist. We convert your shop into a 'Foreigner Friendly' destination within 24 hours."
+    actions={[{ variant: 'primary', text: 'Start Your Optimization Now', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1024&q=80', alt: 'Tourist searching for shop' }}
+  />
+  
+  <!-- BLOCK 2: THE PROBLEM & SOLUTION (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Google Maps SEO', 
+          description: "We translate your name and services into the high-intent keywords tourists actually type into their phones.", 
+          icon: 'tabler:map-pin' 
+        },
+        { 
+          title: 'The Review Magnet', 
+          description: 'A custom QR system that allows tourists to leave high-quality English reviews in just 3 clicks.', 
+          icon: 'tabler:qrcode' 
+        },
+        { 
+          title: 'Zero-Effort FAQ', 
+          description: "Answering 'Do you take cards?' and 'Do you speak English?' before they are even asked.", 
+          icon: 'tabler:message-circle-check' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Don't build a website.<br/>Fix the "Visibility Gap" first.</h3>
+      <p class="text-lg text-muted mb-6">
+        Most Japanese businesses lose 80% of potential inbound traffic because their Google entry is Kanji-only. 
+        Zero English reviews equals a "High Risk" to foreign travelers. We solve this instantly.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Success data" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: THE ONE-SHOT PROMISE (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Fast Deployment', 
+          description: 'Our proprietary proprietary systems ensures your settings are live across Google systems in under 24 hours.', 
+          icon: 'tabler:bolt' 
+        },
+        { 
+          title: 'Zero Development', 
+          description: 'No code to install. No servers to manage. Just fill out a simple questionnaire and we handle the rest.', 
+          icon: 'tabler:check' 
+        },
+        { 
+          title: 'Western Standards', 
+          description: 'We use psychological triggers and English phrasing that resonates with travelers from the US, EU, and Australia.', 
+          icon: 'tabler:world' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Zero Development Effort.<br/>Fully Deployed in 24 Hours.</h3>
+      <p class="text-lg text-muted">Tourists are looking for you right now. We remove the technical barriers and provide instant results. Our standards go beyond translation—we build trust using native psychological triggers.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80" alt="Professional execution" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Inbound Infrastructure Setup" 
+    subtitle="One-time Fee: ¥99,000 (No Monthly Subscription)"
+    prices={[pricingData]} 
+  />
+
+  <div class="text-center pb-12 text-muted text-sm italic">
+    Ultra-fast Edge Delivery: Powered by Cloudflare
+  </div>
+</Layout>

@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'English Hanare (英語専用・独立型デジタル別館) | 既存サイトを触らず構築', 
+  description: '既存システムへの技術的干渉を完全に排除し、世界基準のインバウンド拠点を構築。',
+};
+
+const pricingData = {
+  title: 'English Hanare 構築プラン',
+  subtitle: '既存システムを維持したまま、最高級の別館を',
+  price: '98,500',
+  period: '一括投資（ランニングコスト不要）',
+  items: [
+    { description: '最大10ページのディープ・コンテンツ構築' },
+    { description: 'ネイティブ水準のビジネス・コピーライティング' },
+    { description: '既存サイトとの完全分離（デカップリング）' },
+    { description: 'Stripe/Calendly等の外部API連携' },
+    { description: '24時間以内の自動化デプロイ' },
+  ],
+  callToAction: { target: '_blank', text: 'インバウンド拠点を構築する', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 2: The English Hanare"
+    title='既存システムへの技術的干渉を<br/><span class="text-accent">完全に排除</span>し、世界基準の拠点を構築'
+    subtitle="「ウェブ人質」状態を打破。既存の日本語サイトには一切触れず、専用サブドメイン上に最高水準の英語専用拠点を24時間以内に構築します。"
+    actions={[{ variant: 'primary', text: '24時間以内にデプロイする', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1503174971373-b1f69850bdf1?auto=format&fit=crop&w=1024&q=80', alt: 'Digital Architecture' }}
+  />
+  
+  <!-- BLOCK 2: RISK MGMT & DECOUPLING (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '完全な非干渉（デカップリング）', 
+          description: '既存サイト（WordPress等）のログイン情報は不要。DNSレコードの追加のみで、安全に英語拠点を分離・稼働させます。', 
+          icon: 'tabler:layers-intersect' 
+        },
+        { 
+          title: '事業継続性の担保', 
+          description: '万が一の日本語サイトのリニューアル時も、独立した「離れ」は影響を受けず、インバウンド収益を止めるリスクを排除。', 
+          icon: 'tabler:shield-lock' 
+        },
+        { 
+          title: 'ウェブ人質問題の解決', 
+          description: '制作会社と連絡不能、パスワード不明などの技術的負債を回避し、最速で世界市場へ参入できます。', 
+          icon: 'tabler:lock-open' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">「ウェブ人質」問題を解決する、<br/>ゼロ・リスク・アーキテクチャ。</h3>
+      <p class="text-lg text-muted mb-6">
+        既存サイトを触るリスクは、インバウンド参入の最大の障壁です。建築における「離れ（Hanare）」の概念をデジタルに応用し、安全かつ迅速に世界基準のインフラを構築します。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Corporate Office" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: STRATEGIC ADVANTAGE & TECH (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: '富裕層向けインバウンド・エンジン', 
+          description: '欧米の富裕層が求める「世界基準の体験」を最大10ページの深いコンテンツで構築。信頼（Shinrai）を醸成します。', 
+          icon: 'tabler:award' 
+        },
+        { 
+          title: '摩擦ゼロの予約・決済統合', 
+          description: 'StripeやCalendly等の世界標準APIをシームレスに統合。顧客が使い慣れたUIで即座に予約・決済を完了させます。', 
+          icon: 'tabler:credit-card' 
+        },
+        { 
+          title: 'エンタープライズ級の技術', 
+          description: '最高速の配信インフラとCloudflareエッジ配信を標準搭載。世界中どこからでも1秒未満の瞬間表示を保証。', 
+          icon: 'tabler:world-upload' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">最高級のデジタル不動産を、<br/>24時間以内に自動化展開。</h3>
+      <p class="text-lg text-muted">単なる翻訳ではなく、ネイティブ・コピーライティングと高度な構造化データ（JSON-LD）の実装により、国際的な検索順位における圧倒的な優位性を確立します。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Tech Analytics" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="世界市場に向けた最高級の拠点を" 
+    subtitle="弊社最上位の人気プラン（一括投資モデル）"
+    prices={[pricingData]} 
+  />
+</Layout>

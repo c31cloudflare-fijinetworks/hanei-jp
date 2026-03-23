@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'Reservation Shield (予約シールド) | インバウンド専用・決済連動型予約エンジン', 
+  description: '現場の混乱と「無断キャンセル」の金銭的損失を完全に遮断する、クロスリンガル予約エンジン。',
+};
+
+const pricingData = {
+  title: 'Reservation Shield 導入パッケージ',
+  subtitle: 'ノーショー（無断キャンセル）防止・接客効率化',
+  price: '78,500',
+  period: '一括投資（初期インフラ構築費）',
+  items: [
+    { description: '双方向非対称データ配信エンジンの構築' },
+    { description: 'Stripe連携によるクレジットカード与信確保設定' },
+    { description: 'PCI-DSS準拠のセキュアな決済パイプライン' },
+    { description: 'クロスリンガル・データ・ルーティング自動化' },
+    { description: '24時間以内のスピード導入' },
+  ],
+  callToAction: { target: '_blank', text: '予約シールドを稼働させる', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Product: The Reservation Shield"
+    title='現場の混乱と「無断キャンセル」の<br/><span class="text-accent">金銭的損失を完全に遮断</span>する予約エンジン'
+    subtitle="顧客には洗練された英語UIを、スタッフには完璧な日本語指示書を。与信確保（オーソリ）によりノーショーを物理的に「ほぼゼロ」へと追い込みます。"
+    actions={[{ variant: 'primary', text: '財務リスクを今すぐ排除する', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Operational Efficiency' }}
+  />
+  
+  <!-- BLOCK 2: EXECUTIVE SUMMARY & STRATEGIC ADVANTAGE (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'ノーショー（無断キャンセル）の防止', 
+          description: '予約時にクレジットカード与信枠を自動確保。キャンセル料の支払いを保証することで、外国人客の心理的コミットメントを形成します。', 
+          icon: 'tabler:shield-lock' 
+        },
+        { 
+          title: 'フロント業務の「静寂」', 
+          description: '英語での電話対応という「ノイズ」を排除。スタッフはシステムから届く正確な日本語通知を確認するだけで予約管理が完了します。', 
+          icon: 'tabler:volume-off' 
+        },
+        { 
+          title: '機会損失を利益に変換', 
+          description: '「口約束の予約」による空席リスクを排除。確実な来店と収益化を保証する、世界水準のインフラを提供します。', 
+          icon: 'tabler:trending-up' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">現場の摩擦と財務リスクを、<br/>技術的に完全排除する。</h3>
+      <p class="text-lg text-muted mb-6">
+        インバウンド集客における最大の失敗は「コミュニケーション・エラー」と「ノーショー」です。Reservation Shieldは、この2つのリスクを遮断するための防御インフラです。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Executive Management" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH SPECS (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: '意味論的データ・ルーティング', 
+          description: '顧客の英語リクエストをサーバー側で解析。店舗側には完璧に構造化された「日本語の指示書」として配信します。', 
+          icon: 'tabler:route' 
+        },
+        { 
+          title: '双方向の非対称配信', 
+          description: '店舗には日本語のオペレーション brief、顧客には洗練された英語の確定書を、同時に最適化して配信。', 
+          icon: 'tabler:arrows-split-2' 
+        },
+        { 
+          title: 'PCI-DSS準拠のセキュリティ', 
+          description: 'カード情報はStripe社の暗号化ボルトに格納。貴社のサーバーに機密情報は一切触れず、漏洩リスクは存在しません。', 
+          icon: 'tabler:lock-check' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">クロスリンガル・データ処理エンジン。 <br/>言語変換ではなく、ローカライズ。</h3>
+      <p class="text-lg text-muted">安価な翻訳ツールでは不可能な「業務指示」レベルのデータ精度。特別なITトレーニングや英語教育を必要とせず、即座に現場へ導入可能です。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e61?auto=format&fit=crop&w=800&q=80" alt="Technical Logic" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="ノーショーの恐怖から永遠に解放される" 
+    subtitle="現場のオペレーションに平和と利益を"
+    prices={[pricingData]} 
+  />
+</Layout>

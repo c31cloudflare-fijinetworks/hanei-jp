@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'Grand Opening (完全バイリンガル・旗艦店再構築) | デジタル・トランスフォーメーション', 
+  description: '過去の技術的負債を完全に一掃し、世界水準のデジタル拠点をゼロから構築。',
+};
+
+const pricingData = {
+  title: 'Grand Opening プラン',
+  subtitle: '全社的デジタル・トランスフォーメーション',
+  price: '158,500',
+  period: '一括投資（エンタープライズ級インフラ）',
+  items: [
+    { description: '日本語・英語完全統合の旗艦サイト構築' },
+    { description: '既存有用コンテンツの戦略的データ移行' },
+    { description: 'ハッキング・リスクを排除したsecure構築' },
+    { description: '次世代SEO（構造化データ）DNAレベル実装' },
+    { description: '48時間以内のフルスタック展開' },
+  ],
+  callToAction: { target: '_blank', text: 'デジタル旗艦店を構築する', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 3: The Grand Opening"
+    title='過去の技術的負債を完全に一掃し、<br/><span class="text-accent">世界水準のデジタル拠点</span>をゼロから構築'
+    subtitle="古いウェブサイトは負債です。デザイン、速度、信頼性のすべてをリブートし、今後10年間のグローバルビジネスを牽引する強固な旗艦店を48時間以内に構築します。"
+    actions={[{ variant: 'primary', text: '48時間以内の再構築を開始する', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1024&q=80', alt: 'Digital Transformation Flagship' }}
+  />
+  
+  <!-- BLOCK 2: STRATEGIC ADVANTAGE (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'ハイブリッド・バイリンガル設計', 
+          description: '日本人顧客の安心感と、欧米富裕層が好む洗練されたUXを高度に統合。単一ドメインで全世界をターゲットにします。', 
+          icon: 'tabler:language-hiragana' 
+        },
+        { 
+          title: '「Japanglish」からの脱却', 
+          description: '不自然な直訳を排除。貴社の価値をネイティブ・エグゼクティブ層の心に響く洗練された英語コピーへと変換。', 
+          icon: 'tabler:message-language' 
+        },
+        { 
+          title: '信頼の自動生成装置', 
+          description: '社会的証明（Googleレビュー等）を戦略的に収集・表示。サイト自体が自動で信頼を構築する仕組みを標準実装。', 
+          icon: 'tabler:shield-star' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">世界基準のUI/UXで、<br/>ブランド・エクイティを確立。</h3>
+      <p class="text-lg text-muted mb-6">
+        表示速度が遅く、モバイルに最適化されていない古いサイトは、ブランドへの不信感を与えます。Grand Openingは、部分改修ではなく根本からのリブートにより、最高レベルのブランド体験を提供します。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Executive Strategy" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH & RISK MGMT (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: '最高水準の速度最適化', 
+          description: 'JavaScriptの肥大化を排除。Astroフレームワークにより、モバイル回線でも1秒未満の瞬間表示を実現。', 
+          icon: 'tabler:device-mobile-bolt' 
+        },
+        { 
+          title: 'ハッキング・リスクの排除', 
+          description: 'データベースを持たないsecureアーキテクチャにより、WordPress等で頻発する改ざんや攻撃を構造的に防ぎます。', 
+          icon: 'tabler:lock-check' 
+        },
+        { 
+          title: '究極のSEOマトリックス', 
+          description: 'セマンティックHTMLと高度な構造化データ（JSON-LD）をDNAレベルで注入。国内外の検索順位で優位に立ちます。', 
+          icon: 'tabler:chart-arrows-vertical' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">ゼロ・メンテナンスで、<br/>鉄壁のセキュリティを。</h3>
+      <p class="text-lg text-muted">Cloudflareのグローバル・エッジ配信により、物理的な距離による遅延を最小化。ハッキングの恐怖や頻繁なアップデートから解放され、安定した運用を約束します。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Modern Tech Stack" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="次の10年を牽引するデジタル不動産への投資" 
+    subtitle="48時間以内のフルスタック・リブート"
+    prices={[pricingData]} 
+  />
+</Layout>

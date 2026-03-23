@@ -1,0 +1,49 @@
+---
+import '~/assets/styles/tailwind.css';
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header.astro';
+import Footer from '~/components/widgets/Footer.astro';
+import Announcement from '~/components/widgets/Announcement.astro';
+import StickyFooterCTA from '~/components/widgets/StickyFooterCTA.astro';
+import { headerDataEn, headerDataJp, footerDataEn, footerDataJp } from '~/navigation';
+
+const { metadata } = Astro.props;
+const pathname = Astro.url.pathname;
+const currentPath = pathname.replace(/\/$/, "") || "/";
+const isJp = currentPath.includes("-jp") || currentPath.includes("trust-kit");
+
+const currentHeaderData = JSON.parse(JSON.stringify(isJp ? headerDataJp : headerDataEn));
+const currentFooterData = JSON.parse(JSON.stringify(isJp ? footerDataJp : footerDataEn));
+
+let enUrl = "/";
+let jpUrl = "/index-jp";
+
+if (isJp) {
+    if (currentPath === "/index-jp") { enUrl = "/"; } else { enUrl = currentPath.replace("-jp", ""); }
+    jpUrl = pathname;
+} else {
+    enUrl = pathname;
+    if (currentPath === "/") { jpUrl = "/index-jp"; } else { jpUrl = `${currentPath}-jp`; }
+}
+
+currentHeaderData.links.push({
+  text: isJp ? '🌐 JP' : '🌐 EN',
+  links: [
+    { text: '🇺🇸 English', href: enUrl },
+    { text: '🇯🇵 日本語', href: jpUrl },
+  ],
+});
+
+currentFooterData.secondaryLinks.push(
+  { text: '🇺🇸 English', href: enUrl },
+  { text: '🇯🇵 日本語', href: jpUrl }
+);
+---
+<Layout metadata={metadata}>
+  <style is:global>main > section + section { padding-top: 0; }</style>
+  <slot name="announcement"><Announcement /></slot>
+  <slot name="header"><Header {...currentHeaderData} isSticky showToggleTheme /></slot>
+  <main><slot /></main>
+  <slot name="footer"><Footer {...currentFooterData} /></slot>
+  <StickyFooterCTA isJp={isJp} />
+</Layout>

@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The English Hanare (Independent Digital Annex) | Decoupled Architecture', 
+  description: 'Zero-Risk Global Infrastructure Built on a Decoupled Architecture.',
+};
+
+const pricingData = {
+  title: 'The English Hanare Plan',
+  subtitle: 'Our Most Popular Global Deployment',
+  price: '98,500',
+  period: 'One-time CapEx',
+  items: [
+    { description: 'Deep Content Architecture (Up to 10 Pages)' },
+    { description: 'Executive-Level Native Copywriting' },
+    { description: 'Total Decoupling from Legacy Systems' },
+    { description: 'Global API Integration (Stripe/Calendly)' },
+    { description: '24-Hour streamlined setup' },
+  ],
+  callToAction: { target: '_blank', text: 'Build Your Global Annex', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 2: The English Hanare"
+    title='Zero-Risk Global Infrastructure Built on a <br/><span class="text-accent">Decoupled Architecture</span>'
+    subtitle="Break free from the 'Website Hostage' dilemma. We build a world-class English asset on an independent subdomain without touching your fragile legacy code."
+    actions={[{ variant: 'primary', text: 'Launch in 24 Hours', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1503174971373-b1f69850bdf1?auto=format&fit=crop&w=1024&q=80', alt: 'Independent Pavilion' }}
+  />
+  
+  <!-- BLOCK 2: SOLVING THE HOSTAGE DILEMMA (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Total Decoupling', 
+          description: 'No FTP access or CMS logins required for your existing site. We use DNS-level routing to keep your domestic site 100% untouched.', 
+          icon: 'tabler:layers-intersect' 
+        },
+        { 
+          title: 'Risk-Free Future-Proofing', 
+          description: 'Future crashes or updates to your Japanese site have zero impact on your English revenue engine. Absolute technical safety.', 
+          icon: 'tabler:shield-lock' 
+        },
+        { 
+          title: 'Strategic Bypass', 
+          description: "Don't let lost passwords or unresponsive agencies block your international expansion. We bypass technical debt entirely.", 
+          icon: 'tabler:lock-open' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Solving the "Website Hostage" Dilemma with Technical Safety.</h3>
+      <p class="text-lg text-muted mb-6">
+        Modifying legacy systems risks total failure. Borrowing the concept of a "Hanare" (detached pavilion), we build a modern infrastructure optimized for affluent Western consumer psychology while maintaining zero risk to your current operations.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Modern Architecture" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: ADVANTAGE & TECH STACK (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'High-Net-Worth Conversion', 
+          description: 'Up to 10 pages of comprehensive digital authority, encompassing philosophy, credentials, and transparent pricing to build Trust (Shinrai).', 
+          icon: 'tabler:award' 
+        },
+        { 
+          title: 'Frictionless Transactions', 
+          description: 'Embedding global standard APIs for payments and reservations. Allowing international clients to commit capital instantly.', 
+          icon: 'tabler:credit-card' 
+        },
+        { 
+          title: 'Enterprise Performance', 
+          description: 'high-performance code with zero unnecessary JS for sub-second global rendering and semantic SEO superiority.', 
+          icon: 'tabler:world-upload' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Executive-Level Logic. <br/>24-Hour deployment speed.</h3>
+      <p class="text-lg text-muted">We use psychological native logic to rewrite your value proposition for Western standards. By injecting dense JSON-LD data, we ensure your business outranks competitors in English search results.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Global Data" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="The Ultimate Inbound Revenue Asset" 
+    subtitle="Strategically sound global expansion with zero technical risk."
+    prices={[pricingData]} 
+  />
+</Layout>

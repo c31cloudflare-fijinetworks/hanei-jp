@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'Welcome Mat (ウェルカム・マット) | インバウンド初期接客基盤', 
+  description: '言語の壁と入店リスクを排除する、非接触型の英語ガイダンス拡張。',
+};
+
+const pricingData = {
+  title: 'Welcome Mat 導入パッケージ',
+  subtitle: 'インバウンド専用・初期接客基盤',
+  price: '68,500',
+  period: '一括投資（ランニングコスト不要）',
+  items: [
+    { description: 'プロフェッショナル英語ライティング' },
+    { description: '最新の高速インフラによる瞬時の表示' },
+    { description: 'Cloudflareによる世界275都市エッジ配信' },
+    { description: '既存システムへの完全非干渉（リスクゼロ）' },
+    { description: '即日デプロイ（当日運用開始）' },
+  ],
+  callToAction: { target: '_blank', text: '本番環境へデプロイする', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 1: The Welcome Mat"
+    title='言語の壁と入店リスクを排除する、<br/><span class="text-accent">非接触型の英語ガイダンス</span>拡張'
+    subtitle="外国人客の「入店に対する心理的障壁」を解消。既存サイトに干渉せず、貴社の運用ルールと価値を正確な英語で伝える高機能インフラ。"
+    actions={[{ variant: 'primary', text: '5分の要件定義を開始する', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', alt: 'Japanese Hospitality' }}
+  />
+  
+  <!-- BLOCK 2: EXECUTIVE SUMMARY & STRATEGY (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'フロント業務の負担軽減', 
+          description: '欧米圏の顧客が必ず尋ねる質問に先回りして回答。現場スタッフが翻訳アプリを片手に接客する時間を削減します。', 
+          icon: 'tabler:clock-stop' 
+        },
+        { 
+          title: '視覚的ガイダンス設計', 
+          description: '直感的なアイコンと画像を配置し、「注文の仕方」や「決済方法」を視覚的に理解させ、顧客の不安を払拭します。', 
+          icon: 'tabler:eye' 
+        },
+        { 
+          title: 'MEO（マップ検索）の強化', 
+          description: '「Near me」と検索した際、貴社のビジネスが正確な英語でインデックスされるよう、アルゴリズムに最適化。', 
+          icon: 'tabler:brand-google' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">入店を迷わせない。戦略的優位性の構築。</h3>
+      <p class="text-lg text-muted mb-6">
+        多くの名店が「入店に対する心理的障壁（Anxiety of Entry）」で機会損失をしています。Welcome Matは、この情報の非対称性を解消し、店前での離脱を防ぎ、確実な来店へと誘導します。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Restaurant Professionalism" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH & RISK MGMT (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: '最高峰のスピードと安定性', 
+          description: '劣悪な通信環境下でも、1秒未満の瞬間ロードを実現。世界275都市以上のエッジから配信されます。', 
+          icon: 'tabler:rocket' 
+        },
+        { 
+          title: 'リスク管理（非干渉）', 
+          description: '既存サイト（WordPress等）のログイン情報は不要。既存システムを破壊するリスクは技術的に存在しません。', 
+          icon: 'tabler:shield-check' 
+        },
+        { 
+          title: '完全自動化プロセス', 
+          description: '独自の自動化システムによる人的エラーの排除。人的コストをかけず、人的ミスをゼロに抑えた納品。', 
+          icon: 'tabler:settings-automation' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">極限の表示パフォーマンスと、<br/>既存資産への「ゼロ・リスク」。</h3>
+      <p class="text-lg text-muted">外国人旅行者のeSIM環境でも瞬時に表示。デザイン費用ではなく「現場の接客コストを削減し、機会損失を利益に変換するインフラ」への投資です。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Tech Infrastructure" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="インバウンド集客の基盤を今日から稼働" 
+    subtitle="人的コストを削減し、機会損失を利益に変換する"
+    prices={[pricingData]} 
+  />
+</Layout>

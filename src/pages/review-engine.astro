@@ -1,0 +1,106 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'Testimonial Review Engine | Automate Social Proof', 
+  description: 'Are you losing new customers because your excellent service lacks visible "Trust"?',
+};
+
+const pricingData = {
+  title: 'Standard Plan',
+  subtitle: 'Build Your Most Valuable Asset: Trust.',
+  price: '9,800',
+  period: 'per month (Zero Setup Fee)',
+  items: [
+    { description: 'Unlimited Text & Video Review Collection' },
+    { description: 'Premium Website Display Widgets' },
+    { description: 'Automated Social Media Asset Generation' },
+    { description: 'Dedicated "O-makase" Support' },
+  ],
+  callToAction: { target: '_blank', text: 'Start Your Free Demo Today', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Testimonial Review Engine"
+    title='Are you losing new customers because your service lacks <br/><span class="text-accent">Visible "Trust"?</span>'
+    subtitle="The next-generation Review Engine that collects authentic customer voices on autopilot and turns your website into your highest-converting sales asset."
+    actions={[{ variant: 'primary', text: 'Turn Voices into Sales (Free Demo)', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1556740734-7f9589451ab8?auto=format&fit=crop&w=1024&q=80', alt: 'Testimonial Display' }}
+  />
+  
+  <!-- BLOCK 2: THE PROBLEM (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'The Trust Gap', 
+          description: '90% of consumers check reviews. Without authentic social proof, they perceive "risk" and bounce to your competitors.', 
+          icon: 'tabler:alert-triangle' 
+        },
+        { 
+          title: 'The Awkward Request', 
+          description: 'Manually asking for reviews is awkward for staff. We remove the friction with a seamless automated flow.', 
+          icon: 'tabler:user-x' 
+        },
+        { 
+          title: 'Limits of Old Methods', 
+          description: 'Plain text testimonials are no longer enough. Modern consumers need to see real faces and video proof.', 
+          icon: 'tabler:device-laptop-off' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">The biggest reason customers don't choose you isn't "price"—it's "anxiety."</h3>
+      <p class="text-lg text-muted mb-6">
+        If your website lacks authentic testimonials, potential clients move on. Testimonial bridges the gap between your hard work and public proof.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80" alt="Problem Visual" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: THE SOLUTION (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Autopilot Collection', 
+          description: 'Send a link or QR code. No apps, no logins. Customers record video or text reviews in seconds.', 
+          icon: 'tabler:refresh' 
+        },
+        { 
+          title: 'Beautiful Displays', 
+          description: 'Collected reviews are elegantly integrated into your website, matching your brand image perfectly.', 
+          icon: 'tabler:palette' 
+        },
+        { 
+          title: 'Wall of Love', 
+          description: 'Create overwhelming social proof that instantly builds confidence and skyrockets conversion rates.', 
+          icon: 'tabler:trending-up' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Visualize Absolute "Trust." <br/>Zero technical expertise needed.</h3>
+      <p class="text-lg text-muted">We handle the heavy lifting. Simply place the widget on your site and let your happy customers do the selling for you.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Solution Visual" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Turn Satisfaction into Revenue" 
+    subtitle="Standard Plan (Cancel Anytime)"
+    prices={[pricingData]} 
+  />
+</Layout>

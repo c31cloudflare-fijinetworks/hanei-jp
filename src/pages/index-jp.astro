@@ -1,0 +1,108 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = { 
+  title: 'English Support Japan | インバウンド集客・支援ソリューション', 
+  description: '日本の技を、世界へ繋ぐ。Googleマップ英語SEO、レビューエンジン、ノーショー防止予約システムなど、インバウンド集客のインフラを提供します。' 
+};
+---
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="インバウンド集客・支援"
+    title='日本のローカルビジネスを<br/><span class="text-accent dark:text-white">世界基準のサービスへ。</span>'
+    subtitle="外国人客が「あなたのお店」を見つけ、信頼し、予約するためのデジタルインフラを提供。英語SEOから予約システムまで、最短即日で構築・展開します。"
+    actions={[{ variant: 'primary', text: 'プランを見る', href: '/pricing-jp' }, { text: 'サービス一覧', href: '#features' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', width: 1024, height: 576 }}
+  />
+
+  <Features
+    id="features"
+    title="インバウンド・サービスキット"
+    subtitle="現場の負担を減らし、収益を最大化するための6つの専門ソリューション。"
+    items={[
+        { 
+          title: 'インバウンド・サービスキット', 
+          description: '集客の基盤。Googleマップを英語で最適化し、訪日外国人の検索画面に店舗を表示させます。', 
+          icon: 'tabler:map-pin',
+          callToAction: { variant: 'primary', text: 'インバウンド・サービスキット', href: '/inbound-kit-jp' }
+        },
+        { 
+          title: 'レビューエンジン', 
+          description: '信頼の自動生成。外国人客からの動画・テキストレビューを収集し、圧倒的な社会的証明を構築。', 
+          icon: 'tabler:message-star',
+          callToAction: { variant: 'primary', text: 'レビューエンジン', href: '/review-engine-jp' }
+        },
+        { 
+          title: 'ウェルカム・マット', 
+          description: '入店リスクの排除。店舗ルールやこだわりを正確な英語で伝える、非接触型の英語ガイダンス。', 
+          icon: 'tabler:door-enter',
+          callToAction: { variant: 'primary', text: 'ウェルカム・マット', href: '/welcome-mat-jp' }
+        },
+        { 
+          title: '予約シールド', 
+          description: '無断キャンセルの防止。クレジットカード与信確保と、現場への完璧な日本語指示書の配信。', 
+          icon: 'tabler:shield-lock',
+          callToAction: { variant: 'primary', text: '予約シールド', href: '/reservation-shield-jp' }
+        },
+        { 
+          title: '英語専用デジタル別館', 
+          description: 'リスクゼロの海外展開。既存サイトに触れず、独立したドメイン上に最高水準の英語資産を構築。', 
+          icon: 'tabler:layers-intersect',
+          callToAction: { variant: 'primary', text: '英語専用デジタル別館', href: '/english-hanare-jp' }
+        },
+        { 
+          title: '旗艦店再構築', 
+          description: '完全なリブート。デザイン、速度、SEOのすべてを世界基準で再構築する、最上位ブランディング。', 
+          icon: 'tabler:rocket',
+          callToAction: { variant: 'primary', text: '旗艦店再構築', href: '/grand-opening-jp' }
+        },
+    ]}
+  />
+
+  <Content
+    isReversed={false}
+    tagline="集客は「情報の壁」を壊すことから"
+    title="外国人客が迷わず選べる環境を整える。"
+    items={[
+        { title: 'ネイティブ水準のコピー', description: '単なる翻訳ではなく、欧米人の購買心理に突き刺さる「刺さる」英語表現で貴社の価値を書き換えます。', icon: 'tabler:brain' },
+        { title: '最短即日のスピード導入', description: '独自の自動化技術により、設定から公開までを最短1日で完了。機会損失を即座に利益に変えます。', icon: 'tabler:bolt' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80', alt: 'Japanese Professionalism' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent dark:text-white">なぜ今、専門の支援が必要なのか？</span>
+      </h3>
+      <p>訪日客の9割以上がGoogleマップで店を探します。日本語だけの情報は、彼らにとって存在しないのと同じです。私たちはその壁を取り除き、現場の混乱を防ぎながら、インバウンド収益を最大化します。</p>
+    </Fragment>
+  </Content>
+
+  <div id="process" class="scroll-mt-20">
+    <Steps2
+      isReversed={true}
+      title="世界市場への進出ロードマップ"
+      subtitle="インバウンド収益を確保するための3つのステップ。"
+      items={[
+        { title: '01. 最適なプランを選択', description: '貴社のビジネスフェーズに合わせたキットを選択します。', icon: 'tabler:number-1' },
+        { title: '02. 独自の技術によるスピード導入', description: '1日で貴社のデジタル資産を構築し、プロフィールを最適化します。', icon: 'tabler:number-2' },
+        { title: '03. 世界中のゲストを迎え入れる', description: '予約が確定し、事前情報の行き届いた質の高い外国人客の集客が始まります。', icon: 'tabler:number-3' },
+      ]}
+      image={{ src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80', alt: 'Global Team Success' }}
+    />
+  </div>
+
+  <FAQs
+    title="よくあるご質問"
+    items={[
+        { title: '英語を話せなくても導入できますか？', description: 'はい。ゲストには英語を、スタッフには正確な日本語指示書を届けるため、特別な英語教育は不要です。', icon: 'tabler:language' },
+        { title: '月額費用はかかりますか？', description: '主要なインフラ構築は一括投資（買い切り）モデルです。', icon: 'tabler:coin' },
+        { title: 'English Support Japanとは何ですか？', description: '私たちはインバウンドに特化した技術スタジオです。日本企業が世界市場に参入する際の技術・言語・財務上のリスクを解決します。', icon: 'tabler:world' },
+        { title: '導入までにどのくらいの期間がかかりますか？', description: 'ほとんどのキットで24時間以内のスピード導入を保証しています。情報をいただいてから最短1日でインフラを構築します。', icon: 'tabler:bolt' },
+    ]}
+  />
+</Layout>

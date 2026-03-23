@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The Grand Opening (Full Bilingual Reboot) | Digital Transformation', 
+  description: 'Eradicate Legacy Technical Debt. Deploy a World-Class Digital Flagship from Scratch.',
+};
+
+const pricingData = {
+  title: 'The Grand Opening Plan',
+  subtitle: 'Enterprise Digital Transformation',
+  price: '158,500',
+  period: 'One-time CapEx (Enterprise Infrastructure)',
+  items: [
+    { description: 'Full Bilingual Digital Flagship Reconstruction' },
+    { description: 'Strategic Migration of Legacy Content' },
+    { description: 'Database-free, Unhackable serverless infrastructure' },
+    { description: 'DNA-level Schema.org SEO Integration' },
+    { description: '48-Hour Full-Stack Production Rebuild' },
+  ],
+  callToAction: { target: '_blank', text: 'Build Your Digital Flagship', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 3: The Grand Opening"
+    title='Eradicate Legacy Technical Debt. <br/><span class="text-accent">Deploy a World-Class Digital Flagship</span> from Scratch'
+    subtitle="An outdated website is a liability. We reboot your design, velocity, and authority within 48 hours to create a formidable bilingual flagship engineered for the next decade of global growth."
+    actions={[{ variant: 'primary', text: 'Initiate 48-Hour Rebuild', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1024&q=80', alt: 'Corporate Digital Headquarters' }}
+  />
+  
+  <!-- BLOCK 2: STRATEGIC EQUITY (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Hybrid Bilingual UX', 
+          description: 'Unified UI/UX satisfying Japanese informational depth and Western visual preferences. One domain, targeting the entire globe.', 
+          icon: 'tabler:language-hiragana' 
+        },
+        { 
+          title: 'Eradicating "Japanglish"', 
+          description: "Transition from basic translation to high-conversion, executive-level English that commands respect from Western decision-makers.", 
+          icon: 'tabler:message-language' 
+        },
+        { 
+          title: 'Automated Trust Engine', 
+          description: 'Strategic capture and display of verified 5-star Google reviews. Lowering the barrier to conversion through automated social proof.', 
+          icon: 'tabler:shield-star' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Command Authority with <br/>World-Class Brand Equity.</h3>
+      <p class="text-lg text-muted mb-6">
+        Slow, unresponsive legacy sites trigger severe risk assessments in high-net-worth clients. The "Grand Opening" plan delivers an enterprise DX that ensures your digital presence matches your service quality.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Executive Decision Making" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH & RISK (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Extreme Loading Velocity', 
+          description: 'Eliminating render-blocking legacy JS. Pure HTML delivery perfectly aligned with Google’s Core Web Vitals for sub-second loads.', 
+          icon: 'tabler:device-mobile-bolt' 
+        },
+        { 
+          title: 'Zero-Hacking Architecture', 
+          description: 'Serverless serverless infrastructure removes structural vulnerabilities, rendering your flagship functionally unhackable.', 
+          icon: 'tabler:lock-check' 
+        },
+        { 
+          title: 'Semantic SEO Matrix', 
+          description: 'Embedding deep JSON-LD (Schema.org) into the DNA of the code to ensure algorithmic dominance in global search results.', 
+          icon: 'tabler:chart-arrows-vertical' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Zero Maintenance. <br/>Mathematical Security.</h3>
+      <p class="text-lg text-muted">Hosted on Cloudflare’s global edge network to mathematically reduce latency. Liberate yourself from plugin updates and version conflicts with stable, future-proof infrastructure.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Technical Excellence" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Secure Your Most Valuable Digital Asset" 
+    subtitle="Complete enterprise-tier reboot in 48 hours."
+    prices={[pricingData]} 
+  />
+</Layout>

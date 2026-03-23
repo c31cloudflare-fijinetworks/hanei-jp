@@ -1,0 +1,109 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = { 
+  title: 'English Support Japan | Inbound Solutions for Local Business', 
+  description: 'Helping Japanese local businesses welcome the world. Professional Google Maps SEO, Review Engines, and English infrastructure.' 
+};
+---
+<Layout metadata={metadata}>
+  
+  <Hero2
+    tagline="Global Inbound Solutions"
+    title='Helping Japanese Local Businesses <br/><span class="text-accent dark:text-white">Welcome the World.</span>'
+    subtitle="We provide the digital infrastructure Japanese businesses need to attract, convert, and serve international guests. Professional English SEO, Automated Trust Engines, and Secure Booking."
+    actions={[{ variant: 'primary', text: 'Get Started Today', href: '/pricing' }, { text: 'View Services', href: '#features' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1024&q=80', width: 1024, height: 576 }}
+  />
+
+  <Features
+    id="features"
+    title="The Inbound Service Kit Suite"
+    subtitle="Six specialized products engineered to bridge the gap between your local expertise and the global market."
+    items={[
+        { 
+          title: 'Inbound Service Kit', 
+          description: 'The foundation of your global presence. Professional English SEO for Google Maps and MEO optimization.', 
+          icon: 'tabler:map-pin',
+          callToAction: { variant: 'primary', text: 'Inbound Service Kit', href: '/inbound-kit' }
+        },
+        { 
+          title: 'Review Engine', 
+          description: 'Automate your social proof. Capture authentic English video and text reviews from guests to build instant trust.', 
+          icon: 'tabler:message-star',
+          callToAction: { variant: 'primary', text: 'Review Engine', href: '/review-engine' }
+        },
+        { 
+          title: 'Welcome Mat', 
+          description: 'A rapid digital annex that answers every guest question before they ask. Eliminate entry anxiety.', 
+          icon: 'tabler:door-enter',
+          callToAction: { variant: 'primary', text: 'Welcome Mat', href: '/welcome-mat' }
+        },
+        { 
+          title: 'Reservation Shield', 
+          description: 'Stop financial leakage. Secure credit card holds for bookings and deliver Japanese briefs to your staff.', 
+          icon: 'tabler:shield-lock',
+          callToAction: { variant: 'primary', text: 'Reservation Shield', href: '/reservation-shield' }
+        },
+        { 
+          title: 'English Hanare', 
+          description: 'A detached digital flagship. Build a world-class English asset without touching your legacy Japanese code.', 
+          icon: 'tabler:layers-intersect',
+          callToAction: { variant: 'primary', text: 'English Hanare', href: '/english-hanare' }
+        },
+        { 
+          title: 'Grand Opening', 
+          description: 'Total digital transformation. A full bilingual reboot for flagship locations ready to dominate the market.', 
+          icon: 'tabler:rocket',
+          callToAction: { variant: 'primary', text: 'Grand Opening', href: '/grand-opening' }
+        },
+    ]}
+  />
+
+  <Content
+    isReversed={false}
+    tagline="Visibility is Growth"
+    title="Break the 'Information Barrier' and attract affluent guests."
+    items={[
+        { title: 'Native Psychological Logic', description: 'We rewrite your value proposition using the native triggers that western guests trust.', icon: 'tabler:brain' },
+        { title: 'Proprietary Rapid Deployment', description: 'Our systems mean your inbound infrastructure can be live and generating results in just one day.', icon: 'tabler:bolt' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80', alt: 'Inbound Data Success' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent dark:text-white">Why Inbound English Support?</span>
+      </h3>
+      <p>92% of tourists in Japan rely on Google Maps. If your data is Kanji-only, you are invisible. We remove the friction, protect your revenue, and help you scale your international reputation on autopilot.</p>
+    </Fragment>
+  </Content>
+
+  <div id="process" class="scroll-mt-20">
+    <Steps2
+      isReversed={true}
+      title="The Path to Global Success"
+      subtitle="Three simple steps to secure your inbound future."
+      items={[
+        { title: '01. Choose Your Entry Point', description: 'Select the kit that matches your current business needs.', icon: 'tabler:number-1' },
+        { title: '02. Rapid Implementation', description: 'Our studio builds your assets and optimizes your profiles using our proprietary setup.', icon: 'tabler:number-2' },
+        { title: '03. Welcome the World', description: 'Start receiving verified, prepaid, and well-informed international guests immediately.', icon: 'tabler:number-3' },
+      ]}
+      image={{ src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80', alt: 'Global Team Success' }}
+    />
+  </div>
+
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+        { title: 'Do I need to speak English to use this?', description: 'No. Our systems communicate in native English to your guests while delivering Japanese briefs to your staff.', icon: 'tabler:language' },
+        { title: 'Is this a monthly subscription?', description: 'Most of our kits are one-time CapEx investments. We build it, you own it for life.', icon: 'tabler:coin' },
+        { title: 'What is English Support Japan?', description: 'We are a boutique inbound technology studio solving linguistic and financial risks for Japanese businesses.', icon: 'tabler:world' },
+        { title: 'How long does the setup process take?', description: 'We guarantee a 24-hour turnaround for most kits. Our studio works in real-time to deploy your infrastructure so you can begin results immediately.', icon: 'tabler:bolt' },
+    ]}
+  />
+</Layout>

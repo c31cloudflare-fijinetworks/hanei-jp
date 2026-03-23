@@ -1,0 +1,107 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The Reservation Shield | Cross-Lingual Booking Engine', 
+  description: 'Eliminate Front-Desk Panic and Financial Leakage from Foreign "No-Shows."',
+};
+
+const pricingData = {
+  title: 'The Reservation Shield Plan',
+  subtitle: 'Operational Infrastructure for Inbound',
+  price: '78,500',
+  period: 'One-time CapEx',
+  items: [
+    { description: 'Asynchronous Dual-Delivery Processing' },
+    { description: 'Stripe-Integrated Credit Card Vaulting' },
+    { description: 'PCI-DSS Compliant Security Pipeline' },
+    { description: 'Automated Semantic Data Routing' },
+    { description: '24-Hour Production Deployment' },
+  ],
+  callToAction: { target: '_blank', text: 'Deploy Your Shield Now', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Product: The Reservation Shield"
+    title='Eliminate Front-Desk Panic and <br/><span class="text-accent">Financial Leakage</span> from "No-Shows"'
+    subtitle="Secure Western-standard 'Authorization Holds' and deliver automated, native-Japanese operational briefs to your staff. Built to protect your inventory and your peace of mind."
+    actions={[{ variant: 'primary', text: 'Secure Your Revenue Today', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Financial Security' }}
+  />
+  
+  <!-- BLOCK 2: STRATEGIC ADVANTAGE (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Financial Escrow Protection', 
+          description: 'Automatically vaulting credit card credentials and placing authorization holds to mathematically eliminate no-show risk.', 
+          icon: 'tabler:shield-lock' 
+        },
+        { 
+          title: 'Operational Silence', 
+          description: "Silencing chaotic English phone calls. Your staff receives clear, perfectly formatted Japanese briefs via email.", 
+          icon: 'tabler:volume-off' 
+        },
+        { 
+          title: 'Psychological Commitment', 
+          description: 'A vaulted card transforms a casual inquiry into a locked commitment, ensuring your business is monetized.', 
+          icon: 'tabler:trending-up' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Neutralizing Operational Friction and Revenue Loss.</h3>
+      <p class="text-lg text-muted mb-6">
+        Linguistic bottlenecks increase staff fatigue and turnover. Verbal bookings from international guests carry zero penalty. The "Reservation Shield" is engineered to permanently solve these liabilities.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Executive Performance" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: TECH SPECS (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Semantic Data Routing', 
+          description: 'Our backend parses underlying semantics in English and dispatches flawlessly structured native-Japanese instructions.', 
+          icon: 'tabler:route' 
+        },
+        { 
+          title: 'Asynchronous Dual-Delivery', 
+          description: 'Dispatching a Japanese brief to your team and a professional English itinerary to the guest simultaneously.', 
+          icon: 'tabler:arrows-split-2' 
+        },
+        { 
+          title: 'Military-Grade Vaulting', 
+          description: 'Payment data is tokenized within Stripe’s PCI-DSS compliant vault. Your business assumes zero liability for storage.', 
+          icon: 'tabler:lock-check' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Semantic Cross-Lingual Routing. <br/>Infrastructure, not Translation.</h3>
+      <p class="text-lg text-muted">Bypassing the unreliability of automated translation. We deliver operational-level data precision, requiring zero English training and zero new software for your team.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e61?auto=format&fit=crop&w=800&q=80" alt="Data Systems" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Insulate Your Business Against Losses" 
+    subtitle="One-time investment for permanent operational relief."
+    prices={[pricingData]} 
+  />
+</Layout>

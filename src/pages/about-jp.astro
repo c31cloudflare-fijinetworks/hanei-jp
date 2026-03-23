@@ -1,0 +1,20 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = { title: '戦略的意図 | English Support Japan' };
+---
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Strategic Intent"
+    title='日本の価値を、<br/><span class="text-accent">世界水準の「正解」</span>へ。'
+    subtitle="私たちは単なる翻訳者ではありません。欧米富裕層の消費心理に基づいた「選ばれる理由」へと変換する戦略的パートナーです。"
+    actions={[{ variant: 'primary', text: 'ソリューションを見る', href: '/pricing-jp' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1024&q=80' }}
+  />
+  <Content
+    title="心理的リスクの排除"
+    items={[{ title: '信頼の構築', description: '独自のロジックを用い、貴社を信頼できる目的地として提示します。', icon: 'tabler:shield-check' }]}
+  />
+</Layout>

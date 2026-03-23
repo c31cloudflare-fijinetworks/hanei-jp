@@ -1,0 +1,67 @@
+---
+import { getHomePermalink } from '~/utils/permalinks';
+
+interface Link { text?: string; href?: string; }
+interface Links { links: Array<Link>; }
+export interface Props { links: Array<Links>; secondaryLinks: Array<Link>; footNote?: string; }
+
+const { secondaryLinks = [], links = [], footNote = '' } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const cleanPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit');
+---
+
+<footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose bg-white dark:bg-slate-900">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    
+    <div class="py-8 md:py-12">
+      <div class="flex flex-col md:flex-row md:justify-between items-center gap-8">
+        <div class="text-center md:text-left">
+          <a class="font-bold text-2xl hover:text-primary transition block mb-1" href={isJp ? '/index-jp' : '/'}>
+            English Support Japan
+          </a>
+          <p class="text-sm italic text-gray-500 font-medium">
+            {isJp ? '日本の技を、世界へ繋ぐ 🌏' : "Bridging Japan's Finest to the World 🌏"}
+          </p>
+        </div>
+
+        <nav aria-label="Footer Navigation">
+          <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+            {links[0]?.links.map((link) => (
+              <li>
+                <a class="text-muted hover:text-primary transition dark:text-gray-400 whitespace-nowrap" href={link.href}>
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Improved Bottom Bar: Uses flexbox to group links nicely on mobile -->
+    <div class="py-6 md:py-8 border-t border-gray-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      
+      <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center md:text-left">
+        <Fragment set:html={footNote} />
+      </div>
+
+      <div class="flex flex-wrap justify-center items-center text-[10px] font-bold text-gray-500 uppercase tracking-wider">
+        {secondaryLinks.map(({ text, href }, index) => (
+          <div class="flex items-center">
+            <a 
+              class="hover:text-primary transition flex items-center whitespace-nowrap px-2" 
+              href={href}
+            >
+              <span class="normal-case flex items-center gap-1" set:html={text}></span>
+            </a>
+            {index < secondaryLinks.length - 1 && (
+              <span class="text-gray-300 dark:text-slate-700 font-light select-none">|</span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</footer>

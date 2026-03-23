@@ -1,0 +1,106 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: '次世代レビューエンジン | お客様の声で信頼を可視化', 
+  description: '素晴らしいサービスを提供しているのに、新規客に「信頼」が伝わらず損をしていませんか？',
+};
+
+const pricingData = {
+  title: 'スタンダードプラン',
+  subtitle: '「信頼」という最強の資産を構築する',
+  price: '9,800',
+  period: '月額（初期費用なし）',
+  items: [
+    { description: 'テキスト＆動画レビューの無制限収集' },
+    { description: 'ウェブサイト用 高品質ウィジェット' },
+    { description: 'SNS共有用デザインの自動生成' },
+    { description: '「完全お任せ」導入サポート' },
+  ],
+  callToAction: { target: '_blank', text: '今すぐ無料で効果を実感する', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Testimonial Review Engine"
+    title='素晴らしいサービスを提供しているのに、<br/>新規客に<span class="text-accent">「信頼」が伝わらず</span>損をしていませんか？'
+    subtitle="「お客様の声」を簡単に集め、あなたのウェブサイトを24時間働く最強の営業マンに変える次世代レビューエンジン。"
+    actions={[{ variant: 'primary', text: 'お客様の声を売上に変える（無料デモ）', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1556740734-7f9589451ab8?auto=format&fit=crop&w=1024&q=80', alt: 'Review Display' }}
+  />
+  
+  <!-- BLOCK 2: THE PROBLEM (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '信頼の欠如', 
+          description: '消費者の9割以上がレビューをチェックします。リアルな声がないだけで、彼らは競合他社へ離脱します。', 
+          icon: 'tabler:alert-triangle' 
+        },
+        { 
+          title: 'お願いする負担', 
+          description: '満足しているお客様に直接レビューを頼むのは、現場スタッフにとって大きな心理的負担です。', 
+          icon: 'tabler:user-x' 
+        },
+        { 
+          title: '古いシステムの限界', 
+          description: 'テキストだけの古い「お客様の声」は本物かどうか疑われます。今は「顔が見える声」が必要です。', 
+          icon: 'tabler:device-laptop-off' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">顧客があなたのビジネスを選ばない最大の理由は、<br/>「価格」ではなく「不安」です。</h3>
+      <p class="text-lg text-muted mb-6">
+        自社サイトにリアルなレビューがないだけで、訪問者は無意識に「リスク」を感じます。Testimonialは、その不安を「確信」に変えるエンジンです。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80" alt="Problem Visual" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: THE SOLUTION (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'レビュー獲得の完全自動化', 
+          description: '専用QRを送るだけ。ログイン不要で、お客様は数クリックで動画やテキストのレビューを送信できます。', 
+          icon: 'tabler:refresh' 
+        },
+        { 
+          title: '洗練されたデザイン', 
+          description: '集まった声は、あなたのブランドに合わせた美しいウィジェットとして自動的にサイトへ配置されます。', 
+          icon: 'tabler:palette' 
+        },
+        { 
+          title: '社会的証明の最大化', 
+          description: '高評価を「Wall of Love（信頼の壁）」として集約。訪問者を圧倒し、成約率を劇的に向上させます。', 
+          icon: 'tabler:trending-up' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">圧倒的な「信頼」を可視化する。<br/>導入から運用まで「完全お任せ」。</h3>
+      <p class="text-lg text-muted">専門知識は不要。ウィジェットを設置するだけで、偽物ではない実在する顧客の「生の声」があなたの最強の営業マンになります。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Solution Visual" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="今日から「満足」を「売上」に変えましょう" 
+    subtitle="スタンダードプラン（いつでも解約可能）"
+    prices={[pricingData]} 
+  />
+</Layout>
