@@ -6,7 +6,7 @@ import Background from './Background.astro';
 
 export interface Props extends Widget {
   containerClass?: string;
-  mobilePtClass?: string; // ADDED THIS PROP
+  mobilePtClass?: string;
   ['as']?: HTMLTag;
 }
 
@@ -26,9 +26,9 @@ const defaultPadding = 'pt-12 md:pt-16 lg:pt-20';
   <div
     class:list={[
       twMerge(
-        'relative mx-auto max-w-7xl px-4 md:px-6 text-default intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+        'relative mx-auto max-w-7xl px-4 md:px-6 text-default',
         defaultPadding,
-        mobilePtClass, // MERGED THE NEW PROP HERE
+        mobilePtClass,
         containerClass
       ),
       { dark: isDark },
