@@ -27,7 +27,7 @@ if (isJp) {
 }
 
 currentHeaderData.links.push({
-  text: isJp ? '🌐 JP' : '🌐 EN',
+  text: isJp ? '🇯🇵 JP' : '🇺🇸 EN',
   links: [
     { text: '🇺🇸 English', href: enUrl },
     { text: '🇯🇵 日本語', href: jpUrl },
@@ -40,7 +40,39 @@ currentFooterData.secondaryLinks.push(
 );
 ---
 <Layout metadata={metadata}>
-  <style is:global>main > section + section { padding-top: 0; }</style>
+  <style is:global>
+    main > section + section { padding-top: 0; }
+    
+    /* Prominent Language Selector Pill (Desktop Only) */
+    @media (min-width: 768px) {
+      nav[aria-label="Main navigation"] > ul > li:last-child > button {
+        background-color: #f1f5f9; /* slate-100 */
+        color: var(--aw-color-primary) !important;
+        border: 1px solid #e2e8f0; /* slate-200 */
+        border-radius: 9999px;
+        padding: 0.35rem 0.85rem !important;
+        margin: 0 0.5rem;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      }
+      nav[aria-label="Main navigation"] > ul > li:last-child > button:hover {
+        background-color: #e2e8f0; /* slate-200 */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transform: translateY(-1px);
+      }
+      /* Dark Mode Adjustments */
+      .dark nav[aria-label="Main navigation"] > ul > li:last-child > button {
+        background-color: #1e293b; /* slate-800 */
+        color: #e2e8f0 !important; /* slate-200 */
+        border-color: #334155; /* slate-700 */
+      }
+      .dark nav[aria-label="Main navigation"] > ul > li:last-child > button:hover {
+        background-color: #334155; /* slate-700 */
+        color: #ffffff !important;
+      }
+    }
+  </style>
   <slot name="announcement"><Announcement /></slot>
   <slot name="header"><Header {...currentHeaderData} isSticky showToggleTheme /></slot>
   <main><slot /></main>
