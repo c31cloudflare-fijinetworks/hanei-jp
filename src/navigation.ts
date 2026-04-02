@@ -9,7 +9,6 @@ export const headerDataEn = {
         { text: 'Review Engine', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
-        { text: 'Reservation Shield', href: getPermalink('/reservation-shield') },
       ],
     },
     { text: 'Strategic Intent', href: getPermalink('/about') },
@@ -28,7 +27,6 @@ export const headerDataJp = {
         { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
         { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
         { text: '旗艦店再構築', href: getPermalink('/grand-opening-jp') },
-        { text: '予約シールド', href: getPermalink('/reservation-shield-jp') },
       ],
     },
     { text: '戦略的意図', href: getPermalink('/about-jp') },
@@ -44,7 +42,6 @@ export const footerDataEn = {
       links: [
         { text: 'Inbound Welcome Kit', href: getPermalink('/inbound-welcome-kit') },
         { text: 'Review Engine', href: getPermalink('/review-engine') },
-        { text: 'Reservation Shield', href: getPermalink('/reservation-shield') },
         { text: 'Strategic Intent', href: getPermalink('/about') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
@@ -63,7 +60,6 @@ export const footerDataJp = {
       links: [
         { text: 'インバウンド・ウェルカムキット', href: getPermalink('/inbound-welcome-kit-jp') },
         { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
-        { text: '予約シールド', href: getPermalink('/reservation-shield-jp') },
         { text: '戦略的意図', href: getPermalink('/about-jp') },
         { text: 'お問い合わせ', href: getPermalink('/contact-jp') },
       ],

@@ -8,14 +8,14 @@ import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = { 
   title: 'Hanei JP | インバウンド集客・支援ソリューション', 
-  description: '日本の技を、世界へ繋ぐ。Googleマップ英語SEO、レビューエンジン、ノーショー防止予約システムなど、インバウンド集客のインフラを提供します。' 
+  description: '日本の技を、世界へ繋ぐ。Googleマップ英語SEO、レビューエンジンなど、インバウンド集客のインフラを提供します。' 
 };
 ---
 <Layout metadata={metadata}>
   <Hero2
     tagline="インバウンド集客・支援"
     title='日本のローカルビジネスを<br/><span class="text-accent dark:text-white">世界基準のサービスへ。</span>'
-    subtitle="外国人客が「あなたのお店」を見つけ、信頼し、予約するためのデジタルインフラを提供。英語SEOから予約システムまで、最短即日で構築・展開します。"
+    subtitle="外国人客が「あなたのお店」を見つけ、信頼し、予約するためのデジタルインフラを提供。英語SEOから別館構築まで、最短即日で展開します。"
     actions={[{ variant: 'primary', text: 'プランを見る', href: '/pricing-jp' }, { text: 'サービス一覧', href: '#features' }]}
     image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', width: 1024, height: 576 }}
   />
@@ -23,7 +23,7 @@ const metadata = {
   <Features
     id="features"
     title="インバウンド・サービスキット"
-    subtitle="現場の負担を減らし、収益を最大化するための5つの専門ソリューション。"
+    subtitle="現場の負担を減らし、収益を最大化するための4つの専門ソリューション。"
     items={[
         { 
           title: 'インバウンド・ウェルカムキット', 
@@ -36,12 +36,6 @@ const metadata = {
           description: '信頼の自動生成。外国人客からの動画・テキストレビューを収集し、圧倒的な社会的証明を構築。', 
           icon: 'tabler:message-star',
           callToAction: { variant: 'primary', text: 'レビューエンジン', href: '/review-engine-jp' }
-        },
-        { 
-          title: '予約シールド', 
-          description: '無断キャンセルの防止。クレジットカード与信確保と、現場への完璧な日本語指示書の配信。', 
-          icon: 'tabler:shield-lock',
-          callToAction: { variant: 'primary', text: '予約シールド', href: '/reservation-shield-jp' }
         },
         { 
           title: '英語専用デジタル別館', 
