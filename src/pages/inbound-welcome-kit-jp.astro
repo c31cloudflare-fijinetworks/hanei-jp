@@ -1,0 +1,111 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'インバウンド・ウェルカムキット | 発見と入店を促す基盤構築', 
+  description: 'Googleマップの英語最適化による「発見」と、視覚的ガイダンスによる「入店への安心感」を統合した初期インフラ。',
+};
+
+const pricingData = {
+  title: 'インバウンド・ウェルカムキット',
+  subtitle: '外国人客を呼び込む・安心させるための必須基盤',
+  price: '128,500',
+  period: '一括費用（月額なし）',
+  items: [
+    { description: 'Googleマップ＆MEO英語SEO完全設定' },
+    { description: '視覚的英語ガイダンス（別館）の構築' },
+    { description: '店舗専用・英語レビュー獲得QRスタンド' },
+    { description: 'AI最適化された英語コピーライティング' },
+    { description: '24時間以内のスピード導入保証' },
+  ],
+  callToAction: { target: '_blank', text: '今すぐ集客を開始する', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 1: インバウンド・ウェルカムキット"
+    title='外国人客が「あなたのお店」を<br/><span class="text-accent">見つけられない・入店をためらう</span>理由'
+    subtitle="訪日客の92%が利用するGoogleマップの英語最適化による「発見」と、店舗ルールを視覚的に伝えるガイダンスによる「安心感」を統合。24時間以内に機会損失を利益に変えます。"
+    actions={[{ variant: 'primary', text: '24時間以内にインフラを構築する', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', alt: 'スマホで店を探す外国人' }}
+  />
+  
+  <!-- BLOCK 2: THE PROBLEM & SOLUTION (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Googleマップ＆MEO英語SEO', 
+          description: '店名やカテゴリーを、外国人が実際に検索するキーワードで英語化。検索順位を劇的に向上させます。', 
+          icon: 'tabler:map-pin' 
+        },
+        { 
+          title: '視覚的ガイダンス設計（Q&A統合）', 
+          description: '「カードは使える？」「注文の仕方は？」といった不安を、直感的なアイコンと英語で入店前に解消し、フロント業務の負担を軽減します。', 
+          icon: 'tabler:eye' 
+        },
+        { 
+          title: '英語レビュー獲得QRシステム', 
+          description: 'QRコードをかざすだけで、外国人が迷わず英語で高評価を書ける専用スタンドとデジタル資産を提供。', 
+          icon: 'tabler:qrcode' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">「情報の壁」と「心理的障壁」を<br/>同時に打ち破る戦略的優位性。</h3>
+      <p class="text-lg text-muted mb-6">
+        店名が漢字のままだと検索にヒットせず、店頭のルールが不明瞭だと外国人客は「リスク」を感じて立ち去ります。本キットは、この2つの機会損失ポイントを同時に解決する強力なパッケージです。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="集客データ" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: THE ONE-SHOT PROMISE (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Speed (スピード)', 
+          description: '弊社独自のインフラ構築技術により、設定から反映・デプロイまでを最短24時間で完了させます。', 
+          icon: 'tabler:bolt' 
+        },
+        { 
+          title: '既存サイトへの非干渉（ゼロ・リスク）', 
+          description: '既存サイトのログイン情報は不要。現在のシステムを壊すリスクは技術的に存在しません。', 
+          icon: 'tabler:shield-check' 
+        },
+        { 
+          title: 'Western Standards (欧米基準)', 
+          description: '単なる翻訳ではなく、欧米人の購買心理に基づいた「刺さる」英語表現を使用します。', 
+          icon: 'tabler:world' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">開発の手間、一切なし。<br/>24時間でデプロイ完了。</h3>
+      <p class="text-lg text-muted">外国人客は、今この瞬間もあなたを探しています。技術的な障壁をすべて取り除き、最速で成果を出すことに特化したパッケージです。欧米の顧客が求める高い基準の情報を即座に提供します。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="プロフェッショナルな対応" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="インバウンド集客・接客の基盤構築" 
+    subtitle="一括費用: ¥128,500 (月額費用なし)"
+    prices={[pricingData]} 
+  />
+
+  <div class="text-center pb-12 text-muted text-sm italic">
+    Ultra-fast Edge Delivery: Powered by Cloudflare
+  </div>
+</Layout>

@@ -1,0 +1,111 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+
+const metadata = { 
+  title: 'The Inbound Welcome Kit | Discovery & Guidance Foundation', 
+  description: 'Eradicate invisible Google listings and the Anxiety of Entry. The ultimate SEO and digital guidance foundation.',
+};
+
+const pricingData = {
+  title: 'The Inbound Welcome Kit',
+  subtitle: 'Essential setup for global reach & frictionless entry',
+  price: '128,500',
+  period: 'One-time (No Monthly Fees)',
+  items: [
+    { description: 'Full English SEO Setup for Google Maps' },
+    { description: 'Visual-First English Guidance Annex' },
+    { description: 'Branded QR "Review Magnet" Stand' },
+    { description: 'AI-Optimized Professional English Copy' },
+    { description: 'Guaranteed Deployment in 24 Hours' },
+  ],
+  callToAction: { target: '_blank', text: 'Start Attracting Tourists Now', href: '#', variant: 'success' },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- BLOCK 1: HERO -->
+  <Hero2
+    tagline="Plan 1: The Inbound Welcome Kit"
+    title='Why Your Business is Invisible, and <br/>Why Tourists Walk <span class="text-accent">Right Past Your Door</span>'
+    subtitle="92% of tourists use Google Maps to find their next stop. If you aren't optimized, you don't exist. Furthermore, if your operational rules are unclear, they perceive 'risk' and leave. We fix both issues within 24 hours."
+    actions={[{ variant: 'primary', text: 'Deploy Your Welcome Kit Now', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', alt: 'Tourist searching for shop' }}
+  />
+  
+  <!-- BLOCK 2: THE PROBLEM & SOLUTION (Reversed False) -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: 'Google Maps SEO & MEO Optimization', 
+          description: "We translate your name and services into the high-intent keywords tourists actually type into their phones, prioritizing 'near me' algorithms.", 
+          icon: 'tabler:map-pin' 
+        },
+        { 
+          title: 'Visual-First Guidance Annex', 
+          description: "A frictionless digital manual preemptively answering 'Do you take cards?' and explaining ordering rules via clear iconography to eliminate entry anxiety.", 
+          icon: 'tabler:eye' 
+        },
+        { 
+          title: 'The Review Magnet System', 
+          description: 'A custom QR system that allows tourists to leave high-quality English reviews in just 3 clicks, building permanent social proof.', 
+          icon: 'tabler:qrcode' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Strategic Advantage: <br/>Closing the Visibility & Trust Gap.</h3>
+      <p class="text-lg text-muted mb-6">
+        Most Japanese businesses lose 80% of potential inbound traffic because their Google entry is Kanji-only and their storefront feels intimidating to foreigners. We combine discovery and guidance into one powerful asset.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Success data" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 3: THE ONE-SHOT PROMISE (Reversed True) -->
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'Fast Deployment', 
+          description: 'Our proprietary systems ensure your settings and your digital annex are live across global networks in under 24 hours.', 
+          icon: 'tabler:bolt' 
+        },
+        { 
+          title: 'Zero Risk to Legacy Systems', 
+          description: 'No code to install. No CMS passwords required. Your core Japanese website remains 100% untouched.', 
+          icon: 'tabler:shield-check' 
+        },
+        { 
+          title: 'Western Standards', 
+          description: 'We use psychological triggers and English phrasing that resonates with travelers from the US, EU, and Australia.', 
+          icon: 'tabler:world' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Zero Development Effort.<br/>Fully Deployed in 24 Hours.</h3>
+      <p class="text-lg text-muted">Tourists are looking for you right now. We remove the technical barriers and provide instant results. Our standards go beyond translation—we build trust using native psychological triggers.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="Professional execution" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- BLOCK 4: PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Inbound Infrastructure Foundation" 
+    subtitle="One-time Fee: ¥128,500 (No Monthly Subscription)"
+    prices={[pricingData]} 
+  />
+
+  <div class="text-center pb-12 text-muted text-sm italic">
+    Ultra-fast Edge Delivery: Powered by Cloudflare
+  </div>
+</Layout>
