@@ -1,106 +1,168 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'Testimonial Review Engine | Automate Social Proof', 
-  description: 'Are you losing new customers because your excellent service lacks visible "Trust"?',
+  title: 'The Review Engine | Hanei JP', 
+  description: 'Transform the quiet satisfaction of your guests into a loud, global megaphone for your business—automatically.',
 };
 
 const pricingData = {
-  title: 'Standard Plan',
+  title: 'Review Engine Standard',
   subtitle: 'Build Your Most Valuable Asset: Trust.',
   price: '9,800',
   period: 'per month (Zero Setup Fee)',
   items: [
     { description: 'Unlimited Text & Video Review Collection' },
     { description: 'Premium Website Display Widgets' },
-    { description: 'Automated Social Media Asset Generation' },
-    { description: 'Dedicated "O-makase" Support' },
+    { description: 'Private Reputation Shield Filtering' },
+    { description: 'Smart Language Detection & Routing' },
   ],
-  callToAction: { target: '_blank', text: 'Start Your Free Demo Today', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: 'Activate My Review Engine Now', href: '/contact', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Testimonial Review Engine"
-    title='Are you losing new customers because your service lacks <br/><span class="text-accent">Visible "Trust"?</span>'
-    subtitle="The next-generation Review Engine that collects authentic customer voices on autopilot and turns your website into your highest-converting sales asset."
-    actions={[{ variant: 'primary', text: 'Turn Voices into Sales (Free Demo)', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1556740734-7f9589451ab8?auto=format&fit=crop&w=1024&q=80', alt: 'Testimonial Display' }}
+    tagline="The Review Engine"
+    title='Your Reputation is Your Most Valuable Asset. <br/><span class="text-accent">Start Treating It That Way.</span>'
+    subtitle="Stop letting your hardest work go unrewarded. The Hanei Review Engine transforms the quiet satisfaction of your guests into a loud, global megaphone for your business—automatically."
+    actions={[{ variant: 'primary', text: 'Activate My Review Engine Now', href: '/contact' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJldmlld3xlbnwwfHwwfHx8Mg%3D%3D', alt: 'Review Ratings' }}
   />
   
-  <!-- BLOCK 2: THE PROBLEM (Reversed False) -->
+  <!-- SECTION 1: THE PROBLEM -->
   <Content
     isReversed={false}
-    items={[
-        { 
-          title: 'The Trust Gap', 
-          description: '90% of consumers check reviews. Without authentic social proof, they perceive "risk" and bounce to your competitors.', 
-          icon: 'tabler:alert-triangle' 
-        },
-        { 
-          title: 'The Awkward Request', 
-          description: 'Manually asking for reviews is awkward for staff. We remove the friction with a seamless automated flow.', 
-          icon: 'tabler:user-x' 
-        },
-        { 
-          title: 'Limits of Old Methods', 
-          description: 'Plain text testimonials are no longer enough. Modern consumers need to see real faces and video proof.', 
-          icon: 'tabler:device-laptop-off' 
-        },
-    ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">The biggest reason customers don't choose you isn't "price"—it's "anxiety."</h3>
+      <h3 class="text-3xl font-bold mb-4">The "Invisible Gap": <br/>Why Even Great Businesses Fail Online</h3>
+      <p class="text-lg text-muted mb-4">
+        You pour your heart into every dish, every room, and every interaction. You see the smiles. You hear the "Arigato." But when you look at Google, your rating doesn't reflect the reality of your shop.
+      </p>
       <p class="text-lg text-muted mb-6">
-        If your website lacks authentic testimonials, potential clients move on. Testimonial bridges the gap between your hard work and public proof.
+        This is the <strong>Invisible Gap</strong>—the space between a guest’s happiness and their public feedback. In the busy world of travel, if you don't make it effortless to say "Thank You" online, they simply won't do it. Meanwhile, the loudest voices are often the most critical. 
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        The Hanei Review Engine was designed to bridge this gap. We turn your "Silent Satisfied Majority" into a thriving, 5-star digital legacy.
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80" alt="Problem Visual" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1735970336839-810a54623b42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Atmosphere" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: THE SOLUTION (Reversed True) -->
+  <!-- SECTION 2: DIGITAL RED CARPET & SHIELD -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: 'Autopilot Collection', 
-          description: 'Send a link or QR code. No apps, no logins. Customers record video or text reviews in seconds.', 
-          icon: 'tabler:refresh' 
-        },
-        { 
-          title: 'Beautiful Displays', 
-          description: 'Collected reviews are elegantly integrated into your website, matching your brand image perfectly.', 
+          title: '1. The "Digital Red Carpet"', 
+          description: 'Forget ugly, generic forms. Scan your Hanei QR code and guests step onto a digital red carpet tailored to your brand. Featuring high-speed elegance, aesthetic harmony, and smart language detection that greets them in their native tongue.', 
           icon: 'tabler:palette' 
         },
         { 
-          title: 'Wall of Love', 
-          description: 'Create overwhelming social proof that instantly builds confidence and skyrockets conversion rates.', 
-          icon: 'tabler:trending-up' 
+          title: '2. The "Reputation Shield"', 
+          description: 'Your private early-warning system. 4-5 star reviews are fast-tracked to Google. 1-3 star feedback is discreetly guided to a private channel, giving you the chance to resolve issues before they hit your public ranking.', 
+          icon: 'tabler:shield-check' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Visualize Absolute "Trust." <br/>Zero technical expertise needed.</h3>
-      <p class="text-lg text-muted">We handle the heavy lifting. Simply place the widget on your site and let your happy customers do the selling for you.</p>
+      <h3 class="text-3xl font-bold mb-4">Vibrant Features: <br/>Designed for Excellence</h3>
+      <p class="text-lg text-muted">
+        We provide the tools to ensure your transition from the physical world to the digital one feels seamless, professional, and protected.
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Solution Visual" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBjYWZlfGVufDB8fDB8fHwy" alt="Serving Coffee in Japan" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 3: WALL OF FAME & QR -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '3. The "Live Wall of Fame"', 
+          description: "Don't let reviews get buried. Our sleek website widget displays your latest 5-star reviews in a beautiful, scrolling wall. Build instant trust with potential customers in milliseconds.", 
+          icon: 'tabler:stars' 
+        },
+        { 
+          title: '4. The Frictionless QR Ecosystem', 
+          description: "Premium physical touchpoints—from elegant table tents to 'Thank You' cards—that look like a natural part of your decor. No logging in, no searching. Just: Scan. Tap. Done.", 
+          icon: 'tabler:qrcode' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Real-Time Social Proof & <br/>Frictionless Engagement</h3>
+      <p class="text-lg text-muted mb-6">
+        Your website should be a living, breathing testimonial to your success. We provide a continuous loop of positive feedback.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Interior" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 4: WHY INVEST -->
+  <Steps2
+    title="Why the Hanei Review Engine is an Essential Investment"
+    subtitle="Every guest who walks out without leaving a review is a missed opportunity for ten more to find you."
+    items={[
+      {
+        title: 'Dominate Local Search',
+        description: 'Google’s algorithm rewards businesses with frequent and recent reviews. By automating the process, you climb the rankings, appearing at the top for "Best experiences near me."',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Empower Your Staff',
+        description: 'Your team no longer has to feel awkward asking for reviews. The system does the "ask" for them, allowing your staff to focus entirely on hospitality.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Turn Critics into Fans',
+        description: 'By catching negative feedback privately, you have the chance to turn an unhappy guest into a loyal one by addressing their concerns personally.',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxqYXBhbmVzZSUyMGNhZmV8ZW58MHx8MHx8fDI%3D', 
+      alt: 'Barista Pouring Coffee',
+    }}
+  />
+
+  <!-- SECTION 5: CTA 1 -->
+  <CallToAction
+    title="Step Into the Spotlight"
+    subtitle="Transform your reputation from a question mark into your greatest competitive advantage."
+    actions={[
+        { variant: 'primary', text: 'Activate My Review Engine Now', href: '/contact' }
+    ]}
+  >
+    <Fragment slot="tagline">Start capturing the praise you deserve. Setup takes less than 15 minutes.</Fragment>
+  </CallToAction>
+
+  <!-- SECTION 6: PRICING -->
   <Pricing 
     id="pricing"
     title="Turn Satisfaction into Revenue" 
     subtitle="Standard Plan (Cancel Anytime)"
     prices={[pricingData]} 
   />
+
+  <!-- SECTION 7: ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+    actions={[]}
+  />
+
 </Layout>

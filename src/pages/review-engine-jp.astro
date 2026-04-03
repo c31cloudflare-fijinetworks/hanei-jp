@@ -1,106 +1,168 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: '次世代レビューエンジン | お客様の声で信頼を可視化', 
-  description: '素晴らしいサービスを提供しているのに、新規客に「信頼」が伝わらず損をしていませんか？',
+  title: 'Hanei口コミエンジン | Hanei JP', 
+  description: 'お客様の心の中にある「静かな満足感」を、世界中に響き渡る「強力な推薦の声」へと自動的に変換します。',
 };
 
 const pricingData = {
-  title: 'スタンダードプラン',
+  title: '口コミエンジン・スタンダード',
   subtitle: '「信頼」という最強の資産を構築する',
   price: '9,800',
   period: '月額（初期費用なし）',
   items: [
     { description: 'テキスト＆動画レビューの無制限収集' },
     { description: 'ウェブサイト用 高品質ウィジェット' },
-    { description: 'SNS共有用デザインの自動生成' },
-    { description: '「完全お任せ」導入サポート' },
+    { description: '評判シールド（非公開フィードバック）機能' },
+    { description: 'スマート多言語認識＆ルーティング' },
   ],
-  callToAction: { target: '_blank', text: '今すぐ無料で効果を実感する', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: '今すぐ口コミエンジンを導入する', href: '/contact-jp', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Testimonial Review Engine"
-    title='素晴らしいサービスを提供しているのに、<br/>新規客に<span class="text-accent">「信頼」が伝わらず</span>損をしていませんか？'
-    subtitle="「お客様の声」を簡単に集め、あなたのウェブサイトを24時間働く最強の営業マンに変える次世代レビューエンジン。"
-    actions={[{ variant: 'primary', text: 'お客様の声を売上に変える（無料デモ）', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1556740734-7f9589451ab8?auto=format&fit=crop&w=1024&q=80', alt: 'Review Display' }}
+    tagline="The Review Engine"
+    title='お店の「評判」は、最も価値のある資産です。<br/><span class="text-accent">だからこそ、大切に育てていきませんか。</span>'
+    subtitle="日々のおもてなしが、正当に評価されない現状を変えましょう。「Hanei口コミエンジン」は、お客様の心の中にある「静かな満足感」を、世界中に響き渡る「あなたのお店への強力な推薦の声」へと自動的に変換します。"
+    actions={[{ variant: 'primary', text: '今すぐ口コミエンジンを導入する', href: '/contact-jp' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJldmlld3xlbnwwfHwwfHx8Mg%3D%3D', alt: 'Review Ratings' }}
   />
   
-  <!-- BLOCK 2: THE PROBLEM (Reversed False) -->
+  <!-- SECTION 1: THE PROBLEM -->
   <Content
     isReversed={false}
-    items={[
-        { 
-          title: '信頼の欠如', 
-          description: '消費者の9割以上がレビューをチェックします。リアルな声がないだけで、彼らは競合他社へ離脱します。', 
-          icon: 'tabler:alert-triangle' 
-        },
-        { 
-          title: 'お願いする負担', 
-          description: '満足しているお客様に直接レビューを頼むのは、現場スタッフにとって大きな心理的負担です。', 
-          icon: 'tabler:user-x' 
-        },
-        { 
-          title: '古いシステムの限界', 
-          description: 'テキストだけの古い「お客様の声」は本物かどうか疑われます。今は「顔が見える声」が必要です。', 
-          icon: 'tabler:device-laptop-off' 
-        },
-    ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">顧客があなたのビジネスを選ばない最大の理由は、<br/>「価格」ではなく「不安」です。</h3>
+      <h3 class="text-3xl font-bold mb-4">「見えないギャップ」：<br/>素晴らしいお店でも、ネット上の評価が伸び悩む理由</h3>
+      <p class="text-lg text-muted mb-4">
+        一皿の料理、空間づくり、そして日々の接客に、あなたは心を注いでいます。お客様の笑顔も見ていますし、「ありがとう」という言葉も直接受け取っているはずです。しかし、Googleの評価を見た時、その点数がお店の本当の姿を反映していないと感じることはありませんか？
+      </p>
       <p class="text-lg text-muted mb-6">
-        自社サイトにリアルなレビューがないだけで、訪問者は無意識に「リスク」を感じます。Testimonialは、その不安を「確信」に変えるエンジンです。
+        これが<strong>「見えないギャップ」</strong>——お客様の「満足度」と「ネット上の評価」の間にある溝です。忙しい旅行中、ネット上で「ありがとう」と伝える作業が少しでも面倒だと、お客様はレビューを書いてくれません。その一方で、不満を持った一部の声ばかりが大きくネット上に響いてしまうのです。
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        「Hanei口コミエンジン」は、このギャップを埋めるために設計されました。声なき多数の「大満足のお客様」を、あなたのお店を永続的に輝かせる「星5つのデジタル資産」へと変えていきます。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80" alt="Problem Visual" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1735970336839-810a54623b42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Atmosphere" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: THE SOLUTION (Reversed True) -->
+  <!-- SECTION 2: DIGITAL RED CARPET & SHIELD -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: 'レビュー獲得の完全自動化', 
-          description: '専用QRを送るだけ。ログイン不要で、お客様は数クリックで動画やテキストのレビューを送信できます。', 
-          icon: 'tabler:refresh' 
-        },
-        { 
-          title: '洗練されたデザイン', 
-          description: '集まった声は、あなたのブランドに合わせた美しいウィジェットとして自動的にサイトへ配置されます。', 
+          title: '1. 「デジタル・レッドカーペット」', 
+          description: '味気ない汎用フォームは不要です。QRコードを読み込むと、お店のブランドに完全に寄り添った専用ページでお出迎え。システムがお客様のスマホ言語を自動で認識し、母国語で歓迎の意を伝えます。', 
           icon: 'tabler:palette' 
         },
         { 
-          title: '社会的証明の最大化', 
-          description: '高評価を「Wall of Love（信頼の壁）」として集約。訪問者を圧倒し、成約率を劇的に向上させます。', 
-          icon: 'tabler:trending-up' 
+          title: '2. 「評判シールド」（非公開の早期警戒システム）', 
+          description: '星4・5を選択したお客様はGoogle等へ直接ご案内。もし不満（星1〜3）を持ったお客様がいれば、非公開のフィードバック画面へ誘導します。ネット上に悪い評価が公開される前に、問題を解決するチャンスを得られます。', 
+          icon: 'tabler:shield-check' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">圧倒的な「信頼」を可視化する。<br/>導入から運用まで「完全お任せ」。</h3>
-      <p class="text-lg text-muted">専門知識は不要。ウィジェットを設置するだけで、偽物ではない実在する顧客の「生の声」があなたの最強の営業マンになります。</p>
+      <h3 class="text-3xl font-bold mb-4">卓越した成果を生み出す機能。<br/>ブランドイメージを守り抜く。</h3>
+      <p class="text-lg text-muted">
+        現実の店舗からデジタルの世界へ、違和感のないプロフェッショナルな体験を提供しつつ、あなたのお店のリスクを最小化します。
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Solution Visual" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBjYWZlfGVufDB8fDB8fHwy" alt="Serving Coffee in Japan" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 3: WALL OF FAME & QR -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '3. 「称賛の壁（ライブ・ウォール）」', 
+          description: "素晴らしい口コミを埋もれさせません。最新の星5つの口コミを自社サイトに美しく表示。Webサイトを訪れた見込み客がリアルタイムの称賛を目にした瞬間、入店への躊躇は消え去ります。", 
+          icon: 'tabler:stars' 
+        },
+        { 
+          title: '4. ストレスフリーな「QRエコシステム」', 
+          description: "テーブルのPOPからサンキューカードまで、インテリアの一部として自然に溶け込む上質なQRデザインをサポート。ログインも検索も不要。「スキャンして、タップするだけ」で完了します。", 
+          icon: 'tabler:qrcode' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">リアルタイムの信頼獲得と、<br/>摩擦のないスムーズな導線</h3>
+      <p class="text-lg text-muted mb-6">
+        あなたのWebサイトを、お店の魅力を生き生きと伝える「最高の証明書」にしましょう。絶え間なく良い評価が集まるサイクルを作り出します。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Interior" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 4: WHY INVEST -->
+  <Steps2
+    title="「Hanei口コミエンジン」が不可欠な投資である理由"
+    subtitle="口コミを残さずにお店を後にするお客様が一人いるたびに、次に訪れるはずだった「10人のお客様」を逃しています。"
+    items={[
+      {
+        title: 'ローカル検索で圧倒的な優位性を',
+        description: 'Googleのアルゴリズムは、頻繁に新しい口コミが集まるお店を高く評価します。自動化により検索順位が上昇し、観光客が検索した際にトップに表示されるようになります。',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'スタッフの負担を軽減',
+        description: 'スタッフが気まずい思いをして「口コミをお願いします」と頼む必要はもうありません。システムが自然にお願いを代行するため、接客に100%集中できます。',
+        icon: 'tabler:users',
+      },
+      {
+        title: '不満を持った客を「ファン」に変える',
+        description: 'ネガティブな意見を非公開で受け取ることで、不満を抱えたお客様にも誠実な個別対応ができ、結果として忠実なリピーターやファンに変えるチャンスが生まれます。',
+        icon: 'tabler:heart-handshake',
+      },
+    ]}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxqYXBhbmVzZSUyMGNhZmV8ZW58MHx8MHx8fDI%3D', 
+      alt: 'Barista Pouring Coffee',
+    }}
+  />
+
+  <!-- SECTION 5: CTA 1 -->
+  <CallToAction
+    title="スポットライトを浴びる舞台へ"
+    subtitle="あなたのお店の「評判」を、未知数なものから「最大の競争優位性（強力な集客の武器）」へと変えましょう。"
+    actions={[
+        { variant: 'primary', text: '今すぐ口コミエンジンを導入する', href: '/contact-jp' }
+    ]}
+  >
+    <Fragment slot="tagline">あなたが受けるべき正当な評価を集め始めましょう。初期設定は15分以内で完了します。</Fragment>
+  </CallToAction>
+
+  <!-- SECTION 6: PRICING -->
   <Pricing 
     id="pricing"
     title="今日から「満足」を「売上」に変えましょう" 
     subtitle="スタンダードプラン（いつでも解約可能）"
     prices={[pricingData]} 
   />
+
+  <!-- SECTION 7: ABOUT HANEI -->
+  <CallToAction
+    title="Haneiについて"
+    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、世界中の人々にその素晴らしい体験を届けるために、最新のテクノロジーを活用してあなたのお店をサポートします。"
+    actions={[]}
+  />
+
 </Layout>
