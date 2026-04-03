@@ -1,12 +1,14 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'The Grand Opening (Full Bilingual Reboot) | Digital Transformation', 
-  description: 'Eradicate Legacy Technical Debt. Deploy a World-Class Digital Flagship from Scratch.',
+  title: 'The Grand Opening | Hanei JP', 
+  description: 'In just 48 hours, we reboot your entire digital presence, forging a formidable bilingual flagship.',
 };
 
 const pricingData = {
@@ -17,91 +19,165 @@ const pricingData = {
   items: [
     { description: 'Full Bilingual Digital Flagship Reconstruction' },
     { description: 'Strategic Migration of Legacy Content' },
-    { description: 'Database-free, Unhackable serverless infrastructure' },
-    { description: 'DNA-level Schema.org SEO Integration' },
+    { description: 'Database-free, Unhackable architecture' },
+    { description: 'Clean-slate SEO & Schema.org Integration' },
     { description: '48-Hour Full-Stack Production Rebuild' },
   ],
-  callToAction: { target: '_blank', text: 'Build Your Digital Flagship', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: 'Secure My 48-Hour Grand Opening', href: '/contact', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Plan 3: The Grand Opening"
-    title='Eradicate Legacy Technical Debt. <br/><span class="text-accent">Deploy a World-Class Digital Flagship</span> from Scratch'
-    subtitle="An outdated website is a liability. We reboot your design, velocity, and authority within 48 hours to create a formidable bilingual flagship engineered for the next decade of global growth."
-    actions={[{ variant: 'primary', text: 'Initiate 48-Hour Rebuild', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1024&q=80', alt: 'Corporate Digital Headquarters' }}
+    tagline="The Grand Opening"
+    title='The Digital Flagship: Your Global Rebirth <br/><span class="text-accent">Starts Here.</span>'
+    subtitle="An outdated website is no longer just 'old'—it’s a liability. In just 48 hours, we reboot your entire digital presence, forging a formidable bilingual flagship engineered for the next decade of global growth."
+    actions={[{ variant: 'primary', text: 'Secure My 48-Hour Grand Opening', href: '/contact' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Culinary Excellence' }}
   />
   
-  <!-- BLOCK 2: STRATEGIC EQUITY (Reversed False) -->
+  <!-- SECTION 1: THE REALITY -->
   <Content
     isReversed={false}
     items={[
         { 
-          title: 'Hybrid Bilingual UX', 
-          description: 'Unified UI/UX satisfying Japanese informational depth and Western visual preferences. One domain, targeting the entire globe.', 
-          icon: 'tabler:language-hiragana' 
+          title: 'The Speed Penalty', 
+          description: 'If your site takes more than 3 seconds to load, you’ve already lost 50% of your potential customers.', 
+          icon: 'tabler:device-mobile-bolt' 
         },
         { 
-          title: 'Eradicating "Japanglish"', 
-          description: "Transition from basic translation to high-conversion, executive-level English that commands respect from Western decision-makers.", 
-          icon: 'tabler:message-language' 
+          title: 'The Trust Gap', 
+          description: 'An old-fashioned design suggests an old-fashioned experience. High-end Western and Japanese travelers alike seek modern, sleek, and reliable digital touchpoints.', 
+          icon: 'tabler:shield-x' 
         },
         { 
-          title: 'Automated Trust Engine', 
-          description: 'Strategic capture and display of verified 5-star Google reviews. Lowering the barrier to conversion through automated social proof.', 
-          icon: 'tabler:shield-star' 
+          title: 'The Language Barrier', 
+          description: 'Managing two separate versions of a site is exhausting and often leads to "half-finished" English pages that hurt your credibility.', 
+          icon: 'tabler:language-off' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Command Authority with <br/>World-Class Brand Equity.</h3>
-      <p class="text-lg text-muted mb-6">
-        Slow, unresponsive legacy sites trigger severe risk assessments in high-net-worth clients. The "Grand Opening" plan delivers an enterprise DX that ensures your digital presence matches your service quality.
+      <h3 class="text-3xl font-bold mb-4">The Reality: Your Website is Either an Engine or an Anchor.</h3>
+      <p class="text-lg text-muted mb-4">
+        In the modern economy, your website is the first "room" your guest enters. If that room is slow, cluttered, or difficult to navigate, they leave before you ever get to say "Welcome."
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        Hanei’s "Grand Opening" is the total solution. We don't just "fix" your site—we demolish the old barriers and build a high-performance digital landmark from the ground up.
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Executive Decision Making" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Elegant Sushi Presentation" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: TECH & RISK (Reversed True) -->
+  <!-- SECTION 2: VELOCITY & BILINGUAL -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: 'Extreme Loading Velocity', 
-          description: 'Eliminating render-blocking legacy JS. Pure HTML delivery perfectly aligned with Google’s Core Web Vitals for sub-second loads.', 
-          icon: 'tabler:device-mobile-bolt' 
+          title: '1. 48-Hour Digital Velocity: From Zero to Flagship', 
+          description: 'We deploy our proprietary high-speed framework to build, optimize, and launch your new flagship in just two days. Your business goes from "outdated" to "industry-leading" over a single weekend.', 
+          icon: 'tabler:bolt' 
         },
         { 
-          title: 'Zero-Hacking Architecture', 
-          description: 'Serverless serverless infrastructure removes structural vulnerabilities, rendering your flagship functionally unhackable.', 
-          icon: 'tabler:lock-check' 
+          title: '2. Dual-Engine Bilingual Mastery (Japanese & English)', 
+          description: 'A true flagship speaks to the world and the local community with equal authority. Your Japanese content remains culturally resonant, while your English content is engineered with the psychology of the Western consumer in mind. Seamless toggling included.', 
+          icon: 'tabler:language-hiragana' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Precision Engineering for <br/>Global Success</h3>
+      <p class="text-lg text-muted">
+        In business, time is the ultimate luxury. Traditional agencies take 3 to 6 months to build a bilingual site. In that time, you’ve lost thousands of potential guests. We solve this instantly.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1626379907753-406934326e2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Japanese Chef Cooking" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 3: ARCHITECTURE & SEO -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '3. Architecture for the Next Decade', 
+          description: "Built with clean, lightweight code achieving 'Green' scores on Google. We implement military-grade security encryption and ensure mobile-first dominance so you look stunning on every screen.", 
+          icon: 'tabler:rocket' 
         },
         { 
-          title: 'Semantic SEO Matrix', 
-          description: 'Embedding deep JSON-LD (Schema.org) into the DNA of the code to ensure algorithmic dominance in global search results.', 
+          title: '4. Instant Authority & SEO Reboot', 
+          description: "When we build from scratch, we clean out the digital cobwebs. We implement perfect header structure, meta-data, and schema markup from Day 1 to help you climb search rankings.", 
           icon: 'tabler:chart-arrows-vertical' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Zero Maintenance. <br/>Mathematical Security.</h3>
-      <p class="text-lg text-muted">Hosted on Cloudflare’s global edge network to mathematically reduce latency. Liberate yourself from plugin updates and version conflicts with stable, future-proof infrastructure.</p>
+      <h3 class="text-3xl font-bold mb-4">Architecture for the Next Decade</h3>
+      <p class="text-lg text-muted mb-6">
+        We build on the "bleeding edge" of web technology. Your new site isn't just modern for today; it is engineered to be compatible with the tech of tomorrow.
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Technical Excellence" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Traditional Japanese Setting" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 4: WHY GRAND OPENING -->
+  <Steps2
+    title="Why 'Grand Opening' is the Ultimate Choice for Visionary Owners"
+    subtitle="Stop patching the past. Launch your future."
+    items={[
+      {
+        title: 'Total Peace of Mind',
+        description: 'We handle the migration, the hosting, the design, and the copy. You simply provide the vision; we provide the results.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Maximum ROI',
+        description: 'By combining speed, design, and bilingual optimization, your site stops being an "expense" and starts being a high-conversion sales machine.',
+        icon: 'tabler:trending-up',
+      },
+      {
+        title: 'Brand Elevation',
+        description: 'Instantly align your digital presence with the actual quality of your physical service. If you are the best in your town, your website should prove it.',
+        icon: 'tabler:star',
+      },
+    ]}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1754228752210-e41501dd1773?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg1fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D', 
+      alt: 'Luxury Japanese Cuisine',
+    }}
+  />
+
+  <!-- SECTION 5: CTA 1 -->
+  <CallToAction
+    title="The World is Waiting. Don't Keep Them Outside."
+    subtitle="The era of the 'good enough' website is over. To capture the modern, global traveler, you need a digital presence that commands attention and inspires trust."
+    actions={[
+        { variant: 'primary', text: 'Secure My 48-Hour Grand Opening', href: '/contact' }
+    ]}
+  >
+    <Fragment slot="tagline">Limited monthly slots available for the 48-hour reboot. Inquire today for availability.</Fragment>
+  </CallToAction>
+
+  <!-- SECTION 6: PRICING -->
   <Pricing 
     id="pricing"
     title="Secure Your Most Valuable Digital Asset" 
     subtitle="Complete enterprise-tier reboot in 48 hours."
     prices={[pricingData]} 
   />
+
+  <!-- SECTION 7: ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+    actions={[]}
+  />
+
 </Layout>
