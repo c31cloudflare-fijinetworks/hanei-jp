@@ -1,12 +1,14 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'English Hanare (英語専用・独立型デジタル別館) | 既存サイトを触らず構築', 
-  description: '既存システムへの技術的干渉を完全に排除し、世界基準のインバウンド拠点を構築。',
+  title: '英語の離れ（Hanare） | Hanei JP', 
+  description: '技術的なリスクゼロで実現するグローバル展開。既存サイトに触れず、最高水準の別館を構築します。',
 };
 
 const pricingData = {
@@ -21,87 +23,161 @@ const pricingData = {
     { description: 'Stripe/Calendly等の外部API連携' },
     { description: '24時間以内の自動化デプロイ' },
   ],
-  callToAction: { target: '_blank', text: 'インバウンド拠点を構築する', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: '「英語の離れ」の構築について相談する', href: '/contact-jp', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Plan 2: The English Hanare"
-    title='既存システムへの技術的干渉を<br/><span class="text-accent">完全に排除</span>し、世界基準の拠点を構築'
-    subtitle="「ウェブ人質」状態を打破。既存の日本語サイトには一切触れず、専用サブドメイン上に最高水準の英語専用拠点を24時間以内に構築します。"
-    actions={[{ variant: 'primary', text: '24時間以内にデプロイする', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1503174971373-b1f69850bdf1?auto=format&fit=crop&w=1024&q=80', alt: 'Digital Architecture' }}
+    tagline="「英語の離れ（Hanare）」戦略"
+    title='技術的なリスクゼロで実現する<br/><span class="text-accent">グローバル展開。</span>'
+    subtitle="世界初の「離れ（独立型）」Webアーキテクチャのご提案。現在稼働中の日本語Webサイトには一切手を触れず（安全性100%）、高いコンバージョンを誇る最新のグローバル基盤を構築します。"
+    actions={[{ variant: 'primary', text: '「英語の離れ」について相談する', href: '/contact-jp' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy', alt: 'Premium Japanese Dining' }}
   />
   
-  <!-- BLOCK 2: RISK MGMT & DECOUPLING (Reversed False) -->
+  <!-- SECTION 1: THE PROBLEM -->
   <Content
     isReversed={false}
     items={[
         { 
-          title: '完全な非干渉（デカップリング）', 
-          description: '既存サイト（WordPress等）のログイン情報は不要。DNSレコードの追加のみで、安全に英語拠点を分離・稼働させます。', 
-          icon: 'tabler:layers-intersect' 
+          title: 'システム崩壊のリスク', 
+          description: '英語を追加するために制作会社が古いシステムをいじった結果、たった一つのミスで大切な日本語サイト全体がダウンしてしまうかもしれないという恐怖。', 
+          icon: 'tabler:alert-triangle' 
         },
         { 
-          title: '事業継続性の担保', 
-          description: '万が一の日本語サイトのリニューアル時も、独立した「離れ」は影響を受けず、インバウンド収益を止めるリスクを排除。', 
-          icon: 'tabler:shield-lock' 
+          title: 'パスワードや権限の所在不明', 
+          description: '何年も前にサイトを作った会社のFTPログイン情報やCMSのアクセス権限が、すでに社内で分からなくなっているという現実的な問題。', 
+          icon: 'tabler:lock-off' 
         },
         { 
-          title: 'ウェブ人質問題の解決', 
-          description: '制作会社と連絡不能、パスワード不明などの技術的負債を回避し、最速で世界市場へ参入できます。', 
-          icon: 'tabler:lock-open' 
+          title: 'デザインと心理のズレ', 
+          description: '日本語サイトをただ直訳しても、欧米人には響きません。フォント、レイアウト、そして「購買に至る心理」が根本的に異なるからです。', 
+          icon: 'tabler:palette' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">「ウェブ人質」問題を解決する、<br/>ゼロ・リスク・アーキテクチャ。</h3>
-      <p class="text-lg text-muted mb-6">
-        既存サイトを触るリスクは、インバウンド参入の最大の障壁です。建築における「離れ（Hanare）」の概念をデジタルに応用し、安全かつ迅速に世界基準のインフラを構築します。
+      <h3 class="text-3xl font-bold mb-4">ジレンマ：<br/>「英語サイトは欲しいが、今のサイトをいじるのは怖い」</h3>
+      <p class="text-lg text-muted mb-4">
+        多くの歴史ある日本の企業様や店舗様にとって、Webサイトはビジネスの生命線です。しかし、何年も更新されていない古いコードや複雑なシステム（レガシーシステム）で構築されていることも少なくありません。
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        Haneiの「英語の離れ（Hanare）」戦略は、古いサイトを「修理」する連鎖を断ち切り、世界中のお客様を安全に「歓迎」するための全く新しい解決策です。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Corporate Office" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Authentic Japanese Cuisine" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: STRATEGIC ADVANTAGE & TECH (Reversed True) -->
+  <!-- SECTION 2: DIGITAL RED CARPET & SHIELD -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: '富裕層向けインバウンド・エンジン', 
-          description: '欧米の富裕層が求める「世界基準の体験」を最大10ページの深いコンテンツで構築。信頼（Shinrai）を醸成します。', 
-          icon: 'tabler:award' 
+          title: '1. 既存サイトに触れない「ゼロ・タッチ」統合', 
+          description: 'パスワードも、FTP情報も不要です。高度なDNS設定を利用し専用の独自ドメイン（離れ）を構築。日本語サイトはこれまで通り稼働し、技術的リスクは完全にゼロです。', 
+          icon: 'tabler:shield-check' 
         },
         { 
-          title: '摩擦ゼロの予約・決済統合', 
-          description: 'StripeやCalendly等の世界標準APIをシームレスに統合。顧客が使い慣れたUIで即座に予約・決済を完了させます。', 
-          icon: 'tabler:credit-card' 
-        },
-        { 
-          title: 'エンタープライズ級の技術', 
-          description: '最高速の配信インフラとCloudflareエッジ配信を標準搭載。世界中どこからでも1秒未満の瞬間表示を保証。', 
-          icon: 'tabler:world-upload' 
+          title: '2. 欧米の富裕層の心理に合わせた最適化', 
+          description: '言葉だけでなく「ブランド価値」を翻訳します。高単価な旅行者の心に響くデザインと、国際ローミング環境下でも超高速で読み込まれるモバイルファースト設計を採用。', 
+          icon: 'tabler:diamond' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">最高級のデジタル不動産を、<br/>24時間以内に自動化展開。</h3>
-      <p class="text-lg text-muted">単なる翻訳ではなく、ネイティブ・コピーライティングと高度な構造化データ（JSON-LD）の実装により、国際的な検索順位における圧倒的な優位性を確立します。</p>
+      <h3 class="text-3xl font-bold mb-4">コンセプト：<br/>大切なお客様をお迎えする「離れ」</h3>
+      <p class="text-lg text-muted">
+        伝統的な日本建築において「離れ」とは、特別なお客様のために静かでモダンに整えられた、最高のおもてなしの場です。既存の日本語サイト（母屋）に無理やり英語を「詰め込む」のではなく、外国人ゲストに特化した最新・高速のデジタル空間を独立して新設するのです。
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Tech Analytics" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Japanese Sushi Preparation" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 3: WALL OF FAME & QR -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '3. 完全な独立性による「未来への備え」', 
+          description: "将来、日本語サイトをフルリニューアルすることになっても、英語サイトは一切影響を受けず安定して稼働し続けます。最新の安全なアーキテクチャで構築されます。", 
+          icon: 'tabler:layers-intersect' 
+        },
+        { 
+          title: '4. 「コンシェルジュ」のような予約導線', 
+          description: "単なるパンフレットではなく、高いコンバージョンを生む営業ツールです。複雑なメニューを省き、「今すぐ予約」へスムーズに導くビジュアル・ストーリーテリングを活用します。", 
+          icon: 'tabler:concierge-bell' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">圧倒的な機能：<br/>絶対的な安全性と、完全な最適化</h3>
+      <p class="text-lg text-muted mb-6">
+        古いシステムは脆弱です。万が一、母屋のサーバーがダウンしても、海外からのクレジットカード決済や問い合わせに対して、最もセキュアな環境を提供し続けます。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Dish Detail" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 4: WHY INVEST -->
+  <Steps2
+    title="「英語の離れ」が選ばれる理由"
+    subtitle="過去のシステムを「壊してしまうかもしれない」という不安を手放し、未来の集客基盤を「築く」ことに集中しましょう。"
+    items={[
+      {
+        title: '圧倒的なスピード',
+        description: '古いコードを解読・改修する必要がないため、通常の多言語化プロジェクトの何分の一かの期間でグローバル展開をスタートできます。',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: '絶対的な安全性',
+        description: '現在の社内IT担当者や契約中のWeb制作会社の業務を邪魔することはありません。私たちは並行した別の安全な領域で構築を行います。',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'オーダーメイドの品質',
+        description: '国内向けサイトの「おまけの直訳版」ではなく、洗練されたグローバルブランドとしての独立した美しいサイトが手に入ります。',
+        icon: 'tabler:star',
+      },
+    ]}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', 
+      alt: 'Luxury Japanese Table Setting',
+    }}
+  />
+
+  <!-- SECTION 5: CTA 1 -->
+  <CallToAction
+    title="世界中のお客様をお迎えする「離れ」を"
+    subtitle="「既存サイトに一切触れない」安全なグローバル展開で、圧倒的な安心感と収益拡大を体験してください。世界中の市場が、あなたのお店を探しています。"
+    actions={[
+        { variant: 'primary', text: '「英語の離れ」の構築について相談する', href: '/contact-jp' }
+    ]}
+  >
+    <Fragment slot="tagline">パスワード等の技術的な情報は不要です。現在のWebサイトのURLさえあれば、すぐに分析を開始できます。</Fragment>
+  </CallToAction>
+
+  <!-- SECTION 6: PRICING -->
   <Pricing 
     id="pricing"
     title="世界市場に向けた最高級の拠点を" 
     subtitle="弊社最上位の人気プラン（一括投資モデル）"
     prices={[pricingData]} 
   />
+
+  <!-- SECTION 7: ABOUT HANEI -->
+  <CallToAction
+    title="Haneiについて"
+    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、世界中の人々にその素晴らしい体験を届けるために、最新のテクノロジーを活用してあなたのお店をサポートします。"
+    actions={[]}
+  />
+
 </Layout>

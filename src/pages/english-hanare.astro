@@ -1,12 +1,14 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'The English Hanare (Independent Digital Annex) | Decoupled Architecture', 
-  description: 'Zero-Risk Global Infrastructure Built on a Decoupled Architecture.',
+  title: 'The English Hanare | Hanei JP', 
+  description: 'Global Expansion Without the Technical Risk. A detached, modern digital pavilion.',
 };
 
 const pricingData = {
@@ -21,87 +23,161 @@ const pricingData = {
     { description: 'Global API Integration (Stripe/Calendly)' },
     { description: '24-Hour streamlined setup' },
   ],
-  callToAction: { target: '_blank', text: 'Build Your Global Annex', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: 'Inquire About My Hanare Setup', href: '/contact', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Plan 2: The English Hanare"
-    title='Zero-Risk Global Infrastructure Built on a <br/><span class="text-accent">Decoupled Architecture</span>'
-    subtitle="Break free from the 'Website Hostage' dilemma. We build a world-class English asset on an independent subdomain without touching your fragile legacy code."
-    actions={[{ variant: 'primary', text: 'Launch in 24 Hours', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1503174971373-b1f69850bdf1?auto=format&fit=crop&w=1024&q=80', alt: 'Independent Pavilion' }}
+    tagline="The English Hanare Strategy"
+    title='Global Expansion Without the <br/><span class="text-accent">Technical Risk.</span>'
+    subtitle='Introducing the world’s first "Detached Pavilion" web architecture. We build your global presence on a modern, high-conversion foundation while keeping your existing Japanese website 100% untouched and safe.'
+    actions={[{ variant: 'primary', text: 'Inquire About My Hanare Setup', href: '/contact' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy', alt: 'Premium Japanese Dining' }}
   />
   
-  <!-- BLOCK 2: SOLVING THE HOSTAGE DILEMMA (Reversed False) -->
+  <!-- SECTION 1: THE DILEMMA -->
   <Content
     isReversed={false}
     items={[
         { 
-          title: 'Total Decoupling', 
-          description: 'No FTP access or CMS logins required for your existing site. We use DNS-level routing to keep your domestic site 100% untouched.', 
-          icon: 'tabler:layers-intersect' 
+          title: 'The Risk of Failure', 
+          description: 'If a developer goes into your old system to "add English," one wrong click could crash your entire Japanese site.', 
+          icon: 'tabler:alert-triangle' 
         },
         { 
-          title: 'Risk-Free Future-Proofing', 
-          description: 'Future crashes or updates to your Japanese site have zero impact on your English revenue engine. Absolute technical safety.', 
-          icon: 'tabler:shield-lock' 
+          title: 'The Password Nightmare', 
+          description: 'You might not even have the original FTP logins or CMS access from the agency that built your site a decade ago.', 
+          icon: 'tabler:lock-off' 
         },
         { 
-          title: 'Strategic Bypass', 
-          description: "Don't let lost passwords or unresponsive agencies block your international expansion. We bypass technical debt entirely.", 
-          icon: 'tabler:lock-open' 
+          title: 'The Design Gap', 
+          description: 'A simple translation of a Japanese site rarely works for Westerners. The fonts, layout, and "psychology of the sale" are fundamentally different.', 
+          icon: 'tabler:palette' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Solving the "Website Hostage" Dilemma with Technical Safety.</h3>
-      <p class="text-lg text-muted mb-6">
-        Modifying legacy systems risks total failure. Borrowing the concept of a "Hanare" (detached pavilion), we build a modern infrastructure optimized for affluent Western consumer psychology while maintaining zero risk to your current operations.
+      <h3 class="text-3xl font-bold mb-4">The Dilemma: <br/>"I want an English site, but I’m afraid to touch my current one."</h3>
+      <p class="text-lg text-muted mb-4">
+        For many established Japanese businesses, your website is your lifeblood. But it’s also often built on "legacy systems"—older code or complex setups that haven't been updated in years.
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        Hanei’s "English Hanare" solves this by stopping the cycle of "fixing" and starting the journey of "welcoming."
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Modern Architecture" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Authentic Japanese Cuisine" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: ADVANTAGE & TECH STACK (Reversed True) -->
+  <!-- SECTION 2: THE CONCEPT & FEATURES 1 -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: 'High-Net-Worth Conversion', 
-          description: 'Up to 10 pages of comprehensive digital authority, encompassing philosophy, credentials, and transparent pricing to build Trust (Shinrai).', 
-          icon: 'tabler:award' 
+          title: '1. Zero-Touch Integration (DNS-Level Magic)', 
+          description: 'We don\'t need your passwords or FTP access. Using advanced CNAME routing, we create a dedicated domain. Your Japanese site continues running with zero risk of technical glitches.', 
+          icon: 'tabler:shield-check' 
         },
         { 
-          title: 'Frictionless Transactions', 
-          description: 'Embedding global standard APIs for payments and reservations. Allowing international clients to commit capital instantly.', 
-          icon: 'tabler:credit-card' 
-        },
-        { 
-          title: 'Enterprise Performance', 
-          description: 'high-performance code with zero unnecessary JS for sub-second global rendering and semantic SEO superiority.', 
-          icon: 'tabler:world-upload' 
+          title: '2. Optimized for the Affluent Western Mindset', 
+          description: 'We translate your brand value. We use psychographic design, typography, and spacing that appeals to high-spending tourists, delivered with mobile-first lightning performance.', 
+          icon: 'tabler:diamond' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Executive-Level Logic. <br/>24-Hour deployment speed.</h3>
-      <p class="text-lg text-muted">We use psychological native logic to rewrite your value proposition for Western standards. By injecting dense JSON-LD data, we ensure your business outranks competitors in English search results.</p>
+      <h3 class="text-3xl font-bold mb-4">The Concept: <br/>The "Hanare" (Detached Pavilion)</h3>
+      <p class="text-lg text-muted">
+        In traditional Japanese architecture, the <em>Hanare</em> is a separate, beautiful building set apart from the main house. It is a dedicated space for guests—quiet, modern, and perfectly prepared for their comfort. Instead of trying to "cram" English into your existing structure, we build a modern, high-speed digital pavilion specifically for your international guests.
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Global Data" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Japanese Sushi Preparation" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 3: FEATURES 2 -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '3. Total Decoupling: Future-Proof Your Business', 
+          description: "Because the Hanare is detached, it is future-proof. If you redesign your Japanese site in three years, your English site remains stable. Built on cutting-edge, secure architecture.", 
+          icon: 'tabler:layers-intersect' 
+        },
+        { 
+          title: '4. The "Concierge" Conversion Path', 
+          description: "The English Hanare isn't just a brochure; it’s a sales tool. We bypass confusing menus, leading guests directly to a 'Book Now' button through vibrant visual storytelling.", 
+          icon: 'tabler:concierge-bell' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Absolute Safety, <br/>Total Optimization</h3>
+      <p class="text-lg text-muted mb-6">
+        Legacy systems are fragile. Your English business shouldn't have to suffer if an old plugin fails. We provide a safe environment for international reservations.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Dish Detail" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 4: WHY HANARE -->
+  <Steps2
+    title="Why 'English Hanare' is the Only Logical Choice"
+    subtitle="Stop worrying about 'breaking' the past. Start focusing on 'building' the future."
+    items={[
+      {
+        title: 'Speed to Market',
+        description: 'Because we don\'t have to navigate your old code, we can launch your English presence in a fraction of the time.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Absolute Safety',
+        description: 'Your IT manager or current web agency can rest easy—we are not a threat to their work. We operate in a parallel, optimized space.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Bespoke Quality',
+        description: 'You get a site that looks like a modern global brand, not a translated "copy" of a domestic site.',
+        icon: 'tabler:star',
+      },
+    ]}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', 
+      alt: 'Luxury Japanese Table Setting',
+    }}
+  />
+
+  <!-- SECTION 5: CTA 1 -->
+  <CallToAction
+    title="Your Global Guest House is Ready"
+    subtitle="Experience the peace of mind that comes with a 'Zero-Touch' global expansion. The international market is looking for you—give them a beautiful, modern place to find you."
+    actions={[
+        { variant: 'primary', text: 'Inquire About My Hanare Setup', href: '/contact' }
+    ]}
+  >
+    <Fragment slot="tagline">No technical access required. We can begin with just your URL.</Fragment>
+  </CallToAction>
+
+  <!-- SECTION 6: PRICING -->
   <Pricing 
     id="pricing"
     title="The Ultimate Inbound Revenue Asset" 
     subtitle="Strategically sound global expansion with zero technical risk."
     prices={[pricingData]} 
   />
+
+  <!-- SECTION 7: ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+    actions={[]}
+  />
+
 </Layout>
