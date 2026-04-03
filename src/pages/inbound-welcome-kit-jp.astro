@@ -1,111 +1,188 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'インバウンド・ウェルカムキット | 発見と入店を促す基盤構築', 
-  description: 'Googleマップの英語最適化による「発見」と、視覚的ガイダンスによる「入店への安心感」を統合した初期インフラ。',
+  title: 'インバウンド・ウェルカムキット | Hanei JP', 
+  description: '「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。',
 };
 
 const pricingData = {
-  title: 'インバウンド・ウェルカムキット',
-  subtitle: '外国人客を呼び込む・安心させるための必須基盤',
+  title: 'ウェルカムキット・スタンダード',
+  subtitle: '24時間対応のグローバル受付を構築',
   price: '128,500',
-  period: '一括費用（月額なし）',
+  period: '初期費用 ＋ 月額保守 ¥9,800',
   items: [
-    { description: 'Googleマップ＆MEO英語SEO完全設定' },
-    { description: '視覚的英語ガイダンス（別館）の構築' },
-    { description: '店舗専用・英語レビュー獲得QRスタンド' },
-    { description: 'AI最適化された英語コピーライティング' },
-    { description: '24時間以内のスピード導入保証' },
+    { description: '英語最適化されたWeb集客＆ビジュアルメニュー' },
+    { description: 'Googleマップ（MEO）英語キーワード最適化' },
+    { description: '「口コミシールド」と評価向上エンジン' },
+    { description: 'デジタル「指さし会話」接客ツール' },
+    { description: 'サーバー保守と継続的なシステムアップデート' },
   ],
-  callToAction: { target: '_blank', text: '今すぐ集客を開始する', href: '#', variant: 'success' },
+  callToAction: { target: '_self', text: '無料インバウンド診断を申し込む', href: '/contact-jp', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- BLOCK 1: HERO -->
+  
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Plan 1: インバウンド・ウェルカムキット"
-    title='外国人客が「あなたのお店」を<br/><span class="text-accent">見つけられない・入店をためらう</span>理由'
-    subtitle="訪日客の92%が利用するGoogleマップの英語最適化による「発見」と、店舗ルールを視覚的に伝えるガイダンスによる「安心感」を統合。24時間以内に機会損失を利益に変えます。"
-    actions={[{ variant: 'primary', text: '24時間以内にインフラを構築する', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1590674154471-da6771d03393?auto=format&fit=crop&w=1024&q=80', alt: 'スマホで店を探す外国人' }}
+    tagline="インバウンド・ウェルカムキット"
+    title='訪日客の受け入れに、<br/><span class="text-accent">もう悩む必要はありません。</span>'
+    subtitle="「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。"
+    actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: 'Beautiful Japan Scenery' }}
   />
   
-  <!-- BLOCK 2: THE PROBLEM & SOLUTION (Reversed False) -->
+  <!-- SECTION 1: THE PROBLEM -->
   <Content
     isReversed={false}
     items={[
         { 
-          title: 'Googleマップ＆MEO英語SEO', 
-          description: '店名やカテゴリーを、外国人が実際に検索するキーワードで英語化。検索順位を劇的に向上させます。', 
-          icon: 'tabler:map-pin' 
+          title: 'コミュニケーションの壁', 
+          description: '「英語が話せないから、十分なおもてなし（サービス）ができないかもしれない」', 
+          icon: 'tabler:messages-off' 
         },
         { 
-          title: '視覚的ガイダンス設計（Q&A統合）', 
-          description: '「カードは使える？」「注文の仕方は？」といった不安を、直感的なアイコンと英語で入店前に解消し、フロント業務の負担を軽減します。', 
-          icon: 'tabler:eye' 
+          title: 'デジタル集客への戸惑い', 
+          description: '「外国人に向けたGoogleやTripAdvisorの活用方法がわからない」', 
+          icon: 'tabler:cloud-fog' 
         },
         { 
-          title: '英語レビュー獲得QRシステム', 
-          description: 'QRコードをかざすだけで、外国人が迷わず英語で高評価を書ける専用スタンドとデジタル資産を提供。', 
-          icon: 'tabler:qrcode' 
+          title: '口コミへの恐怖', 
+          description: '「言葉の壁による些細な誤解で、対応もできないまま星1つの低評価をつけられたらどうしよう」', 
+          icon: 'tabler:star-off' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">「情報の壁」と「心理的障壁」を<br/>同時に打ち破る戦略的優位性。</h3>
+      <h3 class="text-3xl font-bold mb-4">本格的なインバウンド需要の回復。<br/>機会を逃していませんか？</h3>
+      <p class="text-lg text-muted mb-4">
+        スマホを片手に、お店の前を通り過ぎる外国人観光客。彼らは「本物のローカル体験」を求めているのに、何かが原因で入店をためらっています。その光景を、あなたも日常的に目にしているのではないでしょうか。
+      </p>
       <p class="text-lg text-muted mb-6">
-        店名が漢字のままだと検索にヒットせず、店頭のルールが不明瞭だと外国人客は「リスク」を感じて立ち去ります。本キットは、この2つの機会損失ポイントを同時に解決する強力なパッケージです。
+        英語のメニューがないからでしょうか。Googleマップの情報が日本語のみだからでしょうか。それとも、「英語で複雑な要望をされたらどうしよう」という、あなた自身の不安がストップをかけているのかもしれません。<strong>Haneiの「インバウンド・ウェルカムキット」は、こうした不安を根本から解消し、あなたが誇るサービスと世界中の旅行者を安全に橋渡しします。</strong>
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="集客データ" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 3: THE ONE-SHOT PROMISE (Reversed True) -->
+  <!-- SECTION 2: THE 3 NO's -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: 'Speed (スピード)', 
-          description: '弊社独自のインフラ構築技術により、設定から反映・デプロイまでを最短24時間で完了させます。', 
-          icon: 'tabler:bolt' 
+          title: '1. 英語力は不要（NO English Required）', 
+          description: '新しく英語を学ぶ必要はありません。私たちのツールと自動化システムが、翻訳とコミュニケーションを代行します。', 
+          icon: 'tabler:language' 
         },
         { 
-          title: '既存サイトへの非干渉（ゼロ・リスク）', 
-          description: '既存サイトのログイン情報は不要。現在のシステムを壊すリスクは技術的に存在しません。', 
-          icon: 'tabler:shield-check' 
+          title: '2. 専門的なITスキルは不要（NO Technical Skill）', 
+          description: 'デジタル周りの構築・管理はすべてお任せください。スマートフォンが使えれば、システムを簡単に使いこなせます。', 
+          icon: 'tabler:device-mobile' 
         },
         { 
-          title: 'Western Standards (欧米基準)', 
-          description: '単なる翻訳ではなく、欧米人の購買心理に基づいた「刺さる」英語表現を使用します。', 
-          icon: 'tabler:world' 
+          title: '3. スタッフの業務負担増はなし（NO Extra Work）', 
+          description: '現在の業務フローにそのまま組み込めます。複雑な新しい機器の導入や、時間のかかるスタッフ研修は必要ありません。', 
+          icon: 'tabler:clock-check' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">開発の手間、一切なし。<br/>24時間でデプロイ完了。</h3>
-      <p class="text-lg text-muted">外国人客は、今この瞬間もあなたを探しています。技術的な障壁をすべて取り除き、最速で成果を出すことに特化したパッケージです。欧米の顧客が求める高い基準の情報を即座に提供します。</p>
+      <h3 class="text-3xl font-bold mb-4">Haneiのお約束：<br/>インバウンド成功のための「3つのゼロ」</h3>
+      <p class="text-lg text-muted">
+        売上を伸ばすために、経営者の負担が増えては意味がありません。私たちのシステムは、面倒な手間をかけずに結果を出したい、多忙なオーナー様のために設計されています。
+      </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="プロフェッショナルな対応" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fHwy" alt="Japan City Lights" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- BLOCK 4: PRICING -->
+  <!-- SECTION 3: TOTAL SOLUTION -->
+  <Content
+    isReversed={false}
+    items={[
+        { 
+          title: '1. 英語最適化されたWeb集客', 
+          description: '「見ているだけの人」を「来店客」に変えることに特化したページ。何を注文しているか一目でわかるビジュアルメニューと、来店前に予約・決済を完了できるスムーズな動線を提供します。', 
+          icon: 'tabler:world-www' 
+        },
+        { 
+          title: '2. Googleマップ（MEO）の最適化', 
+          description: '外国人が「近くの美味しいお店」と英語で検索した時、あなたのお店は表示されるでしょうか？Googleプロフィールを英語キーワードで最適化し、最も重要な検索結果で上位表示を狙います。', 
+          icon: 'tabler:map-pin' 
+        },
+        { 
+          title: '3. 「口コミシールド」と評価向上エンジン', 
+          description: '満足したお客様に英語レビュー投稿を自動で促します。不満を持ったお客様の声は公開前に「非公開メッセージ」としてキャッチ。AI返信ツールでスマートな対応も可能です。', 
+          icon: 'tabler:shield-star' 
+        },
+        { 
+          title: '4. デジタル「指さし会話」ツール', 
+          description: 'アレルギー、Wi-Fi、支払い方法について聞かれても、タブレットや印刷したガイドを「指さす」だけで対応可能。接客スピードを落とさず、お客様もスタッフも笑顔でいられます。', 
+          icon: 'tabler:hand-click' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">インバウンド・ウェルカムキット：<br/>トータルソリューション</h3>
+      <p class="text-lg text-muted mb-6">
+        単なるWebサイト制作ではありません。あなたのお店に「24時間対応のグローバル受付」を構築します。
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGphcGFufGVufDB8fDB8fHwy" alt="Japanese Dining" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 4: HOW TO GET STARTED -->
+  <Steps2
+    title="導入までの3ステップ"
+    subtitle="すべてを一人で抱え込む必要はありません。現在、どれだけ多くの潜在的な外国人客があなたのお店を検索しているか、実際にデータでお見せします。"
+    items={[
+      {
+        title: 'ステップ1：無料インバウンド診断',
+        description: '英語キーワードにおける、あなたのお店の現在のGoogleマップ順位やWebでの露出度を分析します。',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'ステップ2：カスタマイズ戦略のご提案',
+        description: '現状の「課題・抜け漏れ」を明確にし、ウェルカムキットがそれをどう解決するかを具体的にご提案します。',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'ステップ3：安心のスタート（本業への集中）',
+        description: 'キットを導入した後は、あなたが最も得意とする「ご自身のお店づくり」に集中してください。その間に、世界中のお客様があなたのお店を見つけ、来店するようになります。',
+        icon: 'tabler:rocket',
+      },
+    ]}
+    callToAction={{ text: '無料インバウンド診断を申し込む', href: '/contact-jp', variant: 'primary' }}
+    image={{ 
+      src: 'https://images.unsplash.com/photo-1611518040385-1cc65ab82c91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGl6YWtheWF8ZW58MHx8MHx8fDI%3D', 
+      alt: 'Izakaya Interior',
+    }}
+  />
+
+  <!-- SECTION 5: PRICING -->
   <Pricing 
     id="pricing"
-    title="インバウンド集客・接客の基盤構築" 
-    subtitle="一括費用: ¥128,500 (月額費用なし)"
+    title="シンプルで透明性の高い料金体系" 
+    subtitle="隠れた追加費用や複雑な料金プランはありません。プロによる初期設定（一律料金）と、月に数名の外国人客の来店で十分に回収できる低額の月額保守費用のみでご利用いただけます。"
     prices={[pricingData]} 
   />
 
-  <div class="text-center pb-12 text-muted text-sm italic">
-    Ultra-fast Edge Delivery: Powered by Cloudflare
-  </div>
+  <!-- SECTION 6: ABOUT HANEI -->
+  <CallToAction
+    title="Haneiについて"
+    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、世界中の人々にその素晴らしい体験を届けるために、最新のテクノロジーを活用してあなたのお店をサポートします。"
+    actions={[]}
+  />
+
 </Layout>
