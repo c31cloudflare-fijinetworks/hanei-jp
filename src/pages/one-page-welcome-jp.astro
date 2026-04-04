@@ -8,112 +8,111 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = { 
-  title: '1ページ・ウェルカム | Hanei JP', 
-  description: '「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。',
+  title: '外国人観光客の集客・英語ページ制作 | Hanei JP', 
+  description: '看板を見て通り過ぎる外国人客を、今日から「お客様」に変えませんか？19,800円でプロ品質の英語ページを制作。',
 };
 
 const pricingData = {
-  title: '1ページ・ウェルカムプラン',
-  subtitle: '24時間対応のグローバル受付を構築',
-  price: '128,500',
-  period: '初期費用 ＋ 月額保守 ¥9,800',
+  title: 'インバウンド対策・1ページ制作プラン',
+  subtitle: '外国人観光客を迷わせない、集客に必要なすべてを。',
+  price: '19,800',
+  period: '一括払い（追加費用なし）',
   items: [
-    { description: '英語最適化された1ページWebサイト' },
-    { description: 'Googleマップ（MEO）英語キーワード最適化' },
-    { description: 'カスタム口コミ獲得QR & 誘導' },
-    { description: 'デジタル「指さし会話」接客ツール' },
-    { description: 'サーバー保守と継続的なシステムアップデート' },
+    { description: 'プロによる英語Webページ制作' },
+    { description: 'Googleマップ英語検索対策（MEO）' },
+    { description: '店頭用・注文用QRコード作成' },
+    { description: '当日納品（正午までの注文）' },
+    { description: 'ご満足いただけるまで修正無制限' },
   ],
-  callToAction: { target: '_self', text: '無料インバウンド診断を申し込む', href: '/contact-jp', variant: 'primary' },
+  callToAction: { target: '_self', text: '今すぐ申し込む', href: '/contact-jp', variant: 'primary' },
 };
 ---
 
 <Layout metadata={metadata}>
   
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="プラン1：1ページ・ウェルカム"
-    title='訪日客の受け入れに、<br/><span class="text-accent">もう悩む必要はありません。</span>'
-    subtitle="「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。"
-    actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '1-Page Welcome' }}
+    tagline="シンプル。最速。確かな効果。"
+    title='看板を見て通り過ぎる外国人客を<br/><span class="text-accent">「常連客」に変えませんか？</span>'
+    subtitle='スマホを見ながらお店の前を通り過ぎてしまう外国人。その原因は「英語の情報がない不安」です。最短24時間で、あなたのお店を「外国人歓迎」の場所に変えます。'
+    actions={[{ variant: 'primary', text: '今すぐ英語ページを作る', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '賑わう日本の商店街' }}
   />
   
+  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
     items={[
-        { title: 'コミュニケーションの壁', description: '「英語が話せないから、十分なおもてなしができないかもしれない」', icon: 'tabler:messages-off' },
-        { title: 'デジタル集客への戸惑い', description: '「外国人に向けたGoogleやTripAdvisorの活用方法がわからない」', icon: 'tabler:cloud-fog' },
-        { title: '口コミへの恐怖', description: '「言葉の壁による些細な誤解で、対応もできないまま低評価をつけられたらどうしよう」', icon: 'tabler:star-off' },
+        { title: '英語が話せなくても大丈夫', description: 'スタッフが英語を話す必要はありません。メニュー、ルール、サービス内容をスマホで完璧に伝えることで、接客のストレスをゼロにします。', icon: 'tabler:mood-smile' },
+        { title: 'Googleマップで発見される', description: '外国人が英語で「Cafe」「Dentist」と検索した際、あなたのお店が上位に表示されるよう設定。競合店に流れている客層をしっかりキャッチします。', icon: 'tabler:map-search' },
+        { title: 'トラブルや誤解を未然に防ぐ', description: '料金体系やお店独自のルールを正しい英語で明文化。言葉の壁による誤解や、不本意な低評価レビューを防ぎます。', icon: 'tabler:thumb-up' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">本格的なインバウンド需要の回復。<br/>機会を逃していませんか？</h3>
-      <p class="text-lg text-muted mb-4">スマホを片手に、お店の前を通り過ぎる外国人観光客。彼らは「本物のローカル体験」を求めているのに、何かが原因で入店をためらっています。</p>
-      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」は、こうした不安を根本から解消し、</strong>あなたが誇るサービスと世界中の旅行者を安全に橋渡しします。</p>
+      <h3 class="text-3xl font-bold mb-4">インバウンドの波を逃すのは、<br/>もう終わりにしましょう。</h3>
+      <p class="text-lg text-muted mb-4">カフェ、レストラン、ショップ、歯科医院… 外国人観光客はあなたのサービスを求めています。しかし、日本語の情報しかないと「入ってもいいのかな？」と躊躇してしまいます。</p>
+      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」</strong>は、その不安を取り除きます。難しいことはすべてお任せください。あなたは普段通り,日本のおもてなしに集中するだけです。</p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="日本の観光客" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
+  <!-- SECTION 2: WHY US -->
   <Content
     isReversed={true}
     items={[
-        { title: '1. 英語力は不要', description: '新しく英語を学ぶ必要はありません。私たちのツールが翻訳とコミュニケーションを代行します。', icon: 'tabler:language' },
-        { title: '2. 専門的なITスキルは不要', description: 'デジタル周りの管理はすべてお任せください。スマホが使えれば簡単に使いこなせます。', icon: 'tabler:device-mobile' },
-        { title: '3. スタッフの業務負担増はなし', description: '現在の業務フローにそのまま組み込めます。時間のかかるスタッフ研修は必要ありません。', icon: 'tabler:clock-check' },
+        { title: 'ITの知識は不要です', description: 'LINEが使えれば準備は完了です。サーバーの契約や難しい設定、英語の翻訳作業はすべて私たちが代行します。', icon: 'tabler:device-mobile-check' },
+        { title: '驚きのスピード納品', description: 'お昼の12時までにご注文いただければ、その日の夜までに公開。明日からインバウンド客の受け入れを開始できます。', icon: 'tabler:bolt' },
+        { title: 'リスクゼロの修正保証', description: '修正回数に制限はありません。内容やデザインに100%ご納得いただけるまで、何度でも無料で調整いたします。', icon: 'tabler:shield-check' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Haneiのお約束：<br/>インバウンド成功のための「3つのゼロ」</h3>
-      <p class="text-lg text-muted">売上を伸ばすために、経営者の負担が増えては意味がありません。多忙なオーナー様のために設計されています。</p>
+      <h3 class="text-3xl font-bold mb-4">忙しいオーナー様のための<br/>「丸投げ」プラン。</h3>
+      <p class="text-lg text-muted">「何から始めたらいいかわからない」という悩みは不要です。私たちがこれまでの実績に基づき、最も効果的な構成であなたのビジネスを英語化します。</p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fHwy" alt="Japan City Lights" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fHwy" alt="日本の店舗" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <Content
-    isReversed={false}
+  <!-- HOW TO GET STARTED -->
+  <Steps2
+    title="導入までの3ステップ"
+    subtitle="難しい打ち合わせに時間をかける必要はありません。最短で結果を出します。"
     items={[
-        { title: '1. 英語最適化されたWeb集客', description: 'ビジュアルメニューと予約動線を備えた、外国人観光客専用の高速1ページWebサイトを構築します。', icon: 'tabler:world-www' },
-        { title: '2. Googleマップ（MEO）の最適化', description: 'Googleビジネスプロフィールを英語キーワードで最適化し、検索結果での上位表示を狙います。', icon: 'tabler:map-pin' },
-        { title: '3. 口コミ獲得エンジン', description: '満足したお客様に英語レビュー投稿を自動で促し、ブランド専用ページで高評価を積み上げます。', icon: 'tabler:shield-star' },
-        { title: '4. デジタル「指さし会話」ツール', description: 'アレルギーやWi-Fiの質問にタブレットで即座に対応。接客スピードを落とさず笑顔を守ります。', icon: 'tabler:hand-click' },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">1ページ・ウェルカム：<br/>トータルソリューション</h3>
-      <p class="text-lg text-muted mb-6">単なるWeb制作ではありません。あなたのお店に「24時間対応のグローバル受付」を構築します。</p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGphcGFufGVufDB8fDB8fHwy" alt="Japanese Dining" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <Features2
-    title='すべてのプランに含まれる「インバウンド対応スイート」'
-    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
-    columns={3}
-    items={[
-      { title: 'GoogleマップSEO（MEO）', description: '「近くの〇〇」と検索された際に上位表示させる英語SEO。', icon: 'tabler:circle-check' },
-      { title: 'カスタムQRレビューPOP', description: 'Googleの星5つレビューを促進する卓上POPデータ。', icon: 'tabler:circle-check' },
-      { title: '「How-To」ランディングページ', description: 'お店のルールを説明し、入店前の不安を解消するコンテンツ。', icon: 'tabler:circle-check' },
-      { title: 'プロの英語コピーライティング', description: '予約・来店につながる魅力的なビジネス説明文。', icon: 'tabler:circle-check' },
-      { title: '超高速ページ配信', description: '海外ローミング環境下でも瞬時に表示される高速ネットワーク。', icon: 'tabler:circle-check' },
-      { title: '最短即日のデプロイ', description: '午前中のご注文で、本日中にWebサイトを公開します！', icon: 'tabler:bolt' },
+      { title: 'STEP 1: 情報の送付', description: '店名やメニュー、伝えたいルールなど、現在の日本語情報を送るだけ。', icon: 'tabler:send' },
+      { title: 'STEP 2: 制作・英語化', description: 'プロがネイティブに通じる自然な英語でページを構築。Googleマップの英語対策も行います。', icon: 'tabler:tool' },
+      { title: 'STEP 3: 運用開始', description: '完成したページに飛ぶQRコードを店頭に置くだけ。スマホひとつで「おもてなし」が始まります。', icon: 'tabler:door-enter' },
     ]}
   />
 
+  <!-- FEATURES -->
+  <Features2
+    title='19,800円に含まれるすべてのサービス'
+    subtitle="追加料金や月額費用は一切ありません。明朗会計です。"
+    columns={3}
+    items={[
+      { title: 'Googleマップ英語化', description: '英語で検索された際に店舗が表示されるよう最適化。', icon: 'tabler:map-pin' },
+      { title: 'プロの英語ライティング', description: '機械翻訳ではない、心に響く自然な英語で紹介。', icon: 'tabler:writing' },
+      { title: 'スマホ最適化', description: '旅行中のゲストが外でもサクサク見られる高速表示。', icon: 'tabler:device-mobile' },
+      { title: '専用QRコード作成', description: '店頭やメニュー表に貼れる高品質なQRコードを提供。', icon: 'tabler:qrcode' },
+      { title: '最短当日納品', description: '正午までの注文で当日、それ以降でも翌日にはお届け。', icon: 'tabler:clock' },
+      { title: '無制限の修正', description: '100%満足いただけるまで、何度でも無料で修正対応。', icon: 'tabler:user-check' },
+    ]}
+  />
+
+  <!-- PRICING -->
   <Pricing 
     id="pricing"
-    title="シンプルで透明性の高い料金体系" 
+    title="価格のご案内" 
     prices={[pricingData]} 
   />
 
+  <!-- CTA -->
   <CallToAction
-    title="Haneiについて"
-    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、最新のテクノロジーを活用してあなたのお店をサポートします。"
-    actions={[]}
+    title="インバウンド客を「チャンス」に変えましょう"
+    subtitle="言葉の壁でチャンスを逃すのは今日で終わりです。あなたの素晴らしいサービスを、世界中の人々に届けませんか？"
+    actions={[{ variant: 'primary', text: '注文する - 19,800円', href: '/contact-jp' }]}
   />
 </Layout>
