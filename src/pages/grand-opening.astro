@@ -1,0 +1,143 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = { 
+  title: 'The Grand Opening | Hanei JP', 
+  description: 'Resurrect your existing site or rebuild a bilingual digital flagship from scratch.',
+};
+
+const pricingData = [
+  {
+    title: 'Grand Reform',
+    subtitle: 'High-performance digital facelift.',
+    price: '158,500',
+    period: 'One-time CapEx',
+    items: [
+      { description: 'Extreme Performance Injection (Speed)' },
+      { description: 'Modern Aesthetic Facelift & UI Redesign' },
+      { description: 'Mobile-First Responsive Excellence' },
+      { description: 'Security Hardening & SEO Cleanup' },
+      { description: 'Guaranteed 48-Hour Turnaround' },
+    ],
+    callToAction: { target: '_self', text: 'Start My Grand Reform', href: '/contact', variant: 'primary' },
+  },
+  {
+    title: 'Grand New Opening',
+    subtitle: 'Premium bilingual Digital Flagship.',
+    price: '298,500',
+    period: 'One-time CapEx',
+    items: [
+      { description: 'The "Bilingual-First" Dual-Engine Core' },
+      { description: 'Cutting-Edge Headless Modern Tech Stack' },
+      { description: 'Authority-First Global & Local SEO Strategy' },
+      { description: 'The "High-End Guest" Luxury UX Design' },
+      { description: 'Zero-to-Hero 48-Hour Launch' },
+    ],
+    callToAction: { target: '_self', text: 'Launch My New Opening', href: '/contact', variant: 'primary' },
+    hasRibbon: true,
+    ribbonTitle: 'Premium',
+  }
+];
+---
+
+<Layout metadata={metadata}>
+  
+  <!-- HERO SECTION -->
+  <Hero2
+    tagline="Service #4: The Grand Opening"
+    title='The Digital Flagship: Resurrect or Rebuild Your <br/><span class="text-accent">Global Presence.</span>'
+    subtitle="An outdated website is a liability. Whether you need a high-speed 'facelift' for your existing site or a premium bilingual flagship built from scratch, we forge your digital headquarters in just 48 hours."
+    actions={[{ variant: 'primary', text: 'View Transformation Plans', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Culinary Excellence' }}
+  />
+  
+  <!-- THE PROBLEM -->
+  <Content
+    isReversed={false}
+    items={[
+        { title: 'The Speed Penalty', description: 'If your site takes more than 3 seconds to load, you’ve already lost 50% of your potential customers.', icon: 'tabler:device-mobile-bolt' },
+        { title: 'The Trust Gap', description: 'An old-fashioned design suggests an old-fashioned experience. High-end travelers seek modern, sleek digital touchpoints.', icon: 'tabler:shield-x' },
+        { title: 'The Language Barrier', description: 'Managing two separate versions of a site is exhausting and often leads to "half-finished" English pages that hurt your credibility.', icon: 'tabler:language-off' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">The Reality: Your Website is Either an Engine or an Anchor.</h3>
+      <p class="text-lg text-muted mb-4">
+        You have a website, but does it actually work for you? Many Japanese business owners are sitting on "Digital Anchors"—sites that were built years ago and are now slow, clunky, and embarrassing to show to international guests.
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        Hanei’s Grand Opening is the total solution. We offer two distinct paths to reclaim your digital authority.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Elegant Sushi Presentation" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- OPTION 1: REFORM -->
+  <Content
+    isReversed={true}
+    items={[
+        { title: 'Extreme Performance Injection', description: 'We optimize every image and script for lightning velocity, aiming for a "Green Score" on Google.', icon: 'tabler:bolt' },
+        { title: 'Modern Aesthetic Facelift', description: 'We replace dated layouts with clean, high-impact design and mobile-first responsive excellence.', icon: 'tabler:palette' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Option 1: The Grand Reform</h3>
+      <p class="text-lg text-muted">
+        Don’t let a "tired" website represent your vibrant business. We perform a total high-speed overhaul of your existing site—injecting modern design, elite performance, and SEO cleanup in a guaranteed 48-Hour Turnaround.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1626379907753-406934326e2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Japanese Chef Cooking" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- OPTION 2: NEW OPENING -->
+  <Content
+    isReversed={false}
+    items={[
+        { title: 'The "Bilingual-First" Architecture', description: 'Both Japanese and English are treated with equal importance, maximizing conversion for Western travelers and Japanese locals.', icon: 'tabler:language-hiragana' },
+        { title: 'Cutting-Edge Modern Tech Stack', description: 'Built using the latest "Headless" high-velocity frameworks. Future-proof and blisteringly fast across the globe.', icon: 'tabler:rocket' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Option 2: The Grand New Opening</h3>
+      <p class="text-lg text-muted">
+        Why settle for a "translated" site when you can own a global landmark? We build your definitive, dual-language digital headquarters from scratch—engineered for maximum authority and high-spending international conversion.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Traditional Japanese Setting" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- TOURIST READY SUITE -->
+  <Features2
+    title='Every Plan Includes the "Tourist-Ready" Suite:'
+    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
+    columns={3}
+    items={[
+      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
+      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
+      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules (No smoking, cover charges, shoe policy) to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
+      { title: 'Professional English Copywriting', description: "We don't just translate; we write high-converting business descriptions.", icon: 'tabler:circle-check' },
+      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data so your site loads instantly.', icon: 'tabler:circle-check' },
+      { title: 'Same-Day Lightning Fast Deployment', description: 'Order before lunch, and we launch your website today!', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <!-- PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Choose Your Transformation" 
+    subtitle="Secure your most valuable digital asset in just 48 hours."
+    prices={pricingData} 
+  />
+
+</Layout>
