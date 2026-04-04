@@ -5,7 +5,7 @@ export const headerDataEn = {
     {
       text: 'Inbound Service Suite',
       links: [
-        { text: 'Inbound Welcome Kit', href: getPermalink('/inbound-welcome-kit') },
+        { text: '1-Page Welcome', href: getPermalink('/one-page-welcome') },
         { text: 'Review Engine', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
@@ -24,7 +24,7 @@ export const headerDataJp = {
     {
       text: 'サービス一覧',
       links: [
-        { text: 'インバウンド・ウェルカムキット', href: getPermalink('/inbound-welcome-kit-jp') },
+        { text: '1ページ・ウェルカム', href: getPermalink('/one-page-welcome-jp') },
         { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
         { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },
@@ -42,7 +42,7 @@ export const footerDataEn = {
   links: [
     {
       links: [
-        { text: 'Inbound Welcome Kit', href: getPermalink('/inbound-welcome-kit') },
+        { text: '1-Page Welcome', href: getPermalink('/one-page-welcome') },
         { text: 'Review Engine', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
@@ -64,7 +64,7 @@ export const footerDataJp = {
   links: [
     {
       links: [
-        { text: 'インバウンド・ウェルカムキット', href: getPermalink('/inbound-welcome-kit-jp') },
+        { text: '1ページ・ウェルカム', href: getPermalink('/one-page-welcome-jp') },
         { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
         { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },

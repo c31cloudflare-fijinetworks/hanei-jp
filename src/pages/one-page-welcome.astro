@@ -1,0 +1,83 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = { 
+  title: 'The 1-Page Welcome | Hanei JP', 
+  description: 'Turn the "Language Barrier" into a "Welcome" — Attract high-spending international guests automatically.',
+};
+
+const pricingData = {
+  title: 'The 1-Page Welcome Plan',
+  subtitle: 'Complete Global Reception Desk setup & support.',
+  price: '128,500',
+  period: 'Setup + ¥9,800/mo support',
+  items: [
+    { description: 'English-Optimized 1-Page Landing Page' },
+    { description: 'Google Maps (MEO) Keyword Optimization' },
+    { description: 'Custom Review QR & Navigation' },
+    { description: 'Digital Point-and-Speak Staff Tools' },
+    { description: 'Ongoing monthly hosting and English updates' },
+  ],
+  callToAction: { target: '_self', text: 'Request My Free Inbound Audit', href: '/contact', variant: 'primary' },
+};
+---
+
+<Layout metadata={metadata}>
+  
+  <Hero2
+    tagline="Plan 1: 1-Page Welcome"
+    title='Welcoming the World <br/><span class="text-accent">Shouldn’t Be Stressful.</span>'
+    subtitle='Turn the "Language Barrier" into a "Welcome" — Attract high-spending international guests automatically, without changing your daily routine.'
+    actions={[{ variant: 'primary', text: 'Request My Free Inbound Audit', href: '/contact' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '1-Page Welcome' }}
+  />
+  
+  <Content
+    isReversed={false}
+    items={[
+        { title: 'The Communication Wall', description: '"I can’t speak English, so I might provide poor service."', icon: 'tabler:messages-off' },
+        { title: 'The Digital Fog', description: '"I don\'t know how to optimize Google or TripAdvisor to reach foreigners."', icon: 'tabler:cloud-fog' },
+        { title: 'The Review Fear', description: '"What if a misunderstanding leads to a 1-star review?"', icon: 'tabler:star-off' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">The "Inbound Boom" is here.<br/>Are you being left behind?</h3>
+      <p class="text-lg text-muted mb-6">Most Japanese business owners feel these anxieties. <strong>Hanei’s 1-Page Welcome was built to solve these fears.</strong> We bridge the gap between your craft and the global market.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Features2
+    title='Every Plan Includes the "Tourist-Ready" Suite:'
+    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
+    columns={3}
+    items={[
+      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
+      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
+      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
+      { title: 'Professional English Copywriting', description: "We write high-converting business descriptions.", icon: 'tabler:circle-check' },
+      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data.', icon: 'tabler:circle-check' },
+      { title: 'Same-Day Deployment', description: 'Order before lunch, and we launch today!', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <Pricing 
+    id="pricing"
+    title="Simple, Transparent Pricing" 
+    prices={[pricingData]} 
+  />
+
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses through modern technology."
+    actions={[]}
+  />
+</Layout>

@@ -1,0 +1,83 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = { 
+  title: '1ページ・ウェルカム | Hanei JP', 
+  description: '「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。',
+};
+
+const pricingData = {
+  title: '1ページ・ウェルカムプラン',
+  subtitle: '24時間対応のグローバル受付を構築',
+  price: '128,500',
+  period: '初期費用 ＋ 月額保守 ¥9,800',
+  items: [
+    { description: '英語最適化された1ページWebサイト' },
+    { description: 'Googleマップ（MEO）英語キーワード最適化' },
+    { description: 'カスタム口コミ獲得QR & 誘導' },
+    { description: 'デジタル「指さし会話」接客ツール' },
+    { description: 'サーバー保守と継続的なシステムアップデート' },
+  ],
+  callToAction: { target: '_self', text: '無料インバウンド診断を申し込む', href: '/contact-jp', variant: 'primary' },
+};
+---
+
+<Layout metadata={metadata}>
+  
+  <Hero2
+    tagline="プラン1：1ページ・ウェルカム"
+    title='訪日客の受け入れに、<br/><span class="text-accent">もう悩む必要はありません。</span>'
+    subtitle="「言葉の壁」を「歓迎」に変え、日常業務を変えずに高単価の外国人観光客を自動で集客します。"
+    actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '1-Page Welcome' }}
+  />
+  
+  <Content
+    isReversed={false}
+    items={[
+        { title: 'コミュニケーションの壁', description: '「英語が話せないから、十分なおもてなしができないかもしれない」', icon: 'tabler:messages-off' },
+        { title: 'デジタル集客への戸惑い', description: '「外国人に向けたGoogle活用方法がわからない」', icon: 'tabler:cloud-fog' },
+        { title: '口コミへの恐怖', description: '「些細な誤解で低評価をつけられたらどうしよう」', icon: 'tabler:star-off' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">本格的なインバウンド需要の回復。<br/>機会を逃していませんか？</h3>
+      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」は、こうした不安を解消し、</strong>あなたが誇るサービスと世界中の旅行者を安全に橋渡しします。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Features2
+    title='すべてのプランに含まれる「インバウンド対応スイート」'
+    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
+    columns={3}
+    items={[
+      { title: 'GoogleマップSEO（MEO）', description: '「近くの〇〇」と検索された際に上位表示させる英語SEO。', icon: 'tabler:circle-check' },
+      { title: 'カスタムQRレビューPOP', description: 'Googleの星5つレビューを促進する卓上POPデータ。', icon: 'tabler:circle-check' },
+      { title: '「How-To」ランディングページ', description: 'お店のルールを説明し、入店前の不安を解消するコンテンツ。', icon: 'tabler:circle-check' },
+      { title: 'プロの英語コピーライティング', description: '予約・来店につながる魅力的なビジネス説明文。', icon: 'tabler:circle-check' },
+      { title: '超高速ページ配信', description: '海外ローミング環境下でも瞬時に表示される高速ネットワーク。', icon: 'tabler:circle-check' },
+      { title: '最短即日のデプロイ', description: '午前中のご注文で、本日中にWebサイトを公開します！', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <Pricing 
+    id="pricing"
+    title="シンプルで透明性の高い料金体系" 
+    prices={[pricingData]} 
+  />
+
+  <CallToAction
+    title="Haneiについて"
+    subtitle="最新のテクノロジーを活用して、日本の素晴らしい文化を世界へ届けるサポートをします。"
+    actions={[]}
+  />
+</Layout>
