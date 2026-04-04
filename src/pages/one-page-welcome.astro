@@ -30,7 +30,6 @@ const pricingData = {
 
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION -->
   <Hero2
     tagline="Simple. Fast. Effective."
     title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>'
@@ -39,7 +38,6 @@ const pricingData = {
     image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: 'Busy Japanese Street' }}
   />
   
-  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
     items={[
@@ -58,7 +56,6 @@ const pricingData = {
     </Fragment>
   </Content>
 
-  <!-- SECTION 2: WHY US -->
   <Content
     isReversed={true}
     items={[
@@ -76,7 +73,6 @@ const pricingData = {
     </Fragment>
   </Content>
 
-  <!-- HOW TO GET STARTED -->
   <Steps2
     title="3 Simple Steps to Get Started"
     subtitle="You don't have to spend weeks planning. We make it instant."
@@ -87,7 +83,6 @@ const pricingData = {
     ]}
   />
 
-  <!-- FEATURES -->
   <Features2
     title='Everything Included for ¥19,800'
     subtitle="No hidden fees. No complicated contracts."
@@ -102,17 +97,22 @@ const pricingData = {
     ]}
   />
 
-  <!-- PRICING -->
   <Pricing 
     id="pricing"
     title="One Price. Complete Service." 
     prices={[pricingData]} 
   />
 
-  <!-- CTA -->
   <CallToAction
     title="Ready to grow your business?"
     subtitle="Stop letting the language barrier hold you back. Let the world find your business today."
     actions={[{ variant: 'primary', text: 'Order Now - ¥19,800', href: '/contact' }]}
+  />
+
+  <!-- ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+    actions={[]}
   />
 </Layout>

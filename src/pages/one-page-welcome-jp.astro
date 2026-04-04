@@ -30,7 +30,6 @@ const pricingData = {
 
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION -->
   <Hero2
     tagline="シンプル。最速。確かな効果。"
     title='看板を見て通り過ぎる外国人客を<br/><span class="text-accent">「常連客」に変えませんか？</span>'
@@ -39,7 +38,6 @@ const pricingData = {
     image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '賑わう日本の商店街' }}
   />
   
-  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
     items={[
@@ -51,14 +49,13 @@ const pricingData = {
     <Fragment slot="content">
       <h3 class="text-3xl font-bold mb-4">インバウンドの波を逃すのは、<br/>もう終わりにしましょう。</h3>
       <p class="text-lg text-muted mb-4">カフェ、レストラン、ショップ、歯科医院… 外国人観光客はあなたのサービスを求めています。しかし、日本語の情報しかないと「入ってもいいのかな？」と躊躇してしまいます。</p>
-      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」</strong>は、その不安を取り除きます。難しいことはすべてお任せください。あなたは普段通り,日本のおもてなしに集中するだけです。</p>
+      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」</strong>は、その不安を取り除きます。難しいことはすべてお任せください。あなたは普段通り、日本のおもてなしに集中するだけです。</p>
     </Fragment>
     <Fragment slot="image">
        <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="日本の観光客" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- SECTION 2: WHY US -->
   <Content
     isReversed={true}
     items={[
@@ -76,7 +73,6 @@ const pricingData = {
     </Fragment>
   </Content>
 
-  <!-- HOW TO GET STARTED -->
   <Steps2
     title="導入までの3ステップ"
     subtitle="難しい打ち合わせに時間をかける必要はありません。最短で結果を出します。"
@@ -87,7 +83,6 @@ const pricingData = {
     ]}
   />
 
-  <!-- FEATURES -->
   <Features2
     title='19,800円に含まれるすべてのサービス'
     subtitle="追加料金や月額費用は一切ありません。明朗会計です。"
@@ -102,17 +97,22 @@ const pricingData = {
     ]}
   />
 
-  <!-- PRICING -->
   <Pricing 
     id="pricing"
     title="価格のご案内" 
     prices={[pricingData]} 
   />
 
-  <!-- CTA -->
   <CallToAction
     title="インバウンド客を「チャンス」に変えましょう"
     subtitle="言葉の壁でチャンスを逃すのは今日で終わりです。あなたの素晴らしいサービスを、世界中の人々に届けませんか？"
     actions={[{ variant: 'primary', text: '注文する - 19,800円', href: '/contact-jp' }]}
+  />
+
+  <!-- ABOUT HANEI -->
+  <CallToAction
+    title="Haneiについて"
+    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、世界中の人々にその素晴らしい体験を届けるために、最新のテクノロジーを活用してあなたのお店をサポートします。"
+    actions={[]}
   />
 </Layout>
