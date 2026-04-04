@@ -9,6 +9,7 @@ export const headerDataEn = {
         { text: 'Review Engine', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand New or Reform', href: getPermalink('/grand-opening') },
+        { text: 'Community Mission', href: getPermalink('/community-mission') },
       ],
     },
     { text: 'Strategic Intent', href: getPermalink('/about') },
