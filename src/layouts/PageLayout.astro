@@ -72,6 +72,15 @@ currentFooterData.secondaryLinks.push(
         color: #ffffff !important;
       }
     }
+  
+    /* Center odd last item in Features grid (e.g., the 5th item) */
+    @media (min-width: 640px) {
+      #features .grid > div:last-child:nth-child(odd) {
+        grid-column: span 2 / span 2;
+        display: flex;
+        justify-content: center;
+      }
+    }
   </style>
   <slot name="announcement"><Announcement /></slot>
   <slot name="header"><Header {...currentHeaderData} isSticky showToggleTheme /></slot>
