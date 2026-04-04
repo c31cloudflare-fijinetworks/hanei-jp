@@ -6,6 +6,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Button from '~/components/ui/Button.astro';
 
 const metadata = { 
   title: 'Hanei JP | Inbound Solutions for Local Business', 
@@ -56,67 +57,94 @@ const metadata = {
     ]}
   />
 
-  <!-- CONTENT 1: THE FOUNDATION -->
+  <!-- SERVICE 1: WELCOME KIT -->
   <Content
     isReversed={false}
-    tagline="The Visibility Gap"
-    title="Break the 'Information Barrier' and attract affluent guests."
+    tagline="Service #1: Inbound Welcome Kit"
+    title="Break the 'Information Barrier' and Attract Affluent Guests."
     items={[
-        { title: 'The Cost of Invisibility', description: '92% of tourists in Japan rely on Google Maps. If your profile is Kanji-only, or your storefront lacks clear English guidance, they perceive "risk" and walk to your competitor.', icon: 'tabler:eye-off' },
-        { title: 'Native Psychological Logic', description: 'We don\'t just translate your menu; we rewrite your value proposition using the native psychological triggers that affluent Western guests trust.', icon: 'tabler:brain' },
+        { title: 'Google Maps (MEO) SEO', description: 'We translate your value proposition using native psychological triggers to dominate local search and capture tourists nearby.', icon: 'tabler:map-pin' },
+        { title: 'Visual-First Guidance', description: 'A frictionless digital manual explaining your rules and ordering systems to completely eliminate entry anxiety.', icon: 'tabler:eye' },
+        { title: 'Custom QR Assets', description: 'Premium, print-ready QR stands to drive immediate engagement right from the table.', icon: 'tabler:qrcode' },
     ]}
     image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI0fHx8ZW58MHx8fHx8', alt: 'Authentic Japan Experience' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">Why Great Service Isn't Enough Online</span>
+        <span class="text-accent dark:text-white">The Visibility Gap</span>
       </h3>
-      <p class="text-muted text-lg">You offer world-class hospitality, but to the international traveler, you might be invisible. Our infrastructure removes the friction of discovery, ensuring your business is found, understood, and trusted before they even arrive.</p>
+      <p class="text-muted text-lg mb-6">You offer world-class hospitality, but to the international traveler, you might be invisible. Our infrastructure removes the friction of discovery, ensuring your business is found, understood, and trusted before they even arrive.</p>
+      <Button variant="primary" text="Explore the Welcome Kit" href="/inbound-welcome-kit" />
     </Fragment>
   </Content>
 
-  <!-- CONTENT 2: REPUTATION -->
+  <!-- SERVICE 2: REVIEW ENGINE -->
   <Content
     isReversed={true}
-    tagline="Automated Trust"
+    tagline="Service #2: Review Engine"
     title="Visualize Absolute Trust and Intercept Negative Feedback."
     items={[
-        { title: 'The Reputation Shield', description: 'We act as a diplomatic filter. 5-star reviews go straight to Google. 1-3 star feedback is routed to a private channel, giving you the chance to fix issues before they damage your public ranking.', icon: 'tabler:shield-check' },
-        { title: 'The Live Wall of Fame', description: 'Our custom website widgets pull your best reviews into a beautiful, scrolling display, instantly proving your excellence to new visitors.', icon: 'tabler:stars' },
+        { title: 'The Reputation Shield', description: 'We act as a diplomatic filter. 5-star reviews go straight to Google. 1-3 star feedback is routed to a private channel for your eyes only.', icon: 'tabler:shield-check' },
+        { title: 'The Live Wall of Fame', description: 'Our custom website widgets pull your best reviews into a beautiful, scrolling display to instantly prove your excellence.', icon: 'tabler:stars' },
+        { title: 'Smart Language Routing', description: 'Guests are automatically greeted in their native language (English, French, Spanish, etc.) for a seamless, red-carpet experience.', icon: 'tabler:language' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Serving Japanese Tea' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">Your Reputation is an Asset. Protect It.</span>
+        <span class="text-accent dark:text-white">Automated Trust</span>
       </h3>
-      <p class="text-muted text-lg">The "Invisible Gap" is the space between a guest’s happiness and their public feedback. If you don't make it effortless to leave a review, they won't. We automate this process, turning your silent satisfied majority into a loud, global megaphone.</p>
+      <p class="text-muted text-lg mb-6">The "Invisible Gap" is the space between a guest’s happiness and their public feedback. We automate this process, turning your silent satisfied majority into a loud, global megaphone.</p>
+      <Button variant="primary" text="Explore the Review Engine" href="/review-engine" />
     </Fragment>
   </Content>
 
-  <!-- CONTENT 3: INFRASTRUCTURE -->
+  <!-- SERVICE 3: ENGLISH HANARE -->
   <Content
     isReversed={false}
-    tagline="Zero-Risk Architecture"
+    tagline="Service #3: English Hanare"
     title="Global Expansion Without Breaking Your Legacy Code."
     items={[
         { title: 'The "Hanare" Concept', description: 'Like a detached guest pavilion in Japanese architecture, we build a modern, high-speed digital space exclusively for your international guests.', icon: 'tabler:home' },
-        { title: 'Zero-Touch Integration', description: 'We don\'t need your passwords or FTP access. Through advanced DNS routing, your current Japanese site remains 100% untouched and safe from crashes.', icon: 'tabler:lock' },
+        { title: 'Zero-Touch Integration', description: 'We don\'t need your passwords or FTP access. Through advanced DNS routing, your current Japanese site remains 100% untouched.', icon: 'tabler:lock' },
+        { title: 'High-End Guest UX', description: 'We utilize immersive design and direct-to-booking pathways specifically tailored to the psychology of affluent Western travelers.', icon: 'tabler:diamond' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEzfHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Modern Japanese Business' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">Solving the "Website Hostage" Dilemma</span>
+        <span class="text-accent dark:text-white">Zero-Risk Architecture</span>
       </h3>
-      <p class="text-muted text-lg">Many businesses are terrified of adding English to their site because one wrong click by a developer could crash their entire legacy Japanese system. Our decoupled architecture bypasses this fear entirely.</p>
+      <p class="text-muted text-lg mb-6">Many businesses are terrified of adding English to their site because one wrong click by a developer could crash their entire legacy Japanese system. Our decoupled architecture bypasses this fear entirely.</p>
+      <Button variant="primary" text="Explore the English Hanare" href="/english-hanare" />
+    </Fragment>
+  </Content>
+
+  <!-- SERVICE 4: GRAND OPENING -->
+  <Content
+    isReversed={true}
+    tagline="Service #4: Grand New or Grand Reform"
+    title="Demolish Technical Debt. Launch Your Digital Flagship."
+    items={[
+        { title: '48-Hour Velocity', description: 'We use a proprietary edge-framework to reboot your entire digital presence in a single weekend. No more waiting months for an agency.', icon: 'tabler:clock' },
+        { title: 'Grand Reform', description: 'A total high-speed overhaul and modern aesthetic facelift for your existing site, injecting elite performance and SEO cleanup.', icon: 'tabler:tool' },
+        { title: 'Grand New Opening', description: 'A fully synchronized, dual-language digital flagship built from scratch. Culturally resonant Japanese combined with conversion-optimized Western English.', icon: 'tabler:rocket' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Premium Japanese Experience' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent dark:text-white">Total Transformation</span>
+      </h3>
+      <p class="text-muted text-lg mb-6">If your site takes more than 3 seconds to load, affluent travelers will assume your service is equally outdated. We build high-performance digital landmarks from the ground up.</p>
+      <Button variant="primary" text="Explore Grand Options" href="/grand-opening" />
     </Fragment>
   </Content>
 
   <!-- STEPS: THE PROCESS -->
   <div id="process" class="scroll-mt-20">
     <Steps2
-      isReversed={true}
+      isReversed={false}
       title="The Path to Global Success"
       subtitle="We handle the heavy lifting. You focus on the hospitality. Here is how we launch your inbound infrastructure."
       items={[
@@ -127,25 +155,6 @@ const metadata = {
       image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Japanese Hospitality' }}
     />
   </div>
-
-  <!-- CONTENT 4: THE REBOOT -->
-  <Content
-    isReversed={true}
-    tagline="Total Transformation"
-    title="Demolish Technical Debt. Launch Your Digital Flagship."
-    items={[
-        { title: '48-Hour Velocity', description: 'Traditional agencies take months. We use a proprietary edge-framework to reboot your entire digital presence in a single weekend.', icon: 'tabler:clock' },
-        { title: 'Bilingual Mastery', description: 'A synchronized dual-language experience. Culturally resonant Japanese combined with conversion-optimized Western English.', icon: 'tabler:language-hiragana' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Premium Japanese Experience' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">An Outdated Website is a Liability.</span>
-      </h3>
-      <p class="text-muted text-lg">If your site takes more than 3 seconds to load, or looks like it was built a decade ago, affluent travelers will assume your service is equally outdated. We build high-performance digital landmarks from the ground up.</p>
-    </Fragment>
-  </Content>
 
   <!-- TOURIST READY SUITE -->
   <Features2
@@ -168,7 +177,7 @@ const metadata = {
     items={[
         { title: 'Do I need to speak English to use these services?', description: 'No. Our systems are designed to communicate in native English to your guests, providing clear visual guidance and automated follow-ups so your staff can focus on service, not translation.', icon: 'tabler:messages-off' },
         { title: 'Is this a monthly subscription?', description: 'Most of our core products (like the Hanare and Welcome Kit) are one-time CapEx investments. You pay once for the infrastructure. Services like the Review Engine carry a small monthly support fee for ongoing cloud filtering and widgets.', icon: 'tabler:coin' },
-        { title: 'What is Hanei JP?', description: 'We are a boutique inbound technology studio. We specialize in solving linguistic, psychological, and technical risks for Japanese businesses expanding into the global tourist market.', icon: 'tabler:world' },
+        { title: 'What is Hanei JP?', description: 'We are a boutique inbound technology studio. We specialize in solving linguistic, psychological, and technical risks for Japanese businesses expanding into the global tourist market.', icon: 'tabler:building-bridge' },
         { title: 'How long does the setup process take?', description: 'We pride ourselves on extreme velocity. Products like the Welcome Kit or Review Engine are deployed in under 24 hours. Even a full "Grand Opening" site reboot is guaranteed within 48 hours.', icon: 'tabler:bolt' },
     ]}
   />
