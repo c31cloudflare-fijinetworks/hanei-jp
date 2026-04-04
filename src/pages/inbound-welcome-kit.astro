@@ -3,6 +3,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -171,6 +172,22 @@ const pricingData = {
   />
 
   <!-- SECTION 5: PRICING -->
+  
+  <!-- TOURIST READY SUITE -->
+  <Features2
+    title='Every Plan Includes the "Tourist-Ready" Suite:'
+    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
+    columns={3}
+    items={[
+      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
+      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
+      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules (No smoking, cover charges, shoe policy) to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
+      { title: 'Professional English Copywriting', description: "We don't just translate; we write high-converting business descriptions.", icon: 'tabler:circle-check' },
+      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data so your site loads instantly.', icon: 'tabler:circle-check' },
+      { title: 'Same-Day Lightning Fast Deployment', description: 'Order before lunch, and we launch your website today!', icon: 'tabler:bolt' },
+    ]}
+  />
+
   <Pricing 
     id="pricing"
     title="Simple, Transparent Pricing" 

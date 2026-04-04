@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import { lifetimeDealJp } from '~/data/pricingData';
@@ -8,5 +9,21 @@ const metadata = { title: '料金プラン | Hanei JP' };
 ---
 <Layout metadata={metadata}>
   <HeroText tagline="Pricing" title="プロフェッショナルな拠点を最短即日で。" />
+  
+  <!-- TOURIST READY SUITE -->
+  <Features2
+    title='すべてのプランに含まれる「インバウンド対応スイート」'
+    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
+    columns={3}
+    items={[
+      { title: 'GoogleマップSEO（MEO）', description: '外国人観光客が「近くの〇〇」と検索した際に上位表示させる、1ページの完全英語SEO設定。', icon: 'tabler:circle-check' },
+      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用PDFデータ。', icon: 'tabler:circle-check' },
+      { title: '「How-To」ランディングページ', description: '禁煙、お通し、靴を脱ぐルールなどを説明し、入店前の不安を解消するカスタムコンテンツ。', icon: 'tabler:circle-check' },
+      { title: 'プロの英語コピーライティング', description: '単なる翻訳ではなく、予約・来店につながる魅力的なビジネス説明文を執筆。', icon: 'tabler:circle-check' },
+      { title: '超高速ページ配信ネットワーク', description: 'ローミング通信を利用するモバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
+      { title: '最短即日の超高速デプロイ', description: '午前中のご注文で、本日中にWebサイトを公開・稼働させます！', icon: 'tabler:bolt' },
+    ]}
+  />
+
   <Pricing prices={[lifetimeDealJp]} />
 </Layout>
