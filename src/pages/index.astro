@@ -1,8 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -48,7 +48,6 @@ const metadata = {
           callToAction: { variant: 'primary', text: 'Explore English Hanare', href: '/english-hanare' }
         },
         { 
-        { 
           title: 'Grand Reform', 
           description: 'Deep modernization. We perform a total high-speed overhaul of your existing site in 48 hours.', 
           icon: 'tabler:tool',
@@ -63,7 +62,7 @@ const metadata = {
     ]}
   />
 
-  <!-- CONTENT 1: THE FOUNDATION (Welcome Kit Philosophy) -->
+  <!-- CONTENT 1: THE FOUNDATION -->
   <Content
     isReversed={false}
     tagline="The Visibility Gap"
@@ -82,7 +81,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- CONTENT 2: REPUTATION (Review Engine Philosophy) -->
+  <!-- CONTENT 2: REPUTATION -->
   <Content
     isReversed={true}
     tagline="Automated Trust"
@@ -101,7 +100,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- CONTENT 3: INFRASTRUCTURE (Hanare Philosophy) -->
+  <!-- CONTENT 3: INFRASTRUCTURE -->
   <Content
     isReversed={false}
     tagline="Zero-Risk Architecture"
@@ -129,13 +128,13 @@ const metadata = {
       items={[
         { title: '01. The Inbound Audit', description: 'We analyze your current visibility, finding the gaps where you are losing foreign customers.', icon: 'tabler:search' },
         { title: '02. Rapid Implementation', description: 'Our boutique studio builds your assets, optimizes your profiles, and deploys your custom tools—often in just 24 to 48 hours.', icon: 'tabler:bolt' },
-        { title: '03. Welcome the World', description: 'Start receiving verified, confident, and well-informed international guests immediately while our systems manage your reputation on autopilot.', icon: 'tabler:globe' },
+        { title: '03. Welcome the World', description: 'Start receiving verified, confident, and well-informed international guests immediately while our systems manage your reputation on autopilot.', icon: 'tabler:world' },
       ]}
       image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Japanese Hospitality' }}
     />
   </div>
 
-  <!-- CONTENT 4: THE REBOOT (Grand Opening Philosophy) -->
+  <!-- CONTENT 4: THE REBOOT -->
   <Content
     isReversed={true}
     tagline="Total Transformation"
@@ -154,8 +153,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- FAQS -->
-  
   <!-- TOURIST READY SUITE -->
   <Features2
     title='Every Plan Includes the "Tourist-Ready" Suite:'
@@ -171,6 +168,7 @@ const metadata = {
     ]}
   />
 
+  <!-- FAQS -->
   <FAQs
     title="Frequently Asked Questions"
     items={[

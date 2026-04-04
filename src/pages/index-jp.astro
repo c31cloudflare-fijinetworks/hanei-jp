@@ -1,8 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -48,7 +48,6 @@ const metadata = {
           callToAction: { variant: 'primary', text: '英語の離れを見る', href: '/english-hanare-jp' }
         },
         { 
-        { 
           title: 'グランドリフォーム', 
           description: '既存サイトの抜本的な最新化。デザインと速度を世界基準へ48時間でリブートします。', 
           icon: 'tabler:tool',
@@ -63,7 +62,7 @@ const metadata = {
     ]}
   />
 
-  <!-- CONTENT 1: THE FOUNDATION (Welcome Kit Philosophy) -->
+  <!-- CONTENT 1: THE FOUNDATION -->
   <Content
     isReversed={false}
     tagline="見えない壁（The Visibility Gap）"
@@ -82,7 +81,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- CONTENT 2: REPUTATION (Review Engine Philosophy) -->
+  <!-- CONTENT 2: REPUTATION -->
   <Content
     isReversed={true}
     tagline="信頼の自動化（Automated Trust）"
@@ -101,7 +100,7 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- CONTENT 3: INFRASTRUCTURE (Hanare Philosophy) -->
+  <!-- CONTENT 3: INFRASTRUCTURE -->
   <Content
     isReversed={false}
     tagline="ゼロ・リスクの海外展開"
@@ -129,13 +128,13 @@ const metadata = {
       items={[
         { title: '01. 無料インバウンド診断', description: '英語キーワードにおける、あなたのお店の現在のGoogleマップ順位やWebでの露出度（機会損失のギャップ）を分析します。', icon: 'tabler:search' },
         { title: '02. 驚異的スピードでの構築', description: 'Haneiの独自システムにより、デジタル資産の構築とプロフィールの最適化を、最短24時間〜48時間で完了させます。', icon: 'tabler:bolt' },
-        { title: '03. 世界中のお客様をお迎えする', description: '不安を解消し、魅力を十分に理解した質の高い外国人観光客の集客が始まります。口コミの管理もシステムが自動で行います。', icon: 'tabler:globe' },
+        { title: '03. 世界中のお客様をお迎えする', description: '不安を解消し、魅力を十分に理解した質の高い外国人観光客の集客が始まります。口コミの管理もシステムが自動で行います。', icon: 'tabler:world' },
       ]}
       image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Japanese Hospitality' }}
     />
   </div>
 
-  <!-- CONTENT 4: THE REBOOT (Grand Opening Philosophy) -->
+  <!-- CONTENT 4: THE REBOOT -->
   <Content
     isReversed={true}
     tagline="全社的トランスフォーメーション"
@@ -154,8 +153,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- FAQS -->
-  
   <!-- TOURIST READY SUITE -->
   <Features2
     title='すべてのプランに含まれる「インバウンド対応スイート」'
@@ -171,13 +168,14 @@ const metadata = {
     ]}
   />
 
+  <!-- FAQS -->
   <FAQs
     title="よくあるご質問"
     items={[
         { title: '英語を話せなくても導入できますか？', description: 'はい。システムがお客様にネイティブ英語で視覚的なガイダンスを提供し、質問を未然に防ぎます。スタッフは翻訳ではなく「接客」に集中できます。', icon: 'tabler:messages-off' },
         { title: '月額費用はかかりますか？', description: '「英語の離れ」や「ウェルカムキット」などのインフラ構築は一括投資（買い切り）です。レビューエンジン等のクラウド機能を利用する場合のみ、少額の月額保守費用が発生します。', icon: 'tabler:coin' },
         { title: 'Hanei JPとは何ですか？', description: 'インバウンドに特化した技術スタジオです。日本のローカルビジネスが世界市場に参入する際の「言語」「心理」「技術」のリスクをテクノロジーで解決します。', icon: 'tabler:world' },
-        { title: '導入までにどのくらいの期間がかかりますか？', description: '私たちは「圧倒的なスピード」を重視しています。ウェルカムキット等は24時間以内、完全なサイトリニューアル（Grand Opening）であっても48時間以内のデプロイを保証しています。', icon: 'tabler:bolt' },
+        { title: '導入までにどのくらいの期間がかかりますか？', description: '私たちは「圧倒的なスピード」を重視しています。ウェルカムキット等は24時間以内、完全なサイトリニューアルであっても48時間以内のデプロイを保証しています。', icon: 'tabler:bolt' },
     ]}
   />
 </Layout>
