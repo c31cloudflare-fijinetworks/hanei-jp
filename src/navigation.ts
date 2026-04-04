@@ -9,10 +9,8 @@ export const headerDataEn = {
         { text: 'Review Engine', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand New or Reform', href: getPermalink('/grand-opening') },
-        { text: 'Community Mission', href: getPermalink('/community-mission') },
       ],
     },
-    { text: 'Strategic Intent', href: getPermalink('/about') },
   ],
   actions: [
     { text: 'Claim Your URL', variant: 'primary', href: '/pricing' }
@@ -30,7 +28,6 @@ export const headerDataJp = {
         { text: 'グランド・ニュー / リフォーム', href: getPermalink('/grand-opening-jp') },
       ],
     },
-    { text: '戦略的意図', href: getPermalink('/about-jp') },
   ],
   actions: [
     { text: 'サイトを作成する', variant: 'primary', href: '/pricing-jp' }
