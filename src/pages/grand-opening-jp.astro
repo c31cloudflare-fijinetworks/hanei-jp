@@ -4,42 +4,43 @@ import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'グランドオープン | Hanei JP', 
-  description: 'デジタル上の「旗艦店」。全面改修か、完全新規構築かをお選びいただけます。',
+  title: 'グランドオープニング | ホームページ刷新・新規制作 | Hanei JP', 
+  description: '古いホームページの刷新、または新規制作。プロ品質のサイトを最短4日で納品します。',
 };
 
 const pricingData = [
   {
-    title: 'グランドリフォーム',
-    subtitle: 'デジタル上の存在感を劇的に蘇らせます',
-    price: '158,500',
-    period: '一括投資',
+    title: 'グランド・リフォーム',
+    subtitle: '今のサイトを、最新のデザインへ劇的チェンジ。',
+    price: '78,800',
+    period: '10ページまで',
     items: [
-      { description: '限界突破のパフォーマンス注入（超高速化）' },
-      { description: 'モダンで洗練されたデザインへの刷新' },
-      { description: 'モバイルファーストの徹底的な最適化' },
-      { description: 'セキュリティ強化とSEOクリーンアップ' },
-      { description: '48時間での納品保証' },
+      { description: '最新のクリーンなデザインへ刷新' },
+      { description: '100%スマホ対応（レスポンシブ）' },
+      { description: '表示速度とパフォーマンスの改善' },
+      { description: '最短4日のスピード納品' },
+      { description: '満足いただけるまで修正無制限' },
     ],
-    callToAction: { target: '_self', text: 'リフォームを開始する', href: '/contact-jp', variant: 'primary' },
+    callToAction: { target: '_self', text: 'リフォームを申し込む', href: '/contact-jp', variant: 'primary' },
   },
   {
     title: 'グランド・ニューオープン',
-    subtitle: '最高級のバイリンガル「デジタル旗艦店」',
-    price: '298,500',
-    period: '一括投資',
+    subtitle: 'ゼロから作る、最高品質の新規サイト。',
+    price: '78,800',
+    period: '10ページまで',
     items: [
-      { description: '「バイリンガル・ファースト」のアーキテクチャ' },
-      { description: '最先端のモダンな技術基盤（ヘッドレス）' },
-      { description: '「権威性」を最優先したSEO戦略' },
-      { description: '富裕層ゲストのための極上のUX（ユーザー体験）' },
-      { description: '48時間でゼロからトップクラスへ' },
+      { description: '日英バイリンガル対応の最新設計' },
+      { description: '爆速で動く最新のテクノロジー' },
+      { description: '「おもてなし」を伝える高品質デザイン' },
+      { description: '最短4日のスピード納品' },
+      { description: '満足いただけるまで修正無制限' },
     ],
-    callToAction: { target: '_self', text: 'ニューオープンの構築を開始', href: '/contact-jp', variant: 'primary' },
+    callToAction: { target: '_self', text: '新規制作を申し込む', href: '/contact-jp', variant: 'primary' },
     hasRibbon: true,
-    ribbonTitle: '最上位',
+    ribbonTitle: '人気',
   }
 ];
 ---
@@ -48,33 +49,33 @@ const pricingData = [
   
   <!-- HERO SECTION -->
   <Hero2
-    tagline="サービス4：グランドオープン"
-    title='デジタル上の「旗艦店」。<br/><span class="text-accent">全面改修か、完全新規構築か。</span>'
-    subtitle="古いWebサイトは、もはや単なる「時代遅れ」ではなく、ビジネスの「負債」です。わずか48時間であなたのデジタル環境を完全に刷新し、今後10年のグローバル成長を牽引するデジタル拠点を構築します。"
-    actions={[{ variant: 'primary', text: 'プランを選択する', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Culinary Excellence' }}
+    tagline="グランドオープニング"
+    title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>'
+    subtitle="古いホームページは、大切なお客様を遠ざけてしまいます。既存サイトの劇的な刷新（リフォーム）から、ゼロからの新規制作まで。プロ品質の「動く」サイトを最短4日でお届けします。"
+    actions={[{ variant: 'primary', text: 'プランと料金を見る', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: '高級日本料理' }}
   />
   
   <!-- THE PROBLEM -->
   <Content
     isReversed={false}
     items={[
-        { title: '表示速度のペナルティ', description: 'サイトの読み込みに3秒以上かかると、すでに潜在顧客の50%を失っていると言われています。', icon: 'tabler:device-mobile-bolt' },
-        { title: '信頼感の喪失（ギャップ）', description: '古めかしいデザインは、「サービス自体も古い」という誤解を与えます。', icon: 'tabler:shield-x' },
-        { title: '言語の壁と管理の限界', description: '日本語と英語、2つのサイトを別々に管理するのは疲弊する作業です。', icon: 'tabler:language-off' },
+        { title: '表示速度の改善', description: '読み込みが遅いサイトは、お客様がすぐに離脱します。どの端末でも一瞬で表示されるサイトに変えます。', icon: 'tabler:bolt' },
+        { title: '信頼感の向上', description: '10年前のデザインは、お店が古臭い印象を与えます。清潔感と高級感のあるデザインで、瞬時に信頼を築きます。', icon: 'tabler:shield-check' },
+        { title: '言葉の壁を突破', description: '日本語と英語の両方で完璧に機能するサイトを構築し、世界中のお客様を歓迎します。', icon: 'tabler:language' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">あなたのWebサイトは「デジタルのゴーストタウン」になっていませんか？</h3>
+      <h3 class="text-3xl font-bold mb-4">ホームページは、お店の「顔」です。</h3>
       <p class="text-lg text-muted mb-4">
-        Webサイトはあるものの、実際に集客の役に立っているでしょうか？多くの日本の経営者が、表示が遅く、操作性が悪く、海外のお客様に胸を張って見せられないようなサイトを抱えています。
+        多くの日本の店舗やクリニックが、古いホームページのせいでチャンスを逃しています。「スマホで見づらい」「情報が古い」「表示が遅い」…そんな悩みはありませんか？
       </p>
       <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Haneiの「グランドオープン」は、これらを一挙に解決するトータルソリューションです。2つの強力なアプローチをご用意しました。
+        Haneiのグランドオープニングなら、難しい技術の話抜きで、最高品質のサイトが手に入ります。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Elegant Sushi Presentation" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="寿司" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
@@ -82,18 +83,18 @@ const pricingData = [
   <Content
     isReversed={true}
     items={[
-        { title: '限界突破のパフォーマンス注入', description: 'サイトを遅くしている無駄な要素を排除し、画像とプログラムを最適化。「一瞬で表示される」感動をお客様にお届けします。', icon: 'tabler:bolt' },
-        { title: 'モダンで洗練されたデザインへの刷新', description: '時代遅れのレイアウトを、クリーンでインパクトのあるデザインに置き換えます。美しい写真と上品な文字フォントを最優先します。', icon: 'tabler:palette' },
+        { title: '劇的ビフォーアフター', description: '内容はそのままに、見た目と機能を最新にアップデート。見違えるほど美しくなります。', icon: 'tabler:palette' },
+        { title: 'スマホ最適化', description: '今や集客の8割はスマホから。あらゆる画面サイズで完璧に表示されるよう設計します。', icon: 'tabler:device-mobile' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">選択肢1：グランドリフォーム<br/>（既存サイトの全面改修）</h3>
+      <h3 class="text-3xl font-bold mb-4">選択肢1：グランド・リフォーム</h3>
       <p class="text-lg text-muted">
-        活気ある素晴らしいお店の魅力を、「疲れ切った」Webサイトで台無しにしないでください。既存のWebサイトを圧倒的なスピードで全面改修し、わずか48時間で洗練されたモダンなデザインと最高水準のパフォーマンスを注入します。
+        今のサイトの「古さ」に困っていませんか？ 既存の情報を活かしつつ、デザインと速度を最新の状態にフルリフォームします。最短4日で、あなたのお店のデジタルな印象が劇的に変わります。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1626379907753-406934326e2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Japanese Chef Cooking" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1626379907753-406934326e2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="日本料理のシェフ" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
@@ -101,20 +102,35 @@ const pricingData = [
   <Content
     isReversed={false}
     items={[
-        { title: '「バイリンガル・ファースト」のアーキテクチャ', description: '最初から日・英のデュアルエンジンを前提に構築。欧米の旅行者と日本人で心に響く導線を最適化します。', icon: 'tabler:language-hiragana' },
-        { title: '最先端のモダンな技術基盤', description: '最新のヘッドレスアーキテクチャを使用。高解像度の動画を使用しても、世界中どこからアクセスしても驚異的なスピードで表示されます。', icon: 'tabler:rocket' },
+        { title: 'バイリンガル設計', description: '日本人客も海外客も、両方を強力に惹きつけるデュアル言語構造。', icon: 'tabler:world' },
+        { title: '最新テクノロジー', description: '数年先も古くならない最新技術を採用。常に爆速で安定した運用が可能です。', icon: 'tabler:rocket' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">選択肢2：グランド・ニューオープン<br/>（完全新規構築）</h3>
+      <h3 class="text-3xl font-bold mb-4">選択肢2：グランド・ニューオープン</h3>
       <p class="text-lg text-muted">
-        単なる「翻訳されたサイト」で妥協する必要はありません。圧倒的な信頼感と、高単価な外国人観光客の確実なコンバージョンを実現するために設計された、完全な「2か国語対応のデジタル拠点」をゼロから構築します。
+        心機一転、最高のデジタル拠点を。ゼロから作り上げる完全新規サイトです。インバウンド集客と国内集客を両立させる、あなたのお店の「最強の営業マン」を構築します。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Traditional Japanese Setting" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="伝統的な日本の風景" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
+
+  <!-- FEATURES -->
+  <Features2
+    title="充実のコミコミパック"
+    subtitle="追加料金なしの明朗会計です。"
+    columns={3}
+    items={[
+      { title: 'たっぷり10ページまで', description: 'メニュー、スタッフ紹介、アクセスなど、必要な情報を網羅。', icon: 'tabler:copy' },
+      { title: '最短4日のスピード納品', description: '正午までの注文で、4日後には新しいサイトが公開可能です。', icon: 'tabler:clock' },
+      { title: '修正は何度でも無料', description: 'オーナー様が100%満足されるまで、妥協なく修正します。', icon: 'tabler:thumb-up' },
+      { title: 'プロの英語対応', description: '海外客を迷わせない、自然で魅力的な英語コピーを執筆。', icon: 'tabler:writing' },
+      { title: '最新のスマホ対応', description: '外出中のスマホ検索でもサクサク動き、使いやすい設計。', icon: 'tabler:device-mobile' },
+      { title: 'Googleマップ対策', description: 'お店の場所がすぐに見つかるよう、地図情報も最適化。', icon: 'tabler:map-pin' },
+    ]}
+  />
 
   <!-- TOURIST READY SUITE -->
   <Features2
@@ -134,9 +150,15 @@ const pricingData = [
   <!-- PRICING -->
   <Pricing 
     id="pricing"
-    title="あなたのビジネスに最適な選択を" 
-    subtitle="過去のシステムを継ぎ接ぎして使うのは終わりにし、未来へ向けて新たなスタートを切りましょう。"
+    title="ワンプライスで劇的チェンジ" 
+    subtitle="最高品質のホームページを、わかりやすい定額料金で。"
     prices={pricingData} 
   />
 
+  <!-- ABOUT HANEI -->
+  <CallToAction
+    title="Haneiについて"
+    subtitle="Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。"
+    actions={[]}
+  />
 </Layout>
