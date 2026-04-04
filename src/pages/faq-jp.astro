@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = { title: 'よくあるご質問 | Hanei JP' };
+---
+<Layout metadata={metadata}>
+  <HeroText tagline="サポート" title="よくあるご質問 (FAQ)" />
+  <FAQs
+    columns={1}
+    items={[
+      { title: '英語を話せなくても大丈夫ですか？', description: 'はい。システムがゲストにはネイティブ英語で、スタッフには正確な日本語指示書で伝えるため、特別な語学力は不要です。', icon: 'tabler:messages-off' },
+      { title: '導入までどのくらいかかりますか？', description: 'ウェルカムキットやレビューエンジンは24時間以内、フルリニューアルでも48時間以内のスピード導入を保証しています。', icon: 'tabler:clock' },
+      { title: '月額費用はかかりますか？', description: '主要なインフラ構築は一括投資（買い切り）モデルです。レビューエンジン等のクラウド機能を利用する場合のみ、少額の月額費用が発生します。', icon: 'tabler:coin' },
+      { title: '既存の日本語サイトが壊れる心配はありませんか？', description: '「離れ（Hanare）」アーキテクチャにより、既存サイトには一切触れず独立して構築するため、技術的リスクはゼロです。', icon: 'tabler:lock' },
+      { title: 'Googleマップでどのように表示されますか？', description: '外国人観光客が実際に検索する英語キーワードでプロフィールを最適化し、検索結果の上位表示（MEO）を狙います。', icon: 'tabler:map-pin' },
+      { title: '「入店前の不安」とは何ですか？', description: 'ルールやメニュー、支払い方法が不明な際、外国人客が感じる心理的障壁です。これを視覚的ガイダンスで解消します。', icon: 'tabler:user-check' },
+      { title: '独自のドメイン（.com等）は使えますか？', description: 'はい。お客様がお持ちのドメインを当システムに紐づけ、安全なSSL通信で公開することが可能です。', icon: 'tabler:world' },
+      { title: '後からメニューを変更したい場合は？', description: 'サポートチームが継続的に対応します。新しい情報をいただければ、迅速にアップデートを反映いたします。', icon: 'tabler:settings' },
+      { title: '口コミ管理はどのように行いますか？', description: '満足したお客様を高評価レビューへ導き、不満のある声はネット公開前に非公開でキャッチする仕組みを提供します。', icon: 'tabler:shield-check' },
+      { title: 'NPO向けの支援はありますか？', description: 'はい。「地域貢献活動」として、国内の登録NPO法人等に対して完全無料でWeb制作を提供しています。', icon: 'tabler:heart' },
+      { title: '支払いは安全ですか？', description: '世界標準の決済システム「Stripe」を採用しており、暗号化された安全な取引をお約束します。', icon: 'tabler:credit-card' },
+      { title: '使用している技術は何ですか？', description: 'AstroやCloudflare等の最新フレームワークを使用し、モバイル回線でも1秒未満で表示される高速環境を構築します。', icon: 'tabler:rocket' },
+      { title: '複数店舗での導入は可能ですか？', description: 'はい。複数店舗やグループ店向けの割引プランもご用意しております。', icon: 'tabler:building-store' },
+      { title: '写真は用意する必要がありますか？', description: '既存の写真、または高品質なストックフォトを組み合わせて、プロフェッショナルな見栄えを最短で作り上げます。', icon: 'tabler:camera' },
+      { title: 'なぜ表示速度が重要なのですか？', description: '旅行者はローミング回線を使います。表示に3秒以上かかると半数が離脱するため、瞬時の表示が不可欠です。', icon: 'tabler:bolt' },
+    ]}
+  />
+</Layout>

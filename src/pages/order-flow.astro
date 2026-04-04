@@ -1,0 +1,58 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = { 
+  title: 'Order Flow | The Productized Service Model',
+  description: 'How we automate web development from visit to project launch.'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="The Hanei Method"
+    title='High-Speed Delivery via <br/><span class="text-accent">Productized Services.</span>'
+    subtitle="We have eliminated discovery calls and manual invoicing. Experience the frictionless 'Stripe-to-Brief' flow that gets your project live in record time."
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Automation' }}
+  />
+
+  <Steps2
+    title="The 4-Step Automated Funnel"
+    subtitle="Our process is designed for zero friction and maximum velocity."
+    items={[
+      { title: 'Step 1: Choose Your Package', description: 'No quotes, no waiting. Select the defined package that matches your business goals.', icon: 'tabler:package' },
+      { title: 'Step 2: Instant Checkout', description: 'Pay your deposit via a secure Stripe payment link. Professional, tax-ready, and instant.', icon: 'tabler:credit-card' },
+      { title: 'Step 3: The Post-Payment Brief', description: 'You are redirected to an onboarding form to provide your domain, style preferences, and assets.', icon: 'tabler:file-description' },
+      { title: 'Step 4: Automated Portal Launch', description: 'We instantly create your client portal in Notion/Trello and start coding your project.', icon: 'tabler:rocket' },
+    ]}
+  />
+
+  <Features3
+    title="The Tech Stack of Efficiency"
+    subtitle="Built for reliability and sub-second performance."
+    columns={3}
+    items={[
+      { title: 'Stripe Payments', description: 'Secure, global, and frictionless transactions.', icon: 'tabler:brand-stripe' },
+      { title: 'Onboarding Briefs', description: 'Smart forms (Tally/Typeform) to capture every detail.', icon: 'tabler:clipboard-check' },
+      { title: 'Edge Infrastructure', description: 'Powered by Cloudflare for global speed.', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <Content
+    isReversed={false}
+    tagline="The Secret Sauce"
+    title="Extreme Social Proof & Risk Reversal"
+    items={[
+        { title: '100% Refund Guarantee', description: 'If you don\'t like the first design mockup, we refund 100% of your deposit, no questions asked.', icon: 'tabler:refresh' },
+        { title: 'The 7-Day Draft', description: 'Pay today, receive your first full-production draft in 7 business days or less.', icon: 'tabler:calendar-check' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold mb-4">Why this works for you.</h3>
+      <p class="text-muted text-lg">Zero friction. You can start your project at 2 AM when you are feeling motivated, and we wake up to your brief ready to execute.</p>
+    </Fragment>
+  </Content>
+</Layout>

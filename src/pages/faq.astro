@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = { title: 'FAQ | Hanei JP' };
+---
+<Layout metadata={metadata}>
+  <HeroText tagline="Support" title="Frequently Asked Questions" />
+  <FAQs
+    columns={1}
+    items={[
+      { title: 'Do I need to speak English to use Hanei?', description: 'No. Our systems communicate in native English to your guests while delivering perfectly structured Japanese briefs to your staff.', icon: 'tabler:messages-off' },
+      { title: 'How long does the setup take?', description: 'We guarantee a 24-hour turnaround for the Welcome Kit and Review Engine, and 48 hours for a full Grand Opening reboot.', icon: 'tabler:clock' },
+      { title: 'Is this a monthly subscription?', description: 'Most of our core products are one-time CapEx investments. Only specific cloud-based tools like the Review Engine carry a small monthly support fee.', icon: 'tabler:coin' },
+      { title: 'Will you touch my existing Japanese website?', description: 'No. Using our "Hanare" architecture, we build your English assets on independent subdomains, keeping your legacy site 100% safe.', icon: 'tabler:lock' },
+      { title: 'How do you improve my Google Maps ranking?', description: 'We perform deep English SEO on your Google Business Profile, using keywords that international tourists actually use in search.', icon: 'tabler:map-pin' },
+      { title: 'What is the "Anxiety of Entry"?', description: 'It is the psychological barrier that stops tourists from entering a shop if they don’t understand the rules, menus, or payment methods. We solve this with visual guidance.', icon: 'tabler:user-check' },
+      { title: 'Can I use my own .com domain?', description: 'Yes. We can link your Hanei assets to any custom domain you own, providing full SSL security.', icon: 'tabler:world' },
+      { title: 'What happens if I want to change my menu later?', description: 'Our support team provides lifetime white-glove updates. Simply send us the new details, and we apply them for you.', icon: 'tabler:settings' },
+      { title: 'How does the "Review Shield" work?', description: 'We provide a custom landing page that guides happy guests to public review sites while routing negative feedback to a private channel.', icon: 'tabler:shield-check' },
+      { title: 'Do you offer support for NPOs?', description: 'Yes! Our Community Mission initiative provides 100% free web development for registered Japanese non-profits.', icon: 'tabler:heart' },
+      { title: 'Is payment secure?', description: 'All transactions are handled via Stripe, ensuring world-class encryption and security for your business.', icon: 'tabler:credit-card' },
+      { title: 'What tech stack do you use?', description: 'We build using high-performance, serverless edge frameworks like Astro and Cloudflare for sub-second loading speeds.', icon: 'tabler:rocket' },
+      { title: 'Can you handle multiple locations?', description: 'Yes. We offer multi-chair or multi-location discounts for salon and restaurant groups.', icon: 'tabler:building-store' },
+      { title: 'Do you provide photography?', description: 'While we can guide you on best practices, we typically use your existing assets or high-end stock imagery to ensure rapid deployment.', icon: 'tabler:camera' },
+      { title: 'Why is speed so important?', description: 'Tourists use roaming data. If a site takes more than 3 seconds to load, 50% of them will leave. We ensure your site loads instantly.', icon: 'tabler:bolt' },
+    ]}
+  />
+</Layout>

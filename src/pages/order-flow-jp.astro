@@ -1,0 +1,58 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = { 
+  title: '制作の流れ | プロダクト型サービスモデル',
+  description: 'お問い合わせから公開までを自動化し、最短スピードでお届けする仕組み。'
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Haneiの制作手法"
+    title='「プロダクト型サービス」による<br/><span class="text-accent">圧倒的なスピード導入。</span>'
+    subtitle="見積もり待ちや無駄な会議を徹底排除。「Stripe決済から即ブリーフィング」へ進む摩擦ゼロのフローで、最短即日の公開を実現します。"
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Automation' }}
+  />
+
+  <Steps2
+    title="4ステップの自動化フロー"
+    subtitle="オーナー様の貴重な時間を奪わない、最も効率的なプロセスです。"
+    items={[
+      { title: '1. プランを選択', description: '見積もり不要。内容が明確に定義されたパッケージから最適なものを選びます。', icon: 'tabler:package' },
+      { title: '2. 決済（Stripe）', description: '安全なStripe決済リンクで着手金を支払い。領収書も即座に発行されます。', icon: 'tabler:credit-card' },
+      { title: '3. オンボーディング入力', description: '決済完了後、ドメイン名や希望のデザイン、写真素材を専用フォームから送信。', icon: 'tabler:file-description' },
+      { title: '4. 開発スタート', description: '情報を頂いた瞬間から開発を開始。専用の進捗管理ボードで公開までを可視化します。', icon: 'tabler:rocket' },
+    ]}
+  />
+
+  <Features3
+    title="効率を支えるテクノロジー"
+    subtitle="信頼性とパフォーマンスを両立させるツール群。"
+    columns={3}
+    items={[
+      { title: 'Stripe決済', description: '世界標準のセキュアなオンライン決済。', icon: 'tabler:brand-stripe' },
+      { title: 'スマートフォーム', description: '情報を正確にキャッチする直感的な入力画面。', icon: 'tabler:clipboard-check' },
+      { title: 'エッジインフラ', description: 'Cloudflareによる世界最高速の配信ネットワーク。', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <Content
+    isReversed={false}
+    tagline="Haneiのこだわり"
+    title="リスクを排除した確実なリターン"
+    items={[
+        { title: '100%返金保証', description: '最初のデザイン案がお気に召さない場合は、理由を問わず着手金を全額返金いたします。', icon: 'tabler:refresh' },
+        { title: 'スピード納品', description: '今日お支払いいただければ、最短で本日、通常でも数日以内に初稿をお届けします。', icon: 'tabler:calendar-check' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold mb-4">なぜ、この方法が選ばれるのか？</h3>
+      <p class="text-muted text-lg">「まずは打ち合わせ」という時間をカットし、やる気になったその瞬間にプロジェクトをスタート。私たちは届いたブリーフに基づき、すぐにコーディングを開始します。</p>
+    </Fragment>
+  </Content>
+</Layout>

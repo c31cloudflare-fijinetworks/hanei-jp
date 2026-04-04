@@ -11,6 +11,7 @@ export const headerDataEn = {
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
       ],
     },
+    { text: 'Order Flow', href: getPermalink('/order-flow') },
     { text: 'Community Mission', href: getPermalink('/community-mission') },
   ],
   actions: [
@@ -29,6 +30,7 @@ export const headerDataJp = {
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },
       ],
     },
+    { text: '制作の流れ', href: getPermalink('/order-flow-jp') },
     { text: '地域貢献活動', href: getPermalink('/community-mission-jp') },
   ],
   actions: [
@@ -45,6 +47,8 @@ export const footerDataEn = {
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
         { text: 'Community Mission', href: getPermalink('/community-mission') },
+        { text: 'Order Flow', href: getPermalink('/order-flow') },
+        { text: 'FAQ', href: getPermalink('/faq') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
     },
@@ -65,6 +69,8 @@ export const footerDataJp = {
         { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },
         { text: '地域貢献活動', href: getPermalink('/community-mission-jp') },
+        { text: '制作の流れ', href: getPermalink('/order-flow-jp') },
+        { text: 'よくあるご質問', href: getPermalink('/faq-jp') },
         { text: 'お問い合わせ', href: getPermalink('/contact-jp') },
       ],
     },
