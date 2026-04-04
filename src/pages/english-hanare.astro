@@ -8,23 +8,23 @@ import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'The English Hanare | Hanei JP', 
-  description: 'Global Expansion Without the Technical Risk. A detached, modern digital pavilion.',
+  title: 'English Hanare | Standalone English Website | Hanei JP', 
+  description: 'Get a professional English website for your business without touching your current Japanese site. Safe, fast, and high-quality.',
 };
 
 const pricingData = {
   title: 'The English Hanare Plan',
-  subtitle: 'Our Most Popular Global Deployment',
-  price: '98,500',
-  period: 'One-time CapEx',
+  subtitle: 'A full English version of your business website.',
+  price: '59,800',
+  period: 'One-time setup (Up to 10 pages)',
   items: [
-    { description: 'Deep Content Architecture (Up to 10 Pages)' },
-    { description: 'Executive-Level Native Copywriting' },
-    { description: 'Total Decoupling from Legacy Systems' },
-    { description: 'Global API Integration (Stripe/Calendly)' },
-    { description: '24-Hour streamlined setup' },
+    { description: 'Complete 10-Page English Website' },
+    { description: 'Professional Native English Copywriting' },
+    { description: 'No Passwords or Login Access Required' },
+    { description: '3-Day Turnaround (Order by noon)' },
+    { description: 'Unlimited revisions until 100% satisfied' },
   ],
-  callToAction: { target: '_self', text: 'Inquire About My Hanare Setup', href: '/contact', variant: 'primary' },
+  callToAction: { target: '_self', text: 'Get Your English Website', href: '/contact', variant: 'primary' },
 };
 ---
 
@@ -33,40 +33,40 @@ const pricingData = {
   <!-- HERO SECTION -->
   <Hero2
     tagline="The English Hanare Strategy"
-    title='Global Expansion Without the <br/><span class="text-accent">Technical Risk.</span>'
-    subtitle='Introducing the world’s first "Detached Pavilion" web architecture. We build your global presence on a modern, high-conversion foundation while keeping your existing Japanese website 100% untouched and safe.'
-    actions={[{ variant: 'primary', text: 'Inquire About My Hanare Setup', href: '/contact' }]}
+    title='A Complete English Website <br/><span class="text-accent">Without Touching Your Current Site.</span>'
+    subtitle='Need an English website but afraid to change your current one? We build a professional English version of your site that stands on its own. No risk of breaking your original site and no technical skills required.'
+    actions={[{ variant: 'primary', text: 'Get Your English Website Today', href: '#pricing' }]}
     image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy', alt: 'Premium Japanese Dining' }}
   />
   
-  <!-- SECTION 1: THE DILEMMA -->
+  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
     items={[
         { 
-          title: 'The Risk of Failure', 
-          description: 'If a developer goes into your old system to "add English," one wrong click could crash your entire Japanese site.', 
-          icon: 'tabler:alert-triangle' 
+          title: 'Afraid of Breaking Your Site?', 
+          description: 'You don’t have to worry about a developer messing up your existing Japanese website. We don’t touch your current system at all.', 
+          icon: 'tabler:shield-lock' 
         },
         { 
-          title: 'The Password Nightmare', 
-          description: 'You might not even have the original FTP logins or CMS access from the agency that built your site a decade ago.', 
-          icon: 'tabler:lock-open' 
+          title: 'Lost Your Passwords?', 
+          description: 'Can’t find your login info from the agency that built your site 10 years ago? No problem. We don’t need them to build your English version.', 
+          icon: 'tabler:key-off' 
         },
         { 
-          title: 'The Design Gap', 
-          description: 'A simple translation of a Japanese site rarely works for Westerners. The fonts, layout, and "psychology of the sale" are fundamentally different.', 
-          icon: 'tabler:palette' 
+          title: 'English That Actually Sells', 
+          description: 'Bad machine translation scares customers away. We write professional English that makes Westerners trust your business immediately.', 
+          icon: 'tabler:message-language' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">The Dilemma: <br/>"I want an English site, but I’m afraid to touch my current one."</h3>
+      <h3 class="text-3xl font-bold mb-4">"I want an English site, <br/>but I’m afraid to touch my current one."</h3>
       <p class="text-lg text-muted mb-4">
-        For many established Japanese businesses, your website is your lifeblood. But it’s also often built on "legacy systems"—older code or complex setups that haven't been updated in years.
+        Your website is your business. Many owners worry that "adding English" will break their Japanese site or cause technical headaches. 
       </p>
       <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Hanei’s "English Hanare" solves this by stopping the cycle of "fixing" and starting the journey of "welcoming."
+        Hanei’s "English Hanare" solves this by building a separate, beautiful English pavilion for your global guests.
       </p>
     </Fragment>
     <Fragment slot="image">
@@ -74,26 +74,26 @@ const pricingData = {
     </Fragment>
   </Content>
 
-  <!-- SECTION 2: THE CONCEPT & FEATURES 1 -->
+  <!-- SECTION 2: THE CONCEPT -->
   <Content
     isReversed={true}
     items={[
         { 
-          title: '1. Zero-Touch Integration (DNS-Level Magic)', 
-          description: 'We don\'t need your passwords or FTP access. Using advanced CNAME routing, we create a dedicated domain. Your Japanese site continues running with zero risk of technical glitches.', 
-          icon: 'tabler:shield-check' 
+          title: 'Zero-Touch Build', 
+          description: 'We build your English site on a separate "sub-domain." It looks like your main site, but it’s technically independent and safe.', 
+          icon: 'tabler:circle-check' 
         },
         { 
-          title: '2. Optimized for the Affluent Western Mindset', 
-          description: 'We translate your brand value. We use psychographic design, typography, and spacing that appeals to high-spending tourists, delivered with mobile-first lightning performance.', 
-          icon: 'tabler:diamond' 
+          title: 'Modern & Mobile Friendly', 
+          description: 'While your old site might be slow, your new English site will be lightning-fast on any smartphone.', 
+          icon: 'tabler:device-mobile' 
         },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">The Concept: <br/>The "Hanare" (Detached Pavilion)</h3>
+      <h3 class="text-3xl font-bold mb-4">The "Hanare" Concept</h3>
       <p class="text-lg text-muted">
-        In traditional Japanese architecture, the <em>Hanare</em> is a separate, beautiful building set apart from the main house. It is a dedicated space for guests—quiet, modern, and perfectly prepared for their comfort. Instead of trying to "cram" English into your existing structure, we build a modern, high-speed digital pavilion specifically for your international guests.
+        In Japan, a <em>Hanare</em> is a separate, beautiful building for guests. We do the same for your digital presence. We build a high-speed English website specifically for your international visitors, leaving your original Japanese site exactly as it is.
       </p>
     </Fragment>
     <Fragment slot="image">
@@ -101,52 +101,25 @@ const pricingData = {
     </Fragment>
   </Content>
 
-  <!-- SECTION 3: FEATURES 2 -->
-  <Content
-    isReversed={false}
-    items={[
-        { 
-          title: '3. Total Decoupling: Future-Proof Your Business', 
-          description: "Because the Hanare is detached, it is future-proof. If you redesign your Japanese site in three years, your English site remains stable. Built on cutting-edge, secure architecture.", 
-          icon: 'tabler:layers-intersect' 
-        },
-        { 
-          title: '4. The "Concierge" Conversion Path', 
-          description: "The English Hanare isn't just a brochure; it’s a sales tool. We bypass confusing menus, leading guests directly to a 'Book Now' button through vibrant visual storytelling.", 
-          icon: 'tabler:bell-ringing' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Absolute Safety, <br/>Total Optimization</h3>
-      <p class="text-lg text-muted mb-6">
-        Legacy systems are fragile. Your English business shouldn't have to suffer if an old plugin fails. We provide a safe environment for international reservations.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Dish Detail" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- SECTION 4: WHY HANARE -->
+  <!-- STEPS -->
   <Steps2
-    title="Why 'English Hanare' is the Only Logical Choice"
-    subtitle="Stop worrying about 'breaking' the past. Start focusing on 'building' the future."
+    title="Your English Website in 3 Days"
+    subtitle="Simple process. Zero stress for you or your staff."
     items={[
       {
-        title: 'Speed to Market',
-        description: 'Because we don\'t have to navigate your old code, we can launch your English presence in a fraction of the time.',
+        title: 'Step 1: Send Your URL',
+        description: 'Just give us your current website link. We don’t need your passwords.',
+        icon: 'tabler:link',
+      },
+      {
+        title: 'Step 2: We Build Everything',
+        description: 'We translate and design up to 10 pages in professional English in just 3 days.',
         icon: 'tabler:bolt',
       },
       {
-        title: 'Absolute Safety',
-        description: 'Your IT manager or current web agency can rest easy—we are not a threat to their work. We operate in a parallel, optimized space.',
-        icon: 'tabler:lock',
-      },
-      {
-        title: 'Bespoke Quality',
-        description: 'You get a site that looks like a modern global brand, not a translated "copy" of a domestic site.',
-        icon: 'tabler:star',
+        title: 'Step 3: Launch & Welcome Guests',
+        description: 'Your new English site goes live. We offer unlimited revisions until you are 100% happy.',
+        icon: 'tabler:world',
       },
     ]}
     image={{ 
@@ -155,19 +128,21 @@ const pricingData = {
     }}
   />
 
-  <!-- SECTION 5: CTA 1 -->
-  <CallToAction
-    title="Your Global Guest House is Ready"
-    subtitle="Experience the peace of mind that comes with a 'Zero-Touch' global expansion. The international market is looking for you—give them a beautiful, modern place to find you."
-    actions={[
-        { variant: 'primary', text: 'Inquire About My Hanare Setup', href: '/contact' }
+  <!-- FEATURES -->
+  <Features2
+    title="Everything Included"
+    subtitle="Full service for one fixed price."
+    columns={3}
+    items={[
+      { title: '10 Full Pages', description: 'Home, Menu, Services, Access, and more.', icon: 'tabler:files' },
+      { title: 'Native Copywriting', description: 'Perfect English that converts visitors into customers.', icon: 'tabler:writing' },
+      { title: 'Zero Technical Risk', description: 'Your Japanese site remains 100% untouched and safe.', icon: 'tabler:shield' },
+      { title: '3-Day Turnaround', description: 'Order by noon and we deliver in 72 hours.', icon: 'tabler:clock' },
+      { title: 'Unlimited Revisions', description: 'We change it until you are completely satisfied.', icon: 'tabler:thumb-up' },
+      { title: 'Mobile Optimized', description: 'Perfect viewing experience on all smartphones.', icon: 'tabler:device-mobile' },
     ]}
-  >
-    <Fragment slot="tagline">No technical access required. We can begin with just your URL.</Fragment>
-  </CallToAction>
+  />
 
-  <!-- SECTION 6: PRICING -->
-  
   <!-- TOURIST READY SUITE -->
   <Features2
     title='Every Plan Includes the "Tourist-Ready" Suite:'
@@ -176,21 +151,21 @@ const pricingData = {
     items={[
       { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
       { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
-      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules (No smoking, cover charges, shoe policy) to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
-      { title: 'Professional English Copywriting', description: "We don't just translate; we write high-converting business descriptions.", icon: 'tabler:circle-check' },
-      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data so your site loads instantly.', icon: 'tabler:circle-check' },
-      { title: 'Same-Day Lightning Fast Deployment', description: 'Order before lunch, and we launch your website today!', icon: 'tabler:bolt' },
+      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
+      { title: 'Professional English Copywriting', description: "We write high-converting business descriptions.", icon: 'tabler:circle-check' },
+      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data.', icon: 'tabler:circle-check' },
+      { title: 'Same-Day Deployment', description: 'Order before lunch, and we launch today!', icon: 'tabler:bolt' },
     ]}
   />
 
   <Pricing 
     id="pricing"
-    title="The Ultimate Inbound Revenue Asset" 
-    subtitle="Strategically sound global expansion with zero technical risk."
+    title="The Ultimate Inbound Asset" 
+    subtitle="Professional English expansion with zero risk."
     prices={[pricingData]} 
   />
 
-  <!-- SECTION 7: ABOUT HANEI -->
+  <!-- ABOUT HANEI -->
   <CallToAction
     title="About Hanei"
     subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
