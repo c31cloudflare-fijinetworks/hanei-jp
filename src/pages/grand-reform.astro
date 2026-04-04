@@ -1,0 +1,105 @@
+---
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = { 
+  title: 'The Grand Reform | Hanei JP', 
+  description: 'Deep modernization and high-performance "facelift" for existing websites.',
+};
+
+const pricingData = {
+  title: 'The Grand Reform',
+  subtitle: 'High-performance digital facelift.',
+  price: '158,500',
+  period: 'One-time CapEx',
+  items: [
+    { description: 'Extreme Performance Injection (Speed Optimization)' },
+    { description: 'Modern Aesthetic Facelift & UI Redesign' },
+    { description: 'Mobile-First Responsive Excellence' },
+    { description: 'Security Hardening & SEO Cleanup' },
+    { description: 'Guaranteed 48-Hour Turnaround' },
+  ],
+  callToAction: { target: '_self', text: 'Start My Grand Reform Today', href: '/contact', variant: 'primary' },
+};
+---
+
+<Layout metadata={metadata}>
+  
+  <!-- HERO SECTION -->
+  <Hero2
+    tagline="Service #1: Grand Reform"
+    title='The Grand Reform: Resurrect Your <br/><span class="text-accent">Digital Presence.</span>'
+    subtitle="Don’t let a 'tired' website represent your vibrant business. We perform a total high-speed overhaul of your existing site—injecting modern design, elite performance, and global authority in just 48 hours."
+    actions={[{ variant: 'primary', text: 'Start My Grand Reform Today', href: '/contact' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Culinary Excellence' }}
+  />
+  
+  <!-- THE PROBLEM -->
+  <Content
+    isReversed={false}
+    items={[
+        { title: 'The "Shabbiness" Factor', description: 'Your physical shop is beautiful, but your website looks like it belongs in the year 2010.', icon: 'tabler:alert-triangle' },
+        { title: 'The High Bounce Rate', description: 'Potential guests click your link, see a dated design, and leave within seconds to find a "more modern" competitor.', icon: 'tabler:trending-down' },
+        { title: 'The Mobile Struggle', description: 'If your site is hard to read on a smartphone, you are invisible to 90% of today’s travelers.', icon: 'tabler:device-mobile-off' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">The Problem: Is Your Website a "Digital Ghost Town"?</h3>
+      <p class="text-lg text-muted mb-4">
+        You have a website, but does it actually work for you? Many Japanese business owners are sitting on "Digital Anchors"—sites that were built years ago and are now slow, clunky, and embarrassing to show to international guests.
+      </p>
+      <p class="text-lg font-bold text-gray-900 dark:text-white">
+        Hanei’s Grand Reform doesn't just "tidy up"—it reboots your existing site into a high-performance engine.
+      </p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Elegant Sushi Presentation" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- FEATURES -->
+  <Content
+    isReversed={true}
+    items={[
+        { title: '1. Extreme Performance Injection', description: 'Speed is the new currency. We strip away old code. We optimize every image and script for lightning velocity, aiming for a "Green Score" on Google. We do this in a guaranteed 48-Hour Turnaround.', icon: 'tabler:bolt' },
+        { title: '2. Modern Aesthetic Facelift', description: 'We replace dated layouts with clean, high-impact design. We reorganize your content to prioritize stunning, full-screen visual storytelling and ensure brand harmony with your physical location.', icon: 'tabler:palette' },
+        { title: '3. Mobile-First Optimization', description: 'We ensure your site looks and feels like a high-end "App" on every mobile device. We simplify the path to your "Book Now" buttons so guests can commit in one tap.', icon: 'tabler:device-mobile' },
+        { title: '4. Security Hardening & SEO Cleanup', description: 'An old site is a target for hackers. We update your core architecture to the latest security standards and fix broken links and outdated metadata to restore your SEO.', icon: 'tabler:shield-check' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Vibrant Features: <br/>A Total Transformation</h3>
+      <p class="text-lg text-muted">
+        Focusing on deep modernization and a high-performance "facelift" for your existing digital presence.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- TOURIST READY SUITE -->
+  <Features2
+    title='Every Plan Includes the "Tourist-Ready" Suite:'
+    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
+    columns={3}
+    items={[
+      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
+      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
+      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules (No smoking, cover charges, shoe policy) to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
+      { title: 'Professional English Copywriting', description: "We don't just translate; we write high-converting business descriptions.", icon: 'tabler:circle-check' },
+      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data so your site loads instantly.', icon: 'tabler:circle-check' },
+      { title: 'Same-Day Lightning Fast Deployment', description: 'Order before lunch, and we launch your website today!', icon: 'tabler:bolt' },
+    ]}
+  />
+
+  <!-- PRICING -->
+  <Pricing 
+    id="pricing"
+    title="Resurrect Your Digital Presence" 
+    subtitle="48-hour delivery guaranteed."
+    prices={[pricingData]} 
+  />
+
+</Layout>
