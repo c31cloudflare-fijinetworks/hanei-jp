@@ -42,16 +42,52 @@ const pricingData = {
     isReversed={false}
     items={[
         { title: 'コミュニケーションの壁', description: '「英語が話せないから、十分なおもてなしができないかもしれない」', icon: 'tabler:messages-off' },
-        { title: 'デジタル集客への戸惑い', description: '「外国人に向けたGoogle活用方法がわからない」', icon: 'tabler:cloud-fog' },
-        { title: '口コミへの恐怖', description: '「些細な誤解で低評価をつけられたらどうしよう」', icon: 'tabler:star-off' },
+        { title: 'デジタル集客への戸惑い', description: '「外国人に向けたGoogleやTripAdvisorの活用方法がわからない」', icon: 'tabler:cloud-fog' },
+        { title: '口コミへの恐怖', description: '「言葉の壁による些細な誤解で、対応もできないまま低評価をつけられたらどうしよう」', icon: 'tabler:star-off' },
     ]}
   >
     <Fragment slot="content">
       <h3 class="text-3xl font-bold mb-4">本格的なインバウンド需要の回復。<br/>機会を逃していませんか？</h3>
-      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」は、こうした不安を解消し、</strong>あなたが誇るサービスと世界中の旅行者を安全に橋渡しします。</p>
+      <p class="text-lg text-muted mb-4">スマホを片手に、お店の前を通り過ぎる外国人観光客。彼らは「本物のローカル体験」を求めているのに、何かが原因で入店をためらっています。</p>
+      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」は、こうした不安を根本から解消し、</strong>あなたが誇るサービスと世界中の旅行者を安全に橋渡しします。</p>
     </Fragment>
     <Fragment slot="image">
        <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed={true}
+    items={[
+        { title: '1. 英語力は不要', description: '新しく英語を学ぶ必要はありません。私たちのツールが翻訳とコミュニケーションを代行します。', icon: 'tabler:language' },
+        { title: '2. 専門的なITスキルは不要', description: 'デジタル周りの管理はすべてお任せください。スマホが使えれば簡単に使いこなせます。', icon: 'tabler:device-mobile' },
+        { title: '3. スタッフの業務負担増はなし', description: '現在の業務フローにそのまま組み込めます。時間のかかるスタッフ研修は必要ありません。', icon: 'tabler:clock-check' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Haneiのお約束：<br/>インバウンド成功のための「3つのゼロ」</h3>
+      <p class="text-lg text-muted">売上を伸ばすために、経営者の負担が増えては意味がありません。多忙なオーナー様のために設計されています。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fHwy" alt="Japan City Lights" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed={false}
+    items={[
+        { title: '1. 英語最適化されたWeb集客', description: 'ビジュアルメニューと予約動線を備えた、外国人観光客専用の高速1ページWebサイトを構築します。', icon: 'tabler:world-www' },
+        { title: '2. Googleマップ（MEO）の最適化', description: 'Googleビジネスプロフィールを英語キーワードで最適化し、検索結果での上位表示を狙います。', icon: 'tabler:map-pin' },
+        { title: '3. 口コミ獲得エンジン', description: '満足したお客様に英語レビュー投稿を自動で促し、ブランド専用ページで高評価を積み上げます。', icon: 'tabler:shield-star' },
+        { title: '4. デジタル「指さし会話」ツール', description: 'アレルギーやWi-Fiの質問にタブレットで即座に対応。接客スピードを落とさず笑顔を守ります。', icon: 'tabler:hand-click' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">1ページ・ウェルカム：<br/>トータルソリューション</h3>
+      <p class="text-lg text-muted mb-6">単なるWeb制作ではありません。あなたのお店に「24時間対応のグローバル受付」を構築します。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGphcGFufGVufDB8fDB8fHwy" alt="Japanese Dining" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
@@ -77,7 +113,7 @@ const pricingData = {
 
   <CallToAction
     title="Haneiについて"
-    subtitle="最新のテクノロジーを活用して、日本の素晴らしい文化を世界へ届けるサポートをします。"
+    subtitle="Haneiは、日本の地域ビジネスを支援し、活力を与えることに尽力しています。私たちは「日本のローカル文化こそが最大の資産」であると信じています。言葉の壁によるストレスを感じることなく、最新のテクノロジーを活用してあなたのお店をサポートします。"
     actions={[]}
   />
 </Layout>

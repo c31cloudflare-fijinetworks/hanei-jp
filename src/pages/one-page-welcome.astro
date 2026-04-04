@@ -30,6 +30,7 @@ const pricingData = {
 
 <Layout metadata={metadata}>
   
+  <!-- HERO SECTION -->
   <Hero2
     tagline="Plan 1: 1-Page Welcome"
     title='Welcoming the World <br/><span class="text-accent">Shouldn’t Be Stressful.</span>'
@@ -38,23 +39,76 @@ const pricingData = {
     image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGphcGFufGVufDB8fDB8fHwy', alt: '1-Page Welcome' }}
   />
   
+  <!-- SECTION 1: THE INBOUND BOOM & 3 ANXIETIES -->
   <Content
     isReversed={false}
     items={[
         { title: 'The Communication Wall', description: '"I can’t speak English, so I might provide poor service."', icon: 'tabler:messages-off' },
         { title: 'The Digital Fog', description: '"I don\'t know how to optimize Google or TripAdvisor to reach foreigners."', icon: 'tabler:cloud-fog' },
-        { title: 'The Review Fear', description: '"What if a misunderstanding leads to a 1-star review?"', icon: 'tabler:star-off' },
+        { title: 'The Review Fear', description: '"What if a misunderstanding leads to a 1-star review that I can\'t even respond to?"', icon: 'tabler:star-off' },
     ]}
   >
     <Fragment slot="content">
       <h3 class="text-3xl font-bold mb-4">The "Inbound Boom" is here.<br/>Are you being left behind?</h3>
-      <p class="text-lg text-muted mb-6">Most Japanese business owners feel these anxieties. <strong>Hanei’s 1-Page Welcome was built to solve these fears.</strong> We bridge the gap between your craft and the global market.</p>
+      <p class="text-lg text-muted mb-4">You see them every day—travelers walking past your door with their smartphones in hand. You know they are looking for authentic local experiences, but something is stopping them from coming inside.</p>
+      <p class="text-lg text-muted mb-6">Maybe it’s the lack of an English menu. Maybe your Google Maps profile is only in Japanese. <strong>Hanei’s 1-Page Welcome was built to solve these fears.</strong> We bridge the gap between your craft and the global market.</p>
     </Fragment>
     <Fragment slot="image">
        <img src="https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFufGVufDB8fDB8fHwy" alt="Tourists in Japan" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
+  <!-- SECTION 2: THE 3 NO'S -->
+  <Content
+    isReversed={true}
+    items={[
+        { title: 'NO English Required', description: 'You don’t need to learn a new language. Our tools and automated systems handle the translation and communication for you.', icon: 'tabler:language' },
+        { title: 'NO Technical Skill Needed', description: 'We build and manage your digital presence. If you can use a smartphone, you can use Hanei.', icon: 'tabler:device-mobile' },
+        { title: 'NO Extra Work for Staff', description: 'Our kit integrates into your existing workflow. No complicated new hardware or time-consuming training for your team.', icon: 'tabler:clock-check' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">Our Promise: <br/>The "3 No’s" of Inbound Success</h3>
+      <p class="text-lg text-muted">We believe that growing your business shouldn't make your life harder. Our system is designed for the busy owner who wants results without the headache.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1533050487297-09b450131914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGphcGFufGVufDB8fDB8fHwy" alt="Japan City Lights" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- SECTION 3: THE TOTAL SOLUTION (4 PILLARS) -->
+  <Content
+    isReversed={false}
+    items={[
+        { title: '1. English-Optimized Web Presence', description: 'We build a high-speed, mobile-optimized landing page featuring beautiful visual menus and reservation-ready links.', icon: 'tabler:world-www' },
+        { title: '2. Google Maps (MEO) Dominance', description: 'We optimize your Google Business Profile with English keywords, ensuring you rank at the top of the map.', icon: 'tabler:map-pin' },
+        { title: '3. Reputation Engine', description: 'Automatically invite happy guests to leave 5-star reviews on Google and TripAdvisor via a custom branded landing page.', icon: 'tabler:shield-star' },
+        { title: '4. Digital "Point-and-Speak" Tools', description: 'Staff communication sheets for allergies, Wi-Fi, or payments. Staff just point to the tablet. Service remains fast.', icon: 'tabler:hand-click' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">1-Page Welcome: <br/>A Total Solution</h3>
+      <p class="text-lg text-muted mb-6">We don’t just build a website; we build a "Global Reception Desk" for your business.</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGphcGFufGVufDB8fDB8fHwy" alt="Japanese Dining" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <!-- HOW TO GET STARTED -->
+  <Steps2
+    title="How to Get Started"
+    subtitle="You don't have to figure this out alone. Let us show you exactly how many potential guests are searching for your business right now."
+    items={[
+      { title: 'Step 1: Free Inbound Audit', description: 'We analyze your current Google Maps ranking and digital visibility for English keywords.', icon: 'tabler:search' },
+      { title: 'Step 2: The Custom Strategy', description: 'We show you the "gaps" in your current setup and how the 1-Page Welcome will fill them.', icon: 'tabler:bulb' },
+      { title: 'Step 3: Peace of Mind', description: 'We launch your kit, and you go back to running your business while the world finds your door.', icon: 'tabler:rocket' },
+    ]}
+    callToAction={{ text: 'Request My Free Inbound Audit', href: '/contact', variant: 'primary' }}
+    image={{ src: 'https://images.unsplash.com/photo-1611518040385-1cc65ab82c91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGl6YWtheWF8ZW58MHx8MHx8fDI%3D', alt: 'Izakaya Interior' }}
+  />
+
+  <!-- TOURIST READY SUITE -->
   <Features2
     title='Every Plan Includes the "Tourist-Ready" Suite:'
     subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
@@ -77,7 +131,7 @@ const pricingData = {
 
   <CallToAction
     title="About Hanei"
-    subtitle="Hanei is dedicated to empowering Japanese local businesses through modern technology."
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure the world can experience it—without the stress of the language barrier."
     actions={[]}
   />
 </Layout>
