@@ -4,55 +4,78 @@ import Content from '~/components/widgets/Content.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: 'Order Flow | The Productized Service Model',
-  description: 'How we automate web development from visit to project launch.'
+  title: 'Order Flow | Simple 3-Step Process | Hanei JP',
+  description: 'From order to launch in record time. See how easy it is to start your international expansion.'
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="The Hanei Method"
-    title='High-Speed Delivery via <br/><span class="text-accent">Productized Services.</span>'
-    subtitle="We have eliminated discovery calls and manual invoicing. Experience the frictionless 'Stripe-to-Brief' flow that gets your project live in record time."
-    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Automation' }}
+    tagline="The Hanei Process"
+    title='Fast, Simple, and <br/><span class="text-accent">Stress-Free.</span>'
+    subtitle="We know you're busy running your business. That's why we’ve eliminated long meetings and complicated contracts. Get started in minutes, not weeks."
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Efficient Workflow' }}
   />
 
+  <!-- THE 3-STEP PROCESS -->
   <Steps2
-    title="The 4-Step Automated Funnel"
-    subtitle="Our process is designed for zero friction and maximum velocity."
+    title="3 Simple Steps to Success"
+    subtitle="Our streamlined process is designed to get you results immediately."
     items={[
-      { title: 'Step 1: Choose Your Package', description: 'No quotes, no waiting. Select the defined package that matches your business goals.', icon: 'tabler:package' },
-      { title: 'Step 2: Instant Checkout', description: 'Pay your deposit via a secure Stripe payment link. Professional, tax-ready, and instant.', icon: 'tabler:credit-card' },
-      { title: 'Step 3: The Post-Payment Brief', description: 'You are redirected to an onboarding form to provide your domain, style preferences, and assets.', icon: 'tabler:file-description' },
-      { title: 'Step 4: Automated Portal Launch', description: 'We instantly create your client portal in Notion/Trello and start coding your project.', icon: 'tabler:rocket' },
+      { 
+        title: 'Step 1: Choose Your Service', 
+        description: 'Select the plan that fits your needs—whether it’s a 1-page welcome, a review engine, or a full website. Complete your secure payment instantly.', 
+        icon: 'tabler:package' 
+      },
+      { 
+        title: 'Step 2: Share Your Details', 
+        description: 'Fill out a simple form with your basic shop info, photos, and any specific requests. No technical skills or passwords required.', 
+        icon: 'tabler:file-description' 
+      },
+      { 
+        title: 'Step 3: Review & Launch', 
+        description: 'We build your project and send it to you. We offer unlimited revisions until you are 100% satisfied. Once you love it, we go live!', 
+        icon: 'tabler:rocket' 
+      },
     ]}
   />
 
+  <!-- EFFICIENCY FEATURES -->
   <Features3
-    title="The Tech Stack of Efficiency"
-    subtitle="Built for reliability and sub-second performance."
+    title="Built for Busy Owners"
+    subtitle="We handle the heavy lifting so you don't have to."
     columns={3}
     items={[
-      { title: 'Stripe Payments', description: 'Secure, global, and frictionless transactions.', icon: 'tabler:brand-stripe' },
-      { title: 'Onboarding Briefs', description: 'Smart forms (Tally/Typeform) to capture every detail.', icon: 'tabler:clipboard-check' },
-      { title: 'Edge Infrastructure', description: 'Powered by Cloudflare for global speed.', icon: 'tabler:bolt' },
+      { title: 'Secure Payments', description: 'Fast and safe transactions via Stripe. No hidden invoicing delays.', icon: 'tabler:shield-check' },
+      { title: 'Zero Tech Talk', description: 'We communicate in plain language. No "coding talk" or complex jargon.', icon: 'tabler:message-circle' },
+      { title: 'Record Speed', description: 'Most services are delivered within 24 to 72 hours of receiving your info.', icon: 'tabler:bolt' },
     ]}
   />
 
+  <!-- SATISFACTION GUARANTEE -->
   <Content
     isReversed={false}
-    tagline="The Secret Sauce"
-    title="Extreme Social Proof & Risk Reversal"
+    tagline="Our Promise"
+    title="Unlimited Revisions for Total Peace of Mind"
     items={[
-        { title: '100% Refund Guarantee', description: 'If you don\'t like the first design mockup, we refund 100% of your deposit, no questions asked.', icon: 'tabler:refresh' },
-        { title: 'The 7-Day Draft', description: 'Pay today, receive your first full-production draft in 7 business days or less.', icon: 'tabler:calendar-check' },
+        { title: '100% Satisfaction', description: 'We don’t stop working until the design and wording are exactly how you want them.', icon: 'tabler:thumb-up' },
+        { title: 'No Risk', description: 'If you aren’t happy with the result, we keep polishing it until you are proud to show it to your guests.', icon: 'tabler:refresh' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold mb-4">Why this works for you.</h3>
-      <p class="text-muted text-lg">Zero friction. You can start your project at 2 AM when you are feeling motivated, and we wake up to your brief ready to execute.</p>
+      <h3 class="text-2xl font-bold mb-4">You are in control.</h3>
+      <p class="text-muted text-lg">We believe that your digital presence should reflect the heart of your business. That is why we offer <strong>unlimited revisions</strong> until you are 100% fully satisfied with the result.</p>
     </Fragment>
   </Content>
+
+  <!-- ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+    actions={[]}
+  />
 </Layout>

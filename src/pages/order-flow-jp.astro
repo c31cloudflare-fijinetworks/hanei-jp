@@ -4,55 +4,78 @@ import Content from '~/components/widgets/Content.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
-  title: '制作の流れ | プロダクト型サービスモデル',
-  description: 'お問い合わせから公開までを自動化し、最短スピードでお届けする仕組み。'
+  title: '注文の流れ | シンプルな3ステップ | Hanei JP',
+  description: '注文から公開まで、最短・最速。インバウンド対策を今すぐ始めるための、最も簡単なステップをご案内します。'
 };
 ---
 
 <Layout metadata={metadata}>
+  <!-- HERO SECTION -->
   <Hero2
-    tagline="Haneiの制作手法"
-    title='「プロダクト型サービス」による<br/><span class="text-accent">圧倒的なスピード導入。</span>'
-    subtitle="見積もり待ちや無駄な会議を徹底排除。「Stripe決済から即ブリーフィング」へ進む摩擦ゼロのフローで、最短即日の公開を実現します。"
-    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: 'Automation' }}
+    tagline="Haneiの注文メソッド"
+    title='驚くほど、<br/><span class="text-accent">かんたんで、スムーズ。</span>'
+    subtitle="オーナー様の貴重な時間を無駄にはしません。長い打ち合わせや複雑な契約書は一切なし。わずか数分で、インバウンド対策の第一歩を踏み出せます。"
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: '効率的なワークフロー' }}
   />
 
+  <!-- THE 3-STEP PROCESS -->
   <Steps2
-    title="4ステップの自動化フロー"
-    subtitle="オーナー様の貴重な時間を奪わない、最も効率的なプロセスです。"
+    title="成功までの3ステップ"
+    subtitle="迷うことはありません。最もシンプルな流れで結果をお届けします。"
     items={[
-      { title: '1. プランを選択', description: '見積もり不要。内容が明確に定義されたパッケージから最適なものを選びます。', icon: 'tabler:package' },
-      { title: '2. 決済（Stripe）', description: '安全なStripe決済リンクで着手金を支払い。領収書も即座に発行されます。', icon: 'tabler:credit-card' },
-      { title: '3. オンボーディング入力', description: '決済完了後、ドメイン名や希望のデザイン、写真素材を専用フォームから送信。', icon: 'tabler:file-description' },
-      { title: '4. 開発スタート', description: '情報を頂いた瞬間から開発を開始。専用の進捗管理ボードで公開までを可視化します。', icon: 'tabler:rocket' },
+      { 
+        title: 'STEP 1: サービスを選んで注文', 
+        description: 'ご希望のプラン（英語ページ、レビュー収集、ウェブサイト制作など）を選び、オンラインで決済を完了します。', 
+        icon: 'tabler:package' 
+      },
+      { 
+        title: 'STEP 2: 情報の送付', 
+        description: '専用のフォームに、お店の情報や写真、ご要望を入力して送るだけ。専門知識や難しい設定は不要です。', 
+        icon: 'tabler:file-description' 
+      },
+      { 
+        title: 'STEP 3: 確認・公開', 
+        description: '私たちが制作した内容を確認いただき、修正があれば何度でも対応します。100%ご満足いただけたら、運用開始です！', 
+        icon: 'tabler:rocket' 
+      },
     ]}
   />
 
+  <!-- EFFICIENCY FEATURES -->
   <Features3
-    title="効率を支えるテクノロジー"
-    subtitle="信頼性とパフォーマンスを両立させるツール群。"
+    title="忙しいオーナー様のために"
+    subtitle="面倒な作業はすべて私たちが代行します。"
     columns={3}
     items={[
-      { title: 'Stripe決済', description: '世界標準のセキュアなオンライン決済。', icon: 'tabler:brand-stripe' },
-      { title: 'スマートフォーム', description: '情報を正確にキャッチする直感的な入力画面。', icon: 'tabler:clipboard-check' },
-      { title: 'エッジインフラ', description: 'Cloudflareによる世界最高速の配信ネットワーク。', icon: 'tabler:bolt' },
+      { title: '安心の決済システム', description: 'Stripeによる安全な即時決済。見積もり待ちの無駄な時間を省きます。', icon: 'tabler:shield-check' },
+      { title: '専門用語は使いません', description: 'ITや技術の話は一切不要。わかりやすい言葉で丁寧に進めます。', icon: 'tabler:message-circle' },
+      { title: '圧倒的なスピード', description: '情報を受け取ってから最短当日、遅くとも数日以内に納品いたします。', icon: 'tabler:bolt' },
     ]}
   />
 
+  <!-- SATISFACTION GUARANTEE -->
   <Content
     isReversed={false}
-    tagline="Haneiのこだわり"
-    title="リスクを排除した確実なリターン"
+    tagline="私たちの約束"
+    title="ご満足いただけるまで、修正は無制限"
     items={[
-        { title: '100%返金保証', description: '最初のデザイン案がお気に召さない場合は、理由を問わず着手金を全額返金いたします。', icon: 'tabler:refresh' },
-        { title: 'スピード納品', description: '今日お支払いいただければ、最短で本日、通常でも数日以内に初稿をお届けします。', icon: 'tabler:calendar-check' },
+        { title: '100% 満足保証', description: 'デザインや文言が、オーナー様の理想の形になるまで妥協なく修正いたします。', icon: 'tabler:thumb-up' },
+        { title: 'リスクゼロ', description: '「思っていたのと違う」という心配は不要です。納得がいくまで、私たちが寄り添います。', icon: 'tabler:refresh' },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold mb-4">なぜ、この方法が選ばれるのか？</h3>
-      <p class="text-muted text-lg">「まずは打ち合わせ」という時間をカットし、やる気になったその瞬間にプロジェクトをスタート。私たちは届いたブリーフに基づき、すぐにコーディングを開始します。</p>
+      <h3 class="text-2xl font-bold mb-4">すべての主導権はオーナー様に。</h3>
+      <p class="text-muted text-lg">あなたのお店の「こだわり」をデジタルの世界でも表現したい。だからこそ、私たちはオーナー様が<strong>100%納得されるまで、回数制限なしで修正</strong>をお受けします。</p>
     </Fragment>
   </Content>
+
+  <!-- ABOUT HANEI -->
+  <CallToAction
+    title="About Hanei"
+    subtitle="Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。"
+    actions={[]}
+  />
 </Layout>
