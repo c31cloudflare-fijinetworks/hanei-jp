@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero2 from '~/components/widgets/Hero2.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -36,9 +37,18 @@ const metadata = {
         name: "Sarah L., Salon Owner"
     }}
   />
+
+  <!-- STATS SECTION (Fills Whitespace & Builds Trust) -->
+  <Stats
+    stats={[
+      { title: 'Google Review Increase', amount: '314%' },
+      { title: 'Client Capture Rate', amount: '3x' },
+      { title: 'Setup Time', amount: '< 24 Hrs' },
+      { title: 'Monthly SaaS Fees', amount: '$0' },
+    ]}
+  />
   
   <Features
-    class="-mt-16"
     id="features"
     title="Everything You Need to Dominate Local Search"
     subtitle="We handle the tech. You focus on the hair. Here is how we help you grow your salon:"

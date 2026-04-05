@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
@@ -22,6 +23,16 @@ const metadata = {
     subtitle="日本の素晴らしいおもてなしを、テクノロジーの力で世界基準へ。<br/><br/>インバウンド集客の「見えない壁」を壊し、日常業務を変えることなく高単価な外国人観光客を惹きつけるデジタルインフラを提供します。<br/><br/>私たちは単なる翻訳ではなく、欧米富裕層の消費心理に基づいた「選ばれる理由」へと価値を再定義し、言葉やシステムの壁を越えて世界中のお客様を歓迎できる環境を構築します。"
     actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }, { text: 'サービス一覧を見る', href: '#features' }]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', width: 1024, height: 576, alt: 'Japanese Street Scene' }}
+  />
+
+  <!-- STATS SECTION (Fills Whitespace & Builds Trust) -->
+  <Stats
+    stats={[
+      { title: '訪日外国人客数 (2024年)', amount: '3,300万+' },
+      { title: '英語でのローカル検索率', amount: '92%' },
+      { title: '最長セットアップ時間', amount: '48時間' },
+      { title: '月額保守費用', amount: '¥0' },
+    ]}
   />
 
   <!-- FEATURES SUMMARY -->
@@ -163,7 +174,7 @@ const metadata = {
     columns={3}
     items={[
       { title: 'GoogleマップSEO（MEO）', description: '外国人観光客が「近くの〇〇」と検索した際に上位表示させる、1ページの完全英語SEO設定。', icon: 'tabler:circle-check' },
-      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用PDFデータ。', icon: 'tabler:circle-check' },
+      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用プリセット。', icon: 'tabler:circle-check' },
       { title: '「How-To」ランディングページ', description: '禁煙、お通し、靴を脱ぐルールなどを説明し、入店前の不安を解消するカスタムコンテンツ。', icon: 'tabler:circle-check' },
       { title: 'プロの英語コピーライティング', description: '単なる翻訳ではなく、予約・来店につながる魅力的なビジネス説明文を執筆。', icon: 'tabler:circle-check' },
       { title: '超高速ページ配信ネットワーク', description: 'ローミング通信を利用するモバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
