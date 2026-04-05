@@ -38,7 +38,7 @@ const metadata = {
     }}
   />
 
-  <!-- STATS SECTION (Fills Whitespace & Builds Trust) -->
+  <!-- STATS SECTION -->
   <Stats
     stats={[
       { title: 'Googleレビュー増加率', amount: '314%' },
@@ -86,24 +86,24 @@ const metadata = {
       subtitle="Four simple steps to automate your salon's reputation."
       items={[
         {
-          title: 'Step 1: Secure Your License',
+          title: 'STEP 1: Secure Your License',
           description: 'Purchase your $99 lifetime deal. No hidden fees or recurring subscriptions.',
           icon: 'tabler:number-1',
         },
         {
-          title: 'Step 2: We Build Your Engine',
+          title: 'STEP 2: We Build Your Engine',
           description: 'Tell us your salon name. We set up your profile, Google sync, and custom QR codes.',
           icon: 'tabler:number-2',
         },
         {
-          title: 'Step 3: Watch the Reviews Roll In',
+          title: 'STEP 3: Watch the Reviews Roll In',
           description: 'Print your QR code for your stations. Clients scan, review, and your rating climbs.',
           icon: 'tabler:number-3',
         },
         {
-          title: 'Step 4: Dominate Local Search',
-          description: 'As fresh 5-star reviews roll in automatically, your Google Maps ranking skyrockets, filling your books with high-paying clients.',
-          icon: 'tabler:number-4',
+          title: 'STEP 4: 地域No.1のブランド確立',
+          description: '星5つの高評価が自動的に蓄積されることでGoogleマップの順位が上昇し、地域で最も選ばれる圧倒的なブランドへと成長します。',
+          icon: 'tabler:trending-up',
         },
       ]}
       image={{ 
@@ -129,6 +129,7 @@ const metadata = {
         { title: 'What if I have multiple locations?', description: 'Each location requires its own setup and QR engine. Contact us for "Multi-Chair" or "Multi-Location" discounts!', icon: 'tabler:building-store' },
         { title: 'Is it really a one-time payment?', description: 'Yes. Most competitors charge $50-$150 every single month. We charge a one-time setup fee for our labor and software logic. You own it for life.', icon: 'tabler:currency-dollar' },
     ]}
+    callToAction={{ variant: 'primary', text: 'よくあるご質問をもっと見る', href: '/faq-jp' }}
   >
     <Fragment slot="bg"><div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div></Fragment>
   </FAQs>
