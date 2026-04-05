@@ -2,6 +2,7 @@
 import Headline from '~/components/ui/Headline.astro';
 import ItemGrid from '~/components/ui/ItemGrid.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
 import type { Faqs as Props } from '~/types';
 
 const {
@@ -10,6 +11,7 @@ const {
   tagline = '',
   items = [],
   columns = 2,
+  callToAction,
 
   id,
   isDark = false,
@@ -30,4 +32,11 @@ const {
       icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
     }}
   />
+  {
+    callToAction && (
+      <div class="mt-12 flex justify-center">
+        <Button {...callToAction} />
+      </div>
+    )
+  }
 </WidgetWrapper>
