@@ -22,7 +22,7 @@ const {
             {typeof image === 'string' ? (
               <Fragment set:html={image} />
             ) : (
-              <img src={image.src} alt={image.alt} width={image.width} height={image.height} class="mx-auto rounded-lg" loading="lazy" decoding="async" />
+              <img src={image.src} alt={image.alt} class="mx-auto aspect-[3/2] object-cover rounded-lg shadow-lg w-full" loading="lazy" decoding="async" />
             )}
           </div>
         )}
@@ -53,4 +53,3 @@ const {
     </div>
   </div>
 </section>
-
