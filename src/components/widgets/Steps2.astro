@@ -6,13 +6,13 @@ const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   callToAction = {},
-  items = [], // Ensure this is destructuring
+  items = [],
   image = {},
 } = Astro.props;
 ---
 
 <section class="bg-primary-50 dark:bg-slate-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-12 md:pb-16"> <!-- Added bottom padding -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-12 md:pb-16">
     <div class="grid md:grid-cols-2 gap-16">
       
       <!-- Left Column -->
@@ -20,20 +20,24 @@ const {
         {title && <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4" set:html={title}></h2>}
         {subtitle && <p class="text-muted dark:text-slate-400 mb-8 text-xl" set:html={subtitle}></p>}
         
-        <!-- NEW: Render items if they exist to fill space -->
         {items && items.length > 0 && (
-          <div class="grid gap-6 mb-8">
+          <div class="grid gap-4 mb-8">
             {items.map(({ title: ititle, description, icon }) => (
-              <div class="flex">
-                <div class="flex-shrink-0 mt-1">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white">
-                    <Icon name={icon || 'tabler:check'} class="w-6 h-6" />
+              <div class={ititle ? "flex items-start" : "flex items-center -mt-2 -mb-2"}>
+                <div class="flex-shrink-0 flex justify-center w-10">
+                  <div class={ititle 
+                    ? "flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white shadow-md" 
+                    : "flex items-center justify-center h-8 w-10 text-slate-400 dark:text-slate-500"
+                  }>
+                    <Icon name={icon || 'tabler:check'} class={ititle ? "w-6 h-6" : "w-7 h-7"} />
                   </div>
                 </div>
-                <div class="ml-4">
-                  <h3 class="text-lg font-semibold">{ititle}</h3>
-                  <p class="text-muted dark:text-slate-400">{description}</p>
-                </div>
+                {ititle && (
+                  <div class="ml-4">
+                    <h3 class="text-lg font-bold">{ititle}</h3>
+                    <p class="text-muted dark:text-slate-400">{description}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -47,10 +51,10 @@ const {
       </div>
       
       <!-- Right Column -->
-      <div>
+      <div class="flex items-center">
         {image && image.src && (
           <div class="relative m-auto max-w-5xl">
-            <img src={image.src} alt={image.alt} class="mx-auto rounded-lg shadow-lg" loading="lazy" decoding="async" />
+            <img src={image.src} alt={image.alt} class="mx-auto rounded-lg shadow-2xl border-4 border-white dark:border-slate-700" loading="lazy" decoding="async" />
           </div>
         )}
       </div>
