@@ -16,16 +16,14 @@ const metadata = {
 ---
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION -->
   <Hero2
     tagline="インバウンド集客・デジタル基盤構築の専門家"
     title='日本の「おもてなし」を、<br/><span class="text-accent dark:text-white">世界が選ぶ「正解」へ。</span>'
-    subtitle="日本の素晴らしいおもてなしを、テクノロジーの力で世界基準へ。<br/><br/>インバウンド集客の「見えない壁」を壊し、日常業務を変えることなく高単価な外国人観光客を惹きつけるデジタルインフラを提供します。<br/><br/>私たちは単なる翻訳ではなく、欧米富裕層の消費心理に基づいた「選ばれる理由」へと価値を再定義し、言葉やシステムの壁を越えて世界中のお客様を歓迎できる環境を構築します。"
+    subtitle="日本の素晴らしいおもてなしを、テクノロジーの力で世界基準へ。<br/><br/>インバウンド集客の「見えない壁」を壊し、日常業務を変えることなく高単価な外国人観光客を惹きつけるデジタルインフラを提供します。<br/><br/>私たちは単なる翻訳ではなく、欧米富裕層の消費心理に基づいた「選ばれる理由」へと価値を再定義し、言葉の壁を越えて世界中のお客様を歓迎できる環境を構築します。"
     actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }, { text: 'サービス一覧を見る', href: '#features' }]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', width: 1024, height: 576, alt: 'Japanese Street Scene' }}
   />
 
-  <!-- STATS SECTION -->
   <Stats
     stats={[
       { title: '設定・制作の丸投げ', amount: '100%' },
@@ -35,162 +33,129 @@ const metadata = {
     ]}
   />
 
-  <!-- FEATURES SUMMARY -->
   <Features
     id="features"
     title="インバウンド・サービスキット"
     subtitle="現場の負担を減らし、収益を最大化するための4つの専門ソリューション。"
     items={[
-        { 
-          title: '1ページ・ウェルカム', 
-          description: '集客と接客の基盤。Googleマップ英語SEOと、言語の壁を越える視覚的ガイダンスを統合した初期パッケージ。', 
-          icon: 'tabler:map-pin',
-          callToAction: { variant: 'primary', text: '1ページ・ウェルカムを見る', href: '/one-page-welcome-jp' }
-        },
-        { 
-          title: 'レビューエンジン', 
-          description: '信頼の自動生成。お客様からのレビューを自動収集。お店のブランドに完全に合わせた美しい専用ページで、口コミ投稿を劇的に促進します。', 
-          icon: 'tabler:message-star',
-          callToAction: { variant: 'primary', text: 'レビューエンジンを見る', href: '/review-engine-jp' }
-        },
-        { 
-          title: '英語専用デジタル別館 (Hanare)', 
-          description: 'リスクゼロの海外展開。既存の日本語サイトに一切触れず、独立したドメイン上に最高水準の英語資産を構築します。', 
-          icon: 'tabler:layers-intersect',
-          callToAction: { variant: 'primary', text: '英語の離れを見る', href: '/english-hanare-jp' }
-        },
-        { 
-          title: 'グランド・ニュー / グランドリフォーム', 
-          description: '完全なリブート。既存サイトの高速リフォームか、ゼロから構築するバイリンガル旗艦店をお選びいただけます。', 
-          icon: 'tabler:rocket',
-          callToAction: { variant: 'primary', text: 'プランの詳細を見る', href: '/grand-opening-jp' }
-        },
+        { title: '1ページ・ウェルカム', description: 'Googleマップ英語SEOと、視覚的ガイダンスを統合した初期パッケージ。', icon: 'tabler:map-pin', callToAction: { variant: 'primary', text: '1ページ・ウェルカムを見る', href: '/one-page-welcome-jp' } },
+        { title: 'レビューエンジン', description: '信頼の自動生成。ブランドに合わせた専用ページで口コミ投稿を促進します。', icon: 'tabler:message-star', callToAction: { variant: 'primary', text: 'レビューエンジンを見る', href: '/review-engine-jp' } },
+        { title: '英語専用デジタル別館', description: 'リスクゼロの海外展開。既存サイトに触れず最高水準の英語資産を構築。', icon: 'tabler:layers-intersect', callToAction: { variant: 'primary', text: '英語の離れを見る', href: '/english-hanare-jp' } },
+        { title: 'グランド・ニュー / リフォーム', description: '完全リブート。高速リフォームかゼロからのバイリンガル旗艦店を選択可能。', icon: 'tabler:rocket', callToAction: { variant: 'primary', text: 'プランの詳細を見る', href: '/grand-opening-jp' } },
     ]}
   />
 
-  <!-- SERVICE 1: WELCOME KIT -->
   <Content
     isReversed={false}
     tagline="サービス1：1ページ・ウェルカム"
     title="集客は「情報の壁」を壊すことから始まります。"
     items={[
-        { title: 'Googleマップ（MEO）SEO', description: '欧米の富裕層が検索するキーワードで最適化し、ローカル検索を制覇します。', icon: 'tabler:map-pin' },
-        { title: '視覚的ガイダンス', description: '店舗ルールを視覚的に伝え、外国人客の「入店前の不安」を完全に払拭します。', icon: 'tabler:eye' },
-        { title: 'カスタムQRツール', description: '卓上に設置してすぐにレビューやアクションを促すQRスタンドを提供。', icon: 'tabler:qrcode' },
+        { title: 'Googleマップ（MEO）SEO', description: '欧米の富裕層が検索するキーワードで最適化。', icon: 'tabler:map-pin' },
+        { title: '視覚的ガイダンス', description: '外国人客の「入店前の不安」を完全に払拭。', icon: 'tabler:eye' },
+        { title: 'カスタムQRツール', description: 'すぐにアクションを促す卓上QRスタンドを提供。', icon: 'tabler:qrcode' },
     ]}
     image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI0fHx8ZW58MHx8fHx8', alt: 'Authentic Japan Experience' }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">見えない壁（The Visibility Gap）</span>
-      </h3>
-      <p class="text-muted text-lg mb-6">あなたのお店は最高のおもてなしを提供していますが、外国人旅行者からは「見えていない」かもしれません。私たちはその摩擦を取り除き、来店前に「発見され、理解され、信頼される」環境を整えます。</p>
-      <Button class="mb-8 sm:mb-12 bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-md font-bold transition-transform hover:-translate-y-0.5" text="詳細を見る" href="/one-page-welcome-jp" />
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">見えない壁</span></h3>
+      <p class="text-muted text-lg mb-6">あなたのお店は最高のおもてなしを提供していますが、外国人には「見えていない」かもしれません。来店前に信頼される環境を整えます。</p>
+      <Button class="mb-8 bg-slate-900 text-white" text="詳細を見る" href="/one-page-welcome-jp" />
     </Fragment>
   </Content>
 
-  <!-- SERVICE 2: REVIEW ENGINE -->
   <Content
     isReversed={true}
     tagline="サービス2：レビューエンジン"
-    title="「静かな満足感」を、世界に響く最強の営業資産へ。"
+    title="「静かな満足感」を、最強の営業資産へ。"
     items={[
-        { title: 'ブランド専用レビューページ', description: '汎用的なリンクではなく、お店のロゴや世界観に完全に合わせた美しい専用ページをご用意し、スムーズな投稿環境を構築します。', icon: 'tabler:palette' },
-        { title: '称賛の壁（ライブ・ウォール）', description: '最新の高評価レビューを自社サイトに美しく自動表示し、瞬時に信頼を構築します。', icon: 'tabler:stars' },
-        { title: 'ストレスフリーな3タップ設計', description: '専用アプリのダウンロードや面倒なログインは一切不要。最短15秒で星5つのレビューを完了できる、極限まで最適化された導線です。', icon: 'tabler:pointer' },
+        { title: 'ブランド専用ページ', description: 'お店の世界観に合わせた美しい専用ページ。', icon: 'tabler:palette' },
+        { title: '称賛の壁', description: '最新の高評価レビューをサイトに自動表示。', icon: 'tabler:stars' },
+        { title: 'ストレスフリーな3タップ設計', description: '最短15秒でレビュー完了。極限まで最適化された導線。', icon: 'tabler:pointer' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Serving Japanese Tea' }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">信頼の自動化（Automated Trust）</span>
-      </h3>
-      <p class="text-muted text-lg mb-6">お客様の「満足度」と「ネット上の評価」の間には溝があります。レビューを書く作業が少しでも面倒だと、お客様は書いてくれません。私たちはこのプロセスを自動化し、口コミに怯える日々を終わらせます。</p>
-      <Button class="mb-8 sm:mb-12 bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-md font-bold transition-transform hover:-translate-y-0.5" text="レビューエンジンの詳細へ" href="/review-engine-jp" />
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">信頼の自動化</span></h3>
+      <p class="text-muted text-lg mb-6">お客様の「満足度」と「評価」の間には溝があります。私たちはこのプロセスを自動化し、口コミに怯える日々を終わらせます。</p>
+      <Button class="mb-8 bg-slate-900 text-white" text="レビューエンジンの詳細へ" href="/review-engine-jp" />
     </Fragment>
   </Content>
 
-  <!-- SERVICE 3: ENGLISH HANARE -->
   <Content
     isReversed={false}
-    tagline="サービス3：英語専用デジタル別館 (Hanare)"
+    tagline="サービス3：英語専用デジタル別館"
     title="既存システムを壊さずに、最高級の「離れ」を建てる。"
     items={[
-        { title: '「離れ（Hanare）」コンセプト', description: '外国人ゲストに特化した最新・高速のデジタル空間を、母屋（既存サイト）とは独立して新設します。', icon: 'tabler:home' },
-        { title: 'ゼロ・タッチ統合（非干渉）', description: 'パスワードもFTP情報も不要。現在の日本語サイトには一切触れず、安全に稼働させます。', icon: 'tabler:lock' },
-        { title: 'インバウンド特化型SEO', description: '外国人観光客が実際に検索する英語キーワードに最適化。あなたの地域を訪れている「今すぐ客」を効果的に集客します。', icon: 'tabler:search' },
+        { title: '「離れ」コンセプト', description: '既存サイトとは独立して、外国人ゲスト専用空間を新設。', icon: 'tabler:home' },
+        { title: 'ゼロ・タッチ統合', description: '現在の日本語サイトには一切触れず、安全に稼働。', icon: 'tabler:lock' },
+        { title: 'インバウンド特化型SEO', description: '実際に検索される英語キーワードに最適化。', icon: 'tabler:search' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEzfHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Modern Japanese Business' }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">ゼロ・リスクの海外展開</span>
-      </h3>
-      <p class="text-muted text-lg mb-6">「英語を追加したいが、古いシステムをいじって日本語サイトが壊れるのが怖い」。多くの経営者が抱えるこのジレンマを、完全に独立したアーキテクチャで根本から解決します。</p>
-      <Button class="mb-8 sm:mb-12 bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-md font-bold transition-transform hover:-translate-y-0.5" text="英語の離れの詳細へ" href="/english-hanare-jp" />
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">ゼロ・リスクの海外展開</span></h3>
+      <p class="text-muted text-lg mb-6">「古いシステムが壊れるのが怖い」。多くの経営者が抱えるこのジレンマを、独立したアーキテクチャで根本から解決します。</p>
+      <Button class="mb-8 bg-slate-900 text-white" text="英語の離れの詳細へ" href="/english-hanare-jp" />
     </Fragment>
   </Content>
 
-  <!-- SERVICE 4: GRAND OPENING -->
   <Content
     isReversed={true}
-    tagline="サービス4：グランド・ニュー / グランドリフォーム"
+    tagline="サービス4：グランド・ニュー / リフォーム"
     title="古いホームページを新しく。スマホ時代の集客サイトへ。"
     items={[
-        { title: '最短48時間でリニューアル', description: '制作会社を何ヶ月も待つ必要はありません。週末の間に、あなたのお店のサイトを最新の状態に生まれ変わらせます。', icon: 'tabler:clock' },
-        { title: 'グランドリフォーム（全面改修）', description: '今の情報はそのままに、スマホでサクサク動く美しく見やすい現代的なデザインへと劇的にリフォームします。', icon: 'tabler:tool' },
-        { title: 'グランド・ニュー（新規制作）', description: 'ゼロから作り直す完全新規プラン。インバウンド客も国内客も惹きつける、最新のバイリンガル対応サイトを構築します。', icon: 'tabler:rocket' },
+        { title: '最短48時間で完了', description: '週末の間に最新の状態に生まれ変わらせます。', icon: 'tabler:clock' },
+        { title: 'グランドリフォーム', description: 'スマホでサクサク動く見やすい現代的デザイン。', icon: 'tabler:tool' },
+        { title: 'グランド・ニュー', description: '国内外の両方を惹きつけるバイリンガルサイト。', icon: 'tabler:rocket' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Premium Japanese Experience' }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-accent dark:text-white">「見づらい・遅い」は、お客様を逃します</span>
-      </h3>
-      <p class="text-muted text-lg mb-6">ホームページのデザインが古かったり、スマホでの表示が遅いと、お客様はすぐに別の競合店へ移ってしまいます。ITの難しい知識は一切不要です。私たちが、あなたのお店を「地域で一番選ばれるお店」に生まれ変わらせます。</p>
-      <Button class="mb-8 sm:mb-12 bg-slate-900 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-md font-bold transition-transform hover:-translate-y-0.5" text="グランドオープンの詳細へ" href="/grand-opening-jp" />
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">「見づらい・遅い」はお客様を逃します</span></h3>
+      <p class="text-muted text-lg mb-6">デザインが古かったり表示が遅いと競合店へ移ってしまいます。私たちが地域で一番選ばれるお店に生まれ変わらせます。</p>
+      <Button class="mb-8 bg-slate-900 text-white" text="グランドオープンの詳細へ" href="/grand-opening-jp" />
     </Fragment>
   </Content>
 
-  <!-- STEPS: THE PROCESS (UPDATED TO DEAD SIMPLE ORDER FLOW) -->
+  <!-- STEPS SECTION (ORDER FLOW WITH ARROWS) -->
   <div id="process" class="scroll-mt-20">
     <Steps2
-      isReversed={false}
       title="ご利用の流れ（カンタン4ステップ）"
-      subtitle="ITの知識は全く必要ありません。面倒な設定はすべて私たちが引き受けます。"
+      subtitle="ITの知識は全く不要。世界へ進出するまでのシンプルな手順です。"
       items={[
-        { title: '01. プランを選ぶ', description: 'お店に合ったプランを選び、オンラインでご注文を完了させます。', icon: 'tabler:shopping-cart' },
-        { title: '02. 情報を送る', description: '簡単なフォームに店舗の基本情報を入力するだけ。パスワードは不要です。', icon: 'tabler:file-description' },
-        { title: '03. すべてお任せ制作', description: 'プロの翻訳からデザイン、システム設定まで、最短24時間〜48時間で私たちが完成させます。', icon: 'tabler:tool' },
-        { title: '04. 集客スタート', description: '届いたQRコードを店頭に置くだけで、今日からスムーズに外国人のお客様を迎えられます。', icon: 'tabler:trending-up' }
+        { title: '01. プランを選ぶ', description: 'お店に合ったプランを選び、オンラインでご注文を完了させます。', icon: 'tabler:number-1' },
+        { title: '', description: '', icon: 'tabler:arrow-down' },
+        { title: '02. 情報を送る', description: '簡単なフォームに店舗の基本情報を入力するだけ。パスワードは不要です。', icon: 'tabler:number-2' },
+        { title: '', description: '', icon: 'tabler:arrow-down' },
+        { title: '03. お任せ制作', description: 'プロの翻訳からデザイン、システム設定まで、最短24時間〜48時間で私たちが完成させます。', icon: 'tabler:number-3' },
+        { title: '', description: '', icon: 'tabler:arrow-down' },
+        { title: '04. 集客スタート', description: '届いたQRコードを店頭に置くだけで、今日からスムーズに外国人のお客様を迎えられます。', icon: 'tabler:number-4' }
       ]}
       image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Japanese Hospitality' }}
     />
   </div>
 
-  <!-- TOURIST READY SUITE -->
   <Features2
-    title='すべてのプランに含まれる「インバウンド対応スイート」'
-    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
+    title='インバウンド対応スイート'
+    subtitle="集客を即座に開始するための必須インフラが付属しています。"
     columns={3}
     items={[
-      { title: 'GoogleマップSEO（MEO）', description: '外国人観光客が「近くの〇〇」と検索した際に上位表示させる、1ページの完全英語SEO設定。', icon: 'tabler:circle-check' },
-      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用プリセット。', icon: 'tabler:circle-check' },
-      { title: '「How-To」ランディングページ', description: '禁煙、お通し、靴を脱ぐルールなどを説明し、入店前の不安を解消するカスタムコンテンツ。', icon: 'tabler:circle-check' },
-      { title: 'プロの英語コピーライティング', description: '単なる翻訳ではなく、予約・来店につながる魅力的なビジネス説明文を執筆。', icon: 'tabler:circle-check' },
-      { title: '超高速ページ配信ネットワーク', description: 'ローミング通信を利用するモバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
-      { title: '最短即日の超高速デプロイ', description: '午前中のご注文で、本日中にWebサイトを公開・稼働させます！', icon: 'tabler:bolt' },
+      { title: 'GoogleマップSEO', description: '英語で検索された際に上位表示させる設定。', icon: 'tabler:circle-check' },
+      { title: 'カスタムQRレビュー', description: 'Googleの星5つレビューを促進する印刷用プリセット。', icon: 'tabler:circle-check' },
+      { title: 'How-Toページ', description: 'お店のルールを説明し不安を解消するコンテンツ。', icon: 'tabler:circle-check' },
+      { title: '英語コピーライティング', description: '単なる翻訳ではない魅力的なビジネス説明文。', icon: 'tabler:circle-check' },
+      { title: '超高速配信', description: 'モバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
+      { title: '最短即日デプロイ', description: '本日中にWebサイトを公開・稼働させます！', icon: 'tabler:bolt' },
     ]}
   />
 
-  <!-- FAQS -->
   <FAQs
     title="よくあるご質問"
     items={[
-        { title: '英語を話せなくても導入できますか？', description: 'はい。システムがお客様にネイティブ英語で視覚的なガイダンスを提供し、質問を未然に防ぎます。スタッフは翻訳ではなく「接客」に集中できます。', icon: 'tabler:messages-off' },
-        { title: '月額費用はかかりますか？', description: '「英語の離れ」や「ウェルカムキット」などのインフラ構築は一括投資（買い切り）です。レビューエンジン等のクラウド機能を利用する場合のみ、少額の月額保守費用が発生します。', icon: 'tabler:coin' },
-        { title: 'Hanei JPとは何ですか？', description: 'インバウンドに特化した技術スタジオです。日本のローカルビジネスが世界市場に参入する際の「言語」「心理」「技術」のリスクをテクノロジーで解決します。', icon: 'tabler:world' },
-        { title: '導入までにどのくらいの期間がかかりますか？', description: '私たちは「圧倒的なスピード」を重視しています。ウェルカムキット等は24時間以内、完全なサイトリニューアルであっても48時間以内のデプロイを保証しています。', icon: 'tabler:bolt' },
+        { title: '英語を話せなくても導入できますか？', description: 'はい。システムがゲストにはネイティブ英語で伝えるため、スタッフのストレスを軽減します。' },
+        { title: '月額費用はかかりますか？', description: '主要インフラは一括投資です。一部機能のみ少額の月額保守費用が発生します。' },
+        { title: 'Hanei JPとは？', description: 'インバウンドに特化した技術スタジオです。言語や技術のリスクをテクノロジーで解決します。' },
+        { title: '導入までの期間は？', description: '圧倒的なスピードを重視。最短24時間、最長でも48時間以内にデプロイします。' },
     ]}
     callToAction={{ variant: 'primary', text: 'よくあるご質問をもっと見る', href: '/faq-jp' }}
   />
