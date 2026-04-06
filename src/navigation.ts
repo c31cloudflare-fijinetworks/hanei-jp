@@ -14,9 +14,7 @@ export const headerDataEn = {
     { text: 'Order Flow', href: getPermalink('/order-flow') },
     { text: 'Community Mission', href: getPermalink('/community-mission') },
   ],
-  actions: [
-    { text: 'Claim Your URL', variant: 'primary', href: '/pricing' }
-  ],
+  actions: [],
 };
 
 export const headerDataJp = {
@@ -33,9 +31,7 @@ export const headerDataJp = {
     { text: '制作の流れ', href: getPermalink('/order-flow-jp') },
     { text: '地域貢献活動', href: getPermalink('/community-mission-jp') },
   ],
-  actions: [
-    { text: 'サイトを作成する', variant: 'primary', href: '/pricing-jp' }
-  ],
+  actions: [],
 };
 
 export const footerDataEn = {
