@@ -22,7 +22,7 @@ if (isJp) {
     jpUrl = pathname;
 } else {
     enUrl = pathname;
-    if (currentPath === "/") { jpUrl = "/index-jp"; } else { jpUrl = \`\${currentPath}-jp\`; }
+    if (currentPath === "/") { jpUrl = "/index-jp"; } else { jpUrl = `${currentPath}-jp`; }
 }
 
 currentHeaderData.links.push({
