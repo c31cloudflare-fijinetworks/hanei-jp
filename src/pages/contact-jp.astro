@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
-const metadata = { title: 'お問い合わせ | Hanei JP' };
+const metadata = { title: 'お問い合わせ/特殊案件 | Hanei JP' };
 
 const jpLabels = {
     title: "お問い合わせフォーム",
@@ -15,8 +15,6 @@ const jpLabels = {
     project_summary: "お問い合わせ・ご依頼内容の詳細",
     budget_range: "ご予算感",
     deadline: "希望納期",
-    tech_pref: "ご希望の技術スタック",
-    attachment: "資料添付",
     referral: "当社を知ったきっかけ",
     submit: "送信する"
 };
@@ -24,6 +22,7 @@ const jpLabels = {
 const jpOptions = {
     requests: ["一般的なお問い合わせ", "独自システム開発", "API・外部連携", "レガシー移行", "その他"],
     budgets: ["未定・該当なし", "100万円 - 300万円", "300万円 - 500万円", "500万円以上"],
+    timelines: ["至急 (最短当日)", "明日まで", "今週中", "1週間以内", "その他"],
     referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
 };
 ---
