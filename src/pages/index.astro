@@ -2,34 +2,33 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Features from '~/components/widgets/Features.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
 const metadata = { title: 'Hanei JP | Inbound Solutions' };
 ---
 <Layout metadata={metadata}>
+  
   <Hero2
     tagline="The Elite Standard for Inbound Growth"
     title='Bridge the Gap Between Your <br/><span class="text-accent dark:text-white">Craft and the Global Market.</span>'
     subtitle="Stop losing international guests. We build the high-performance digital infrastructure required to convert global travelers into loyal customers—all in 48 hours."
     actions={[{ variant: 'primary', text: 'Get Started Today', href: '/contact' }]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop', alt: 'Japanese Street' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
 
-  <Stats stats={[{ title: 'Done-For-You Setup', amount: '100%' }, { title: 'Tech Skills Required', amount: '0' }, { title: 'Maximum Setup Time', amount: '48 Hrs' }, { title: 'Monthly Fees', amount: '$0' }]} />
+  <Stats
+    classes={{ container: 'pt-0 md:pt-0 pb-12' }}
+    stats={[{ title: 'Done-For-You Setup', amount: '100%' }, { title: 'Tech Skills Required', amount: '0' }, { title: 'Maximum Setup Time', amount: '48 Hrs' }, { title: 'Monthly Fees', amount: '$0' }]} 
+  />
 
   <Content tagline="Service #1" title="Dominate Local Search and Eliminate Entry Anxiety." subtitle="Remove the friction of discovery with a frictionless digital manual for your guests." callToAction={{ text: 'Explore 1-Page Welcome', href: '/one-page-welcome' }} image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Welcome' }} />
   <Content isReversed={true} tagline="Service #2" title="Automate Trust with a Live Wall of Fame." subtitle="A premium digital red carpet for your satisfied international guests." callToAction={{ text: 'Explore Review Engine', href: '/review-engine' }} image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Review' }} />
   <Content isReversed={false} tagline="Service #3" title="Expand Globally Without Breaking Your Legacy Code." subtitle="Build a detached digital pavilion exclusively for your international guests." callToAction={{ text: 'Explore English Hanare', href: '/english-hanare' }} image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Hanare' }} />
   <Content isReversed={true} tagline="Service #4" title="Upgrade Your Old Website. Win More Customers." subtitle="Reboot your entire digital presence in a single weekend. No more waiting months." callToAction={{ text: 'Explore Grand Options', href: '/grand-opening' }} image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=611&h=405&auto=format&fit=crop', alt: 'Reboot' }} />
 
-  <div id="process" class="scroll-mt-20">
-    <Steps2 title="4 Simple Steps to Get Started" subtitle="No technical skills required. We do the heavy lifting." items={[{ title: '01. Pick Your Plan', description: 'Choose your package.', icon: 'tabler:number-1' }, { title: '', description: '', icon: 'tabler:arrow-down' }, { title: '02. Share Your Info', description: "Fill out a short form.", icon: 'tabler:number-2' }, { title: '', description: '', icon: 'tabler:arrow-down' }, { title: '03. We Build It', description: 'Setup in 24 to 48 hours.', icon: 'tabler:number-3' }, { title: '', description: '', icon: 'tabler:arrow-down' }, { title: '04. Grow Your Business', description: 'Watch your 5-star reviews grow.', icon: 'tabler:number-4' }]} image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Success' }} />
-  </div>
-
   <Content isReversed={false} tagline="Community Mission" title="World-Class Design for World-Changing Missions." subtitle="We provide elite digital infrastructure for registered Japanese NPOs, 100% pro bono." callToAction={{ text: 'Learn About Our Mission', href: '/community-mission' }} image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=611&h=405&auto=format&fit=crop', alt: 'NPO' }} />
 
-  <FAQs title="Frequently Asked Questions" mobilePtClass="pt-0" containerClass="md:pt-4" items={[{ title: 'Do I need to speak English?', description: 'No. Our systems communicate natively to your guests.' }, { title: 'How long does setup take?', description: '24-hour turnaround for Kits and 48-hour for full websites.' }, { title: 'Is it really a one-time payment?', description: 'Yes. Most services are one-time investments.' }, { title: 'Will you touch my existing site?', description: 'No. We use independent subdomains to keep your site safe.' }]} callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }} />
+  <FAQs title="Frequently Asked Questions" classes={{ container: 'pt-8 md:pt-12' }} items={[{ title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate natively to your guests while giving you clear instructions in Japanese.' }, { title: 'How long does setup take?', description: '24-hour turnaround for Kits and 48-hour for full websites.' }, { title: 'Is it really a one-time payment?', description: 'Yes. Most core services are one-time investments. Only specific maintenance tools carry a small monthly fee.' }, { title: 'Will you touch my existing site?', description: 'No. Using our Hanare architecture, we build your assets on independent subdomains to keep your site 100% safe.' }]} callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }} />
 </Layout>
