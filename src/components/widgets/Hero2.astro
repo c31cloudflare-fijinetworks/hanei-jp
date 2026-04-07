@@ -33,7 +33,9 @@ const {
 
           <div class="max-w-3xl mx-auto md:mx-0">
             {subtitle && (
+              <div class="max-w-xl">
               <p class="text-muted text-xl mb-10 leading-relaxed" set:html={subtitle} />
+              </div>
             )}
             
             {actions && actions.length > 0 && (

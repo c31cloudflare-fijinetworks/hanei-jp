@@ -16,11 +16,11 @@ const metadata = {
 ---
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION: Trimmed for perfect Review-Engine balance -->
   <Hero2
     tagline="The Elite Standard for Inbound Growth"
     title='Bridge the Gap Between Your <br/><span class="text-accent dark:text-white">Craft and the Global Market.</span>'
-    subtitle='Japanese hospitality is world-class, but Kanji-only listings are invisible to 92% of international travelers.<br/><br/><span class="hidden md:inline">Hanei JP engineers the high-performance digital infrastructure required to convert high-spending tourists into loyal guests. From deep Google Maps SEO and MEO optimization to our signature "English Hanare" standalone pavilions, we solve the linguistic and technical barriers that hold Japanese businesses back.<br/><br/>We don"t just translate; we rewrite your value proposition using the native psychological triggers that global travelers trust.</span>'
+    subtitle="Stop losing high-spending international guests. We build the high-performance digital infrastructure required to convert global travelers into loyal customers—all in 48 hours."
     actions={[{ variant: 'primary', text: 'Get Started Today', href: '/contact' }, { text: 'View Our Services', href: '#features' }]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', width: 611, height: 405, alt: 'Japanese Street Scene' }}
   />
@@ -34,129 +34,65 @@ const metadata = {
     ]}
   />
 
+  <!-- SERVICE KIT SUMMARY -->
   <Features
     id="features"
     title="The Inbound Service Kit Suite"
-    subtitle="Four specialized products engineered to bridge the gap between your local expertise and the global market."
+    subtitle="Four specialized products engineered to bridge the gap between local expertise and the global market."
     items={[
-        { title: '1-Page Welcome', description: 'Professional Maps SEO combined with a visual guidance annex to eliminate entry anxiety.', icon: 'tabler:map-pin', callToAction: { variant: 'primary', text: 'Explore 1-Page Welcome', href: '/one-page-welcome' } },
-        { title: 'Review Engine', description: 'Automate social proof. Capture authentic English reviews effortlessly through a beautiful custom page.', icon: 'tabler:message-star', callToAction: { variant: 'primary', text: 'Explore Review Engine', href: '/review-engine' } },
-        { title: 'English Hanare', description: 'A detached digital pavilion. Build a world-class English asset without touching your legacy code.', icon: 'tabler:layers-intersect', callToAction: { variant: 'primary', text: 'Explore English Hanare', href: '/english-hanare' } },
-        { title: 'Grand New or Reform', description: 'Total transformation. Choose a high-speed Reform or a bilingual New Opening built from scratch.', icon: 'tabler:rocket', callToAction: { variant: 'primary', text: 'Explore Grand Options', href: '/grand-opening' } },
+        { title: '1-Page Welcome', description: 'Professional Google Maps SEO and visual-first guidance to eliminate entry anxiety.', icon: 'tabler:map-pin', callToAction: { variant: 'primary', text: 'Explore 1-Page Welcome', href: '/one-page-welcome' } },
+        { title: 'Review Engine', description: 'Capture authentic 5-star English reviews effortlessly through custom digital landing pages.', icon: 'tabler:message-star', callToAction: { variant: 'primary', text: 'Explore Review Engine', href: '/review-engine' } },
+        { title: 'English Hanare', description: 'A world-class English web asset for your business without touching your legacy Japanese code.', icon: 'tabler:layers-intersect', callToAction: { variant: 'primary', text: 'Explore English Hanare', href: '/english-hanare' } },
+        { title: 'Grand New or Reform', description: 'Total transformation. High-speed Reform of your current site or a dual-language site from scratch.', icon: 'tabler:rocket', callToAction: { variant: 'primary', text: 'Explore Grand Options', href: '/grand-opening' } },
     ]}
   />
 
+  <!-- INDIVIDUAL SERVICE SECTIONS: Balanced vertically -->
   <Content
     isReversed={false}
-    tagline="Service #1: 1-Page Welcome"
-    title="Break the 'Information Barrier' and Attract Affluent Guests."
+    tagline="Service #1"
+    title="Dominate Local Search and Eliminate Entry Anxiety."
     items={[
-        { title: 'Google Maps (MEO) SEO', description: 'We dominate local search to capture tourists nearby.', icon: 'tabler:map-pin' },
-        { title: 'Visual-First Guidance', description: 'A frictionless manual to eliminate entry anxiety.', icon: 'tabler:eye' },
-        { title: 'Custom QR Assets', description: 'Premium QR stands to drive engagement from the table.', icon: 'tabler:qrcode' },
+        { title: 'Google Maps (MEO) SEO', description: 'We translate your value proposition using the triggers global travelers trust.', icon: 'tabler:map-pin' },
+        { title: 'Visual-First Guidance', description: 'Remove the friction of discovery with a frictionless digital manual for your guests.', icon: 'tabler:eye' },
     ]}
-    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI0fHx8ZW58MHx8fHx8', alt: 'Authentic Japan Experience' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">The Visibility Gap</span></h3>
-      <p class="text-muted text-lg mb-6">You offer world-class hospitality, but to the international traveler, you might be invisible. Our infrastructure ensures your business is found and trusted before they arrive.</p>
-      <Button class="mb-8 bg-slate-900 text-white" text="Explore 1-Page Welcome" href="/one-page-welcome" />
-    </Fragment>
-  </Content>
+    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Authentic Japan Experience' }}
+  />
 
   <Content
     isReversed={true}
-    tagline="Service #2: Review Engine"
-    title="Visualize Absolute Trust with a Frictionless Review Experience."
+    tagline="Service #2"
+    title="Automate Trust with a Live Wall of Fame."
     items={[
-        { title: 'Custom Branded Review Page', description: 'A premium digital red carpet for your guests.', icon: 'tabler:palette' },
-        { title: 'The Live Wall of Fame', description: 'Pull your best reviews into a beautiful display.', icon: 'tabler:stars' },
-        { title: 'Frictionless 3-Click Flow', description: 'Optimized mobile journey. Leaving a review takes less than 15 seconds.', icon: 'tabler:pointer' },
+        { title: 'Branded Review Pages', description: 'A premium digital red carpet for your satisfied international guests.', icon: 'tabler:palette' },
+        { title: 'Frictionless 3-Click Flow', description: 'Leaving a 5-star review takes less than 15 seconds—no apps required.', icon: 'tabler:pointer' },
     ]}
-    image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Serving Japanese Tea' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">Automated Trust</span></h3>
-      <p class="text-muted text-lg mb-6">The "Invisible Gap" is the space between a guest’s happiness and their public feedback. We automate this process, turning your silent satisfied majority into a global megaphone.</p>
-      <Button class="mb-8 bg-slate-900 text-white" text="Explore the Review Engine" href="/review-engine" />
-    </Fragment>
-  </Content>
+    image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Serving Japanese Tea' }}
+  />
 
-  <Content
-    isReversed={false}
-    tagline="Service #3: English Hanare"
-    title="Global Expansion Without Breaking Your Legacy Code."
-    items={[
-        { title: 'The "Hanare" Concept', description: 'Like a detached guest pavilion, we build a modern digital space exclusively for international guests.', icon: 'tabler:home' },
-        { title: 'Zero-Touch Integration', description: 'Your current Japanese site remains 100% untouched.', icon: 'tabler:lock' },
-        { title: 'Inbound-Optimized SEO', description: 'Rank for high-intent English search terms used by tourists.', icon: 'tabler:search' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjEzfHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Modern Japanese Business' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">Zero-Risk Architecture</span></h3>
-      <p class="text-muted text-lg mb-6">Many businesses are terrified of adding English because it might crash their legacy Japanese system. Our decoupled architecture bypasses this fear entirely.</p>
-      <Button class="mb-8 bg-slate-900 text-white" text="Explore the English Hanare" href="/english-hanare" />
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed={true}
-    tagline="Service #4: Grand New or Reform"
-    title="Upgrade Your Old Website. Win More Customers."
-    items={[
-        { title: 'Done in 48 Hours', description: 'Rebuild your website over a single weekend.', icon: 'tabler:clock' },
-        { title: 'Grand Reform (Makeover)', description: 'Beautiful modern design that loads instantly on smartphones.', icon: 'tabler:tool' },
-        { title: 'Grand New (From Scratch)', description: 'Bilingual website designed to convert tourists into guests.', icon: 'tabler:rocket' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjB0ZWF8ZW58MHx8MHx8fDI%3D', alt: 'Premium Japanese Experience' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">Don"t Let a Slow Website Hurt Your Business</span></h3>
-      <p class="text-muted text-lg mb-6">If your website looks old or loads slowly, tourists will go to your competitors. We create a fast site that makes you the premium choice in your area.</p>
-      <Button class="mb-8 bg-slate-900 text-white" text="Explore Grand Options" href="/grand-opening" />
-    </Fragment>
-  </Content>
-
-  <!-- STEPS SECTION -->
+  <!-- ORDER FLOW -->
   <div id="process" class="scroll-mt-20">
     <Steps2
-      title="How to Get Started"
-      subtitle="The path to global success is only 4 simple steps away."
+      title="4 Simple Steps to Global Success"
+      subtitle="No technical skills or English required. We do all the heavy lifting."
       items={[
-        { title: '01. Pick Your Plan', description: 'Choose the package that fits your needs and securely order online.', icon: 'tabler:number-1' },
+        { title: '01. Pick Your Plan', description: 'Choose your package and securely order online.', icon: 'tabler:number-1' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '02. Share Your Info', description: "Fill out a short, simple form with your shop's details. No passwords needed.", icon: 'tabler:number-2' },
+        { title: '02. Share Your Info', description: "Fill out a short form with your details. No passwords needed.", icon: 'tabler:number-2' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '03. We Build It', description: 'We translate, design, and set up everything in as little as 24 to 48 hours.', icon: 'tabler:number-3' },
+        { title: '03. We Build It', description: 'We design and set up everything in as little as 24 hours.', icon: 'tabler:number-3' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '04. Grow Your Business', description: 'Put up your new QR codes, welcome international tourists, and watch your 5-star reviews grow.', icon: 'tabler:number-4' }
+        { title: '04. Grow Your Business', description: 'Welcome international guests and watch your ratings skyrocket.', icon: 'tabler:number-4' }
       ]}
-      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk3fHxqYXBhbmVzZSUyMGJ1c2luZXNzfGVufDB8fDB8fHwy', alt: 'Japanese Hospitality' }}
+      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Hospitality' }}
     />
   </div>
-
-  <Features2
-    title='Every Plan Includes the "Tourist-Ready" Suite:'
-    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
-    columns={3}
-    items={[
-      { title: 'Google Maps SEO (MEO)', description: 'Full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
-      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs to drive 5-star reviews.', icon: 'tabler:circle-check' },
-      { title: 'The "How-To" Landing Page', description: 'Explain your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
-      { title: 'Professional Copywriting', description: "High-converting business descriptions.", icon: 'tabler:circle-check' },
-      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users.', icon: 'tabler:circle-check' },
-      { title: 'Same-Day Deployment', description: 'Launch your website today!', icon: 'tabler:bolt' },
-    ]}
-  />
 
   <FAQs
     title="Frequently Asked Questions"
     items={[
-        { title: 'Do I need to speak English to use these services?', description: 'No. Our systems communicate in native English to your guests so you can focus on service, not translation.' },
-        { title: 'Is this a monthly subscription?', description: 'Most products are one-time investments. Only specific tools like the Review Engine carry a small monthly support fee.' },
-        { title: 'What is Hanei JP?', description: 'We are a boutique technology studio specializing in solving linguistic and technical risks for Japanese businesses.' },
-        { title: 'How long does the setup process take?', description: 'We pride ourselves on speed. Most setups are completed in under 24 hours.' },
+        { title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate natively to your guests while giving you clear instructions in Japanese.' },
+        { title: 'How long does setup take?', description: 'We guarantee a 24-hour turnaround for Kits and a 48-hour reboot for full websites.' },
     ]}
     callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }}
   />
