@@ -7,11 +7,18 @@ const metadata = { title: 'グランドオープニング | ホームページ�
 const fullFeatureListJp = [{ title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' }, { title: 'GoogleマップSEO対策' }, { title: 'スマホファースト設計' }, { title: 'SSL暗号化通信' }, { title: 'ワンクリック予約導線' }, { title: 'カスタムQRコード制作' }, { title: 'プロによる英語執筆' }, { title: 'SNS連携設定' }, { title: '画像データ最適化' }, { title: '全ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' }, { title: '修正回数無制限' }, { title: '週末48時間の超速公開' }, { title: 'Cloudflare CDN' }, { title: '自動バックアップ' }, { title: 'プライバシーポリシー' }, { title: '戦略的UXデザイン' }, { title: '地域No.1ブランド構築' }, { title: '永久テクニカルサポート' }];
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?q=80&w=1200', alt: '和食' }} />
-  <Content isReversed={false} tagline="制作実例" title="フラッグシップ・デモンストレーション" subtitle="ZenPod Tokyoのデモサイトで、私たちが構築するWebサイトのクオリティをご体験ください。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?q=80&w=1200', alt: 'カプセルホテル' }} />
-  <Content isReversed={true} title="表参道デンタルアーツ" subtitle="外国人患者に最適化されたクリニックのデモ。バイリンガルの信頼構築とスムーズな予約導線を備えています。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200', alt: '歯科医院' }} />
-  <div id="reform" class="scroll-mt-20">
-    <Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、サイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?q=80&w=1200', alt: '寿司' }} />
-    <FeatureTable title="標準装備" subtitle="一括払い。追加費用なし。" items={fullFeatureListJp} />
-  </div>
+  <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: '和食' }} />
+  
+  <Content 
+    isReversed={false} 
+    tagline="制作実例" 
+    title="フラッグシップ・デモンストレーション" 
+    subtitle="ZenPod Tokyoのデモサイトで、私たちが構築するWebサイトのクオリティをご体験ください。" 
+    callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} 
+    image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200&q=80', alt: 'カプセルホテル' }} 
+  />
+  
+  <Content isReversed={true} title="表参道デンタルアーツ" subtitle="外国人患者に最適化されたクリニックのデモ。バイリンガルの信頼構築とスムーズな予約導線を備えています。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', alt: '歯科医院' }} />
+  
+  <div id="reform" class="scroll-mt-20"><Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、サイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?auto=format&fit=crop&w=1200&q=80', alt: '寿司' }} /><FeatureTable title="標準装備" subtitle="一括払い。追加費用なし。" items={fullFeatureListJp} /></div>
 </Layout>

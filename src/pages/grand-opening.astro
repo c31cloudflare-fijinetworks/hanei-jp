@@ -7,11 +7,18 @@ const metadata = { title: 'Grand Opening | Web Design' };
 const fullFeatureList = [{ title: 'High-Speed Edge Delivery' }, { title: 'Bilingual Navigation' }, { title: 'Google Maps SEO' }, { title: 'Mobile-First Design' }, { title: 'SSL Security Encryption' }, { title: 'One-Click Contact Flow' }, { title: 'Custom QR Code Kit' }, { title: 'Native Copywriting' }, { title: 'Social Integration' }, { title: 'Image Optimization' }, { title: 'Browser Compatibility' }, { title: 'Zero Downtime Migration' }, { title: 'Unlimited Revisions' }, { title: '48-Hour Weekend Launch' }, { title: 'Cloudflare CDN Hosting' }, { title: 'Auto-Backup Systems' }, { title: 'GDPR/Privacy Ready' }, { title: 'Strategic UX Design' }, { title: 'Local Authority Ranking' }, { title: 'Lifetime Tech Support' }];
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?q=80&w=1200', alt: 'Culinary' }} />
-  <Content isReversed={false} tagline="Experience Excellence" title="See a Live Flagship Demonstration" subtitle="Explore our ZenPod Tokyo concept to see how we blend luxury Japanese aesthetics with high-converting digital flows." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?q=80&w=1200', alt: 'Capsule Hotel' }} />
-  <Content isReversed={true} title="Omotesando Dental Arts" subtitle="A premium clinic design optimized for international patients. Features bilingual trust signals and advanced booking flows." callToAction={{ variant: 'secondary', text: 'Launch Dental Demo', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200', alt: 'Dental Arts' }} />
-  <div id="reform" class="scroll-mt-20">
-    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?q=80&w=1200', alt: 'Design' }} />
-    <FeatureTable title="Standard Package" subtitle="Fixed price. No extras." items={fullFeatureList} />
-  </div>
+  <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: 'Culinary' }} />
+  
+  <Content 
+    isReversed={false} 
+    tagline="Experience Excellence" 
+    title="See a Live Flagship Demonstration" 
+    subtitle="Explore our ZenPod Tokyo concept to see how we blend luxury Japanese aesthetics with high-converting digital flows." 
+    callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }} 
+    image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200&q=80', alt: 'Capsule Hotel' }} 
+  />
+  
+  <Content isReversed={true} title="Omotesando Dental Arts" subtitle="A premium clinic design optimized for international patients. Features bilingual trust signals and advanced booking flows." callToAction={{ variant: 'secondary', text: 'Launch Dental Demo', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', alt: 'Dental Arts' }} />
+  
+  <div id="reform" class="scroll-mt-20"><Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} /><FeatureTable title="Standard Package" subtitle="Fixed price. No extras." items={fullFeatureList} /></div>
 </Layout>
