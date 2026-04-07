@@ -3,7 +3,6 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import FeatureTable from '~/components/widgets/FeatureTable.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { title: 'グランドオープニング | ホームページ制作' };
 
@@ -32,26 +31,26 @@ const fullFeatureListJp = [
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: '和食' }}
   />
+
+  <!-- DEMO SECTION -->
+  <Content
+    isReversed={false}
+    tagline="制作実例"
+    title="フラッグシップ・デモンストレーション"
+    subtitle="私たちが構築するWebサイトのクオリティを、架空のホテル「ZenPod Tokyo」のデモサイトでご体験ください。"
+    callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }}
+    image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?w=611&h=405&auto=format&fit=crop', alt: 'Demo' }}
+  />
   
   <div id="reform" class="scroll-mt-20">
     <Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、あなたのお店のサイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: '寿司' }} />
     <Content isReversed={true} title="表示速度の改善" subtitle="読み込みが遅いとお客様は離脱します。一瞬で表示されるサイトへ作り直します。" items={[{ title: '爆速表示', description: 'お客様を待たせません。', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: '料理' }} />
-    
-    <FeatureTable
-      title="グランド・リフォームの標準装備"
-      subtitle="一括払い。追加費用は一切ありません。"
-      items={fullFeatureListJp}
-    />
+    <FeatureTable title="グランド・リフォームの標準装備" subtitle="一括払い。追加費用は一切ありません。" items={fullFeatureListJp} />
   </div>
 
   <div id="new" class="scroll-mt-20">
     <Content tagline="グランド・ニュー" title="世界中から選ばれる、最高峰の拠点を。" subtitle="日本人客も海外客も強力に惹きつけるデュアル言語構造をゼロから創り上げます。" items={[{ title: 'バイリンガル設計', description: '国内外の両方を惹きつけます。', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: '日本' }} />
     <Content isReversed={true} title="最新のテクノロジー" subtitle="数年先も古くならない最新技術を採用。常に爆速で安定した運用が可能です。" items={[{ title: '未来への投資', description: '古くならない最新の仕組み。', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Tech' }} />
-
-    <FeatureTable
-      title="グランド・ニューオープンの標準装備"
-      subtitle="一括払い。追加費用は一切ありません。"
-      items={fullFeatureListJp}
-    />
+    <FeatureTable title="グランド・ニューオープンの標準装備" subtitle="一括払い。追加費用は一切ありません。" items={fullFeatureListJp} />
   </div>
 </Layout>
