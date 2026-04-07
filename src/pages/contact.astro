@@ -1,18 +1,20 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import GoogleContactForm from '~/components/widgets/GoogleContactForm.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
-const metadata = {
+const metadata = { 
   title: 'Contact | Hanei JP',
-  description: 'Reach out for white-glove setup or support.',
+  description: 'Reach out for general inquiries or bespoke digital solutions.'
 };
 ---
+
 <Layout metadata={metadata}>
-  <HeroText 
-    tagline="Support"
-    title="We handle everything." 
-    subtitle="Have questions about the Hanei JP Concept? Our team is ready to help you shine online."
+  <Hero2
+    tagline="Contact Us"
+    title='Bespoke Solutions & <br/><span class="text-accent">General Inquiries</span>'
+    subtitle="We thrive on complexity and local excellence. Whether you have a simple question or a highly technical custom request—we want to hear about it."
+    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Contact' }}
   />
-  <GoogleContactForm />
+  <BespokeForm />
 </Layout>
