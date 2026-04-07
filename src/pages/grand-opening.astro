@@ -29,42 +29,35 @@ const fullFeatureList = [
         { variant: 'primary', text: 'Explore Grand Reform', href: '#reform' },
         { variant: 'secondary', text: 'Explore Grand New', href: '#new' }
     ]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary' }}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=1200&q=80', alt: 'Culinary' }}
   />
 
-  <!-- DEMO SECTION -->
+  <!-- DEMO SECTION 1: ZENPOD -->
   <Content
     isReversed={false}
     tagline="Experience Excellence"
     title="See a Live Flagship Demonstration"
     subtitle="Explore our ZenPod Tokyo concept to see how we blend luxury Japanese aesthetics with high-converting digital flows."
     callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }}
-    image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?w=611&h=405&auto=format&fit=crop', alt: 'Demo' }}
+    image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?w=1200&q=80', alt: 'Capsule Hotel Demo' }}
   />
 
+  <!-- DEMO SECTION 2: DENTAL -->
   <Content
     isReversed={true}
     title="Omotesando Dental Arts"
     subtitle="A premium clinic design optimized for international patients. Features bilingual trust signals, advanced booking flows, and a reassuring aesthetic."
     callToAction={{ variant: 'secondary', text: 'Launch Dental Demo', href: '/demos/omotesando-dental' }}
-    image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=611&h=405&auto=format&fit=crop', alt: 'Dental Demo' }}
+    image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', alt: 'Dental Demo' }}
   />
   
   <div id="reform" class="scroll-mt-20">
-    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We keep your content but refresh the soul of your design to match international luxury standards." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Design' }} />
-    <Content isReversed={true} title="02. Performance & Speed Optimization" subtitle="We move your existing information onto a high-velocity framework that loads instantly on any network." items={[{ title: 'Under 1s Load', description: 'Zero lag for mobile users.', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Speed' }} />
-    <Content title="03. Perfect Mobile Responsiveness" subtitle="Your guests are on the move. We ensure your site works perfectly on every single smartphone screen size." items={[{ title: 'Mobile First', description: 'Tailored for the hand.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1555126417-38de941cba37?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
-    <Content isReversed={true} title="04. SEO Infrastructure Cleanup" subtitle="Fix broken links and outdated map settings to ensure your business is actually visible to local searchers." items={[{ title: 'Map Authority', description: 'Dominant local visibility.', icon: 'tabler:map-pin' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
-    
+    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We keep your content but refresh the soul of your design to match international luxury standards." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=1200&q=80', alt: 'Design' }} />
     <FeatureTable title="Everything Included in Grand Reform" subtitle="One fixed price. Zero hidden extras." items={fullFeatureList} />
   </div>
 
   <div id="new" class="scroll-mt-20">
-    <Content tagline="Option 2: Grand New" title="01. Bilingual Digital Flagship" subtitle="Start fresh with a site engineered from Day 1 to serve both local Japanese and global guests." items={[{ title: 'Global Standard', description: 'Native bilingual experience.', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'New' }} />
-    <Content isReversed={true} title="02. Native Psychological Copy" subtitle="We write high-converting copy using native triggers that Western travelers trust and react to." items={[{ title: 'Authority Copy', description: 'Build instant customer trust.', icon: 'tabler:message-language' }]} image={{ src: 'https://images.unsplash.com/photo-1512100356956-c1b47f4b1465?w=611&h=405&auto=format&fit=crop', alt: 'Copy' }} />
-    <Content title="03. High-Velocity Tech Stack" subtitle="We use the world's most advanced serverless tech so your site stays fast and secure for years to come." items={[{ title: 'Future-Proof', description: 'The fastest stack in web design.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Tech' }} />
-    <Content isReversed={true} title="04. Conversion Pathway Design" subtitle="Direct-to-booking flows that turn window shoppers into loyal guests." items={[{ title: 'Direct Results', description: 'Engineered to drive revenue.', icon: 'tabler:target' }]} image={{ src: 'https://images.unsplash.com/photo-1454165833767-027ffea9e61?w=611&h=405&auto=format&fit=crop', alt: 'Goal' }} />
-
+    <Content tagline="Option 2: Grand New" title="01. Bilingual Digital Flagship" subtitle="Start fresh with a site engineered from Day 1 to serve both local Japanese and global guests." items={[{ title: 'Global Standard', description: 'Native bilingual experience.', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=1200&q=80', alt: 'New' }} />
     <FeatureTable title="Everything Included in Grand New" subtitle="One fixed price. Zero hidden extras." items={fullFeatureList} />
   </div>
 </Layout>
