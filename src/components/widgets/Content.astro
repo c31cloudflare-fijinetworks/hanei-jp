@@ -21,10 +21,10 @@ const isUrl = typeof image === 'string' && (image.startsWith('http') || image.st
 
 <section class:list={[{ 'py-12 md:py-20': !isAfterContent, 'pb-12 md:pb-20': isAfterContent }]}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <!-- flex-col-reverse ensures text is on top on mobile, md:flex-row restores side-by-side on desktop -->
-    <div class:list={['flex flex-col-reverse items-center md:gap-16', isReversed ? 'md:flex-row-reverse' : 'md:flex-row']}>
+    <!-- Removed flex-col-reverse. Standard flex-col ensures Text (first div) appears before Image (second div) on mobile. -->
+    <div class:list={['flex flex-col items-center md:gap-16', isReversed ? 'md:flex-row-reverse' : 'md:flex-row']}>
       
-      <!-- Text Container -->
+      <!-- Text Container (Lead on Mobile) -->
       <div class="md:basis-1/2 w-full">
         {tagline && <p class="text-base text-secondary dark:text-gray-400 font-bold tracking-widest uppercase mb-3">{tagline}</p>}
         {title && <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter mb-4 font-heading">{title}</h2>}
@@ -54,8 +54,8 @@ const isUrl = typeof image === 'string' && (image.startsWith('http') || image.st
         )}
       </div>
 
-      <!-- Image Container (Appears below text on mobile, side on desktop) -->
-      <div class="md:basis-1/2 mb-10 md:mb-0 w-full">
+      <!-- Image Container (Below Text on Mobile) -->
+      <div class="md:basis-1/2 mt-10 md:mt-0 w-full">
         {image && (
           <div class="relative m-auto max-w-5xl aspect-[3/2] overflow-hidden rounded-lg shadow-2xl border-4 border-white dark:border-slate-800">
             {isUrl ? (
