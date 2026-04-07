@@ -9,17 +9,34 @@ const { secondaryLinks = [], links = [], footNote = '' } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const cleanPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
-const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit');
+const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit') || cleanPath.includes('-jp/');
+
+// Standardized Copy
+const aboutTitle = isJp ? "Haneiについて" : "About Hanei";
+const aboutText = isJp 
+  ? "Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。" 
+  : "Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier.";
 ---
 
 <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose bg-white dark:bg-slate-900">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     
+    <!-- MANDATORY ABOUT HANEI SECTION -->
+    <div class="pt-16 md:pt-24 pb-12">
+      <div class="max-w-3xl mx-auto text-center p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-50/50 dark:bg-slate-800/30">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
+          {aboutTitle}
+        </h2>
+        <p class="text-xl text-muted dark:text-slate-400 leading-relaxed">
+          {aboutText}
+        </p>
+      </div>
+    </div>
+
     <div class="py-8 md:py-12">
       <div class="flex flex-col md:flex-row md:justify-between items-center gap-8">
         <div class="text-center md:text-left">
-            Hanei JP
-          </a>
+          <span class="text-xl font-bold">Hanei JP</span>
           <p class="text-sm italic text-gray-500 font-medium whitespace-pre-line">
             Bridging Japan's Finest to the World 🌏
           </p>
@@ -39,9 +56,7 @@ const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit');
       </div>
     </div>
 
-    <!-- Improved Bottom Bar: Uses flexbox to group links nicely on mobile -->
     <div class="py-6 md:py-8 border-t border-gray-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-      
       <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center md:text-left">
         <Fragment set:html={footNote} />
       </div>
@@ -49,10 +64,7 @@ const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit');
       <div class="flex flex-wrap justify-center items-center text-[10px] font-bold text-gray-500 uppercase tracking-wider">
         {secondaryLinks.map(({ text, href }, index) => (
           <div class="flex items-center">
-            <a 
-              class="hover:text-primary transition flex items-center whitespace-nowrap px-2" 
-              href={href}
-            >
+            <a class="hover:text-primary transition flex items-center whitespace-nowrap px-2" href={href}>
               <span class="normal-case flex items-center gap-1" set:html={text}></span>
             </a>
             {index < secondaryLinks.length - 1 && (
