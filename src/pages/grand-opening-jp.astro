@@ -2,40 +2,22 @@
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import FeatureTable from '~/components/widgets/FeatureTable.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = { title: 'グランドオープニング | ホームページ制作' };
 
-const pricingData = [
-  {
-    title: 'グランド・リフォーム',
-    subtitle: '今のサイトを、最新デザインへ刷新。',
-    price: '78,800',
-    period: '10ページまで',
-    items: [
-      { description: '最新のクリーンなデザインへ刷新' },
-      { description: '100%スマホ対応（レスポンシブ）' },
-      { description: '表示速度とパフォーマンスの改善' },
-      { description: '最短4日のスピード納品' },
-    ],
-    callToAction: { target: '_self', text: 'リフォームを申し込む', href: '/contact-jp', variant: 'primary' },
-  },
-  {
-    title: 'グランド・ニューオープン',
-    subtitle: 'ゼロから作る、最高品質の新規サイト。',
-    price: '78,800',
-    period: '10ページまで',
-    items: [
-      { description: '日英バイリンガル対応の最新設計' },
-      { description: '爆速で動く最新テクノロジー' },
-      { description: '「おもてなし」を伝えるデザイン' },
-      { description: '最短4日のスピード納品' },
-    ],
-    callToAction: { target: '_self', text: '新規制作を申し込む', href: '/contact-jp', variant: 'primary' },
-    hasRibbon: true,
-    ribbonTitle: '人気',
-  }
+const fullFeatureListJp = [
+  { title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' },
+  { title: 'GoogleマップSEO対策' }, { title: 'スマホファースト設計' },
+  { title: 'SSL暗号化通信' }, { title: 'ワンクリック予約・連絡導線' },
+  { title: 'カスタムQRコード制作' }, { title: 'プロによる英語執筆' },
+  { title: 'SNS連携設定' }, { title: '画像データ最適化' },
+  { title: '全ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' },
+  { title: '修正回数無制限' }, { title: '週末48時間の超速公開' },
+  { title: 'Cloudflare CDN サーバー' }, { title: '自動バックアップ' },
+  { title: 'プライバシーポリシー完備' }, { title: '戦略的UXデザイン' },
+  { title: '地域No.1ブランド構築' }, { title: '永久テクニカルサポート' },
 ];
 ---
 
@@ -44,46 +26,32 @@ const pricingData = [
     tagline="グランドオープニング"
     title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>'
     subtitle="古いデザインや遅い表示は、お客様を逃します。プロ品質のサイトを最短4日でお届けします。"
-    actions={[{ variant: 'primary', text: 'プランを見る', href: '#pricing' }]}
+    actions={[
+        { variant: 'primary', text: 'リフォームを見る', href: '#reform' },
+        { variant: 'secondary', text: '新規制作を見る', href: '#new' }
+    ]}
     image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: '和食' }}
   />
   
-  <Content
-    isReversed={false}
-    title="ホームページは、お店の「顔」です。"
-    subtitle="「スマホで見づらい」「表示が遅い」…そんな悩みはありませんか？Haneiが最高品質のサイトを構築します。"
-    items={[
-        { title: '表示速度の改善', description: '読み込みが遅いとお客様は離脱します。一瞬で表示されるサイトへ。', icon: 'tabler:bolt' },
-        { title: '信頼感の向上', description: '清潔感と高級感のあるデザインで、一目で「選ばれる店」へ。', icon: 'tabler:shield-check' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: '寿司' }}
-  />
+  <div id="reform" class="scroll-mt-20">
+    <Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、あなたのお店のサイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: '寿司' }} />
+    <Content isReversed={true} title="表示速度の改善" subtitle="読み込みが遅いとお客様は離脱します。一瞬で表示されるサイトへ作り直します。" items={[{ title: '爆速表示', description: 'お客様を待たせません。', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: '料理' }} />
+    
+    <FeatureTable
+      title="グランド・リフォームの標準装備"
+      subtitle="一括払い。追加費用は一切ありません。"
+      items={fullFeatureListJp}
+    />
+  </div>
 
-  <Content
-    isReversed={true}
-    title="選択肢1：グランド・リフォーム"
-    subtitle="既存の情報を活かしつつ、デザインと速度をフルリフォーム。最短4日でデジタルの印象を劇的に変えます。"
-    items={[
-        { title: '劇的ビフォーアフター', description: '見た目と機能を最新にアップデート。見違えるほど美しくなります。', icon: 'tabler:palette' },
-        { title: 'スマホ最適化', description: 'あらゆる画面サイズで完璧に表示されるよう設計します。', icon: 'tabler:device-mobile' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: '料理' }}
-  />
+  <div id="new" class="scroll-mt-20">
+    <Content tagline="グランド・ニュー" title="世界中から選ばれる、最高峰の拠点を。" subtitle="日本人客も海外客も強力に惹きつけるデュアル言語構造をゼロから創り上げます。" items={[{ title: 'バイリンガル設計', description: '国内外の両方を惹きつけます。', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: '日本' }} />
+    <Content isReversed={true} title="最新のテクノロジー" subtitle="数年先も古くならない最新技術を採用。常に爆速で安定した運用が可能です。" items={[{ title: '未来への投資', description: '古くならない最新の仕組み。', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Tech' }} />
 
-  <Content
-    isReversed={false}
-    title="選択肢2：グランド・ニューオープン"
-    subtitle="心機一転、最高の拠点を。インバウンドと国内集客を両立させるバイリンガル・フラッグシップサイト。"
-    items={[
-        { title: 'バイリンガル設計', description: '日本人客も海外客も強力に惹きつけるデュアル言語構造。', icon: 'tabler:world' },
-        { title: '最新テクノロジー', description: '数年先も古くならない最新技術で、常に爆速な運用が可能。', icon: 'tabler:rocket' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: '日本' }}
-  />
-
-  <Pricing id="pricing" title="ワンプライスで劇的チェンジ" prices={pricingData} />
-
-  
-  
-  
+    <FeatureTable
+      title="グランド・ニューオープンの標準装備"
+      subtitle="一括払い。追加費用は一切ありません。"
+      items={fullFeatureListJp}
+    />
+  </div>
 </Layout>

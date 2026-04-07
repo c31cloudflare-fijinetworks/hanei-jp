@@ -2,31 +2,22 @@
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import FeatureTable from '~/components/widgets/FeatureTable.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { title: 'Grand Opening | Professional Web Design' };
+const metadata = { title: 'Grand Opening | Web Design' };
 
 const fullFeatureList = [
-  { title: 'High-Speed Edge Delivery', icon: 'tabler:circle-check' },
-  { title: 'Bilingual Navigation', icon: 'tabler:circle-check' },
-  { title: 'Google Maps SEO', icon: 'tabler:circle-check' },
-  { title: 'Mobile-First Design', icon: 'tabler:circle-check' },
-  { title: 'SSL Security Encryption', icon: 'tabler:circle-check' },
-  { title: 'One-Click Contact Flow', icon: 'tabler:circle-check' },
-  { title: 'Custom QR Code Kit', icon: 'tabler:circle-check' },
-  { title: 'Native Copywriting', icon: 'tabler:circle-check' },
-  { title: 'Social Integration', icon: 'tabler:circle-check' },
-  { title: 'Image Optimization', icon: 'tabler:circle-check' },
-  { title: 'Browser Compatibility', icon: 'tabler:circle-check' },
-  { title: 'Zero Downtime Migration', icon: 'tabler:circle-check' },
-  { title: 'Unlimited Revisions', icon: 'tabler:circle-check' },
-  { title: '48-Hour Weekend Launch', icon: 'tabler:circle-check' },
-  { title: 'Cloudflare CDN Hosting', icon: 'tabler:circle-check' },
-  { title: 'Auto-Backup Systems', icon: 'tabler:circle-check' },
-  { title: 'GDPR/Privacy Ready', icon: 'tabler:circle-check' },
-  { title: 'Strategic UX Design', icon: 'tabler:circle-check' },
-  { title: 'Local Authority Ranking', icon: 'tabler:circle-check' },
-  { title: 'Lifetime Tech Support', icon: 'tabler:circle-check' },
+  { title: 'High-Speed Edge Delivery' }, { title: 'Bilingual Navigation' },
+  { title: 'Google Maps SEO' }, { title: 'Mobile-First Design' },
+  { title: 'SSL Security Encryption' }, { title: 'One-Click Contact Flow' },
+  { title: 'Custom QR Code Kit' }, { title: 'Native Copywriting' },
+  { title: 'Social Integration' }, { title: 'Image Optimization' },
+  { title: 'Browser Compatibility' }, { title: 'Zero Downtime Migration' },
+  { title: 'Unlimited Revisions' }, { title: '48-Hour Weekend Launch' },
+  { title: 'Cloudflare CDN Hosting' }, { title: 'Auto-Backup Systems' },
+  { title: 'GDPR/Privacy Ready' }, { title: 'Strategic UX Design' },
+  { title: 'Local Authority Ranking' }, { title: 'Lifetime Tech Support' },
 ];
 ---
 
@@ -48,10 +39,9 @@ const fullFeatureList = [
     <Content title="03. Perfect Mobile Responsiveness" subtitle="Your guests are on the move. We ensure your site works perfectly on every single smartphone screen size." items={[{ title: 'Mobile First', description: 'Tailored for the hand.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1555126417-38de941cba37?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
     <Content isReversed={true} title="04. SEO Infrastructure Cleanup" subtitle="Fix broken links and outdated map settings to ensure your business is actually visible to local searchers." items={[{ title: 'Map Authority', description: 'Dominant local visibility.', icon: 'tabler:map-pin' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
     
-    <Features2
+    <FeatureTable
       title="Everything Included in Grand Reform"
       subtitle="One fixed price. Zero hidden extras."
-      columns={4}
       items={fullFeatureList}
     />
   </div>
@@ -62,10 +52,9 @@ const fullFeatureList = [
     <Content title="03. High-Velocity Tech Stack" subtitle="We use the world's most advanced serverless tech so your site stays fast and secure for years to come." items={[{ title: 'Future-Proof', description: 'The fastest stack in web design.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Tech' }} />
     <Content isReversed={true} title="04. Conversion Pathway Design" subtitle="Direct-to-booking flows that remove all doubt and turn window shoppers into loyal guests." items={[{ title: 'Direct Results', description: 'Engineered to drive revenue.', icon: 'tabler:target' }]} image={{ src: 'https://images.unsplash.com/photo-1454165833767-027ffea9e61?w=611&h=405&auto=format&fit=crop', alt: 'Goal' }} />
 
-    <Features2
+    <FeatureTable
       title="Everything Included in Grand New"
       subtitle="One fixed price. Zero hidden extras."
-      columns={4}
       items={fullFeatureList}
     />
   </div>
