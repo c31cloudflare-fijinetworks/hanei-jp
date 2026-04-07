@@ -11,14 +11,12 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-primary-50 dark:bg-slate-800 py-16 md:py-24">
+<section class="bg-primary-50 dark:bg-slate-800 pt-16 md:pt-24 pb-8 md:pb-12">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid md:grid-cols-2 gap-16 items-center">
-      
       <div class="flex flex-col justify-center">
         {title && <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6 tracking-tighter" set:html={title}></h2>}
         {subtitle && <p class="text-muted dark:text-slate-400 mb-10 text-xl leading-relaxed" set:html={subtitle}></p>}
-        
         {items && items.length > 0 && (
           <div class="grid gap-6 mb-10">
             {items.map(({ title: ititle, description, icon }) => (
@@ -41,18 +39,11 @@ const {
             ))}
           </div>
         )}
-
-        {callToAction && callToAction.text && (
-          <div class="w-fit">
-            <Button {...callToAction} class="shadow-lg px-8 py-3" />
-          </div>
-        )}
       </div>
-      
       <div class="flex items-center">
         {image && (
           <div class="relative m-auto max-w-5xl w-full aspect-[3/2] overflow-hidden rounded-lg shadow-2xl border-4 border-white dark:border-slate-800">
-            <div class="w-full h-full [&>img]:w-full [&>img]:h-full [&>img]:object-cover">
+            <div class="w-full h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:aspect-[3/2]">
               {typeof image === 'string' ? (
                 <img src={image} class="w-full h-full object-cover" loading="lazy" />
               ) : image.src ? (

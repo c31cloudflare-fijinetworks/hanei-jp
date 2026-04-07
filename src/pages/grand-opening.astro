@@ -4,22 +4,39 @@ import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: 'Grand Opening | Hanei JP' };
+const metadata = { title: 'Grand Opening | Professional Web Design' };
+
 const pricingData = [
-  { title: 'Grand Reform', price: '78,800', period: 'Up to 10 pages', items: [{ description: 'Modern Clean Design' }, { description: '100% Mobile Friendly' }, { description: 'Fix Speed Issues' }, { description: '4-Day Turnaround' }], callToAction: { target: '_self', text: 'Start Reform', href: '/contact', variant: 'primary' } },
-  { title: 'Grand New', price: '78,800', period: 'Up to 10 pages', items: [{ description: 'Bilingual Architecture' }, { description: 'Latest Tech Stack' }, { description: 'Luxury UX Design' }, { description: '4-Day Turnaround' }], callToAction: { target: '_self', text: 'Launch New', href: '/contact', variant: 'primary' }, hasRibbon: true, ribbonTitle: 'Popular' }
+  { title: 'Grand Reform', price: '78,800', period: 'One-time', items: [{ description: 'Modern Clean Design' }, { description: 'Mobile Optimized' }, { description: 'Speed Fix' }, { description: '4-Day Delivery' }], callToAction: { target: '_self', text: 'Start Reform', href: '/contact', variant: 'primary' } },
+  { title: 'Grand New', price: '78,800', period: 'One-time', items: [{ description: 'Bilingual Architecture' }, { description: 'Latest Tech Stack' }, { description: 'Global UX' }, { description: '4-Day Delivery' }], callToAction: { target: '_self', text: 'Launch New', href: '/contact', variant: 'primary' }, hasRibbon: true, ribbonTitle: 'Popular' }
 ];
 ---
+
 <Layout metadata={metadata}>
-  <Hero2 tagline="Total Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="Don't let a slow, old design hurt your business. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'View Pricing', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Header' }} />
+  <Hero2
+    tagline="Total Digital Transformation"
+    title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>'
+    subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 4 days."
+    actions={[
+        { variant: 'primary', text: 'Explore Grand Reform', href: '#reform' },
+        { variant: 'secondary', text: 'Explore Grand New', href: '#new' }
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary' }}
+  />
   
-  <Content isReversed={false} title="01. The Speed Performance Fix" subtitle="Slow sites lose customers instantly. We make your site load in under 1 second on any global network." items={[{ title: 'Edge Delivery', description: 'Optimized for international visitors.', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Speed' }} />
-  
-  <Content isReversed={true} title="02. 48-Hour Weekend Delivery" subtitle="No more waiting months for agencies. We reboot your entire digital presence over a single weekend." items={[{ title: 'Record Velocity', description: 'Order Friday, launch Monday.', icon: 'tabler:clock' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Delivery' }} />
-  
-  <Content isReversed={false} title="03. Mobile-First Optimization" subtitle="Your guests are on the move. We ensure your site looks and works perfectly on every smartphone screen size." items={[{ title: 'Responsive Design', description: 'Luxury UX tailored for the hand.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
-  
-  <Content isReversed={true} title="04. Conversion Focused Copy" subtitle="We rewrite your value proposition using native psychological triggers that turn visitors into confirmed bookings." items={[{ title: 'Strategic Writing', description: 'Not just translation—authority.', icon: 'tabler:target' }]} image={{ src: 'https://images.unsplash.com/photo-1512100356956-c1b47f4b1465?w=611&h=405&auto=format&fit=crop', alt: 'Target' }} />
+  <div id="reform" class="scroll-mt-20">
+    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We keep your content but refresh the soul of your design to match international luxury standards." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Design' }} />
+    <Content isReversed={true} title="02. Performance & Speed Optimization" subtitle="We move your existing information onto a high-velocity framework that loads instantly on any network." items={[{ title: 'Under 1s Load', description: 'Zero lag for mobile users.', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Speed' }} />
+    <Content title="03. Perfect Mobile Responsiveness" subtitle="Your guests are on the move. We ensure your site works perfectly on every single smartphone screen size." items={[{ title: 'Mobile First', description: 'Tailored for the hand.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1555126417-38de941cba37?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
+    <Content isReversed={true} title="04. SEO Infrastructure Cleanup" subtitle="Fix broken links and outdated map settings to ensure your business is actually visible to local searchers." items={[{ title: 'Map Authority', description: 'Dominant local visibility.', icon: 'tabler:map-pin' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
+  </div>
+
+  <div id="new" class="scroll-mt-20">
+    <Content tagline="Option 2: Grand New" title="01. Bilingual Digital Flagship" subtitle="Start fresh with a site engineered from Day 1 to serve both local Japanese and global guests." items={[{ title: 'Global Standard', description: 'Native bilingual experience.', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'New' }} />
+    <Content isReversed={true} title="02. Native Psychological Copy" subtitle="We write high-converting copy using native triggers that Western travelers trust and react to." items={[{ title: 'Authority Copy', description: 'Build instant customer trust.', icon: 'tabler:message-language' }]} image={{ src: 'https://images.unsplash.com/photo-1512100356956-c1b47f4b1465?w=611&h=405&auto=format&fit=crop', alt: 'Copy' }} />
+    <Content title="03. High-Velocity Tech Stack" subtitle="We use the world's most advanced serverless tech so your site stays fast and secure for years to come." items={[{ title: 'Future-Proof', description: 'The fastest stack in web design.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Tech' }} />
+    <Content isReversed={true} title="04. Conversion Pathway Design" subtitle="Direct-to-booking flows that remove all doubt and turn window shoppers into loyal guests." items={[{ title: 'Direct Results', description: 'Engineered to drive revenue.', icon: 'tabler:target' }]} image={{ src: 'https://images.unsplash.com/photo-1454165833767-027ffea9e61?w=611&h=405&auto=format&fit=crop', alt: 'Goal' }} />
+  </div>
 
   <Pricing id="pricing" title="Simple, Flat Pricing" prices={pricingData} />
 </Layout>
