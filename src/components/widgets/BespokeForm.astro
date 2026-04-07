@@ -1,0 +1,106 @@
+---
+const { 
+  labels = {
+    client_name: "Full Name",
+    company_name: "Company Name",
+    email: "Email Address",
+    phone: "Phone Number",
+    request_type: "Request Category",
+    project_summary: "Tell us about your 'odd' request",
+    budget_range: "Estimated Budget",
+    deadline: "Desired Timeline",
+    tech_pref: "Preferred Tech Stack",
+    attachment: "Briefing Docs",
+    referral: "How did you find us?",
+    submit: "Send Bespoke Request"
+  },
+  options = {
+    requests: ["Custom System", "API / Integration", "Legacy Migration", "Interactive Installation", "Other"],
+    budgets: ["¥1,000,000 - ¥3,000,000", "¥3,000,000 - ¥5,000,000", "¥5,000,000+"],
+    referrals: ["Google Search", "Social Media", "Friend/Colleague", "Other"]
+  }
+} = Astro.props;
+
+// Use your doc's specific Google Form ID or replace with your preferred endpoint
+const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
+---
+
+<section class="py-12 md:py-20 bg-white dark:bg-slate-900">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
+      <form action={FORM_ACTION} method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Honeypot -->
+        <input type="hidden" name="bot-field" class="hidden" />
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.client_name} *</label>
+          <input type="text" name="client_name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.company_name} *</label>
+          <input type="text" name="company_name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.email} *</label>
+          <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.phone}</label>
+          <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.request_type} *</label>
+          <select name="request_type" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none appearance-none">
+            {options.requests.map(opt => <option value={opt}>{opt}</option>)}
+          </select>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.budget_range} *</label>
+          <select name="budget_range" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none appearance-none">
+            {options.budgets.map(opt => <option value={opt}>{opt}</option>)}
+          </select>
+        </div>
+
+        <div class="flex flex-col md:col-span-2">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.project_summary} *</label>
+          <textarea name="project_summary" required rows="5" placeholder="Describe the problem you are trying to solve..." class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none"></textarea>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.deadline}</label>
+          <input type="text" name="deadline" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="e.g. Next 3 months" />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.tech_pref}</label>
+          <input type="text" name="tech_pref" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="React, Astro, etc." />
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.referral}</label>
+          <select name="referral" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none appearance-none">
+            {options.referrals.map(opt => <option value={opt}>{opt}</option>)}
+          </select>
+        </div>
+
+        <div class="flex flex-col">
+          <label class="block text-sm font-bold mb-2 uppercase tracking-wide text-slate-600 dark:text-slate-400">{labels.attachment}</label>
+          <input type="file" name="attachment" class="w-full px-4 py-1.5 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-secondary cursor-pointer" />
+        </div>
+
+        <div class="md:col-span-2 pt-6">
+          <button type="submit" class="w-full py-4 bg-primary hover:bg-secondary text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest">
+            {labels.submit}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>

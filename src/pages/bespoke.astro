@@ -1,0 +1,17 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import BespokeForm from '~/components/widgets/BespokeForm.astro';
+
+const metadata = { title: 'Bespoke Solutions & Unique Requests | Hanei JP' };
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="Custom Engineering"
+    title='Bespoke Solutions & <br/><span class="text-accent">Unique Requests</span>'
+    subtitle="We are engineers and designers who thrive on complexity. Whether you need specific API integrations, legacy migrations, or digital solutions that don't fit in a standard box—we want to hear about it."
+    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Engineering' }}
+  />
+  <BespokeForm />
+</Layout>
