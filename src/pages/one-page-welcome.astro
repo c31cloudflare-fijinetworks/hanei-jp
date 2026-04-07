@@ -7,10 +7,7 @@ import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
-const metadata = { 
-  title: 'English Web Page for Japanese Businesses | Hanei JP', 
-  description: 'Stop losing tourists. Get a professional English web page today for just ¥19,800.',
-};
+const metadata = { title: 'English Web Page for Japanese Businesses' };
 
 const pricingData = {
   title: 'The "Tourist-Ready" Page',
@@ -29,7 +26,6 @@ const pricingData = {
 ---
 
 <Layout metadata={metadata}>
-  
   <Hero2
     tagline="Simple. Fast. Effective."
     title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>'
@@ -40,74 +36,28 @@ const pricingData = {
   
   <Content
     isReversed={false}
+    title="Don’t miss out on the inbound boom. It’s easier than you think."
+    subtitle="We turn hesitant tourists into confident customers by removing the 'English Barrier' from your business."
     items={[
-        { title: 'Stop the "English Stress"', description: 'You don’t need to speak English. We give your guests all the info they need on their phone so they don’t have to ask you a hundred questions.', icon: 'tabler:mood-smile' },
-        { title: 'Show Up on Google Maps', description: 'When tourists search for "Coffee" or "Dentist" in English, we make sure they find you, not your competitor down the street.', icon: 'tabler:map-pin' },
-        { title: 'No More Misunderstandings', description: 'Clearly explain your rules, prices, and menus in perfect English. No more awkward moments or 1-star reviews from confusion.', icon: 'tabler:thumb-up' },
+        { title: 'Stop the English Stress', description: 'Give guests the info they need on their phone so they don’t have to ask questions.', icon: 'tabler:mood-smile' },
+        { title: 'Show Up on Google Maps', description: 'Appear at the top when tourists search for your service in English.', icon: 'tabler:map-pin' },
+        { title: 'No More Misunderstandings', description: 'Explain your rules and menus in perfect English to prevent confusion or 1-star reviews.', icon: 'tabler:thumb-up' },
     ]}
-    image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Tourists in Japan' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Don’t miss out on the inbound boom.<br/>It’s easier than you think.</h3>
-      <p class="text-lg text-muted mb-4">Tourists are ready to spend money at your shop, cafe, or clinic. But if your online information is only in Japanese, they feel "uninvited."</p>
-      <p class="text-lg text-muted mb-6"><strong>Hanei’s 1-Page Welcome</strong> makes it easy for them to choose you. We do all the work, you get the customers.</p>
-    </Fragment>
-  </Content>
+    image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Tourists' }}
+  />
 
   <Content
     isReversed={true}
+    title="A simple solution for busy owners."
+    subtitle="No 'homework' or tech talk. Just a professional English presence that works on every smartphone."
     items={[
-        { title: 'No Tech Skills Needed', description: 'If you can use LINE, you can do this. We handle the website, the hosting, and the setup.', icon: 'tabler:device-mobile-check' },
-        { title: 'Fast Results', description: 'Order before noon, and you will have your page by tonight. Start welcoming guests tomorrow morning.', icon: 'tabler:bolt' },
-        { title: 'Zero Risk', description: 'We offer unlimited revisions. If you don’t like the wording or the look, we change it until you are 100% happy.', icon: 'tabler:shield-check' },
+        { title: 'No Tech Skills Needed', description: 'If you can use LINE, you can do this. We handle the website, hosting, and setup.', icon: 'tabler:device-mobile-check' },
+        { title: 'Same-Day Build', description: 'Order before noon, and you will have your page by tonight.', icon: 'tabler:bolt' },
     ]}
-    image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Japan Shop' }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">A simple solution for <br/>busy business owners.</h3>
-      <p class="text-lg text-muted">You have enough to do. We don’t give you "homework" or tech talk. Just a professional English presence that works on every smartphone.</p>
-    </Fragment>
-  </Content>
-
-  <Steps2
-    title="3 Simple Steps to Get Started"
-    subtitle="You don't have to spend weeks planning. We make it instant."
-    items={[
-      { title: 'Step 1: Send Your Info', description: 'Tell us your shop name and what you want tourists to know (menus, services, rules).', icon: 'tabler:send' },
-      { title: 'Step 2: We Build Everything', description: 'Our team writes professional English copy and optimizes your Google Maps profile.', icon: 'tabler:tool' },
-      { title: 'Step 3: Welcome Guests', description: 'You get a QR code to put on your door or table. Guests scan it, read it, and order.', icon: 'tabler:door-enter' },
-    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Shop' }}
   />
 
-  <Features2
-    title='Everything Included for ¥19,800'
-    subtitle="No hidden fees. No complicated contracts."
-    columns={3}
-    items={[
-      { title: 'English Google Maps', description: 'We make sure you appear when tourists search in English.', icon: 'tabler:map-pin' },
-      { title: 'Professional English', description: 'No bad "machine translations." We write copy that sounds natural and inviting.', icon: 'tabler:writing' },
-      { title: 'Mobile Optimized', description: 'Your page loads instantly on any tourist’s phone.', icon: 'tabler:device-mobile' },
-      { title: 'Custom QR Code', description: 'A high-quality QR code for your shop window or menus.', icon: 'tabler:qrcode' },
-      { title: 'Same-Day Turnaround', description: 'Order by 12:00 PM, live by tonight. Otherwise, next day.', icon: 'tabler:clock' },
-      { title: 'Unlimited Revisions', description: 'We change it until you are 100% satisfied with the result.', icon: 'tabler:user-check' },
-    ]}
-  />
+  <Pricing id="pricing" title="One Price. Complete Service." prices={[pricingData]} />
 
-  <Pricing 
-    id="pricing"
-    title="One Price. Complete Service." 
-    prices={[pricingData]} 
-  />
-
-  <CallToAction
-    title="Ready to grow your business?"
-    subtitle="Stop letting the language barrier hold you back. Let the world find your business today."
-    actions={[{ variant: 'primary', text: 'Order Now - ¥19,800', href: '/contact' }]}
-  />
-
-  <CallToAction
-    title="About Hanei"
-    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
-    actions={[]}
-  />
+  <CallToAction title="About Hanei" subtitle="Hanei empowers Japan's greatest asset—its local culture—by bridging the gap with modern technology." />
 </Layout>

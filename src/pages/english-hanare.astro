@@ -7,10 +7,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { 
-  title: 'English Hanare | Standalone English Website | Hanei JP', 
-  description: 'Get a professional English website for your business without touching your current Japanese site. Safe, fast, and high-quality.',
-};
+const metadata = { title: 'English Hanare | Standalone English Website' };
 
 const pricingData = {
   title: 'The English Hanare Plan',
@@ -29,147 +26,49 @@ const pricingData = {
 ---
 
 <Layout metadata={metadata}>
-  
-  <!-- HERO SECTION -->
   <Hero2
     tagline="The English Hanare Strategy"
     title='A Complete English Website <br/><span class="text-accent">Without Touching Your Current Site.</span>'
-    subtitle='Need an English website but afraid to change your current one? We build a professional English version of your site that stands on its own. No risk of breaking your original site and no technical skills required.'
+    subtitle='Need an English website but afraid to change your current one? We build a professional English version of your site that stands on its own—zero risk, zero technical skills required.'
     actions={[{ variant: 'primary', text: 'Get Your English Website Today', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy', alt: 'Premium Japanese Dining' }}
+    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Premium Japanese Dining' }}
   />
   
-  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
+    title='"I want an English site, but I’m afraid to touch my current one."'
+    subtitle="Hanei’s 'English Hanare' builds a separate English pavilion for your global guests without touching your legacy Japanese code."
     items={[
-        { 
-          title: 'Afraid of Breaking Your Site?', 
-          description: 'You don’t have to worry about a developer messing up your existing Japanese website. We don’t touch your current system at all.', 
-          icon: 'tabler:shield-lock' 
-        },
-        { 
-          title: 'Lost Your Passwords?', 
-          description: 'Can’t find your login info from the agency that built your site 10 years ago? No problem. We don’t need them to build your English version.', 
-          icon: 'tabler:key-off' 
-        },
-        { 
-          title: 'English That Actually Sells', 
-          description: 'Bad machine translation scares customers away. We write professional English that makes Westerners trust your business immediately.', 
-          icon: 'tabler:message-language' 
-        },
+        { title: 'Zero Technical Risk', description: 'We don’t touch your current system. No risk of breaking your original site.', icon: 'tabler:shield-lock' },
+        { title: 'No Passwords Needed', description: 'Lost your login info? No problem. We build independently of your existing agency.', icon: 'tabler:key-off' },
+        { title: 'Native Copywriting', description: 'We replace bad machine translations with professional English that builds trust.', icon: 'tabler:message-language' },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">"I want an English site, <br/>but I’m afraid to touch my current one."</h3>
-      <p class="text-lg text-muted mb-4">
-        Your website is your business. Many owners worry that "adding English" will break their Japanese site or cause technical headaches. 
-      </p>
-      <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Hanei’s "English Hanare" solves this by building a separate, beautiful English pavilion for your global guests.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Authentic Japanese Cuisine" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
+    image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Authentic Japanese Cuisine' }}
+  />
 
-  <!-- SECTION 2: THE CONCEPT -->
   <Content
     isReversed={true}
+    title="The 'Hanare' Concept"
+    subtitle="Like a separate guest pavilion in traditional architecture, we build a high-speed English site specifically for international visitors while leaving your original site exactly as it is."
     items={[
-        { 
-          title: 'Zero-Touch Build', 
-          description: 'We build your English site on a separate "sub-domain." It looks like your main site, but it’s technically independent and safe.', 
-          icon: 'tabler:circle-check' 
-        },
-        { 
-          title: 'Modern & Mobile Friendly', 
-          description: 'While your old site might be slow, your new English site will be lightning-fast on any smartphone.', 
-          icon: 'tabler:device-mobile' 
-        },
+        { title: 'Zero-Touch Build', description: 'Built on a safe sub-domain that looks like your main site but stays technically independent.', icon: 'tabler:circle-check' },
+        { title: 'Modern & Mobile Friendly', description: 'Your new English site will be lightning-fast on any smartphone.', icon: 'tabler:device-mobile' },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">The "Hanare" Concept</h3>
-      <p class="text-lg text-muted">
-        In Japan, a <em>Hanare</em> is a separate, beautiful building for guests. We do the same for your digital presence. We build a high-speed English website specifically for your international visitors, leaving your original Japanese site exactly as it is.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="Japanese Sushi Preparation" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
+    image={{ src: 'https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Sushi' }}
+  />
 
-  <!-- STEPS -->
   <Steps2
     title="Your English Website in 3 Days"
     subtitle="Simple process. Zero stress for you or your staff."
     items={[
-      {
-        title: 'Step 1: Send Your URL',
-        description: 'Just give us your current website link. We don’t need your passwords.',
-        icon: 'tabler:link',
-      },
-      {
-        title: 'Step 2: We Build Everything',
-        description: 'We translate and design up to 10 pages in professional English in just 3 days.',
-        icon: 'tabler:bolt',
-      },
-      {
-        title: 'Step 3: Launch & Welcome Guests',
-        description: 'Your new English site goes live. We offer unlimited revisions until you are 100% happy.',
-        icon: 'tabler:world',
-      },
+      { title: 'Step 1: Send Your URL', description: 'Just give us your website link. We don’t need your passwords.', icon: 'tabler:link' },
+      { title: 'Step 2: We Build Everything', description: 'We design up to 10 pages in professional English in just 3 days.', icon: 'tabler:bolt' },
+      { title: 'Step 3: Launch & Welcome Guests', description: 'Your new site goes live. We offer unlimited revisions until you are 100% happy.', icon: 'tabler:world' },
     ]}
-    image={{ 
-      src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', 
-      alt: 'Luxury Japanese Table Setting',
-    }}
+    image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'Luxury Setting' }}
   />
 
-  <!-- FEATURES -->
-  <Features2
-    title="Everything Included"
-    subtitle="Full service for one fixed price."
-    columns={3}
-    items={[
-      { title: '10 Full Pages', description: 'Home, Menu, Services, Access, and more.', icon: 'tabler:files' },
-      { title: 'Native Copywriting', description: 'Perfect English that converts visitors into customers.', icon: 'tabler:writing' },
-      { title: 'Zero Technical Risk', description: 'Your Japanese site remains 100% untouched and safe.', icon: 'tabler:shield' },
-      { title: '3-Day Turnaround', description: 'Order by noon and we deliver in 72 hours.', icon: 'tabler:clock' },
-      { title: 'Unlimited Revisions', description: 'We change it until you are completely satisfied.', icon: 'tabler:thumb-up' },
-      { title: 'Mobile Optimized', description: 'Perfect viewing experience on all smartphones.', icon: 'tabler:device-mobile' },
-    ]}
-  />
+  <Pricing id="pricing" title="The Ultimate Inbound Asset" subtitle="Professional English expansion with zero risk." prices={[pricingData]} />
 
-  <!-- TOURIST READY SUITE -->
-  <Features2
-    title='Every Plan Includes the "Tourist-Ready" Suite:'
-    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
-    columns={3}
-    items={[
-      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
-      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
-      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
-      { title: 'Professional English Copywriting', description: "We write high-converting business descriptions.", icon: 'tabler:circle-check' },
-      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data.', icon: 'tabler:circle-check' },
-      { title: 'Same-Day Deployment', description: 'Order before lunch, and we launch today!', icon: 'tabler:bolt' },
-    ]}
-  />
-
-  <Pricing 
-    id="pricing"
-    title="The Ultimate Inbound Asset" 
-    subtitle="Professional English expansion with zero risk."
-    prices={[pricingData]} 
-  />
-
-  <!-- ABOUT HANEI -->
-  <CallToAction
-    title="About Hanei"
-    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
-    actions={[]}
-  />
-
+  <CallToAction title="About Hanei" subtitle="Hanei is dedicated to empowering Japanese local businesses through modern technology and strategic inbound growth." />
 </Layout>

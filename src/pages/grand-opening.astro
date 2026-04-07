@@ -6,10 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { 
-  title: 'The Grand Opening | Professional Web Design | Hanei JP', 
-  description: 'Fix your old website or build a brand new one. Professional, fast, and high-converting for Japanese businesses.',
-};
+const metadata = { title: 'The Grand Opening | Professional Web Design' };
 
 const pricingData = [
   {
@@ -46,120 +43,27 @@ const pricingData = [
 ---
 
 <Layout metadata={metadata}>
-  
-  <!-- HERO SECTION -->
   <Hero2
     tagline="The Grand Opening"
     title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>'
-    subtitle="An outdated website scares away customers. Whether you need to fix your current site or build a brand-new one from scratch, we deliver a professional, fast, and beautiful digital front door in just 4 days."
+    subtitle="An outdated website scares away customers. Whether you need a reform or a new build, we deliver a professional digital front door in just 4 days."
     actions={[{ variant: 'primary', text: 'View Pricing & Plans', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Culinary Excellence' }}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary Excellence' }}
   />
   
-  <!-- THE PROBLEM -->
   <Content
     isReversed={false}
+    title="Your Website Should Be an Engine, Not an Anchor."
+    subtitle="Most websites in Japan are slow and outdated. We give you a world-class digital presence without the tech headaches."
     items={[
         { title: 'The Speed Problem', description: 'If your site is slow, customers leave. We make your site load instantly on any device.', icon: 'tabler:bolt' },
-        { title: 'The Trust Problem', description: 'An old design makes your business look behind the times. We give you a sleek, modern look that builds instant trust.', icon: 'tabler:shield-check' },
-        { title: 'The Language Barrier', description: 'We build sites that work perfectly in both Japanese and English, so you can welcome the world.', icon: 'tabler:language' },
+        { title: 'The Trust Problem', description: 'A sleek, modern design that builds instant trust with high-end travelers.', icon: 'tabler:shield-check' },
+        { title: 'The Language Barrier', description: 'Sites that work perfectly in both Japanese and English, so you can welcome the world.', icon: 'tabler:language' },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Your Website Should Be an Engine, Not an Anchor.</h3>
-      <p class="text-lg text-muted mb-4">
-        Many Japanese businesses are held back by websites built 10 years ago. They are slow, hard to read on phones, and difficult to update. 
-      </p>
-      <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Hanei’s Grand Opening service gives you a world-class presence without the tech headaches.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTIxfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Elegant Sushi Presentation" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- OPTION 1: REFORM -->
-  <Content
-    isReversed={true}
-    items={[
-        { title: 'Modern Facelift', description: 'We keep your content but update the look to match today’s highest design standards.', icon: 'tabler:palette' },
-        { title: 'Mobile-First Design', description: 'Most tourists and customers use phones. We ensure your site looks perfect on every screen.', icon: 'tabler:device-mobile' },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Option 1: The Grand Reform</h3>
-      <p class="text-lg text-muted">
-        Already have a site but hate how it looks? We perform a total makeover. We inject speed, modern design, and better navigation into your existing structure in just 4 days.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1626379907753-406934326e2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI5fHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Japanese Chef Cooking" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- OPTION 2: NEW OPENING -->
-  <Content
-    isReversed={false}
-    items={[
-        { title: 'Bilingual from Day 1', description: 'Built to attract both Japanese locals and international travelers with equal power.', icon: 'tabler:world' },
-        { title: 'High-Velocity Tech', description: 'We use the latest technology so your site is ready for the future and stays fast for years.', icon: 'tabler:rocket' },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Option 2: The Grand New Opening</h3>
-      <p class="text-lg text-muted">
-        Start fresh with a premium digital flagship. We build a brand-new, dual-language headquarters for your business designed to turn visitors into paying customers.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTUyfHxqYXBhbmVzZSUyMGZvb2R8ZW58MHx8MHx8fDI%3D" alt="Traditional Japanese Setting" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- FEATURES -->
-  <Features2
-    title="Everything You Need is Included"
-    subtitle="A fixed price with no hidden surprises."
-    columns={3}
-    items={[
-      { title: 'Up to 10 Pages', description: 'Plenty of space for your menu, staff, services, and map.', icon: 'tabler:copy' },
-      { title: '4-Day Turnaround', description: 'Order by noon and your new site is ready in 4 days.', icon: 'tabler:clock' },
-      { title: 'Unlimited Revisions', description: 'We work until you are 100% happy with the design.', icon: 'tabler:thumb-up' },
-      { title: 'Professional English', description: 'Natural English copy that welcomes global guests.', icon: 'tabler:writing' },
-      { title: 'Mobile Optimization', description: 'Fast and easy to use on any smartphone.', icon: 'tabler:device-mobile' },
-      { title: 'Google Maps Ready', description: 'Optimized so people can find your physical location easily.', icon: 'tabler:map-pin' },
-    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Sushi' }}
   />
 
-  <!-- TOURIST READY SUITE -->
-  <Features2
-    title='Every Plan Includes the "Tourist-Ready" Suite:'
-    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
-    columns={3}
-    items={[
-      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
-      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
-      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
-      { title: 'Professional English Copywriting', description: "We write high-converting business descriptions.", icon: 'tabler:circle-check' },
-      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data.', icon: 'tabler:circle-check' },
-      { title: 'Same-Day Deployment', description: 'Order before lunch, and we launch today!', icon: 'tabler:bolt' },
-    ]}
-  />
+  <Pricing id="pricing" title="Simple, Flat Pricing" subtitle="Get a world-class website for one fixed fee." prices={pricingData} />
 
-  <!-- PRICING -->
-  <Pricing 
-    id="pricing"
-    title="Simple, Flat Pricing" 
-    subtitle="Get a world-class website for one fixed fee."
-    prices={pricingData} 
-  />
-
-  <!-- ABOUT HANEI -->
-  <CallToAction
-    title="About Hanei"
-    subtitle="Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
-    actions={[]}
-  />
-
+  <CallToAction title="About Hanei" subtitle="We use modern technology to ensure that the world can experience Japan's local culture—without the stress of the language barrier." />
 </Layout>

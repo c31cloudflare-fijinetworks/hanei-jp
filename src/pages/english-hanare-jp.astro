@@ -7,10 +7,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { 
-  title: '英語サイト制作「離れ」プラン | Hanei JP', 
-  description: '今の日本語サイトはそのまま。壊すリスクなしで、プロ品質の英語サイトを最短3日で制作します。',
-};
+const metadata = { title: '英語サイト制作「離れ」プラン' };
 
 const pricingData = {
   title: '英語サイト制作「離れ」プラン',
@@ -29,146 +26,38 @@ const pricingData = {
 ---
 
 <Layout metadata={metadata}>
-  
-  <!-- HERO SECTION -->
   <Hero2
     tagline="「離れ」のウェブ戦略"
     title='今のサイトは、いじりません。<br/><span class="text-accent">リスクゼロの英語サイト制作。</span>'
-    subtitle='「英語サイトは欲しいけれど、今の日本語サイトを壊したくない」「制作会社のログイン情報を忘れてしまった」…そんな悩みを解決します。今のサイトはそのままに、独立した高品質な英語サイトを最短3日で構築します。'
+    subtitle='「日本語サイトを壊したくない」「ログイン情報を忘れた」…そんな悩みを解決。既存サイトはそのままに、独立した高品質な英語サイトを最短3日で構築します。'
     actions={[{ variant: 'primary', text: 'まずは相談する', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy', alt: '高級日本料理' }}
+    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: '高級日本料理' }}
   />
   
-  <!-- SECTION 1: THE PAIN -->
   <Content
     isReversed={false}
+    title='「英語化したいけど、今のサイトを触るのが怖い」'
+    subtitle="既存の日本語サイトには一切触れず、独立した「デジタルの離れ」を構築することで技術的リスクをゼロにします。"
     items={[
-        { 
-          title: 'サイトを壊す心配はありません', 
-          description: '既存の日本語サイトに手を入れることはありません。不具合が起きるリスクは「ゼロ」です。', 
-          icon: 'tabler:shield-lock' 
-        },
-        { 
-          title: 'パスワード紛失でも大丈夫', 
-          description: '昔作ったサイトのログイン情報がわからなくても制作可能。面倒な情報の掘り起こしは不要です。', 
-          icon: 'tabler:key-off' 
-        },
-        { 
-          title: '「売れる」英語ライティング', 
-          description: '不自然な自動翻訳は信頼を損ないます。ネイティブが「ここに行きたい」と思う英語で、あなたのお店の価値を伝えます。', 
-          icon: 'tabler:message-language' 
-        },
+        { title: 'サイトへの影響ゼロ', description: '既存のシステムに手を入れないため、不具合が起きるリスクは一切ありません。', icon: 'tabler:shield-lock' },
+        { title: 'パスワード不要', description: '昔作ったサイトのログイン情報がわからなくても、独立して制作可能です。', icon: 'tabler:key-off' },
+        { title: 'ネイティブ品質', description: '不自然な自動翻訳は信頼を損ないます。ネイティブが納得する「売れる英語」を提供。', icon: 'tabler:message-language' },
     ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">「英語化したいけど、<br/>今のサイトを触るのが怖い」</h3>
-      <p class="text-lg text-muted mb-4">
-        多くのオーナー様が、古いシステムの日本語サイトを更新して不具合が出ることを恐れています。また、制作会社との連絡が途絶え、パスワードがわからないというケースも少なくありません。
-      </p>
-      <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Haneiの「離れ」プランは、今のサイトには一切触れず、海外客専用の「デジタルな離れ」を構築することでこの問題を解決します。
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="本格日本料理" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
+    image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: '日本料理' }}
+  />
 
-  <!-- SECTION 2: THE CONCEPT -->
-  <Content
-    isReversed={true}
-    items={[
-        { 
-          title: '完全独立型の構築', 
-          description: '専用のドメイン（サブドメイン）で構築するため、日本語サイトのシステムが古くても影響を受けません。', 
-          icon: 'tabler:circle-check' 
-        },
-        { 
-          title: 'スマホで爆速表示', 
-          description: '最新の技術で制作するため、旅行中の外国人のスマホでもストレスなく一瞬で表示されます。', 
-          icon: 'tabler:device-mobile' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">「離れ（Hanare）」のコンセプト</h3>
-      <p class="text-lg text-muted">
-        日本建築における「離れ」のように、母屋（日本語サイト）はそのままに、大切なお客様を迎えるための特別でモダンな空間（英語サイト）を新しく作ります。
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8amFwYW5lc2UlMjBmb29kfGVufDB8fDB8fHwy" alt="寿司の調理" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- STEPS -->
   <Steps2
     title="導入までの3ステップ"
     subtitle="手間は取らせません。最短3日で完了します。"
     items={[
-      {
-        title: 'STEP 1: URLを送るだけ',
-        description: '現在のホームページのURLをお送りください。ログイン情報は不要です。',
-        icon: 'tabler:link',
-      },
-      {
-        title: 'STEP 2: 私たちが制作',
-        description: '最大10ページ分を、プロの英語とモダンなデザインで最短3日で構築します。',
-        icon: 'tabler:bolt',
-      },
-      {
-        title: 'STEP 3: 運用開始',
-        description: '満足いただけるまで何度でも修正します。完成後、世界中からのお客様を迎えましょう。',
-        icon: 'tabler:world',
-      },
+      { title: 'STEP 1: URLを送るだけ', description: '現在のホームページのURLをお送りください。ログイン情報は不要です。', icon: 'tabler:link' },
+      { title: 'STEP 2: 私たちが制作', description: 'プロの英語とモダンなデザインで、最短3日で構築します。', icon: 'tabler:bolt' },
+      { title: 'STEP 3: 運用開始', description: '満足いただけるまで何度でも修正。完成後、世界中のお客様を迎えましょう。', icon: 'tabler:world' },
     ]}
-    image={{ 
-      src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGphcGFuZXNlJTIwZm9vZHxlbnwwfHwwfHx8Mg%3D%3D', 
-      alt: '豪華な日本の食卓',
-    }}
+    image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: '食卓' }}
   />
 
-  <!-- FEATURES -->
-  <Features2
-    title="安心のパッケージ内容"
-    subtitle="追加料金なしのコミコミ価格です。"
-    columns={3}
-    items={[
-      { title: 'たっぷり10ページ構成', description: 'トップ、メニュー、サービス、アクセスなど主要情報を網羅。', icon: 'tabler:files' },
-      { title: 'ネイティブ翻訳', description: '外国人客を納得させ、予約に繋げるための生きた英語。', icon: 'tabler:writing' },
-      { title: '既存サイトへのリスクなし', description: '日本語サイトをいじらないため、絶対に壊れることがありません。', icon: 'tabler:shield' },
-      { title: '最短3日の爆速納品', description: 'お昼の12時までの注文で、72時間以内に公開可能です。', icon: 'tabler:clock' },
-      { title: '修正無制限', description: 'オーナー様が100%納得するまで、何度でも無料で修正。', icon: 'tabler:thumb-up' },
-      { title: '最新のスマホ対応', description: '外出先での閲覧に特化した、高速・高機能なモバイル設計。', icon: 'tabler:device-mobile' },
-    ]}
-  />
+  <Pricing id="pricing" title="インバウンド収客の最強資産" subtitle="リスクなし、手間なしで、世界へお店を開放しましょう。" prices={[pricingData]} />
 
-  <!-- TOURIST READY SUITE -->
-  <Features2
-    title='すべてのプランに含まれる「インバウンド対応スイート」'
-    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
-    columns={3}
-    items={[
-      { title: 'GoogleマップSEO（MEO）', description: '外国人観光客が「近くの〇〇」と検索した際に上位表示させる、1ページの完全英語SEO設定。', icon: 'tabler:circle-check' },
-      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用PDFデータ。', icon: 'tabler:circle-check' },
-      { title: '「How-To」ランディングページ', description: '禁煙、お通し、靴を脱ぐルールなどを説明し、入店前の不安を解消するカスタムコンテンツ。', icon: 'tabler:circle-check' },
-      { title: 'プロの英語コピーライティング', description: '単なる翻訳ではなく、予約・来店につながる魅力的なビジネス説明文を執筆。', icon: 'tabler:circle-check' },
-      { title: '超高速ページ配信ネットワーク', description: 'ローミング通信を利用するモバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
-      { title: '最短即日の超高速デプロイ', description: '午前中のご注文で、本日中にWebサイトを公開・稼働させます！', icon: 'tabler:bolt' },
-    ]}
-  />
-
-  <Pricing 
-    id="pricing"
-    title="インバウンド収客の最強資産" 
-    subtitle="リスクなし、手間なしで、世界へお店を開放しましょう。"
-    prices={[pricingData]} 
-  />
-
-  <!-- ABOUT HANEI -->
-  <CallToAction
-    title="Haneiについて"
-    subtitle="Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。"
-    actions={[]}
-  />
+  <CallToAction title="Haneiについて" subtitle="日本の地域ビジネスを支援し、最新のテクノロジーと言葉の壁を超えた「繁栄」をお手伝いします。" />
 </Layout>
