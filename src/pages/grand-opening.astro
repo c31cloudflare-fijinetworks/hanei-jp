@@ -1,12 +1,11 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { title: 'The Grand Opening | Professional Web Design' };
+const metadata = { title: 'Grand Opening | Web Design' };
 
 const pricingData = [
   {
@@ -18,8 +17,7 @@ const pricingData = [
       { description: 'Update to a Modern, Clean Design' },
       { description: 'Make it 100% Mobile Friendly' },
       { description: 'Fix Speed & Performance Issues' },
-      { description: '4-Day Turnaround (Order by noon)' },
-      { description: 'Unlimited revisions until satisfied' },
+      { description: '4-Day Turnaround' },
     ],
     callToAction: { target: '_self', text: 'Start My Reform', href: '/contact', variant: 'primary' },
   },
@@ -31,9 +29,8 @@ const pricingData = [
     items: [
       { description: 'Brand New Bilingual Architecture' },
       { description: 'Latest High-Speed Tech Stack' },
-      { description: 'Modern "Luxury Guest" UX Design' },
-      { description: '4-Day Turnaround (Order by noon)' },
-      { description: 'Unlimited revisions until satisfied' },
+      { description: 'Luxury Guest UX Design' },
+      { description: '4-Day Turnaround' },
     ],
     callToAction: { target: '_self', text: 'Launch My New Site', href: '/contact', variant: 'primary' },
     hasRibbon: true,
@@ -46,24 +43,45 @@ const pricingData = [
   <Hero2
     tagline="The Grand Opening"
     title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>'
-    subtitle="An outdated website scares away customers. Whether you need a reform or a new build, we deliver a professional digital front door in just 4 days."
-    actions={[{ variant: 'primary', text: 'View Pricing & Plans', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary Excellence' }}
+    subtitle="An outdated website scares away customers. We deliver a professional digital front door in just 4 days."
+    actions={[{ variant: 'primary', text: 'View Pricing', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary' }}
   />
   
   <Content
     isReversed={false}
-    title="Your Website Should Be an Engine, Not an Anchor."
-    subtitle="Most websites in Japan are slow and outdated. We give you a world-class digital presence without the tech headaches."
+    title="Your Website is an Engine, Not an Anchor."
+    subtitle="Don't let a slow, old design hurt your business. We build world-class digital landmarks that convert visitors into guests."
     items={[
-        { title: 'The Speed Problem', description: 'If your site is slow, customers leave. We make your site load instantly on any device.', icon: 'tabler:bolt' },
-        { title: 'The Trust Problem', description: 'A sleek, modern design that builds instant trust with high-end travelers.', icon: 'tabler:shield-check' },
-        { title: 'The Language Barrier', description: 'Sites that work perfectly in both Japanese and English, so you can welcome the world.', icon: 'tabler:language' },
+        { title: 'The Speed Problem', description: 'Slow sites lose customers. We ensure instant loading on all devices.', icon: 'tabler:bolt' },
+        { title: 'The Trust Problem', description: 'Modern design builds immediate authority with international travelers.', icon: 'tabler:shield-check' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Sushi' }}
   />
 
-  <Pricing id="pricing" title="Simple, Flat Pricing" subtitle="Get a world-class website for one fixed fee." prices={pricingData} />
+  <Content
+    isReversed={true}
+    title="Option 1: The Grand Reform"
+    subtitle="Keep your content, but update the soul. We transform your existing site into a high-speed, modern asset in 4 days."
+    items={[
+        { title: 'Modern Facelift', description: 'Fresh aesthetics aligned with modern luxury standards.', icon: 'tabler:palette' },
+        { title: 'Mobile Optimization', description: 'Perfect viewing and navigation on every smartphone screen.', icon: 'tabler:device-mobile' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Chef' }}
+  />
 
-  <CallToAction title="About Hanei" subtitle="We use modern technology to ensure that the world can experience Japan's local culture—without the stress of the language barrier." />
+  <Content
+    isReversed={false}
+    title="Option 2: The Grand New Opening"
+    subtitle="Start fresh with a premium digital flagship. Built from the ground up for speed, SEO, and global conversion."
+    items={[
+        { title: 'Bilingual Architecture', description: 'Designed to attract locals and global travelers with equal power.', icon: 'tabler:world' },
+        { title: 'Velocity Tech Stack', description: 'Future-proof technology that stays fast for years to come.', icon: 'tabler:rocket' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'Japan' }}
+  />
+
+  <Pricing id="pricing" title="Simple, Flat Pricing" prices={pricingData} />
+
+  <CallToAction title="About Hanei" subtitle="We use modern technology to bridge the gap between local craft and the global market." />
 </Layout>

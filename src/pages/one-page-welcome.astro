@@ -5,9 +5,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
-const metadata = { title: 'English Web Page for Japanese Businesses' };
+const metadata = { title: 'English Page Setup | Hanei JP' };
 
 const pricingData = {
   title: 'The "Tourist-Ready" Page',
@@ -19,7 +18,6 @@ const pricingData = {
     { description: 'Google Maps English Optimization' },
     { description: 'Easy-to-use QR Code for your shop' },
     { description: 'Same-day delivery (if ordered by noon)' },
-    { description: 'Unlimited revisions until 100% satisfied' },
   ],
   callToAction: { target: '_self', text: 'Get Started Now', href: '/contact', variant: 'primary' },
 };
@@ -29,35 +27,34 @@ const pricingData = {
   <Hero2
     tagline="Simple. Fast. Effective."
     title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>'
-    subtitle='You see them every day—tourists looking at their phones, then walking away because they can’t read your sign. We fix that in 24 hours.'
-    actions={[{ variant: 'primary', text: 'Get Your English Page Today', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Busy Japanese Street' }}
+    subtitle='Tourists are looking at their phones, then walking away because they can’t read your sign. We fix that in 24 hours.'
+    actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Street' }}
   />
   
   <Content
     isReversed={false}
-    title="Don’t miss out on the inbound boom. It’s easier than you think."
+    title="Don’t miss out on the inbound boom."
     subtitle="We turn hesitant tourists into confident customers by removing the 'English Barrier' from your business."
     items={[
-        { title: 'Stop the English Stress', description: 'Give guests the info they need on their phone so they don’t have to ask questions.', icon: 'tabler:mood-smile' },
-        { title: 'Show Up on Google Maps', description: 'Appear at the top when tourists search for your service in English.', icon: 'tabler:map-pin' },
-        { title: 'No More Misunderstandings', description: 'Explain your rules and menus in perfect English to prevent confusion or 1-star reviews.', icon: 'tabler:thumb-up' },
+        { title: 'Stop the Stress', description: 'Give guests info on their phone so they don’t have to ask questions.', icon: 'tabler:mood-smile' },
+        { title: 'Google Maps SEO', description: 'Appear at the top when tourists search for your service in English.', icon: 'tabler:map-pin' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Tourists' }}
   />
 
-  <Content
-    isReversed={true}
-    title="A simple solution for busy owners."
-    subtitle="No 'homework' or tech talk. Just a professional English presence that works on every smartphone."
+  <Steps2
+    title="3 Simple Steps to Get Started"
+    subtitle="No technical skills required. We make it instant."
     items={[
-        { title: 'No Tech Skills Needed', description: 'If you can use LINE, you can do this. We handle the website, hosting, and setup.', icon: 'tabler:device-mobile-check' },
-        { title: 'Same-Day Build', description: 'Order before noon, and you will have your page by tonight.', icon: 'tabler:bolt' },
+      { title: 'Step 1: Send Info', description: 'Tell us your shop name and what you want tourists to know.', icon: 'tabler:send' },
+      { title: 'Step 2: We Build', description: 'Our team writes professional copy and optimizes your Google profile.', icon: 'tabler:tool' },
+      { title: 'Step 3: Launch', description: 'Put up your QR code and start welcoming global guests.', icon: 'tabler:door-enter' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Shop' }}
   />
 
   <Pricing id="pricing" title="One Price. Complete Service." prices={[pricingData]} />
 
-  <CallToAction title="About Hanei" subtitle="Hanei empowers Japan's greatest asset—its local culture—by bridging the gap with modern technology." />
+  <CallToAction title="About Hanei" subtitle="Empowering Japan's local culture through modern technology." />
 </Layout>
