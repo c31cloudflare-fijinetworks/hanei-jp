@@ -11,30 +11,30 @@ const {
 } = Astro.props;
 ---
 
-<section class="bg-primary-50 dark:bg-slate-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-12 md:pb-16">
-    <div class="grid md:grid-cols-2 gap-16">
+<section class="bg-primary-50 dark:bg-slate-800 py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
       
       <div class="flex flex-col justify-center">
-        {title && <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4" set:html={title}></h2>}
-        {subtitle && <p class="text-muted dark:text-slate-400 mb-8 text-xl" set:html={subtitle}></p>}
+        {title && <h2 class="text-4xl md:text-5xl font-bold font-heading mb-6 tracking-tighter" set:html={title}></h2>}
+        {subtitle && <p class="text-muted dark:text-slate-400 mb-10 text-xl leading-relaxed" set:html={subtitle}></p>}
         
         {items && items.length > 0 && (
-          <div class="grid gap-4 mb-8">
+          <div class="grid gap-6 mb-10">
             {items.map(({ title: ititle, description, icon }) => (
-              <div class={ititle ? "flex items-start" : "flex items-center -mt-2 -mb-2"}>
-                <div class="flex-shrink-0 flex justify-center w-10">
+              <div class={ititle ? "flex items-start" : "flex items-center -my-3"}>
+                <div class="flex-shrink-0 flex justify-center w-12">
                   <div class={ititle 
-                    ? "flex items-center justify-center h-10 w-10 rounded-full bg-primary text-white shadow-md" 
-                    : "flex items-center justify-center h-8 w-10 text-slate-400 dark:text-slate-500"
+                    ? "flex items-center justify-center h-12 w-12 rounded-full bg-primary text-white shadow-xl" 
+                    : "flex items-center justify-center h-8 w-12 text-slate-400 dark:text-slate-500"
                   }>
-                    <Icon name={icon || 'tabler:check'} class={ititle ? "w-6 h-6" : "w-7 h-7"} />
+                    <Icon name={icon || 'tabler:check'} class={ititle ? "w-6 h-6" : "w-8 h-8"} />
                   </div>
                 </div>
                 {ititle && (
-                  <div class="ml-4">
-                    <h3 class="text-lg font-bold">{ititle}</h3>
-                    <p class="text-muted dark:text-slate-400">{description}</p>
+                  <div class="ml-6">
+                    <h3 class="text-xl font-bold mb-1">{ititle}</h3>
+                    <p class="text-lg text-muted dark:text-slate-400 leading-relaxed">{description}</p>
                   </div>
                 )}
               </div>
@@ -44,15 +44,21 @@ const {
 
         {callToAction && callToAction.text && (
           <div class="w-fit">
-            <Button {...callToAction} />
+            <Button {...callToAction} class="shadow-lg px-8 py-3" />
           </div>
         )}
       </div>
       
       <div class="flex items-center">
         {image && image.src && (
-          <div class="relative m-auto max-w-5xl">
-            <img src={image.src} alt={image.alt} class="mx-auto aspect-[3/2] object-cover rounded-lg shadow-2xl border-4 border-white dark:border-slate-700 w-full" loading="lazy" decoding="async" />
+          <div class="relative m-auto max-w-5xl w-full">
+            <img 
+              src={image.src} 
+              alt={image.alt} 
+              class="mx-auto aspect-[3/2] object-cover rounded-lg shadow-2xl border-4 border-white dark:border-slate-700 w-full" 
+              loading="lazy" 
+              decoding="async" 
+            />
           </div>
         )}
       </div>
