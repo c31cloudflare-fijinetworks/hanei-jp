@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Button from '~/components/ui/Button.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -10,6 +11,7 @@ const {
   image: imageProp,
   isReversed = false,
   isAfterContent = false,
+  callToAction,
 } = Astro.props;
 
 const imageSlot = await Astro.slots.render('image');
@@ -17,7 +19,7 @@ const image = imageProp || imageSlot;
 const isUrl = typeof image === 'string' && (image.startsWith('http') || image.startsWith('/') || image.startsWith('.'));
 ---
 
-<section class:list={[{ 'py-12 md:py-20': !isAfterContent, 'pb-12 md:pb-20': isAfterContent }]}>
+<section class:list={[{ 'pt-12 md:pt-16 pb-8 md:pb-12': !isAfterContent, 'pb-8 md:pb-12': isAfterContent }]}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class:list={['md:flex md:gap-16 items-center', { 'md:flex-row-reverse': isReversed }]}>
       <div class="md:basis-1/2 mb-10 md:mb-0">
@@ -37,25 +39,30 @@ const isUrl = typeof image === 'string' && (image.startsWith('http') || image.st
       </div>
       <div class="md:basis-1/2">
         {tagline && <p class="text-base text-secondary dark:text-gray-400 font-bold tracking-widest uppercase mb-3">{tagline}</p>}
-        {title && <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter mb-6 font-heading">{title}</h2>}
-        {subtitle && <p class="text-xl text-muted mb-8 leading-relaxed" set:html={subtitle} />}
-        {content && <div class="text-lg text-muted mb-8 leading-relaxed" set:html={content} />}
-        {items && (
-          <ul class="space-y-10">
+        {title && <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter mb-4 font-heading">{title}</h2>}
+        {subtitle && <p class="text-xl text-muted mb-6 leading-relaxed" set:html={subtitle} />}
+        {content && <div class="text-lg text-muted mb-6 leading-relaxed" set:html={content} />}
+        {items && items.length > 0 && (
+          <ul class="space-y-6 mb-8">
             {items.map(({ title: itemTitle, description, icon }) => (
               <li class="flex max-w-md">
                 <div class="flex-shrink-0">
-                  <div class="flex items-center justify-center h-12 w-12 rounded-full bg-primary text-gray-50 shadow-lg">
-                    {icon && <Icon name={icon} class="w-6 h-6" />}
+                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-primary text-gray-50 shadow-md">
+                    {icon && <Icon name={icon} class="w-5 h-5" />}
                   </div>
                 </div>
                 <div class="ml-4">
-                  {itemTitle && <h3 class="text-xl leading-6 font-bold mb-2">{itemTitle}</h3>}
-                  {description && <p class="text-lg text-muted leading-relaxed" set:html={description} />}
+                  {itemTitle && <h3 class="text-lg font-bold">{itemTitle}</h3>}
+                  {description && <p class="text-muted leading-relaxed" set:html={description} />}
                 </div>
               </li>
             ))}
           </ul>
+        )}
+        {callToAction && (
+          <div class="mt-4">
+            <Button {...callToAction} class="bg-slate-900 text-white hover:bg-slate-800 shadow-xl" />
+          </div>
         )}
       </div>
     </div>

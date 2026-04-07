@@ -1,173 +1,22 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { 
-  title: 'The Review Engine | Hanei JP', 
-  description: 'Turn happy customers into your best marketing tool. Automated 5-star review collection for Japanese businesses.',
-};
-
-const pricingData = {
-  title: 'The Review Engine',
-  subtitle: 'Build a reputation that brings in new customers.',
-  price: '22,500',
-  period: 'One-time setup',
-  items: [
-    { description: 'Branded Review Collection Page' },
-    { description: 'Direct "Post to Google" shortcut' },
-    { description: 'Live Review Widget for your website' },
-    { description: 'Same-day delivery (Order by 12:00)' },
-    { description: 'Unlimited revisions until 100% satisfied' },
-  ],
-  callToAction: { target: '_self', text: 'Get Started Now', href: '/contact', variant: 'primary' },
-};
+const metadata = { title: 'Review Engine | Hanei JP' };
+const pricingData = { title: 'The Review Engine', price: '22,500', period: 'One-time', items: [{ description: 'Branded Review Page' }, { description: 'Direct Google Shortcut' }, { description: 'Live Review Widget' }, { description: 'Same-day delivery' }], callToAction: { target: '_self', text: 'Get Setup Now', href: '/contact', variant: 'primary' } };
 ---
-
 <Layout metadata={metadata}>
+  <Hero2 tagline="Reputation on Autopilot" title='Turn a "Thank You" <br/><span class="text-accent">into a 5-Star Review.</span>' subtitle='Stop letting happy customers leave without saying a word. We make it effortless for them to praise you on Google.' actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=611&h=405&auto=format&fit=crop', alt: 'Review' }} />
   
-  <!-- HERO SECTION -->
-  <Hero2
-    tagline="Your Reputation, Automated"
-    title='Turn a "Thank You" <br/><span class="text-accent">into a 5-Star Review.</span>'
-    subtitle="Stop letting happy customers leave without saying a word. We make it effortless for them to leave 5-star reviews on Google and your website."
-    actions={[{ variant: 'primary', text: 'Get Your Review Engine', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHJldmlld3xlbnwwfHwwfHx8Mg%3D%3D', alt: 'Review Ratings' }}
-  />
+  <Content isReversed={false} title="01. Branded Review Portal" subtitle="A premium digital red carpet for your guests. Clean, inviting, and tailored to your brand." items={[{ title: 'Visual Trust', description: 'No messy forms, just simple interaction.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1735970336839-810a54623b42?w=611&h=405&auto=format&fit=crop', alt: 'Portal' }} />
   
-  <!-- SECTION 1: THE PROBLEM -->
-  <Content
-    isReversed={false}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">The "Silent Customer" Problem</h3>
-      <p class="text-lg text-muted mb-4">
-        You provide great service. Your customers smile and say "Arigato." But when potential clients search for you on Google, your profile is quiet—or worse, one unhappy person has brought down your whole score.
-      </p>
-      <p class="text-lg text-muted mb-6">
-        Most happy customers <strong>want</strong> to help you, but they find it too difficult to search for your business while they are busy. We remove the friction.
-      </p>
-      <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Hanei’s Review Engine makes leaving a 5-star review as easy as scanning a code.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1735970336839-810a54623b42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Atmosphere" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- SECTION 2: THE SOLUTION -->
-  <Content
-    isReversed={true}
-    items={[
-        { 
-          title: 'Branded Review Page', 
-          description: 'A professional page that matches your business style. No messy forms—just a clean, inviting space for customers to share their experience.', 
-          icon: 'tabler:palette' 
-        },
-        { 
-          title: 'One-Tap to Google', 
-          description: 'We send your happy guests directly to your Google profile so they can leave that 5-star public rating with one tap.', 
-          icon: 'tabler:brand-google' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">A Professional Experience <br/>for Your Guests</h3>
-      <p class="text-lg text-muted">
-        We handle the tech. You just show the QR code. Your reputation grows while you focus on your work.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFwYW5lc2UlMjBjYWZlfGVufDB8fDB8fHwy" alt="Serving Coffee in Japan" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- SECTION 3: LIVE WIDGET -->
-  <Content
-    isReversed={false}
-    items={[
-        { 
-          title: 'Live Website Updates', 
-          description: "When you get a great review, it automatically appears on your website. Show every visitor that you are a business they can trust.", 
-          icon: 'tabler:refresh' 
-        },
-        { 
-          title: 'QR Ecosystem', 
-          description: "No logging in, no searching. Just: Scan. Tap. Done.", 
-          icon: 'tabler:qrcode' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">Real-Time Proof & <br/>Frictionless Engagement</h3>
-      <p class="text-lg text-muted mb-6">
-        Your website becomes a living testimonial to your success, constantly updated with fresh praise.
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGphcGFuZXNlJTIwY2FmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Japanese Cafe Interior" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- STEPS -->
-  <Steps2
-    title="Get Set Up Today"
-    subtitle="Fast, simple, and effective. Here is how we get you started."
-    items={[
-      { title: 'Step 1: Simple Order', description: 'Tell us your shop name and send us your logo.', icon: 'tabler:shopping-cart' },
-      { title: 'Step 2: Same-Day Build', description: 'Order by noon, and we launch today. Otherwise, it is ready tomorrow.', icon: 'tabler:bolt' },
-      { title: 'Step 3: Collect Reviews', description: 'Display your QR code. Watch as your Google rating and website testimonials grow.', icon: 'tabler:star' },
-    ]}
-    image={{ 
-      src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxqYXBhbmVzZSUyMGNhZmV8ZW58MHx8MHx8fDI%3D', 
-      alt: 'Barista Pouring Coffee',
-    }}
-  />
-
-  <!-- FEATURES -->
-  <Features2
-    title="The Hanei Promise"
-    subtitle="We don't stop until your review engine is perfect."
-    columns={3}
-    items={[
-      { title: 'Same-Day Turnaround', description: 'Order by 12:00 PM for today delivery. Otherwise, guaranteed next-day delivery.', icon: 'tabler:clock' },
-      { title: 'Unlimited Revisions', description: 'We will revise the design until you are 100% fully satisfied with the result.', icon: 'tabler:thumb-up' },
-      { title: 'Fixed Price ¥22,500', description: 'One simple payment. No hidden fees or monthly charges.', icon: 'tabler:coin-yen' },
-      { title: 'Branded for You', description: 'A custom-built page that matches your brand style.', icon: 'tabler:brush' },
-      { title: 'Google SEO Boost', description: 'Drives real reviews to Google to improve your search ranking.', icon: 'tabler:external-link' },
-      { title: 'Live Trust Widget', description: 'Display reviews on your website automatically to build trust.', icon: 'tabler:device-laptop' },
-    ]}
-  />
-
-  <!-- TOURIST READY SUITE -->
-  <Features2
-    title='Every Plan Includes the "Tourist-Ready" Suite:'
-    subtitle="Built-in infrastructure to ensure you start capturing inbound traffic immediately."
-    columns={3}
-    items={[
-      { title: 'Google Maps SEO (MEO)', description: '1-page full English SEO setup to ensure you appear when tourists search "near me."', icon: 'tabler:circle-check' },
-      { title: 'Custom QR Review Assets', description: 'Print-ready PDFs for your tables to drive 5-star Google reviews.', icon: 'tabler:circle-check' },
-      { title: 'The "How-To" Landing Page', description: 'Custom content explaining your rules to remove the Anxiety of Entry.', icon: 'tabler:circle-check' },
-      { title: 'Professional English Copywriting', description: "We write high-converting business descriptions.", icon: 'tabler:circle-check' },
-      { title: 'Super-High-Speed Network', description: 'Optimized for mobile users on roaming data so your site loads instantly.', icon: 'tabler:circle-check' },
-      { title: 'Same-Day Lightning Fast Deployment', description: 'Order before lunch, and we launch your website today!', icon: 'tabler:bolt' },
-    ]}
-  />
-
-  <!-- PRICING -->
-  <Pricing 
-    id="pricing"
-    title="Turn Satisfaction into Revenue" 
-    prices={[pricingData]} 
-  />
-
-  <!-- ABOUT HANEI -->
+  <Content isReversed={true} title="02. The Live Wall of Fame" subtitle="Display your best reviews automatically on your own website to instantly prove your excellence." items={[{ title: 'Social Proof', description: 'Verified satisfaction shown in real-time.', icon: 'tabler:stars' }]} image={{ src: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=611&h=405&auto=format&fit=crop', alt: 'Wall' }} />
   
+  <Content isReversed={false} title="03. Frictionless 3-Click Flow" subtitle="We optimize the mobile journey so leaving a review takes less than 15 seconds—no apps required." items={[{ title: 'Speed is King', description: 'Capture the glow before they leave the shop.', icon: 'tabler:pointer' }]} image={{ src: 'https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=611&h=405&auto=format&fit=crop', alt: 'Click' }} />
   
-  
+  <Content isReversed={true} title="04. SEO Boost Engine" subtitle="Continuous fresh reviews signal to Google that your business is active and the #1 choice in your area." items={[{ title: 'Rank Higher', description: 'Google rewards businesses with fresh activity.', icon: 'tabler:trending-up' }]} image={{ src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
+
+  <Pricing id="pricing" title="Turn Satisfaction into Revenue" prices={[pricingData]} />
 </Layout>

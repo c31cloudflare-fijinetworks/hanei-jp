@@ -9,20 +9,16 @@ import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Button from '~/components/ui/Button.astro';
 
-const metadata = { 
-  title: 'Hanei JP | インバウンド集客・支援ソリューション', 
-  description: '日本の技を、世界へ繋ぐ。Googleマップ英語SEO、レビューエンジンなど、インバウンド集客のインフラを圧倒的スピードで提供します。' 
-};
+const metadata = { title: 'Hanei JP | インバウンド集客・支援ソリューション' };
 ---
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION: Japanese - Clean, Modern, Concise -->
   <Hero2
     tagline="インバウンド集客・デジタル基盤構築の専門家"
     title='日本の「おもてなし」を、<br/><span class="text-accent dark:text-white">世界が選ぶ「正解」へ。</span>'
     subtitle="インバウンド集客の『見えない壁』を壊し、高単価な外国人観光客を惹きつけるデジタルインフラを最短48時間で構築します。"
     actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }, { text: 'サービス一覧を見る', href: '#features' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', width: 611, height: 405, alt: 'Japanese Street Scene' }}
+    image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop', alt: 'Japanese Street' }}
   />
 
   <Stats
@@ -37,12 +33,12 @@ const metadata = {
   <Features
     id="features"
     title="インバウンド・サービスキット"
-    subtitle="現場の負担を減らし、収益を最大化するための4つの専門ソリューション。"
+    subtitle="現場の負担を減らし、収益を最大化するための専門ソリューション。"
     items={[
-        { title: '1ページ・ウェルカム', description: 'Googleマップ英語SEOと、言語の壁を越える視覚的ガイダンスの統合パッケージ。', icon: 'tabler:map-pin', callToAction: { variant: 'primary', text: '詳細を見る', href: '/one-page-welcome-jp' } },
-        { title: 'レビューエンジン', description: 'お客様の満足を「星5つの評価」に。ブランドに合わせた専用ページで口コミ投稿を劇的に促進。', icon: 'tabler:message-star', callToAction: { variant: 'primary', text: '詳細を見る', href: '/review-engine-jp' } },
-        { title: '英語専用デジタル別館', description: '既存の日本語サイトはそのまま。独立したドメイン上に最高水準の英語資産を構築します。', icon: 'tabler:layers-intersect', callToAction: { variant: 'primary', text: '詳細を見る', href: '/english-hanare-jp' } },
-        { title: 'グランド・リブート', description: '既存サイトの高速リフォーム、またはゼロから構築するバイリンガル旗艦店プラン。', icon: 'tabler:rocket', callToAction: { variant: 'primary', text: '詳細を見る', href: '/grand-opening-jp' } },
+        { title: '1ページ・ウェルカム', description: 'Googleマップ英語SEOと、視覚的ガイダンスの統合パッケージ。', icon: 'tabler:map-pin', callToAction: { text: '詳細を見る', href: '/one-page-welcome-jp' } },
+        { title: 'レビューエンジン', description: 'お客様の満足を「星5つの評価」に。専用ページで口コミ投稿を促進。', icon: 'tabler:message-star', callToAction: { text: '詳細を見る', href: '/review-engine-jp' } },
+        { title: '英語専用デジタル別館', description: '既存の日本語サイトはそのまま。最高水準の英語資産を構築します。', icon: 'tabler:layers-intersect', callToAction: { text: '詳細を見る', href: '/english-hanare-jp' } },
+        { title: 'グランド・リブート', description: '既存サイトの高速リフォーム、またはゼロから構築するバイリンガル店。', icon: 'tabler:rocket', callToAction: { text: '詳細を見る', href: '/grand-opening-jp' } },
     ]}
   />
 
@@ -50,39 +46,46 @@ const metadata = {
     isReversed={false}
     tagline="サービス1"
     title="「見えない壁」を壊し、外国人客を呼び込む。"
-    items={[
-        { title: 'Googleマップ(MEO)対策', description: '欧米の富裕層が実際に検索するキーワードで店舗を上位表示させます。', icon: 'tabler:map-pin' },
-        { title: '入店前の不安を払拭', description: '店舗ルールやメニューを視覚的に伝え、外国人客の心理的障壁をゼロにします。', icon: 'tabler:eye' },
-    ]}
-    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Authentic Japan Experience' }}
+    subtitle="店舗ルールやメニューを視覚的に伝え、外国人客の心理的障壁をゼロにします。"
+    callToAction={{ text: '詳細を見る', href: '/one-page-welcome-jp' }}
+    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Welcome' }}
   />
 
-  <!-- STEPS SECTION -->
+  <Content
+    isReversed={true}
+    tagline="サービス2"
+    title="信頼を自動化。最強の営業資産を構築。"
+    subtitle="スマホをかざすだけで簡単にGoogleや自社サイトへ口コミを投稿できる仕組みを提供します。"
+    callToAction={{ text: '詳細を見る', href: '/review-engine-jp' }}
+    image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Review' }}
+  />
+
   <div id="process" class="scroll-mt-20">
     <Steps2
-      title="ご利用の流れ（カンタン4ステップ）"
-      subtitle="ITの知識は不要です。世界へ進出するまでのシンプルな手順をご案内します。"
+      title="ご利用の流れ"
+      subtitle="ITの知識は不要です。世界へ進出するまでのシンプルな手順です。"
       items={[
-        { title: '01. プランを選ぶ', description: 'お店に合ったプランを選び、オンラインで注文。', icon: 'tabler:number-1' },
+        { title: '01. プランを選ぶ', description: 'お店に合ったプランを選び注文。', icon: 'tabler:number-1' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '02. 情報を送る', description: '簡単なフォームに入力するだけ。パスワード不要。', icon: 'tabler:number-2' },
+        { title: '02. 情報を送る', description: '簡単なフォームに入力するだけ。', icon: 'tabler:number-2' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '03. お任せ制作', description: '最短24時間〜48時間で私たちがすべて完成させます。', icon: 'tabler:number-3' },
+        { title: '03. お任せ制作', description: '最短24時間〜48時間で完成させます。', icon: 'tabler:number-3' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '04. 集客スタート', description: '届いたQRコードを店頭に置くだけで運用開始。', icon: 'tabler:number-4' }
+        { title: '04. 集客スタート', description: '届いたQRコードを店頭に置くだけ。', icon: 'tabler:number-4' }
       ]}
-      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Hospitality' }}
+      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Success' }}
     />
   </div>
 
   <FAQs
     title="よくあるご質問"
+    classes={{ container: 'pt-8 md:pt-12' }}
     items={[
         { title: '英語を話せなくても導入できますか？', description: 'はい。システムがゲストには英語で、スタッフには正確な日本語で指示を伝えるため安心です。' },
         { title: '導入までにどのくらいの期間がかかりますか？', description: '最短当日、フルリニューアルであっても48時間以内のデプロイを保証しています。' },
+        { title: '既存のサイトが壊れる心配はない？', description: '「離れ」方式を採用しているため、既存サイトのコードを一切変更せずに安全に構築できます。' },
+        { title: 'NPO向けの支援はありますか？', description: 'はい。地域貢献活動として、登録NPO法人等へは完全無料でWeb制作を提供しています。' },
     ]}
     callToAction={{ variant: 'primary', text: 'よくあるご質問をもっと見る', href: '/faq-jp' }}
   />
-  
-  
 </Layout>

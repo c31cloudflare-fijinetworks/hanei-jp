@@ -16,13 +16,12 @@ const metadata = {
 ---
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION: Trimmed for perfect Review-Engine balance -->
   <Hero2
     tagline="The Elite Standard for Inbound Growth"
     title='Bridge the Gap Between Your <br/><span class="text-accent dark:text-white">Craft and the Global Market.</span>'
     subtitle="Stop losing high-spending international guests. We build the high-performance digital infrastructure required to convert global travelers into loyal customers—all in 48 hours."
     actions={[{ variant: 'primary', text: 'Get Started Today', href: '/contact' }, { text: 'View Our Services', href: '#features' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', width: 611, height: 405, alt: 'Japanese Street Scene' }}
+    image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=387&auto=format&fit=crop', alt: 'Japanese Street' }}
   />
 
   <Stats
@@ -34,68 +33,62 @@ const metadata = {
     ]}
   />
 
-  <!-- SERVICE KIT SUMMARY -->
   <Features
     id="features"
     title="The Inbound Service Kit Suite"
     subtitle="Four specialized products engineered to bridge the gap between local expertise and the global market."
     items={[
-        { title: '1-Page Welcome', description: 'Professional Google Maps SEO and visual-first guidance to eliminate entry anxiety.', icon: 'tabler:map-pin', callToAction: { variant: 'primary', text: 'Explore 1-Page Welcome', href: '/one-page-welcome' } },
-        { title: 'Review Engine', description: 'Capture authentic 5-star English reviews effortlessly through custom digital landing pages.', icon: 'tabler:message-star', callToAction: { variant: 'primary', text: 'Explore Review Engine', href: '/review-engine' } },
-        { title: 'English Hanare', description: 'A world-class English web asset for your business without touching your legacy Japanese code.', icon: 'tabler:layers-intersect', callToAction: { variant: 'primary', text: 'Explore English Hanare', href: '/english-hanare' } },
-        { title: 'Grand New or Reform', description: 'Total transformation. High-speed Reform of your current site or a dual-language site from scratch.', icon: 'tabler:rocket', callToAction: { variant: 'primary', text: 'Explore Grand Options', href: '/grand-opening' } },
+        { title: '1-Page Welcome', description: 'Professional Maps SEO combined with visual guidance to eliminate entry anxiety.', icon: 'tabler:map-pin', callToAction: { text: 'Explore 1-Page Welcome', href: '/one-page-welcome' } },
+        { title: 'Review Engine', description: 'Automate social proof. Capture authentic English reviews effortlessly.', icon: 'tabler:message-star', callToAction: { text: 'Explore Review Engine', href: '/review-engine' } },
+        { title: 'English Hanare', description: 'A detached digital pavilion for your business without touching legacy code.', icon: 'tabler:layers-intersect', callToAction: { text: 'Explore English Hanare', href: '/english-hanare' } },
+        { title: 'Grand New or Reform', description: 'Total transformation. High-speed Reform or a dual-language site from scratch.', icon: 'tabler:rocket', callToAction: { text: 'Explore Grand Options', href: '/grand-opening' } },
     ]}
   />
 
-  <!-- INDIVIDUAL SERVICE SECTIONS: Balanced vertically -->
   <Content
     isReversed={false}
     tagline="Service #1"
     title="Dominate Local Search and Eliminate Entry Anxiety."
-    items={[
-        { title: 'Google Maps (MEO) SEO', description: 'We translate your value proposition using the triggers global travelers trust.', icon: 'tabler:map-pin' },
-        { title: 'Visual-First Guidance', description: 'Remove the friction of discovery with a frictionless digital manual for your guests.', icon: 'tabler:eye' },
-    ]}
-    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Authentic Japan Experience' }}
+    subtitle="Remove the friction of discovery with a frictionless digital manual for your guests."
+    callToAction={{ text: 'Explore 1-Page Welcome', href: '/one-page-welcome' }}
+    image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Welcome' }}
   />
 
   <Content
     isReversed={true}
     tagline="Service #2"
     title="Automate Trust with a Live Wall of Fame."
-    items={[
-        { title: 'Branded Review Pages', description: 'A premium digital red carpet for your satisfied international guests.', icon: 'tabler:palette' },
-        { title: 'Frictionless 3-Click Flow', description: 'Leaving a 5-star review takes less than 15 seconds—no apps required.', icon: 'tabler:pointer' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Serving Japanese Tea' }}
+    subtitle="A premium digital red carpet for your satisfied international guests."
+    callToAction={{ text: 'Explore Review Engine', href: '/review-engine' }}
+    image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Review' }}
   />
 
-  <!-- ORDER FLOW -->
   <div id="process" class="scroll-mt-20">
     <Steps2
-      title="4 Simple Steps to Global Success"
-      subtitle="No technical skills or English required. We do all the heavy lifting."
+      title="How to Get Started"
+      subtitle="The path to global success is only 4 simple steps away."
       items={[
-        { title: '01. Pick Your Plan', description: 'Choose your package and securely order online.', icon: 'tabler:number-1' },
+        { title: '01. Pick Your Plan', description: 'Choose the package that fits your needs.', icon: 'tabler:number-1' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '02. Share Your Info', description: "Fill out a short form with your details. No passwords needed.", icon: 'tabler:number-2' },
+        { title: '02. Share Your Info', description: "Fill out a simple form. No passwords needed.", icon: 'tabler:number-2' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '03. We Build It', description: 'We design and set up everything in as little as 24 hours.', icon: 'tabler:number-3' },
+        { title: '03. We Build It', description: 'We design and set up everything in 24 to 48 hours.', icon: 'tabler:number-3' },
         { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '04. Grow Your Business', description: 'Welcome international guests and watch your ratings skyrocket.', icon: 'tabler:number-4' }
+        { title: '04. Grow Your Business', description: 'Welcome guests and watch your ratings skyrocket.', icon: 'tabler:number-4' }
       ]}
-      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Hospitality' }}
+      image={{ src: 'https://images.unsplash.com/photo-1769321309340-6c723c65747a?w=611&h=405&auto=format&fit=crop', alt: 'Success' }}
     />
   </div>
 
   <FAQs
     title="Frequently Asked Questions"
+    classes={{ container: 'pt-8 md:pt-12' }}
     items={[
         { title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate natively to your guests while giving you clear instructions in Japanese.' },
         { title: 'How long does setup take?', description: 'We guarantee a 24-hour turnaround for Kits and a 48-hour reboot for full websites.' },
+        { title: 'Is it really a one-time payment?', description: 'Yes. Most core services are one-time investments. Only specific maintenance tools carry a small monthly fee.' },
+        { title: 'Will you touch my existing site?', description: 'No. Using our Hanare architecture, we build your assets on independent subdomains to keep your site 100% safe.' },
     ]}
     callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }}
   />
-  
-  
 </Layout>

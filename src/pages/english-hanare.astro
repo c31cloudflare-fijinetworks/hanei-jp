@@ -1,76 +1,22 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: 'English Hanare | Standalone English Website' };
-
-const pricingData = {
-  title: 'The English Hanare Plan',
-  subtitle: 'A full English version of your business website.',
-  price: '59,800',
-  period: 'One-time setup (Up to 10 pages)',
-  items: [
-    { description: 'Complete 10-Page English Website' },
-    { description: 'Professional Native English Copywriting' },
-    { description: 'No Passwords or Login Access Required' },
-    { description: '3-Day Turnaround (Order by noon)' },
-    { description: 'Unlimited revisions until 100% satisfied' },
-  ],
-  callToAction: { target: '_self', text: 'Get Your English Website', href: '/contact', variant: 'primary' },
-};
+const metadata = { title: 'English Hanare | Hanei JP' };
+const pricingData = { title: 'The English Hanare Plan', price: '59,800', period: 'One-time', items: [{ description: '10-Page English Site' }, { description: 'Native English Copy' }, { description: 'No Passwords Required' }, { description: '3-Day Delivery' }], callToAction: { target: '_self', text: 'Apply Now', href: '/contact', variant: 'primary' } };
 ---
-
 <Layout metadata={metadata}>
-  <Hero2
-    tagline="The English Hanare Strategy"
-    title='A Complete English Website <br/><span class="text-accent">Without Touching Your Current Site.</span>'
-    subtitle='Need an English website but afraid to change your current one? We build a professional English version of your site that stands on its own—zero risk, zero technical skills required.'
-    actions={[{ variant: 'primary', text: 'Get Your English Website Today', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Premium Japanese Dining' }}
-  />
+  <Hero2 tagline="The Detached Pavilion Strategy" title='A Complete English Website <br/><span class="text-accent">Without Touching Your Current Site.</span>' subtitle='Need English but afraid to change your fragile Japanese site? We build a world-class English pavilion that stands alone.' actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Dining' }} />
   
-  <Content
-    isReversed={false}
-    title='"I want an English site, but I’m afraid to touch my current one."'
-    subtitle="Hanei’s 'English Hanare' builds a separate English pavilion for your global guests without touching your legacy Japanese code."
-    items={[
-        { title: 'Zero Technical Risk', description: 'We don’t touch your current system. No risk of breaking your original site.', icon: 'tabler:shield-lock' },
-        { title: 'No Passwords Needed', description: 'Lost your login info? No problem. We build independently of your existing agency.', icon: 'tabler:key-off' },
-        { title: 'Native Copywriting', description: 'We replace bad machine translations with professional English that builds trust.', icon: 'tabler:message-language' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Authentic Japanese Cuisine' }}
-  />
-
-  <Content
-    isReversed={true}
-    title="The 'Hanare' Concept"
-    subtitle="Like a separate guest pavilion in traditional architecture, we build a high-speed English site specifically for international visitors while leaving your original site exactly as it is."
-    items={[
-        { title: 'Zero-Touch Build', description: 'Built on a safe sub-domain that looks like your main site but stays technically independent.', icon: 'tabler:circle-check' },
-        { title: 'Modern & Mobile Friendly', description: 'Your new English site will be lightning-fast on any smartphone.', icon: 'tabler:device-mobile' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Sushi' }}
-  />
-
-  <Steps2
-    title="Your English Website in 3 Days"
-    subtitle="Simple process. Zero stress for you or your staff."
-    items={[
-      { title: 'Step 1: Send Your URL', description: 'Just give us your website link. We don’t need your passwords.', icon: 'tabler:link' },
-      { title: 'Step 2: We Build Everything', description: 'We design up to 10 pages in professional English in just 3 days.', icon: 'tabler:bolt' },
-      { title: 'Step 3: Launch & Welcome Guests', description: 'Your new site goes live. We offer unlimited revisions until you are 100% happy.', icon: 'tabler:world' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'Luxury Setting' }}
-  />
-
-  <Pricing id="pricing" title="The Ultimate Inbound Asset" subtitle="Professional English expansion with zero risk." prices={[pricingData]} />
-
+  <Content isReversed={false} title="01. Zero Technical Risk" subtitle="We build on a separate sub-domain. Your original legacy Japanese site remains 100% untouched and safe." items={[{ title: 'Decoupled Assets', description: 'Safety first for your original business site.', icon: 'tabler:shield-lock' }]} image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Shield' }} />
   
+  <Content isReversed={true} title="02. Modern, Mobile-First UX" subtitle="While your old site might be slow, your new English Hanare will be lightning-fast on any global smartphone." items={[{ title: 'Speed Performance', description: 'Engineered for tourists on roaming data.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
   
+  <Content isReversed={false} title="03. Native Copywriting" subtitle="We replace bad machine translations with professional, persuasive English that builds trust with high-end guests." items={[{ title: 'Native Nuance', description: 'Copy that sells, not just translates.', icon: 'tabler:message-language' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'Nuance' }} />
   
+  <Content isReversed={true} title="04. SEO Domination" subtitle="Specifically engineered to rank for English search terms that international travelers actually use in your city." items={[{ title: 'Discovery Engine', description: 'Capture tourists before they reach your street.', icon: 'tabler:search' }]} image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
+
+  <Pricing id="pricing" title="Professional Expansion. Zero Risk." prices={[pricingData]} />
 </Layout>

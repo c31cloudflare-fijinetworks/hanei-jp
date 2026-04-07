@@ -2,88 +2,24 @@
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: 'Grand Opening | Web Design' };
-
+const metadata = { title: 'Grand Opening | Hanei JP' };
 const pricingData = [
-  {
-    title: 'Grand Reform',
-    subtitle: 'A total makeover for your current site.',
-    price: '78,800',
-    period: 'Up to 10 pages',
-    items: [
-      { description: 'Update to a Modern, Clean Design' },
-      { description: 'Make it 100% Mobile Friendly' },
-      { description: 'Fix Speed & Performance Issues' },
-      { description: '4-Day Turnaround' },
-    ],
-    callToAction: { target: '_self', text: 'Start My Reform', href: '/contact', variant: 'primary' },
-  },
-  {
-    title: 'Grand New Opening',
-    subtitle: 'A fresh start with a brand new site.',
-    price: '78,800',
-    period: 'Up to 10 pages',
-    items: [
-      { description: 'Brand New Bilingual Architecture' },
-      { description: 'Latest High-Speed Tech Stack' },
-      { description: 'Luxury Guest UX Design' },
-      { description: '4-Day Turnaround' },
-    ],
-    callToAction: { target: '_self', text: 'Launch My New Site', href: '/contact', variant: 'primary' },
-    hasRibbon: true,
-    ribbonTitle: 'Popular',
-  }
+  { title: 'Grand Reform', price: '78,800', period: 'Up to 10 pages', items: [{ description: 'Modern Clean Design' }, { description: '100% Mobile Friendly' }, { description: 'Fix Speed Issues' }, { description: '4-Day Turnaround' }], callToAction: { target: '_self', text: 'Start Reform', href: '/contact', variant: 'primary' } },
+  { title: 'Grand New', price: '78,800', period: 'Up to 10 pages', items: [{ description: 'Bilingual Architecture' }, { description: 'Latest Tech Stack' }, { description: 'Luxury UX Design' }, { description: '4-Day Turnaround' }], callToAction: { target: '_self', text: 'Launch New', href: '/contact', variant: 'primary' }, hasRibbon: true, ribbonTitle: 'Popular' }
 ];
 ---
-
 <Layout metadata={metadata}>
-  <Hero2
-    tagline="The Grand Opening"
-    title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>'
-    subtitle="An outdated website scares away customers. We deliver a professional digital front door in just 4 days."
-    actions={[{ variant: 'primary', text: 'View Pricing', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Culinary' }}
-  />
+  <Hero2 tagline="Total Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="Don't let a slow, old design hurt your business. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'View Pricing', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=611&h=405&auto=format&fit=crop', alt: 'Header' }} />
   
-  <Content
-    isReversed={false}
-    title="Your Website is an Engine, Not an Anchor."
-    subtitle="Don't let a slow, old design hurt your business. We build world-class digital landmarks that convert visitors into guests."
-    items={[
-        { title: 'The Speed Problem', description: 'Slow sites lose customers. We ensure instant loading on all devices.', icon: 'tabler:bolt' },
-        { title: 'The Trust Problem', description: 'Modern design builds immediate authority with international travelers.', icon: 'tabler:shield-check' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Sushi' }}
-  />
-
-  <Content
-    isReversed={true}
-    title="Option 1: The Grand Reform"
-    subtitle="Keep your content, but update the soul. We transform your existing site into a high-speed, modern asset in 4 days."
-    items={[
-        { title: 'Modern Facelift', description: 'Fresh aesthetics aligned with modern luxury standards.', icon: 'tabler:palette' },
-        { title: 'Mobile Optimization', description: 'Perfect viewing and navigation on every smartphone screen.', icon: 'tabler:device-mobile' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Chef' }}
-  />
-
-  <Content
-    isReversed={false}
-    title="Option 2: The Grand New Opening"
-    subtitle="Start fresh with a premium digital flagship. Built from the ground up for speed, SEO, and global conversion."
-    items={[
-        { title: 'Bilingual Architecture', description: 'Designed to attract locals and global travelers with equal power.', icon: 'tabler:world' },
-        { title: 'Velocity Tech Stack', description: 'Future-proof technology that stays fast for years to come.', icon: 'tabler:rocket' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'Japan' }}
-  />
+  <Content isReversed={false} title="01. The Speed Performance Fix" subtitle="Slow sites lose customers instantly. We make your site load in under 1 second on any global network." items={[{ title: 'Edge Delivery', description: 'Optimized for international visitors.', icon: 'tabler:bolt' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=611&h=405&auto=format&fit=crop', alt: 'Speed' }} />
+  
+  <Content isReversed={true} title="02. 48-Hour Weekend Delivery" subtitle="No more waiting months for agencies. We reboot your entire digital presence over a single weekend." items={[{ title: 'Record Velocity', description: 'Order Friday, launch Monday.', icon: 'tabler:clock' }]} image={{ src: 'https://images.unsplash.com/photo-1626379907753-406934326e2c?w=611&h=405&auto=format&fit=crop', alt: 'Delivery' }} />
+  
+  <Content isReversed={false} title="03. Mobile-First Optimization" subtitle="Your guests are on the move. We ensure your site looks and works perfectly on every smartphone screen size." items={[{ title: 'Responsive Design', description: 'Luxury UX tailored for the hand.', icon: 'tabler:device-mobile' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=611&h=405&auto=format&fit=crop', alt: 'Mobile' }} />
+  
+  <Content isReversed={true} title="04. Conversion Focused Copy" subtitle="We rewrite your value proposition using native psychological triggers that turn visitors into confirmed bookings." items={[{ title: 'Strategic Writing', description: 'Not just translation—authority.', icon: 'tabler:target' }]} image={{ src: 'https://images.unsplash.com/photo-1512100356956-c1b47f4b1465?w=611&h=405&auto=format&fit=crop', alt: 'Target' }} />
 
   <Pricing id="pricing" title="Simple, Flat Pricing" prices={pricingData} />
-
-  
-  
-  
 </Layout>

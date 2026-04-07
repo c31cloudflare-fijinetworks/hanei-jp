@@ -3,60 +3,21 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: 'English Page Setup | Hanei JP' };
-
-const pricingData = {
-  title: 'The "Tourist-Ready" Page',
-  subtitle: 'Everything you need to welcome international guests.',
-  price: '19,800',
-  period: 'One-time payment',
-  items: [
-    { description: 'Professional English Web Page' },
-    { description: 'Google Maps English Optimization' },
-    { description: 'Easy-to-use QR Code for your shop' },
-    { description: 'Same-day delivery (if ordered by noon)' },
-  ],
-  callToAction: { target: '_self', text: 'Get Started Now', href: '/contact', variant: 'primary' },
-};
+const metadata = { title: '1-Page Welcome Kit | Hanei JP' };
+const pricingData = { title: 'The Tourist-Ready Page', price: '19,800', period: 'One-time', items: [{ description: 'English Web Page' }, { description: 'Google Maps SEO' }, { description: 'Custom QR Kit' }, { description: 'Same-day delivery' }], callToAction: { target: '_self', text: 'Get Started', href: '/contact', variant: 'primary' } };
 ---
-
 <Layout metadata={metadata}>
-  <Hero2
-    tagline="Simple. Fast. Effective."
-    title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>'
-    subtitle='Tourists are looking at their phones, then walking away because they can’t read your sign. We fix that in 24 hours.'
-    actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Street' }}
-  />
+  <Hero2 tagline="Simple. Fast. Effective." title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>' subtitle='Tourists are looking at their phones, then walking away because they can’t read your sign. We fix that in 24 hours.' actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Street' }} />
   
-  <Content
-    isReversed={false}
-    title="Don’t miss out on the inbound boom."
-    subtitle="We turn hesitant tourists into confident customers by removing the 'English Barrier' from your business."
-    items={[
-        { title: 'Stop the Stress', description: 'Give guests info on their phone so they don’t have to ask questions.', icon: 'tabler:mood-smile' },
-        { title: 'Google Maps SEO', description: 'Appear at the top when tourists search for your service in English.', icon: 'tabler:map-pin' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Tourists' }}
-  />
-
-  <Steps2
-    title="3 Simple Steps to Get Started"
-    subtitle="No technical skills required. We make it instant."
-    items={[
-      { title: 'Step 1: Send Info', description: 'Tell us your shop name and what you want tourists to know.', icon: 'tabler:send' },
-      { title: 'Step 2: We Build', description: 'Our team writes professional copy and optimizes your Google profile.', icon: 'tabler:tool' },
-      { title: 'Step 3: Launch', description: 'Put up your QR code and start welcoming global guests.', icon: 'tabler:door-enter' },
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Shop' }}
-  />
+  <Content isReversed={false} title="01. Google Maps English SEO" subtitle="Appear at the top of local search results when tourists search in English for your craft." items={[{ title: 'Keywords that matter', description: 'We optimize for native search intent.', icon: 'tabler:map-pin' }]} image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Maps' }} />
+  
+  <Content isReversed={true} title="02. Frictionless Digital Manual" subtitle="Explain your rules, menus, and ordering systems clearly to remove the Anxiety of Entry." items={[{ title: 'No more stress', description: 'Guests get info on their phone immediately.', icon: 'tabler:eye' }]} image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Manual' }} />
+  
+  <Content isReversed={false} title="03. Visual-First Ordering" subtitle="Increase ticket size by helping international guests understand your specialty items effortlessly." items={[{ title: 'High-Resolution Menus', description: 'Language-neutral ordering systems.', icon: 'tabler:clipboard-list' }]} image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Order' }} />
+  
+  <Content isReversed={true} title="04. Same-Day QR Kit" subtitle="We deliver high-quality, print-ready QR stand designs so you can start welcoming guests by tonight." items={[{ title: 'Instant Deployment', description: 'Order by noon, live by dinner.', icon: 'tabler:qrcode' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'QR' }} />
 
   <Pricing id="pricing" title="One Price. Complete Service." prices={[pricingData]} />
-
-  
-  
-  
 </Layout>
