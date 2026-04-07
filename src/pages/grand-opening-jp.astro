@@ -3,61 +3,15 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import FeatureTable from '~/components/widgets/FeatureTable.astro';
-
 const metadata = { title: 'グランドオープニング | ホームページ制作' };
-
-const fullFeatureListJp = [
-  { title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' },
-  { title: 'GoogleマップSEO対策' }, { title: 'スマホファースト設計' },
-  { title: 'SSL暗号化通信' }, { title: 'ワンクリック予約・連絡導線' },
-  { title: 'カスタムQRコード制作' }, { title: 'プロによる英語執筆' },
-  { title: 'SNS連携設定' }, { title: '画像データ最適化' },
-  { title: '全ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' },
-  { title: '修正回数無制限' }, { title: '週末48時間の超速公開' },
-  { title: 'Cloudflare CDN サーバー' }, { title: '自動バックアップ' },
-  { title: 'プライバシーポリシー完備' }, { title: '戦略的UXデザイン' },
-  { title: '地域No.1ブランド構築' }, { title: '永久テクニカルサポート' },
-];
+const fullFeatureListJp = [{ title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' }, { title: 'GoogleマップSEO対策' }, { title: 'スマホファースト設計' }, { title: 'SSL暗号化通信' }, { title: 'ワンクリック予約導線' }, { title: 'カスタムQRコード制作' }, { title: 'プロによる英語執筆' }, { title: 'SNS連携設定' }, { title: '画像データ最適化' }, { title: '全ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' }, { title: '修正回数無制限' }, { title: '週末48時間の超速公開' }, { title: 'Cloudflare CDN' }, { title: '自動バックアップ' }, { title: 'プライバシーポリシー' }, { title: '戦略的UXデザイン' }, { title: '地域No.1ブランド構築' }, { title: '永久テクニカルサポート' }];
 ---
-
 <Layout metadata={metadata}>
-  <Hero2
-    tagline="グランドオープニング"
-    title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>'
-    subtitle="古いデザインや遅い表示は、お客様を逃します。プロ品質のサイトを最短4日でお届けします。"
-    actions={[
-        { variant: 'primary', text: 'リフォームを見る', href: '#reform' },
-        { variant: 'secondary', text: '新規制作を見る', href: '#new' }
-    ]}
-    image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?w=1200&q=80', alt: '和食' }}
-  />
-
-  <!-- DEMO SECTION 1: ZENPOD -->
-  <Content
-    isReversed={false}
-    tagline="制作実例"
-    title="フラッグシップ・デモンストレーション"
-    subtitle="私たちが構築するWebサイトのクオリティを、架空のホテル「ZenPod Tokyo」のデモサイトでご体験ください。"
-    callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }}
-    image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?w=1200&q=80', alt: 'Capsule Hotel Demo' }}
-  />
-
-  <!-- DEMO SECTION 2: DENTAL -->
-  <Content
-    isReversed={true}
-    title="表参道デンタルアーツ（歯科医院）"
-    subtitle="外国人患者に最適化されたプレミアムクリニックのデモ。バイリンガルの信頼構築と、スムーズな予約導線を備えた安心感のあるデザインです。"
-    callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/omotesando-dental' }}
-    image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80', alt: 'Dental Demo' }}
-  />
-  
+  <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?q=80&w=1200', alt: '和食' }} />
+  <Content isReversed={false} tagline="制作実例" title="フラッグシップ・デモンストレーション" subtitle="ZenPod Tokyoのデモサイトで、私たちが構築するWebサイトのクオリティをご体験ください。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1541460395697-3f8dce46b149?q=80&w=1200', alt: 'カプセルホテル' }} />
+  <Content isReversed={true} title="表参道デンタルアーツ" subtitle="外国人患者に最適化されたクリニックのデモ。バイリンガルの信頼構築とスムーズな予約導線を備えています。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200', alt: '歯科医院' }} />
   <div id="reform" class="scroll-mt-20">
-    <Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、あなたのお店のサイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?w=1200&q=80', alt: '寿司' }} />
-    <FeatureTable title="グランド・リフォームの標準装備" subtitle="一括払い。追加費用は一切ありません。" items={fullFeatureListJp} />
-  </div>
-
-  <div id="new" class="scroll-mt-20">
-    <Content tagline="グランド・ニュー" title="世界中から選ばれる、最高峰の拠点を。" subtitle="日本人客も海外客も強力に惹きつけるデュアル言語構造をゼロから創り上げます。" items={[{ title: 'バイリンガル設計', description: '国内外の両方を惹きつけます。', icon: 'tabler:world' }]} image={{ src: 'https://images.unsplash.com/photo-1691484466261-cb7557646ffc?w=1200&q=80', alt: '日本' }} />
-    <FeatureTable title="グランド・ニューオープンの標準装備" subtitle="一括払い。追加費用は一切ありません。" items={fullFeatureListJp} />
+    <Content tagline="グランド・リフォーム" title="今の情報を活かしつつ、最新デザインへ。" subtitle="週末の間に、サイトを最新の状態に生まれ変わらせます。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?q=80&w=1200', alt: '寿司' }} />
+    <FeatureTable title="標準装備" subtitle="一括払い。追加費用なし。" items={fullFeatureListJp} />
   </div>
 </Layout>
