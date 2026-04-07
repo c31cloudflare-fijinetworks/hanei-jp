@@ -19,25 +19,13 @@ const image = imageProp || imageSlot;
 const isUrl = typeof image === 'string' && (image.startsWith('http') || image.startsWith('/') || image.startsWith('.'));
 ---
 
-<section class:list={[{ 'pt-12 md:pt-16 pb-8 md:pb-12': !isAfterContent, 'pb-8 md:pb-12': isAfterContent }]}>
+<section class:list={[{ 'py-12 md:py-20': !isAfterContent, 'pb-12 md:pb-20': isAfterContent }]}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class:list={['md:flex md:gap-16 items-center', { 'md:flex-row-reverse': isReversed }]}>
-      <div class="md:basis-1/2 mb-10 md:mb-0">
-        {image && (
-          <div class="relative m-auto max-w-5xl aspect-[3/2] overflow-hidden rounded-lg shadow-2xl border-4 border-white dark:border-slate-800">
-            {isUrl ? (
-              <img src={image} class="w-full h-full object-cover" loading="lazy" decoding="async" />
-            ) : image.src ? (
-              <img src={image.src} alt={image.alt || ''} class="w-full h-full object-cover" loading="lazy" decoding="async" />
-            ) : (
-              <div class="w-full h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:aspect-[3/2]">
-                <Fragment set:html={image} />
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-      <div class="md:basis-1/2">
+    <!-- flex-col-reverse ensures text is on top on mobile, md:flex-row restores side-by-side on desktop -->
+    <div class:list={['flex flex-col-reverse items-center md:gap-16', isReversed ? 'md:flex-row-reverse' : 'md:flex-row']}>
+      
+      <!-- Text Container -->
+      <div class="md:basis-1/2 w-full">
         {tagline && <p class="text-base text-secondary dark:text-gray-400 font-bold tracking-widest uppercase mb-3">{tagline}</p>}
         {title && <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tighter mb-4 font-heading">{title}</h2>}
         {subtitle && <p class="text-xl text-muted mb-6 leading-relaxed" set:html={subtitle} />}
@@ -65,6 +53,24 @@ const isUrl = typeof image === 'string' && (image.startsWith('http') || image.st
           </div>
         )}
       </div>
+
+      <!-- Image Container (Appears below text on mobile, side on desktop) -->
+      <div class="md:basis-1/2 mb-10 md:mb-0 w-full">
+        {image && (
+          <div class="relative m-auto max-w-5xl aspect-[3/2] overflow-hidden rounded-lg shadow-2xl border-4 border-white dark:border-slate-800">
+            {isUrl ? (
+              <img src={image} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+            ) : image.src ? (
+              <img src={image.src} alt={image.alt || ''} class="w-full h-full object-cover" loading="lazy" decoding="async" />
+            ) : (
+              <div class="w-full h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:aspect-[3/2]">
+                <Fragment set:html={image} />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
     </div>
   </div>
 </section>
