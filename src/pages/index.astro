@@ -13,7 +13,10 @@ const metadata = { title: 'Hanei JP | Professional Website Development for Local
     tagline="Professional Website Design for Japanese Businesses"
     title='Connect Your Business with <br/><span class="text-accent dark:text-white">Local and Global Customers.</span>'
     subtitle="We build high-quality websites that help your business grow and look professional online. Get your new digital storefront ready to welcome customers in just 48 hours."
-    actions={[{ variant: 'primary', text: 'Start My Project', href: '/contact' }]}
+    actions={[
+      { variant: 'primary', text: 'Services', href: '#services' },
+      { text: 'Custom Request', href: '/contact' },
+    ]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=611&h=405&auto=format&fit=crop', alt: 'Japanese Street' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
@@ -24,6 +27,7 @@ const metadata = { title: 'Hanei JP | Professional Website Development for Local
   />
 
   <Content 
+    id="services"
     tagline="Service: 1-Page Business Website" 
     title="Make it Easy for New Customers to Find and Choose You." 
     subtitle="We create a simple digital guide that explains your shop rules, menus, and services clearly. This helps both local residents and travelers feel comfortable walking through your door. A clear website removes the confusion that often stops people from entering a new shop." 
@@ -51,10 +55,10 @@ const metadata = { title: 'Hanei JP | Professional Website Development for Local
 
   <Content 
     isReversed={true} 
-    tagline="Service: Full Website Refresh" 
-    title="Modernize Your Old Website to Win More Customers." 
-    subtitle="We reboot your entire digital presence in a single weekend to give you a modern, professional look. An updated design makes your business look great on mobile phones and builds confidence with every visitor. A better website means more local neighbors will choose you over the competition." 
-    callToAction={{ text: 'View Refresh Options', href: '/grand-opening' }} 
+    tagline="Service: Full Website Refresh / NEW" 
+    title="Modernize Your Presence with a Total Reboot or New Build." 
+    subtitle="We either reboot your existing presence or create a brand new professional website from scratch in a single weekend. A modern, high-quality design ensures your business looks perfect on mobile phones and stands out from local competition. Whether you need a fresh start or a total replacement, we deliver a digital home that wins more customers." 
+    callToAction={{ text: 'View Website Options', href: '/grand-opening' }} 
     image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=611&h=405&auto=format&fit=crop', alt: 'Reboot' }} 
   />
 
