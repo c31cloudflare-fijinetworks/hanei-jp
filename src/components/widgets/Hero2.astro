@@ -1,6 +1,7 @@
 ---
 import Button from '~/components/ui/Button.astro';
 import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
 
 const {
   tagline,
@@ -27,7 +28,7 @@ const poster = posterProp || (isUrl ? image : image.src ? image.src : null);
         
         <div class="w-full text-center md:text-left flex flex-col justify-center">
           {tagline && <p class="font-bold dark:text-gray-400 text-base text-secondary tracking-widest uppercase mb-4">{tagline}</p>}
-          {title && <h1 class="font-bold font-heading leading-tight tracking-tighter mb-6 md:text-6xl text-4xl" set:html={title}></h1>}
+          {title && <h1 class="font-bold font-heading leading-tight tracking-tighter mb-6 md:text-6xl text-4xl" set:html={title} {title && title.includes('<span') ? '' : ''}></h1>}
           <div class="max-w-3xl mx-auto md:mx-0">
             <div class="max-w-2xl">
               {subtitle && <p class="text-xl text-muted mb-10 leading-relaxed" set:html={subtitle} />}
@@ -35,7 +36,7 @@ const poster = posterProp || (isUrl ? image : image.src ? image.src : null);
             {actions && actions.length > 0 && (
               <div class="flex flex-col gap-4 max-w-xs md:justify-start md:mx-0 mx-auto sm:flex-row sm:justify-center sm:max-w-md">
                 {actions.map((action) => (
-                  <Button {...action} class="shadow-xl hover:scale-105 transition-transform" />
+                  <Button {...action} class={twMerge("shadow-xl hover:scale-105 transition-transform", action.class)} />
                 ))}
               </div>
             )}
