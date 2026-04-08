@@ -5,19 +5,65 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: '1-Page Welcome Kit | Hanei JP' };
-const pricingData = { title: 'The Tourist-Ready Page', price: '19,800', period: 'One-time', items: [{ description: 'English Web Page' }, { description: 'Google Maps SEO' }, { description: 'Custom QR Kit' }, { description: 'Same-day delivery' }], callToAction: { target: '_self', text: 'Get Started', href: '/contact', variant: 'primary' } };
+const metadata = { 
+  title: '1-Page Business Website | Professional & Fast | Hanei JP',
+  description: 'A complete one-page website for your business. Showcase services, menus, and rules. Order by noon, live by the afternoon.'
+};
+
+const pricingData = { 
+  title: 'The Professional 1-Page Website', 
+  price: '19,800', 
+  period: 'One-time investment', 
+  items: [
+    { description: 'Full Professional 1-Page Design' }, 
+    { description: 'Services, Menus, and Rules Setup' }, 
+    { description: 'High-Speed Mobile Optimization' }, 
+    { description: 'Custom QR Code for Shop Display' },
+    { description: 'Same-Day Delivery Guarantee' }
+  ], 
+  callToAction: { target: '_self', text: 'Order Now', href: '/contact', variant: 'primary' } 
+};
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="Simple. Fast. Effective." title='Stop Tourists from <br/><span class="text-accent">Walking Past Your Door.</span>' subtitle='Tourists are looking at their phones, then walking away because they can’t read your sign. We fix that in 24 hours.' actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Street' }} />
+  <Hero2 
+    tagline="Professional. Fast. Effective." 
+    title='Your Entire Business on <br/><span class="text-accent">One Professional Page.</span>' 
+    subtitle='The fastest way to look professional online. We build a high-quality 1-page website that showcases your services, menus, and house rules. Order by noon, and your site is live by the afternoon.' 
+    actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Professional Business Entry' }} 
+  />
   
-  <Content isReversed={false} title="01. Google Maps English SEO" subtitle="Appear at the top of local search results when tourists search in English for your craft." items={[{ title: 'Keywords that matter', description: 'We optimize for native search intent.', icon: 'tabler:map-pin' }]} image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Maps' }} />
+  <Content 
+    isReversed={false} 
+    title="01. The Digital Business Manual" 
+    subtitle="Replace confusion with clarity. We build a clean digital manual that allows customers to see your service offerings, price lists, and house rules directly on their phones. This removes the stress of explaining details repeatedly to every new guest." 
+    items={[{ title: 'Everything in one place', description: 'Rules, menus, and payment methods.', icon: 'tabler:clipboard-list' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1564284369929-026ba231f89b?w=611&h=405&auto=format&fit=crop', alt: 'Digital Menu on Phone' }} 
+  />
   
-  <Content isReversed={true} title="02. Frictionless Digital Manual" subtitle="Explain your rules, menus, and ordering systems clearly to remove the Anxiety of Entry." items={[{ title: 'No more stress', description: 'Guests get info on their phone immediately.', icon: 'tabler:eye' }]} image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Manual' }} />
+  <Content 
+    isReversed={true} 
+    title="02. Local and Global Discovery" 
+    subtitle="Be found by the right people. We optimize your page so that both local neighbors and international travelers can discover your business through Google. A professional 1-page site builds immediate confidence and makes choosing your shop an easy decision." 
+    items={[{ title: 'Professional Trust', description: 'Look established and modern from day one.', icon: 'tabler:search' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1533050487297-09b450131914?w=611&h=405&auto=format&fit=crop', alt: 'Customer Finding Shop' }} 
+  />
   
-  <Content isReversed={false} title="03. Visual-First Ordering" subtitle="Increase ticket size by helping international guests understand your specialty items effortlessly." items={[{ title: 'High-Resolution Menus', description: 'Language-neutral ordering systems.', icon: 'tabler:clipboard-list' }]} image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Order' }} />
+  <Content 
+    isReversed={false} 
+    title="03. Visual-First Service Showcase" 
+    subtitle="Let your work do the talking. We use high-resolution imagery to showcase your best products or services, helping customers understand exactly what makes your business special. A visual-first approach works across all languages and builds desire for your offerings." 
+    items={[{ title: 'High-Impact Visuals', description: 'Showcase your craft with professional layouts.', icon: 'tabler:camera' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Service Showcase' }} 
+  />
   
-  <Content isReversed={true} title="04. Same-Day QR Kit" subtitle="We deliver high-quality, print-ready QR stand designs so you can start welcoming guests by tonight." items={[{ title: 'Instant Deployment', description: 'Order by noon, live by dinner.', icon: 'tabler:qrcode' }]} image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'QR' }} />
+  <Content 
+    isReversed={true} 
+    title="04. The Lightning-Fast Launch" 
+    subtitle="We value your time. If you submit your information by 12:00 PM, we guarantee your professional 1-page website will be live and ready for customers by the time you open for dinner service. No long meetings or coding delays—just high-speed execution." 
+    items={[{ title: 'Order by Noon', description: 'Live by the afternoon, or by next day latest.', icon: 'tabler:bolt' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'Rapid Deployment' }} 
+  />
 
-  <Pricing id="pricing" title="One Price. Complete Service." prices={[pricingData]} />
+  <Pricing id="pricing" title="One Simple Price. Live Today." prices={[pricingData]} />
 </Layout>
