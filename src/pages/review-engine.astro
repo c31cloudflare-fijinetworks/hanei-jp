@@ -5,18 +5,59 @@ import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = { title: 'Review Engine | Hanei JP' };
-const pricingData = { title: 'The Review Engine', price: '22,500', period: 'One-time', items: [{ description: 'Branded Review Page' }, { description: 'Direct Google Shortcut' }, { description: 'Live Review Widget' }, { description: 'Same-day delivery' }], callToAction: { target: '_self', text: 'Get Setup Now', href: '/contact', variant: 'primary' } };
+const pricingData = { 
+  title: 'The Review Engine', 
+  price: '¥22,500', 
+  period: 'One-time', 
+  items: [
+    { description: 'Branded Review Page' }, 
+    { description: 'Direct Google Shortcut' }, 
+    { description: 'Live Review Widget' }, 
+    { description: 'Same-day delivery' }
+  ], 
+  callToAction: { target: '_self', text: 'Get Setup Now', href: '/contact', variant: 'primary' } 
+};
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="Reputation on Autopilot" title='Turn a "Thank You" <br/><span class="text-accent">into a 5-Star Review.</span>' subtitle='Stop letting happy customers leave without saying a word. We make it effortless for them to praise you on Google.' actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=611&h=405&auto=format&fit=crop', alt: 'Review' }} />
+  <Hero2 
+    tagline="Reputation on Autopilot" 
+    title='Turn a "Thank You" <br/><span class="text-accent">into a 5-Star Review.</span>' 
+    subtitle='Stop letting happy customers leave without saying a word. We make it effortless for them to praise your business on Google using a simple QR code system that we fully host and manage for you.' 
+    actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1565427167526-c9d39f300959?w=611&h=405&auto=format&fit=crop', alt: 'Review' }} 
+  />
   
-  <Content isReversed={false} title="01. Branded Review Portal" subtitle="A premium digital red carpet for your guests. Clean, inviting, and tailored to your brand." items={[{ title: 'Visual Trust', description: 'No messy forms, just simple interaction.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1735970336839-810a54623b42?w=611&h=405&auto=format&fit=crop', alt: 'Portal' }} />
+  <Content 
+    isReversed={false} 
+    title="01. Branded Review Portal" 
+    subtitle="A premium digital red carpet for your guests. Clean, inviting, and tailored to your brand. Our system is fully hosted on our global edge network, ensuring your review page loads instantly for every customer regardless of their data connection." 
+    items={[{ title: 'Visual Trust', description: 'No messy forms, just simple interaction.', icon: 'tabler:palette' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1735970336839-810a54623b42?w=611&h=405&auto=format&fit=crop', alt: 'Portal' }} 
+  />
   
-  <Content isReversed={true} title="02. The Live Wall of Fame" subtitle="Display your best reviews automatically on your own website to instantly prove your excellence." items={[{ title: 'Social Proof', description: 'Verified satisfaction shown in real-time.', icon: 'tabler:stars' }]} image={{ src: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=611&h=405&auto=format&fit=crop', alt: 'Wall' }} />
+  <Content 
+    isReversed={true} 
+    title="02. The Live Wall of Fame" 
+    subtitle="Display your best reviews automatically on your own website to instantly prove your excellence. This live social proof builds immediate confidence with new visitors who are looking for a high-quality, trusted establishment in your neighborhood." 
+    items={[{ title: 'Social Proof', description: 'Verified satisfaction shown in real-time.', icon: 'tabler:stars' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=611&h=405&auto=format&fit=crop', alt: 'Wall' }} 
+  />
   
-  <Content isReversed={false} title="03. Frictionless 3-Click Flow" subtitle="We optimize the mobile journey so leaving a review takes less than 15 seconds—no apps required." items={[{ title: 'Speed is King', description: 'Capture the glow before they leave the shop.', icon: 'tabler:pointer' }]} image={{ src: 'https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=611&h=405&auto=format&fit=crop', alt: 'Click' }} />
+  <Content 
+    isReversed={false} 
+    title="03. Frictionless 3-Click Flow" 
+    subtitle="We optimize the mobile journey so leaving a review takes less than 15 seconds—no apps required. By serving a streamlined QR code experience, we help you capture the customer's peak satisfaction while they are still physically present in your shop." 
+    items={[{ title: 'Speed is King', description: 'Capture the glow before they leave the shop.', icon: 'tabler:pointer' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1715617634656-0ca1a251bde3?w=611&h=405&auto=format&fit=crop', alt: 'Click' }} 
+  />
   
-  <Content isReversed={true} title="04. SEO Boost Engine" subtitle="Continuous fresh reviews signal to Google that your business is active and the #1 choice in your area." items={[{ title: 'Rank Higher', description: 'Google rewards businesses with fresh activity.', icon: 'tabler:trending-up' }]} image={{ src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} />
+  <Content 
+    isReversed={true} 
+    title="04. SEO Boost Engine" 
+    subtitle="Continuous fresh reviews signal to Google that your business is active and the #1 choice in your area. This automated growth engine keeps your business at the top of local search results, ensuring you are the first name seen by residents and travelers alike." 
+    items={[{ title: 'Rank Higher', description: 'Google rewards businesses with fresh activity.', icon: 'tabler:trending-up' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1605256107836-47206b30d200?w=611&h=405&auto=format&fit=crop', alt: 'SEO' }} 
+  />
 
   <Pricing id="pricing" title="Turn Satisfaction into Revenue" prices={[pricingData]} />
 </Layout>
