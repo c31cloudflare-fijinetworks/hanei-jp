@@ -5,76 +5,76 @@ import Stats from '~/components/widgets/Stats.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
-const metadata = { title: 'Hanei JP | Digital Infrastructure for Local & Global Growth' };
+const metadata = { title: 'Hanei JP | Professional Website Development for Local Businesses' };
 ---
 <Layout metadata={metadata}>
   
   <Hero2
-    tagline="Elite Digital Standards for Local Excellence"
-    title='Bridge the Gap Between Your <br/><span class="text-accent dark:text-white">Craft and the Modern Market.</span>'
-    subtitle="Connect with local residents and global travelers alike. We build the high-performance digital infrastructure required to convert attention into loyal customers—all in 48 hours."
-    actions={[{ variant: 'primary', text: 'Get Started Today', href: '/contact' }]}
+    tagline="Professional Website Design for Japanese Businesses"
+    title='Connect Your Business with <br/><span class="text-accent dark:text-white">Local and Global Customers.</span>'
+    subtitle="We build high-quality websites that help your business grow and look professional online. Get your new digital storefront ready to welcome customers in just 48 hours."
+    actions={[{ variant: 'primary', text: 'Start My Project', href: '/contact' }]}
     image={{ src: 'https://images.unsplash.com/photo-1748242790323-477b5eec8486?q=80&w=611&h=405&auto=format&fit=crop', alt: 'Japanese Street' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
 
   <Stats
     classes={{ container: 'pt-0 md:pt-0 pb-12' }}
-    stats={[{ title: 'Done-For-You Setup', amount: '100%' }, { title: 'Tech Skills Required', amount: '0' }, { title: 'Maximum Setup Time', amount: '48 Hrs' }, { title: 'Monthly Fees', amount: '$0' }]} 
+    stats={[{ title: 'Complete Setup', amount: '100%' }, { title: 'No Coding Needed', amount: '0' }, { title: 'Launch Time', amount: '48 Hrs' }, { title: 'Monthly Fees', amount: '$0' }]} 
   />
 
   <Content 
-    tagline="Service: 1-Page Welcome" 
-    title="Enhance Local Discovery and Eliminate Entry Anxiety." 
-    subtitle="Remove the friction of discovery for every guest with a frictionless digital manual for your business." 
-    callToAction={{ text: 'Explore 1-Page Welcome', href: '/one-page-welcome' }} 
+    tagline="Service: 1-Page Business Website" 
+    title="Make it Easy for New Customers to Find and Choose You." 
+    subtitle="We create a simple digital guide that explains your shop rules, menus, and services clearly. This helps both local residents and travelers feel comfortable walking through your door. A clear website removes the confusion that often stops people from entering a new shop." 
+    callToAction={{ text: 'View 1-Page Package', href: '/one-page-welcome' }} 
     image={{ src: 'https://plus.unsplash.com/premium_photo-1722897350877-31cbfde8af2a?w=611&h=405&auto=format&fit=crop', alt: 'Welcome' }} 
   />
 
   <Content 
     isReversed={true} 
-    tagline="Service: Review Engine" 
-    title="Automate Trust with a Professional Wall of Fame." 
-    subtitle="A premium digital red carpet that showcases the satisfaction of your local and international guests." 
-    callToAction={{ text: 'Explore Review Engine', href: '/review-engine' }} 
+    tagline="Service: Customer Review System" 
+    title="Build Instant Trust with an Automated Wall of Reviews." 
+    subtitle="Showcase your best customer feedback directly on your website to prove your quality. We build an easy system that encourages your happy guests to leave 5-star reviews on Google. Positive reviews are the most powerful way to convince new people to visit your business." 
+    callToAction={{ text: 'View Review System', href: '/review-engine' }} 
     image={{ src: 'https://images.unsplash.com/photo-1565117661210-fd54898de423?w=611&h=405&auto=format&fit=crop', alt: 'Review' }} 
   />
 
   <Content 
     isReversed={false} 
-    tagline="Service: English Hanare" 
-    title="Expand Your Reach Without Touching Your Legacy Code." 
-    subtitle="Build a detached digital pavilion exclusively for your global audience while keeping your main site safe." 
-    callToAction={{ text: 'Explore English Hanare', href: '/english-hanare' }} 
+    tagline="Service: English Language Add-on" 
+    title="Add a Professional English Section to Your Current Site." 
+    subtitle="Build a dedicated area for your international guests without changing your existing Japanese website. This is the safest and fastest way to attract global customers while keeping your current site 100% safe. We handle all the translation and setup so you can focus on your craft." 
+    callToAction={{ text: 'View English Package', href: '/english-hanare' }} 
     image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Hanare' }} 
   />
 
   <Content 
     isReversed={true} 
-    tagline="Service: Grand Opening" 
-    title="Upgrade Your Presence. Win More Customers." 
-    subtitle="Reboot your entire digital presence in a single weekend. Modernize your brand for the local community and the web." 
-    callToAction={{ text: 'Explore Grand Options', href: '/grand-opening' }} 
+    tagline="Service: Full Website Refresh" 
+    title="Modernize Your Old Website to Win More Customers." 
+    subtitle="We reboot your entire digital presence in a single weekend to give you a modern, professional look. An updated design makes your business look great on mobile phones and builds confidence with every visitor. A better website means more local neighbors will choose you over the competition." 
+    callToAction={{ text: 'View Refresh Options', href: '/grand-opening' }} 
     image={{ src: 'https://images.unsplash.com/photo-1577016029703-cc22a7c0c28c?w=611&h=405&auto=format&fit=crop', alt: 'Reboot' }} 
   />
 
   <Content 
     isReversed={false} 
     tagline="Community Mission" 
-    title="Elite Design for Local Japanese Support Services." 
-    subtitle="We provide professional digital infrastructure for local NPOs and essential community missions in Japan, 100% pro bono." 
+    title="Professional Web Support for Local Japanese Charities." 
+    subtitle="We provide high-quality website development for local NPOs and essential community services in Japan, free of charge. Our goal is to help those who are helping our local neighborhoods look professional online. Your mission deserves a great website, and we are proud to build it for you." 
     callToAction={{ text: 'Learn About Our Mission', href: '/community-mission' }} 
     image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=611&h=405&auto=format&fit=crop', alt: 'NPO' }} 
   />
 
   <FAQs 
-    title="Frequently Asked Questions" 
+    title="Common Questions" 
     classes={{ container: 'pt-8 md:pt-12' }} 
     items={[
-      { title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate natively to global guests while giving you clear instructions in Japanese.' }, 
-      { title: 'How long does setup take?', description: '24-hour turnaround for Kits and 48-hour for full business website reboots.' }, 
-      { title: 'Is this a monthly subscription?', description: 'Most core services are one-time investments. We prioritize your ownership and long-term stability.' }, 
-      { title: 'Will you touch my existing site?', description: 'No. Using our Hanare architecture, we build new assets on independent subdomains to keep your current systems 100% safe.' }
+      { title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate perfectly to global guests while giving you and your staff clear instructions in Japanese.' }, 
+      { title: 'How long does the setup take?', description: 'We offer a 24-hour turnaround for small packages and 48 hours for full business website reboots.' }, 
+      { title: 'Are there hidden monthly fees?', description: 'No. Most of our services are one-time investments. We believe in helping you own your website without ongoing subscription costs.' }, 
+      { title: 'Will you change my existing website?', description: 'No. We can build your new pages as a detached system. This keeps your current website safe while adding new professional features.' }
     ]} 
     callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }} 
   />
