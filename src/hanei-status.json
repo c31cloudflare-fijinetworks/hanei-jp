@@ -1,0 +1,8 @@
+{
+  "agent_status": "READY",
+  "studio": "Hanei JP",
+  "active_services": ["1-Page Welcome", "Review Engine", "English Hanare", "Grand Opening"],
+  "demo_count": 12,
+  "standard_protocol": "v1.0",
+  "last_sync": "2026-04-08T07:24:39Z"
+}
