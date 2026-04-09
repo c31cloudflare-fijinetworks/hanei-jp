@@ -3,115 +3,112 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
 const metadata = { 
-  title: '地域貢献活動（プロボノ） | Hanei JP', 
-  description: '日本のNPOやコミュニティ団体へ、プロフェッショナルなWeb制作を完全無料で提供します。',
+  title: '地域貢献活動 | 公共の利益のための無料Web制作支援 | Hanei JP', 
+  description: '日本のNPOやコミュニティ団体へ、プロフェッショナルなWeb制作を公共の利益のために完全無料で提供します。',
+};
+
+const jpLabels = {
+    title: "支援申込フォーム",
+    client_name: "代表者名",
+    company_name: "団体名・NPO法人名",
+    email: "メールアドレス",
+    phone: "電話番号",
+    request_type: "支援分野",
+    project_summary: "活動内容と支援希望の背景",
+    budget_range: "現在のウェブ状況",
+    deadline: "希望納期・時期",
+    referral: "当社を知ったきっかけ",
+    submit: "支援を申し込む"
+};
+
+const jpOptions = {
+    requests: ["動物愛護・保護", "高齢者支援・福祉", "子ども・若者支援", "障がい者支援", "その他"],
+    budgets: ["サイトなし", "古いサイトがある", "SNSのみ運用", "その他"],
+    timelines: ["至急", "1ヶ月以内", "時期未定・相談", "その他"],
+    referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
 };
 ---
 
 <Layout metadata={metadata}>
   
-  <!-- HERO SECTION -->
   <Hero2
     tagline="地域貢献活動（コミュニティ・ミッション）"
-    title='日本の地域社会を支える皆様へ。<br/><span class="text-accent">Web制作を「完全無料」で提供。</span>'
-    subtitle="誰かのために人生を捧げる皆様へ。皆様の素晴らしい活動と想いを社会に届けるために、私たちは自らの技術をプロボノ（社会貢献活動）として捧げます。"
-    actions={[{ variant: 'primary', text: 'プロボノ支援を申し込む', href: '/contact-jp' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGphcGFuZXNlJTIwbGlmZXxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Japanese Street Life' }}
+    title='日本の地域社会を支える皆様へ。<br/><span class="text-accent">公共の利益のため、Web制作を無料で提供。</span>'
+    subtitle="誰かのために人生を捧げる皆様へ。皆様の素晴らしい活動と想いを社会に届けるために、私たちは自らの技術を公共の利益に資する無料サービスとして捧げます。"
+    actions={[{ variant: 'primary', text: '支援を申し込む', href: '#application' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=500&auto=format&fit=crop&q=60', alt: 'Japanese Community' }}
   />
   
-  <!-- INTRO -->
-  <Content
-    isReversed={true}
-  >
+  <Content isReversed={true}>
     <Fragment slot="content">
       <h3 class="text-3xl font-bold mb-4">尊い使命には、最高水準のWebサイトを。</h3>
       <p class="text-lg text-muted mb-4">
         東京の喧騒から地方のコミュニティまで、人知れず最前線で汗を流す「真のヒーロー」がいます。動物の命を救う方、高齢者に寄り添う方、子どもたちの未来を導く方々です。
       </p>
       <p class="text-lg text-muted">
-        Haneiは、社会に最も貢献している方々がデジタル資源の不足によって活動を制限されるべきではないと信じています。手作りのテンプレートではなく、プロの企業向けと同等のデジタル基盤を無料で提供します。
+        Haneiは、社会に最も貢献している方々がデジタル資源の不足によって活動を制限されるべきではないと信じています。公共の利益のため、プロの企業向けと同等のデジタル基盤を無料で提供します。
       </p>
     </Fragment>
     <Fragment slot="image">
-       <img src="https://images.unsplash.com/photo-1555126417-38de941cba37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fGphcGFuZXNlJTIwbGlmZXxlbnwwfHwwfHx8Mg%3D%3D" alt="Traditional Japan" class="rounded-lg shadow-xl w-full" />
+       <img src="https://images.unsplash.com/photo-1555126417-38de941cba37?w=500&auto=format&fit=crop&q=60" alt="Traditional Japan" class="rounded-lg shadow-xl w-full" />
     </Fragment>
   </Content>
 
-  <!-- PILLARS -->
   <Content
     isReversed={false}
     tagline="支援の対象"
-    title="私たちが支援する4つの柱"
+    title="公共の利益に資する4つの柱"
     items={[
         { title: '動物愛護・保護活動', description: '動物たちの魅力を伝え、里親申し込みや寄付をスムーズにするサイト構築。', icon: 'tabler:paw' },
         { title: '高齢者支援・福祉', description: '文字が読みやすく、地域のリソースを簡単に見つけられるアクセシブルな設計。', icon: 'tabler:old' },
         { title: '子ども・若者支援', description: '子ども食堂や学習支援など、安全で温かみのあるオンライン空間の創造。', icon: 'tabler:school' },
         { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト。', icon: 'tabler:accessible' },
     ]}
-    image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWFsJTIwY2FyZXxlbnwwfHwwfHx8Mg%3D%3D', alt: 'Animal Care' }}
+    image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&auto=format&fit=crop&q=60', alt: 'Animal Care' }}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-6">
-        思いやりのある社会の基盤となる分野に焦点を当ててプロボノ活動を行っています。
+        思いやりのある社会の基盤となる分野に焦点を当てて支援活動を行っています。
       </p>
     </Fragment>
   </Content>
 
-  <!-- THE SPIRIT -->
-  <Content
-    isReversed={true}
-    tagline="原動力"
-    title="「共生（Kyosei）」の精神"
-    image={{ src: 'https://images.unsplash.com/photo-1665706365893-ee797fe3d3df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY1fHxqYXBhbmVzZSUyMGxpZmV8ZW58MHx8MHx8fDI%3D', alt: 'Japanese Town' }}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">
-        「繁栄」を意味するHaneiは、真の繁栄とは単なる利益ではなく、地域社会の健康と幸福によって測られるものだと信じています。
-      </p>
-      <p class="text-lg text-muted">
-        私たちの技術を社会に還元することで、日本の社会的な絆を強くしたいと考えています。非営利活動の成功こそが、地域社会の繁栄に繋がります。
-      </p>
-    </Fragment>
-  </Content>
-
-  <!-- HANEI STANDARD -->
   <Features2
-    title='「完全無料」の本当の意味'
-    subtitle="企業クライアントへ提供するものと全く同じ「Haneiスタンダード」をNPO法人様へも提供します。"
+    title='公共の利益のための「Haneiスタンダード」:'
+    subtitle="企業クライアントへ提供するものと全く同じエリート・インフラを提供します。"
     columns={3}
     items={[
       { title: 'プロによる完全オリジナルデザイン', description: '団体のビジョンを反映した独自のデザイン。', icon: 'tabler:circle-check' },
       { title: 'モバイル最適化', description: 'スマートフォンで最も快適に閲覧できる設計。', icon: 'tabler:circle-check' },
       { title: 'SEO（検索エンジン最適化）', description: '地域の皆様がネット検索から確実に団体を見つけられる仕組み。', icon: 'tabler:circle-check' },
-      { title: '安全なサーバー設定', description: '個人情報を守るための、最も安全な環境構築のガイド。', icon: 'tabler:circle-check' },
+      { title: '安全なサーバー設定', description: '個人情報を守るための、最も安全な環境構築。', icon: 'tabler:circle-check' },
       { title: '運用トレーニング', description: '活動報告やニュースをご自身で更新できるようレクチャー。', icon: 'tabler:circle-check' },
       { title: '多言語対応（バイリンガル）', description: '在日外国人コミュニティとの架け橋となるサイト構築。', icon: 'tabler:circle-check' },
     ]}
   />
 
-  <!-- APPLICATION -->
-  <Content
-    isReversed={false}
-    tagline="応募方法"
-    title="活動のインパクトを拡大しませんか？"
-    image={{ src: 'https://images.unsplash.com/photo-1765193501601-19e2f52bb546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTcyfHxqYXBhbmVzZSUyMGxpZmV8ZW58MHx8MHx8fDI%3D', alt: 'Interaction' }}
-  >
-    <Fragment slot="content">
-      <p class="text-lg text-muted mb-4">全力で向き合うため、1年間に対応できるプロジェクトの数には限りがございます。</p>
-      <ul class="list-disc pl-5 space-y-2 text-muted mb-6">
-        <li>日本国内のNPO法人、一般社団法人、または実績のある団体であること。</li>
-        <li>主な活動が「動物」「高齢者」「子ども」「障がい者」支援のいずれかであること。</li>
-        <li>Webサイトを通じた社会貢献拡大の明確なビジョンがあること。</li>
-      </ul>
-      <CallToAction
-        title="プロボノプロジェクトに申し込む"
-        subtitle="皆様のストーリーを教えてください。"
-        actions={[{ variant: 'primary', text: '今すぐ問い合わせる', href: '/contact-jp' }]}
-      />
-    </Fragment>
-  </Content>
+  <div id="application" class="scroll-mt-20">
+    <Content
+      isReversed={false}
+      tagline="応募方法"
+      title="活動のインパクトを拡大しませんか？"
+      image={{ src: 'https://images.unsplash.com/photo-1765193501601-19e2f52bb546?w=500&auto=format&fit=crop&q=60', alt: 'Interaction' }}
+    >
+      <Fragment slot="content">
+        <p class="text-lg text-muted mb-4">全力で向き合うため、1年間に対応できるプロジェクトの数には限りがございます。</p>
+        <ul class="list-disc pl-5 space-y-2 text-muted mb-6">
+          <li>日本国内のNPO法人、一般社団法人、または実績のある団体であること。</li>
+          <li>主な活動が「動物」「高齢者」「子ども」「障がい者」支援のいずれかであること。</li>
+          <li>Webサイトを通じた社会貢献拡大の明確なビジョンがあること。</li>
+        </ul>
+        <h3 class="text-2xl font-bold mt-8">支援を申し込む</h3>
+        <p class="text-muted text-lg">皆様のストーリーと、誰を助けているのかを教えてください。</p>
+      </Fragment>
+    </Content>
+    <BespokeForm labels={jpLabels} options={jpOptions} />
+  </div>
 
 </Layout>
