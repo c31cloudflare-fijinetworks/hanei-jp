@@ -7,7 +7,6 @@ import type { Price } from '~/types';
 
 const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.props;
 
-// HANEI STANDARD: Hardcode production domain to prevent localhost leaks from build environments
 const SITE_URL = "https://hanei.jp";
 const currentPath = Astro.url.pathname;
 const cancelUrl = `${SITE_URL}${currentPath}`;
@@ -45,13 +44,13 @@ const successUrl = `${SITE_URL}/thank-you`;
         </div>
         
         <div class="mt-10 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-          <form id="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <!-- HANEI STANDARD: Use method="get" to prevent browser 'Confirm Form Resubmission' errors -->
+          <form id="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
             
-            <!-- PRODUCTION REDIRECTS -->
             <input type="hidden" name="return" value={successUrl} />
             <input type="hidden" name="cancel_return" value={cancelUrl} />
             
