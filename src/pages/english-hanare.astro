@@ -5,8 +5,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = { 
-  title: 'English Hanare | Global Business Presence | Hanei JP',
-  description: 'A world-class English website for Japanese craftsmen, manufacturers, and businesses. Professional global presence without touching your existing systems.'
+  title: 'English Hanare | Global Audience Presence | Hanei JP',
+  description: 'A world-class English website for Japanese hospitality, craftsmen, and manufacturers. Professional presence for travelers and partners without touching your existing site.'
 };
 
 const pricingData = { 
@@ -15,7 +15,7 @@ const pricingData = {
   period: 'One-time investment', 
   items: [
     { description: '10-Page Professional English Site' }, 
-    { description: 'Business & Technical Copywriting' }, 
+    { description: 'Native Technical & Hospitality Copy' }, 
     { description: 'No System Access Required' }, 
     { description: '3-Day Delivery Guarantee' }
   ], 
@@ -25,8 +25,8 @@ const pricingData = {
 <Layout metadata={metadata}>
   <Hero2 
     tagline="The Detached Pavilion Strategy" 
-    title='Your Business, Presented <br/><span class="text-accent">to the Global Market.</span>' 
-    subtitle='Expand your reach to international partners and global clients without the risk of modifying your current Japanese site. We build a high-performance English pavilion that stands alone as your professional global flagship.' 
+    title='Your Business, Presented <br/><span class="text-accent">to a Global Audience.</span>' 
+    subtitle='Expand your reach to international travelers, partners, and global clients without the risk of modifying your current Japanese site. We build a high-performance English pavilion that stands alone as your professional global flagship.' 
     actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Quality and Precision' }} 
   />
@@ -34,7 +34,7 @@ const pricingData = {
   <Content 
     isReversed={false} 
     title="01. Zero Technical Risk" 
-    subtitle="We build your English assets on a separate sub-domain, ensuring your original business site remains 100% untouched and operational. This decoupled architecture is the safest way for manufacturers and craftsmen to establish an international presence without interfering with their essential domestic systems." 
+    subtitle="We build your English assets on a separate sub-domain, ensuring your original business site remains 100% untouched and operational. This decoupled architecture is the safest way for hospitality providers, manufacturers, and craftsmen to establish an international presence without interfering with essential domestic systems." 
     items={[{ title: 'Decoupled Assets', description: 'Total safety for your original business operations.', icon: 'tabler:shield-lock' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1608060146923-7b8ab13e22bb?w=611&h=405&auto=format&fit=crop', alt: 'Secure Global Infrastructure' }} 
   />
@@ -42,23 +42,23 @@ const pricingData = {
   <Content 
     isReversed={true} 
     title="02. Modern, Global Standards" 
-    subtitle="International partners expect a seamless digital experience. Your English Hanare is engineered with cutting-edge serverless technology to load instantly in the US, Europe, and beyond. A high-performance site signals that your business is technologically sophisticated and ready for global collaboration." 
-    items={[{ title: 'Speed Performance', description: 'Optimized for international loading speeds.', icon: 'tabler:device-mobile' }]} 
+    subtitle="International guests and partners expect a seamless digital experience. Your English Hanare is engineered with cutting-edge serverless technology to load instantly for travelers on roaming data or partners browsing from abroad. A high-performance site signals that your business is technologically sophisticated and ready for the world." 
+    items={[{ title: 'Speed Performance', description: 'Engineered for visitors on the move.', icon: 'tabler:device-mobile' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1569912815867-5580004c13a2?w=611&h=405&auto=format&fit=crop', alt: 'High Performance Business Systems' }} 
   />
   
   <Content 
     isReversed={false} 
-    title="03. Professional Business Copy" 
-    subtitle="We replace basic translation with persuasive, industry-standard English that resonates with professional buyers and global clients. Our writers understand how to convey the unique value of Japanese craftsmanship and manufacturing precision, turning your technical expertise into a compelling global sales tool." 
-    items={[{ title: 'Industry Authority', description: 'Copy that builds trust with global partners.', icon: 'tabler:message-language' }]} 
+    title="03. Professional Native Copy" 
+    subtitle="We replace basic translation with persuasive, industry-standard English that builds trust with high-end travelers and professional clients. Our writers understand how to convey the unique value of Japanese hospitality (Omotenashi) and manufacturing precision, turning your expertise into a compelling global sales tool." 
+    items={[{ title: 'Native Nuance', description: 'Copy that builds trust and builds desire.', icon: 'tabler:message-language' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1592466741848-20145fe5d6d7?w=611&h=405&auto=format&fit=crop', alt: 'Precision and Detail' }} 
   />
   
   <Content 
     isReversed={true} 
-    title="04. Global SEO Domination" 
-    subtitle="We engineer your site to rank for the specific search terms used by international companies and global clients seeking your services. By targeting high-intent keywords in English, we ensure your business is discovered by decision-makers in foreign markets before they ever consider your competitors." 
+    title="04. Total Search Visibility" 
+    subtitle="We engineer your site to rank for the specific search terms used by international tourists and global companies seeking your services. By targeting high-intent keywords in English, we ensure your business is discovered by decision-makers and high-net-worth travelers before they even arrive in your city." 
     items={[{ title: 'Market Reach', description: 'Be discovered by international industry leaders.', icon: 'tabler:search' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Search Visibility' }} 
   />
