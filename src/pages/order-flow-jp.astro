@@ -6,7 +6,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 
 const metadata = { 
   title: '注文の流れ | シンプルな3ステップ | Hanei JP',
-  description: '注文から公開まで、最短・最速。インバウンド対策を今すぐ始めるための、最も簡単なステップをご案内します。'
+  description: '注文から公開まで、最短・最速。月額費用ゼロでデジタルの拠点を構築するためのステップをご案内します。'
 };
 ---
 
@@ -14,7 +14,7 @@ const metadata = {
   <Hero2
     tagline="Haneiの注文メソッド"
     title='驚くほど、<br/><span class="text-accent">かんたんで、スムーズ。</span>'
-    subtitle="オーナー様の貴重な時間を無駄にはしません。長い打ち合わせや複雑な契約書は一切なし。わずか数分で、インバウンド対策の第一歩を踏み出せます。"
+    subtitle="オーナー様の貴重な時間を無駄にはしません。長い打ち合わせや複雑な契約書、そして「毎月の月額費用」は一切ありません。"
     image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: '効率的なワークフロー' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
@@ -23,8 +23,8 @@ const metadata = {
     isReversed={false}
     tagline="Step 01"
     title="サービスを選んで注文"
-    subtitle="ご希望のプラン（1ページ、レビュー収集、ウェブサイト制作など）を選び、オンラインで決済を完了します。決済完了と同時に、貴店のプロジェクトがスタートします。"
-    items={[{ title: '即時スタート', description: 'StripeまたはPayPalによる安全な即時決済に対応。', icon: 'tabler:package' }]}
+    subtitle="ご希望のプランを選び、オンラインで決済を完了します。すべてのパッケージは「一括払い」の買い切り型。月額のサブスクリプションや隠れた維持管理費は永久に発生しません。"
+    items={[{ title: '月額費用 0円', description: '一度の投資で、永久に貴店の資産として保有いただけます。', icon: 'tabler:coin' }]}
     image={{ src: 'https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=1200&auto=format&fit=crop&q=60' }}
     classes={{ container: 'py-8 md:py-12' }}
   />
@@ -67,7 +67,7 @@ const metadata = {
     subtitle="面倒な作業はすべて私たちが代行します。"
     columns={3}
     items={[
-      { title: '安心の決済システム', description: 'Stripeによる安全な即時決済。見積もり待ちの時間を省きます。', icon: 'tabler:shield-check' },
+      { title: '月額費用は永久無料', description: '一括払いのみ。追加のサーバー代や管理費はかかりません。', icon: 'tabler:circle-check' },
       { title: '専門用語は使いません', description: 'わかりやすい言葉で丁寧に進めます。ITの話は不要です。', icon: 'tabler:message-circle' },
       { title: '圧倒的なスピード', description: '情報を受け取ってから最短24〜72時間以内に納品。', icon: 'tabler:bolt' },
     ]}
