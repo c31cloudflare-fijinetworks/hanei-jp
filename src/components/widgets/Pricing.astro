@@ -44,7 +44,6 @@ const successUrl = `${SITE_URL}/thank-you`;
         </div>
         
         <div class="mt-10 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-          <!-- HANEI STANDARD: Use method="get" to prevent browser 'Confirm Form Resubmission' errors -->
           <form id="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
@@ -95,7 +94,7 @@ const successUrl = `${SITE_URL}/thank-you`;
             </div>
 
             <button type="submit" class="w-full mt-8 py-4 bg-primary hover:bg-blue-700 text-white font-extrabold rounded shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-lg uppercase tracking-widest">
-              Secure My Package
+              {price.callToAction?.text || 'Secure My Package'}
             </button>
             <div class="flex items-center justify-center gap-2 mt-4 text-slate-400">
                 <Icon name="tabler:credit-card" class="w-4 h-4" />
