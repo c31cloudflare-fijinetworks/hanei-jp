@@ -1,8 +1,40 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-const metadata = { title: 'Privacy Policy | Hanei JP' };
+
+const metadata = { 
+  title: 'Privacy Policy | Hanei JP',
+  description: 'How Hanei JP handles data and protects Client privacy.'
+};
 ---
 <Layout metadata={metadata}>
-  <HeroText title="Privacy Policy" subtitle="Placeholder. Please contact us for full legal documentation." />
+  <HeroText title="Privacy Policy" subtitle="Last Updated: April 2026" />
+  
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:py-20 max-w-4xl">
+    <div class="prose prose-lg dark:prose-invert max-w-none text-muted dark:text-slate-400">
+      
+      <h2 class="text-slate-900 dark:text-white">1. Data Sovereignty</h2>
+      <p>At Hanei JP, we believe your data is your property. We only collect the minimum information necessary to build and host your digital assets.</p>
+
+      <h2 class="text-slate-900 dark:text-white">2. Information Collection</h2>
+      <p>We collect business information (Shop name, menus, services, and photos) provided by you during the onboarding process. This data is used exclusively to construct your website and configure your review systems.</p>
+
+      <h2 class="text-slate-900 dark:text-white">3. Zero-Access Security</h2>
+      <p>We prioritize your privacy by operating a <strong>Zero-Access</strong> model. We do not store, request, or handle your system passwords. All technical hand-offs are conducted via public address record updates to ensure your internal data remains secure.</p>
+
+      <h2 class="text-slate-900 dark:text-white">4. Third-Party Services</h2>
+      <p>Our infrastructure utilizes industry-leading partners for performance and security:</p>
+      <ul>
+        <li><strong>Payments:</strong> Handled entirely via Stripe or PayPal. We never see or store your credit card details.</li>
+        <li><strong>Hosting:</strong> Digital assets are served via secure edge networks to ensure sub-second loading speeds.</li>
+        <li><strong>Analytics:</strong> We may use privacy-first analytics tools to help you understand your website traffic without compromising user identity.</li>
+      </ul>
+
+      <h2 class="text-slate-900 dark:text-white">5. Cookies</h2>
+      <p>We use essential cookies to maintain the functionality of our website. We do not use invasive tracking cookies for advertising purposes.</p>
+
+      <h2 class="text-slate-900 dark:text-white">6. Contact</h2>
+      <p>For any privacy-related inquiries, please contact our team via the official Hanei JP contact channel.</p>
+    </div>
+  </section>
 </Layout>
