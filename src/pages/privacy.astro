@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
   title: 'Privacy Policy | Hanei JP',
@@ -14,55 +13,37 @@ const metadata = {
   <section class="px-4 py-12 sm:px-6 mx-auto lg:py-20 max-w-4xl">
     <div class="prose prose-lg dark:prose-invert max-w-none text-muted dark:text-slate-400">
       
-      <h2 class="text-slate-900 dark:text-white">1. Our Commitment to Data Sovereignty</h2>
-      <p>At Hanei JP, we believe your business data should belong to you. We follow a privacy-by-design approach, ensuring that we only handle the data required to build and maintain your high-performance digital infrastructure.</p>
+      <h2 class="text-slate-900 dark:text-white">1. Data Sovereignty</h2>
+      <p>At Hanei JP, we believe your business data should belong to you. We only handle the data required to build and maintain your high-performance digital infrastructure.</p>
 
       <h2 class="text-slate-900 dark:text-white">2. Information We Collect</h2>
-      <p>We collect information through our onboarding forms and direct communication. This includes:</p>
-      <ul>
-        <li><strong>Business Identity:</strong> Shop name, address, contact details, and history.</li>
-        <li><strong>Content Assets:</strong> Menus, service lists, price points, and high-resolution photography.</li>
-        <li><strong>Technical Metadata:</strong> Domain names and existing website URLs.</li>
-        <li><strong>Payment Information:</strong> We do not store credit card data. All payments are processed through Stripe or PayPal, who act as independent data controllers.</li>
-      </ul>
+      <p>We collect information through onboarding forms and direct communication, including business name, contact details, menus, service lists, and high-resolution photography. We do not store credit card data; all payments are processed through Stripe or PayPal.</p>
 
       <h2 class="text-slate-900 dark:text-white">3. The Zero-Access Philosophy</h2>
-      <p>To maximize your privacy and security, we operate a <strong>Zero-Access</strong> technical model. We do not store your passwords for third-party accounts. By using public address records (DNS) to connect your Hanei assets, we ensure that your internal systems remain private and isolated from our development environment.</p>
+      <p>To maximize your security, we operate a <strong>Zero-Access</strong> technical model. We do not store passwords for your third-party accounts. By using public address records (DNS) to connect your Hanei assets, we ensure your internal data remains private and isolated.</p>
 
       <h2 class="text-slate-900 dark:text-white">4. Use of Information</h2>
-      <p>Your data is used strictly for the following purposes:</p>
-      <ul>
-        <li>To develop, design, and host your professional business website.</li>
-        <li>To configure your Review Engine and automate customer feedback loops.</li>
-        <li>To provide technical support and white-glove content updates.</li>
-        <li>To comply with legal obligations under Japanese law.</li>
-      </ul>
+      <p>Your data is used strictly to develop, design, and host your professional business website, configure your Review Engine, and provide technical support or white-glove updates.</p>
 
-      <h2 class="text-slate-900 dark:text-white">5. Data Sharing & Third-Party Service Providers</h2>
-      <p>We do not sell your data. We only share information with trusted infrastructure partners essential for serving your assets:</p>
-      <ul>
-        <li><strong>Edge Hosting:</strong> Your site is served via secure global networks (e.g., Cloudflare) to ensure sub-second speeds.</li>
-        <li><strong>Review Systems:</strong> Information may be interfaced with Google Business Profile APIs to facilitate review collection.</li>
-        <li><strong>Communication:</strong> We use secure email and chat providers to manage project coordination.</li>
-      </ul>
+      <h2 class="text-slate-900 dark:text-white">5. Data Sharing & Hosting</h2>
+      <p>We do not sell your data. We share information only with trusted infrastructure partners essential for serving your assets, such as global edge hosting networks and Google Business Profile APIs.</p>
 
       <h2 class="text-slate-900 dark:text-white">6. International Data Transfers</h2>
-      <p>As a digital studio serving global audiences, your data may be processed on servers located outside of Japan. We ensure all infrastructure partners adhere to rigorous international data protection standards (GDPR/APPI) to keep your information secure across all regions.</p>
+      <p>As a global studio, your data may be processed on secure servers located outside of Japan. We ensure all partners adhere to rigorous protection standards (GDPR/APPI) to keep your information secure across all regions.</p>
 
       <h2 class="text-slate-900 dark:text-white">7. Data Retention</h2>
-      <p>We retain your business content for as long as your digital asset remains active on our servers. If you choose to terminate your service, we will securely delete your specific data assets from our primary storage within 90 days, unless required otherwise by law.</p>
+      <p>We retain your business content as long as your digital asset is active. If you choose to terminate your service, we securely delete your specific data assets from our primary storage within 90 days.</p>
 
       <h2 class="text-slate-900 dark:text-white">8. Your Rights</h2>
-      <p>You have the right to request a copy of the data we hold regarding your business, and to request corrections to any inaccurate information. Because our sites are built for public discovery, the content you provide for display on your website is excluded from "Private Data" requests once the site is live.</p>
+      <p>You have the right to request a copy of the data we hold regarding your business. Because our sites are built for public discovery, content provided for display on your live website is excluded from "Private Data" requests.</p>
 
       <h2 class="text-slate-900 dark:text-white">9. Cookies and Tracking</h2>
-      <p>We use essential cookies to maintain website performance. We avoid invasive third-party tracking or behavioral advertising cookies. Any analytics we provide are privacy-first and focused on aggregate traffic data rather than individual user identification.</p>
+      <p>We use essential cookies to maintain website performance. We avoid invasive third-party tracking. Any analytics we provide are privacy-first and focused on aggregate traffic data rather than individual user identification.</p>
+    </div>
+
+    <div class="mt-20 pt-10 border-t border-gray-200 dark:border-slate-800 text-center">
+      <p class="text-xl font-bold text-slate-900 dark:text-white mb-2">Have a Question?</p>
+      <a href="/contact" class="text-primary hover:text-accent font-black text-2xl underline decoration-2 underline-offset-8 transition-colors">Please contact us!</a>
     </div>
   </section>
-
-  <CallToAction
-    title="Privacy Concerns?"
-    subtitle="We take data protection seriously. Contact our privacy lead for more information."
-    actions={[{ variant: 'primary', text: 'Contact Our Team', href: '/contact' }]}
-  />
 </Layout>
