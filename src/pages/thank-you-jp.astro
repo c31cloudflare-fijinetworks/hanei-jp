@@ -1,0 +1,22 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import OnboardingForm from '~/components/widgets/OnboardingForm.astro';
+
+const metadata = { 
+    title: '注文完了 | Hanei JPへようこそ',
+    robots: { index: false }
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero2
+    tagline="お支払いが完了しました"
+    title='デジタルの「正解」へ、<br/><span class="text-accent">ようこそ。</span>'
+    subtitle="決済が正常に完了しました。最短24〜72時間でのスピード納品を維持するため、以下のオンボーディングフォームの入力をお願いいたします。送信後、すぐに制作チームが稼働いたします。"
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80', alt: 'プロジェクト開始' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
+  />
+
+  <OnboardingForm isJp={true} />
+</Layout>

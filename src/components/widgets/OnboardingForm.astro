@@ -1,0 +1,138 @@
+---
+const { isJp = false } = Astro.props;
+
+const labels = isJp ? {
+    title: "ビジネス・オンボーディング形式",
+    subtitle: "詳細をご記入ください。最短24時間以内の公開に向けて制作を開始します。",
+    sec1: "1. 基本情報",
+    biz_name: "店名・企業名",
+    rep_name: "代表者名",
+    contact: "連絡用ID (LINE/WhatsApp/電話)",
+    sec2: "2. コンテンツ詳細",
+    services: "提供サービス・メニュー内容 (価格含む)",
+    rules: "お店のルール (禁煙、予約制、お通し代など)",
+    hours: "営業時間・定休日",
+    sec3: "3. 素材とビジュアル",
+    assets: "写真・ロゴの共有URL (Google Drive/Dropbox等)",
+    social: "Instagram / SNSハンドル",
+    vibe: "デザインの希望 (ラグジュアリー、ミニマル、和風等)",
+    sec4: "4. テクニカル設定",
+    url: "既存サイトまたは希望ドメイン",
+    google_maps: "GoogleマップのURL (レビューエンジン用)",
+    submit: "オンボーディングを完了する"
+} : {
+    title: "Business Onboarding Form",
+    subtitle: "Provide your details below. We start production immediately upon submission.",
+    sec1: "1. Business Identity",
+    biz_name: "Business / Shop Name",
+    rep_name: "Representative Name",
+    contact: "Primary Contact (Line/WhatsApp/Phone)",
+    sec2: "2. Core Content",
+    services: "Service List & Price Points (Menus)",
+    rules: "House Rules (Smoking policy, cover charges, etc.)",
+    hours: "Operating Hours & Holidays",
+    sec3: "3. Assets & Visuals",
+    assets: "Link to Photos/Logos (Drive, Dropbox, etc.)",
+    social: "Instagram / Social Media Handles",
+    vibe: "Brand Vibe (Luxury, Minimal, Traditional, etc.)",
+    sec4: "4. Technical Details",
+    url: "Existing Website or Desired Domain",
+    google_maps: "Google Business Profile Link",
+    submit: "Complete Onboarding"
+};
+
+const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
+---
+
+<section class="py-12 bg-white dark:bg-slate-900">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-700">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
+        <p class="text-lg text-muted dark:text-slate-400">{labels.subtitle}</p>
+      </div>
+
+      <form action={FORM_ACTION} method="POST" class="space-y-12">
+        <!-- SECTION 1 -->
+        <div class="space-y-6">
+          <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.biz_name} *</label>
+              <input type="text" name="entry.biz_name" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.rep_name} *</label>
+              <input type="text" name="entry.rep_name" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.contact} *</label>
+              <input type="text" name="entry.contact" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="space-y-6">
+          <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec2}</h3>
+          <div class="space-y-6">
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.services} *</label>
+              <textarea name="entry.services" rows="4" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.rules}</label>
+                <textarea name="entry.rules" rows="3" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.hours}</label>
+                <textarea name="entry.hours" rows="3" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="space-y-6">
+          <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec3}</h3>
+          <div class="space-y-6">
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.assets} (Important for speed)</label>
+              <input type="text" name="entry.assets" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="https://..." />
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.social}</label>
+                <input type="text" name="entry.social" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="@handle" />
+              </div>
+              <div>
+                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.vibe}</label>
+                <input type="text" name="entry.vibe" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="space-y-6">
+          <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec4}</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.url}</label>
+              <input type="text" name="entry.url" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="https://..." />
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.google_maps}</label>
+              <input type="text" name="entry.google_maps" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="Google Maps link" />
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-5 bg-primary hover:bg-blue-700 text-white font-extrabold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
+          {labels.submit}
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
