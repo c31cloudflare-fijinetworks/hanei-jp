@@ -45,9 +45,10 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
             
-            <!-- DYNAMIC ITEM NAME -->
-            <input type="hidden" id="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
+            <!-- REDIRECT AFTER PAYMENT -->
+            <input type="hidden" name="return" value="https://hanei.jp/thank-you" />
             
+            <input type="hidden" id="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '') || "19800"} />
             <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
             <input type="hidden" name="no_shipping" value="1" />
@@ -82,8 +83,9 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
                 <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">
                   3. Primary Email
                 </label>
-                <input type="hidden" name="on2" value="Contact Email" />
-                <input type="email" name="os2" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="email@address.com" />
+                <!-- This field will be passed in the 'custom' metadata field for logging -->
+                <input type="email" id="email-input" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="email@address.com" />
+                <input type="hidden" id="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
@@ -102,25 +104,31 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
 </WidgetWrapper>
 
 <script is:inline>
-  function initCheckoutSync() {
+  function initCheckoutLogic() {
     const bizInput = document.getElementById('business-name-input');
+    const emailInput = document.getElementById('email-input');
     const itemHidden = document.getElementById('paypal-item-name');
+    const customHidden = document.getElementById('paypal-custom-metadata');
     
     if (bizInput && itemHidden) {
       const baseTitle = bizInput.getAttribute('data-base-title') || 'Service Package';
       
-      bizInput.addEventListener('input', (e) => {
-        const val = e.target.value.trim();
-        if (val) {
-          itemHidden.value = `Hanei JP: ${baseTitle} (${val})`;
-        } else {
-          itemHidden.value = `Hanei JP: ${baseTitle}`;
-        }
-      });
+      const updateFields = () => {
+        const bizVal = bizInput.value.trim();
+        const emailVal = emailInput.value.trim();
+        
+        // Update visible item name for PayPal Cart
+        itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (${bizVal})` : `Hanei JP: ${baseTitle}`;
+        
+        // Update custom logging metadata
+        customHidden.value = `Email: ${emailVal} | Biz: ${bizVal}`;
+      };
+
+      bizInput.addEventListener('input', updateFields);
+      emailInput.addEventListener('input', updateFields);
     }
   }
 
-  // Support for both standard load and Astro View Transitions
-  document.addEventListener('astro:page-load', initCheckoutSync);
-  initCheckoutSync();
+  document.addEventListener('astro:page-load', initCheckoutLogic);
+  initCheckoutLogic();
 </script>
