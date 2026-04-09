@@ -12,47 +12,49 @@ const currentPath = Astro.url.pathname;
 const cancelUrl = `${SITE_URL}${currentPath}`;
 const successUrl = `${SITE_URL}/thank-you`;
 
-// Determine dynamic width based on number of items
 const isSingle = prices.length === 1;
 const cardWidthClass = isSingle 
   ? "w-full max-w-xl" 
-  : "w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[300px]";
+  : "w-full md:w-[calc(50%-1.5rem)] xl:w-[calc(25%-1.5rem)] min-w-[280px]";
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
   <Headline {title} {subtitle} {tagline} classes={{ headline: 'max-w-3xl' }} />
   
-  <div class="flex flex-wrap justify-center gap-8">
+  <div class="flex flex-wrap justify-center gap-6">
     {prices.map((price) => (
       <div class:list={[
-        "relative overflow-visible flex flex-col rounded-lg border-2 border-primary p-8 text-center shadow-2xl bg-white dark:bg-slate-900",
+        "relative overflow-visible flex flex-col rounded-lg border-2 border-primary p-6 text-center shadow-xl bg-white dark:bg-slate-900 transition-all hover:shadow-2xl",
         cardWidthClass
       ]}>
         
-        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest text-white whitespace-nowrap shadow-lg">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-white px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white whitespace-nowrap shadow-md">
             One-Time Investment
         </div>
 
-        <h3 class="text-2xl font-bold mt-4 text-slate-900 dark:text-white leading-tight">{price.title}</h3>
+        <!-- FIXED HEIGHT TITLE FOR SYMMETRY -->
+        <h3 class="text-2xl font-bold mt-4 text-slate-900 dark:text-white leading-tight h-16 flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
+          {price.title}
+        </h3>
         
-        <div class="mt-8 flex-1">
-          <div class="flex items-end justify-center">
-            <span class="text-6xl font-bold tracking-tight text-primary">
+        <div class="mt-6 flex-1 flex flex-col">
+          <div class="flex items-end justify-center mb-8">
+            <span class="text-5xl font-bold tracking-tight text-primary">
                 {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
             </span>
-            <span class="ml-1 text-xl font-medium text-muted dark:text-slate-400">/ once</span>
           </div>
-          <ul role="list" class="mt-10 space-y-4 text-left">
+          
+          <ul role="list" class="space-y-3 text-left text-sm mb-8 flex-grow">
             {price.items.map((item) => (
               <li class="flex items-start">
-                <Icon name="tabler:circle-check" class="w-6 h-6 text-green-500 flex-shrink-0" />
-                <p class="ml-3 text-lg text-muted dark:text-slate-300">{item.description}</p>
+                <Icon name="tabler:circle-check" class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <p class="ml-2 text-muted dark:text-slate-300 font-medium">{item.description}</p>
               </li>
             ))}
           </ul>
         </div>
         
-        <div class="mt-10 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           <form class="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
@@ -65,42 +67,37 @@ const cardWidthClass = isSingle
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
             
-            <div class="text-left space-y-5">
+            <div class="text-left space-y-4">
               <div>
-                <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">1. Business / Shop Name</label>
+                <label class="block text-[10px] font-bold mb-1 text-slate-500 uppercase tracking-widest">1. Business Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-3 py-2 text-sm border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="Name" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
-                <input type="text" name="os0" required class="business-name-input w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="Enter Name" data-base-title={price.title} />
               </div>
 
               {hasUrlField ? (
                 <div>
-                  <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">2. Existing Website URL</label>
+                  <label class="block text-[10px] font-bold mb-1 text-slate-500 uppercase tracking-widest">2. Existing Website URL</label>
+                  <input type="text" name="os1" required class="w-full px-3 py-2 text-sm border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="https://..." />
                   <input type="hidden" name="on1" value="Current URL" />
-                  <input type="text" name="os1" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="https://..." />
                 </div>
               ) : (
                 <div>
-                  <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">2. Representative Name</label>
+                  <label class="block text-[10px] font-bold mb-1 text-slate-500 uppercase tracking-widest">2. Representative Name</label>
+                  <input type="text" name="os1" required class="w-full px-3 py-2 text-sm border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="Your Name" />
                   <input type="hidden" name="on1" value="Representative" />
-                  <input type="text" name="os1" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="Your Full Name" />
                 </div>
               )}
 
               <div>
-                <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">3. Primary Email</label>
-                <input type="email" required class="email-input w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="email@address.com" />
+                <label class="block text-[10px] font-bold mb-1 text-slate-500 uppercase tracking-widest">3. Primary Email</label>
+                <input type="email" required class="email-input w-full px-3 py-2 text-sm border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="email@address.com" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-8 py-4 bg-primary hover:bg-blue-700 text-white font-extrabold rounded shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-lg uppercase tracking-widest">
+            <button type="submit" class="w-full mt-6 py-3.5 bg-primary hover:bg-blue-700 text-white font-extrabold rounded shadow-md hover:shadow-lg transition-all text-xs uppercase tracking-[0.1em]">
               {price.callToAction?.text || 'Order Now'}
             </button>
-            
-            <div class="flex items-center justify-center gap-2 mt-4 text-slate-400">
-                <Icon name="tabler:credit-card" class="w-4 h-4" />
-                <p class="text-[10px] font-bold uppercase tracking-tighter">Secure Credit Card Checkout</p>
-            </div>
           </form>
         </div>
       </div>
@@ -116,7 +113,7 @@ const cardWidthClass = isSingle
       const emailInput = form.querySelector('.email-input');
       const itemHidden = form.querySelector('.paypal-item-name');
       const customHidden = form.querySelector('.paypal-custom-metadata');
-      const baseTitle = bizInput.getAttribute('data-base-title');
+      const baseTitle = bizInput?.getAttribute('data-base-title');
 
       const sync = () => {
         const bizVal = bizInput.value.trim();
