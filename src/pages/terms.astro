@@ -1,38 +1,79 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
   title: 'Terms of Service | Hanei JP',
-  description: 'The legal framework and service agreement for Hanei JP digital infrastructure projects.'
+  description: 'Detailed legal framework and service agreement for Hanei JP projects.'
 };
 ---
 <Layout metadata={metadata}>
-  <HeroText title="Terms of Service" subtitle="Last Updated: April 2026" />
+  <HeroText title="Terms of Service" subtitle="Version 2.0 | Last Updated: April 2026" />
   
   <section class="px-4 py-12 sm:px-6 mx-auto lg:py-20 max-w-4xl">
     <div class="prose prose-lg dark:prose-invert max-w-none text-muted dark:text-slate-400">
       
-      <h2 class="text-slate-900 dark:text-white">1. Acceptance of Terms</h2>
-      <p>By engaging Hanei JP ("The Studio") for website development, review systems, or digital infrastructure services, you ("The Client") agree to be bound by the following Terms of Service.</p>
+      <h2 class="text-slate-900 dark:text-white">1. Introduction & Acceptance</h2>
+      <p>These Terms of Service ("Terms") govern your access to and use of the services provided by Hanei JP ("The Studio," "we," "us"). By purchasing any service package, completing an onboarding form, or using our digital assets, you ("The Client," "you") agree to be legally bound by these Terms. If you do not agree to these Terms, you must not use our services.</p>
 
-      <h2 class="text-slate-900 dark:text-white">2. Scope of Services</h2>
-      <p>Hanei JP provides boutique digital infrastructure services, including 1-Page Business Websites, Review Engines, English Language Hubs, and Full Website Developments.</p>
-
-      <h2 class="text-slate-900 dark:text-white">3. Payment & Fees</h2>
+      <h2 class="text-slate-900 dark:text-white">2. Detailed Description of Services</h2>
+      <p>Hanei JP specializes in the rapid deployment of digital infrastructure. Our core services include:</p>
       <ul>
-        <li><strong>One-Time Investment:</strong> Core services operate on a fixed-fee model. There are no recurring monthly management fees unless specified in a bespoke support contract.</li>
-        <li><strong>Refunds:</strong> Due to the immediate allocation of technical resources, all payments are final and non-refundable once development has initiated.</li>
+        <li><strong>1-Page Business Website:</strong> A single-page professional site designed for rapid launch, including menu/service sections and mobile optimization.</li>
+        <li><strong>Review Engine:</strong> A managed system for automating the collection and display of Google Business reviews via a hosted QR-code portal.</li>
+        <li><strong>English Hanare (Digital Hub):</strong> The development of a standalone English-language website hosted on a sub-domain (e.g., en.yourbusiness.com) to serve global audiences without modifying your existing site.</li>
+        <li><strong>Grand Reform & NEW:</strong> Full-scale website facelifts or from-scratch developments including 18-point feature sets and high-performance hosting.</li>
       </ul>
 
-      <h2 class="text-slate-900 dark:text-white">4. Technical Delivery</h2>
-      <p>Hanei JP is committed to rapid delivery (24-72 hours). This timeline is strictly contingent upon the Client providing all required branding assets and imagery by 12:00 PM JST on the business day of order.</p>
+      <h2 class="text-slate-900 dark:text-white">3. Financial Terms & The CapEx Model</h2>
+      <p>Hanei JP operates on a Capital Expenditure (CapEx) model. Our goal is to provide lifetime digital assets with one-time investments.</p>
+      <ul>
+        <li><strong>Payment Obligations:</strong> All service fees are due in full upfront. Work will not commence until payment is verified via Stripe or PayPal.</li>
+        <li><strong>Zero Monthly Fees:</strong> Standard packages include lifetime hosting and technical management. We do not charge recurring "SaaS taxes."</li>
+        <li><strong>Non-Refundable Policy:</strong> Because we allocate developer time and secure server resources immediately upon order, all payments are non-refundable once the onboarding process has begun.</li>
+      </ul>
 
-      <h2 class="text-slate-900 dark:text-white">5. The Zero-Access Model</h2>
-      <p>For your security, Hanei JP will never ask for your domain registrar or hosting passwords. The Client is responsible for updating their "website address record" (CNAME) following our provided instructions. Full assistance will be provided to ensure this is effortless.</p>
+      <h2 class="text-slate-900 dark:text-white">4. Technical Deployment & Zero-Access Security</h2>
+      <p>Security is a core Hanei Standard. We operate a "Zero-Access" model to protect your data.</p>
+      <ul>
+        <li><strong>No Passwords:</strong> We will never ask for your login credentials for domain registrars, email accounts, or hosting panels.</li>
+        <li><strong>Website Address Record:</strong> To launch your site, you are responsible for updating a specific record in your domain settings (CNAME/Address Record). Hanei JP provides full, step-by-step assistance for this process.</li>
+        <li><strong>Client Delay:</strong> Hanei JP is not responsible for launch delays caused by the Client's failure to update their domain records.</li>
+      </ul>
 
-      <h2 class="text-slate-900 dark:text-white">6. Liability</h2>
-      <p>Hanei JP is not liable for any loss of revenue or business standing resulting from the use of our services or the policies of third-party platforms (Google, Instagram, Stripe).</p>
+      <h2 class="text-slate-900 dark:text-white">5. Delivery Guarantees & Client Assets</h2>
+      <p>While we promise industry-leading speeds (24-72 hours), these timelines are "Best Effort" and contingent upon Client cooperation.</p>
+      <ul>
+        <li><strong>Asset Submission:</strong> The 1-business-day delivery promise only applies if all requested text, photos, and brand assets are received by 12:00 PM JST.</li>
+        <li><strong>Quality of Assets:</strong> The Client is responsible for the quality and legality of all provided media. Hanei JP is not liable for copyright infringements resulting from Client-provided content.</li>
+      </ul>
+
+      <h2 class="text-slate-900 dark:text-white">6. Intellectual Property Rights</h2>
+      <ul>
+        <li><strong>Client Property:</strong> You retain ownership of your trademarks, logos, and original text content.</li>
+        <li><strong>Hanei Property:</strong> Hanei JP retains all rights to the underlying software logic, server configurations, automation scripts, and proprietary code used to serve the digital assets.</li>
+        <li><strong>License:</strong> Upon final delivery, we grant you a perpetual, non-transferable license to use the resulting digital asset for your business operations.</li>
+      </ul>
+
+      <h2 class="text-slate-900 dark:text-white">7. Limitation of Liability & Force Majeure</h2>
+      <p>To the maximum extent permitted by Japanese law, Hanei JP shall not be liable for any indirect, incidental, or consequential damages (including loss of profits or data).</p>
+      <ul>
+        <li><strong>Third-Party Failure:</strong> We are not liable for outages caused by Google, Instagram, Stripe, or major backbone internet providers.</li>
+        <li><strong>Force Majeure:</strong> Timelines may be suspended during events beyond our control, including natural disasters, regional infrastructure failure, or regulatory changes.</li>
+      </ul>
+
+      <h2 class="text-slate-900 dark:text-white">8. Warranty & Support</h2>
+      <p>Hanei JP provides a <strong>60-day priority technical warranty</strong> on all new builds. This covers bug fixes and technical errors. Minor text updates are provided "as-is" under our lifetime white-glove support policy. We do not guarantee specific financial results or specific rankings in search engine results.</p>
+
+      <h2 class="text-slate-900 dark:text-white">9. Governing Law</h2>
+      <p>This agreement is governed by and construed in accordance with the laws of Japan. Any legal action arising from these Terms shall be brought exclusively in the courts of the jurisdiction where Hanei JP maintains its primary studio operations.</p>
     </div>
   </section>
+
+  <CallToAction
+    title="Questions regarding our terms?"
+    subtitle="Our team is available to clarify any legal or technical aspects of our service agreement."
+    actions={[{ variant: 'primary', text: 'Contact Hanei JP', href: '/contact' }]}
+  />
 </Layout>
