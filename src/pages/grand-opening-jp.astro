@@ -9,39 +9,37 @@ const fullFeatureListJp = [{ title: '超高速エッジ配信' }, { title: '日�
 <Layout metadata={metadata}>
   <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: '和食' }} />
   
-  <!-- CORE OPTIONS -->
+  <!-- OPTION 1: REFORM -->
   <div id="reform" class="scroll-mt-20">
     <Content tagline="グランド・リフォーム" title="01. 劇的リフォーム" subtitle="今の情報を活かしつつ、国際的なラグジュアリー基準に合わせてデザインを刷新します。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1628652337240-80d1ed549f47?auto=format&fit=crop&w=1200&q=80', alt: '寿司' }} />
+    
+    <Content isReversed={true} isAfterContent={true} title="ブランド価値の再定義" subtitle="これまでの歩みを尊重しつつ、世界基準のインターフェースへと昇華させます。貴店のアイデンティティを保ちながら、プロフェッショナルな「顔」へとリフォームします。" image={{ src: 'https://images.unsplash.com/photo-1667560615919-837fe9001e58?w=1200&auto=format&fit=crop&q=60' }} />
+    
+    <Content isReversed={false} isAfterContent={true} title="超高速・次世代インフラへの移行" subtitle="見た目の刷新だけでなく、中身も最新へ。世界最速水準のエッジネットワークへ移行することで、モバイル環境でも瞬時の表示を実現。ストレスのない閲覧体験を提供します。" image={{ src: 'https://images.unsplash.com/photo-1749104953222-9d6ed76e4bf0?w=1200&auto=format&fit=crop&q=60' }} />
   </div>
 
+  <hr class="border-t dark:border-slate-800 my-12" />
+
+  <!-- OPTION 2: NEW -->
   <div id="new" class="scroll-mt-20">
     <Content isReversed={true} tagline="グランド・ニュー" title="02. 完全新規制作" subtitle="ゼロからデジタル・エコシステムを構築します。最高のコンバージョン（予約・注文）を生むための、貴店専用のフラッグシップサイトを制作します。" items={[{ title: '新規ブランド構築', description: '市場に合わせたカスタムエンジニアリング。', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} />
+    
+    <Content isReversed={false} isAfterContent={true} title="成約率を最大化する設計" subtitle="新規制作においては、まず「成長のための設計図」から描き始めます。予約導線や問い合わせフローに独自のロジックを組み込み、訪問者を優良な顧客へと変える仕組みを構築します。" image={{ src: 'https://images.unsplash.com/photo-1644072267093-cbbfdb74303c?w=1200&auto=format&fit=crop&q=60' }} />
+    
+    <Content isReversed={true} isAfterContent={true} title="世界水準のデータ基盤" subtitle="最新のサーバーレステクノロジーを採用し、盤石な土台を築きます。ミリ単位のSEO最適化により、検索結果での優位性を確保し、地域の競合を圧倒するデジタル資産を提供します。" image={{ src: 'https://images.unsplash.com/photo-1648977555232-99b5a8c8c897?w=1200&auto=format&fit=crop&q=60' }} />
   </div>
 
-  <!-- DEMO PORTFOLIO -->
-  <Content isReversed={false} tagline="制作実例" title="フラッグシップ：ZenPod Tokyo" subtitle="ZenPod Tokyoのデモサイトで、私たちが構築するWebサイトのクオリティをご体験ください。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200', alt: 'ホテル' }} />
-  
-  <Content isReversed={true} title="フラッグシップ：麻布プレミアムメディカル" subtitle="洗練された医療施設向けのデモ. 専門的なケア, 医師の紹介, 転院・予約フローを体験してください。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/azabu-medical' }} image={{ src: 'https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=1200', alt: '医療' }} />
-  
-  <Content isReversed={false} title="フラッグシップ：表参道デンタルアーツ" subtitle="外国人患者に最適化されたクリニックのデモ。バイリンガルの信頼構築とスムーズな予約導線を備えています。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200', alt: '歯科' }} />
+  <div class="py-12 bg-slate-50 dark:bg-transparent border-y dark:border-slate-800 my-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4">制作実例（フラッグシップ）</h2>
+        <p class="text-xl text-muted">各業界で私たちが提供している最高水準のクオリティをご覧ください。</p>
+    </div>
+  </div>
 
-  <Content isReversed={true} title="フラッグシップ：GINZA KAIZEN" subtitle="銀座の高級ヘアサロン向けデモ。洗練された日本のスタイリング技術、完全英語対応の接客、転院・予約動線を体験できます。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/ginza-kaizen' }} image={{ src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1200', alt: '美容' }} />
-
-  <Content isReversed={false} title="フラッグシップ：Zen Relocations Japan" subtitle="外国人駐在員向けプレミアム引越しサービスのデモ. 日本品質の丁寧な梱包, 物流精度, そして完全英語対応のサポート体制を視覚化しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/zen-relocations-japan-relocations' }} image={{ src: 'https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?w=1200', alt: '物流' }} />
-
-  <Content isReversed={true} title="フラッグシップ：Kissa & Co. Osaka" subtitle="現代の喫茶店体験を再解釈した洗練されたデモ。季節のコーヒーメニュー、高品質なビジュアルストーリー、およびシームレスな予約動線を備えています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/kissa-co-osaka' }} image={{ src: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=1200', alt: 'ロースタリー' }} />
-
-  <Content isReversed={false} title="フラッグシップ：Mizu no Kokoro" subtitle="高級銭湯・ウェルネス施設のデモ。伝統的な入浴儀式、モダンな空間デザイン、および外国人ゲストに配慮した予約システムを構築しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/mizu-no-kokoro-luxury-sento-wellness-osaka' }} image={{ src: 'https://images.unsplash.com/photo-1764057146162-64aaea28494a?w=1200', alt: '銭湯' }} />
-
-  <Content isReversed={true} title="フラッグシップ：TAKUMI PRECISION TOKYO" subtitle="高度な工業技術・エンジニアリングに特化したデモサイト。精密機械加工、迅速なプロトタイピング、自動組み立てラインを視覚化し、海外企業向けの見積もり依頼（RFQ）動線を統合しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/takumi-precision-tokyo-engineering-the-future' }} image={{ src: 'https://images.unsplash.com/photo-1757912666361-8c226b7279b9?w=1200', alt: '工業' }} />
-
-  <Content isReversed={false} title="フラッグシップ：SHIKA-AN NARA" subtitle="奈良公園に佇む高級ヘリテージ・ゲストハウスのデモ。歴史的建築の美しさ、特別な体験プログラム、および欧米富裕層向けのシームレスな予約導線を提供します。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/shika-an-nara-luxury-heritage-guesthouse' }} image={{ src: 'https://images.unsplash.com/photo-1530708780517-cc640cf05561?w=1200', alt: '旅館' }} />
-
-  <Content isReversed={true} title="フラッグシップ：OSAKA UNSEEN" subtitle="大阪の隠れた名店を巡る高級グルメツアーのデモ. ネオン煌めく裏路地ツアー、ミシュラン店への特別アクセス、および欧米富裕層向けの予約管理システムを統合しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/osaka-unseen-luxury-culinary-expeditions' }} image={{ src: 'https://images.unsplash.com/photo-1605582763781-dff23d0f5d32?w=1200', alt: '大阪グルメ' }} />
-
-  <Content isReversed={false} title="フラッグシップ：Private Kyoto Temple Expeditions" subtitle="京都の寺院を巡る高級プライベートツアーのデモ。一般非公開寺院への特別参拝、禅僧による解説、および欧米富裕層向けの洗練された予約フローを統合しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/private-kyoto-temple-expeditions' }} image={{ src: 'https://images.unsplash.com/photo-1574236170880-fbbca132d83d?w=1200', alt: '京都' }} />
-
-  <Content isReversed={true} title="フラッグシップ：KURA TOKYO" subtitle="高級荷物預かり・セキュリティストレージのデモ. 生体認証、温度管理、および外国人観光客向けのコンシェルジュサービスを統合したセキュアなインフラを視覚化しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/kura-tokyo-premium-luggage-concierge-secure-storage' }} image={{ src: 'https://images.unsplash.com/photo-1756649627237-d367a3e3a311?w=1200', alt: 'コンシェルジュ' }} />
+  <Content isReversed={false} title="フラッグシップ：ZenPod Tokyo" subtitle="ZenPod Tokyoのデモサイトで、私たちが構築するWebサイトのクオリティをご体験ください。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200', alt: 'ホテル' }} />
+  <Content isReversed={true} title="フラッグシップ：麻布プレミアムメディカル" subtitle="洗練された医療施設向けのデモ. 専門的なケア, 医師の紹介, 予約フローを体験してください。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/azabu-medical' }} image={{ src: 'https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=1200', alt: '医療' }} />
+  <Content isReversed={false} title="フラッグシップ：GINZA KAIZEN" subtitle="銀座の高級ヘアサロン向けデモ。洗練された日本のスタイリング技術、完全英語対応の予約動線を体験できます。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/ginza-kaizen' }} image={{ src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1200', alt: '美容' }} />
+  <Content isReversed={true} title="フラッグシップ：KURA TOKYO" subtitle="高級荷物預かり・セキュリティストレージのデモ. 欧米富裕層向けのコンシェルジュサービスを統合したセキュアなインフラを視覚化しています。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/kura-tokyo-premium-luggage-concierge-secure-storage' }} image={{ src: 'https://images.unsplash.com/photo-1756649627237-d367a3e3a311?w=1200', alt: 'コンシェルジュ' }} />
 
   <!-- COMBINED FEATURES TABLE -->
   <FeatureTable title="グランド・リフォーム ＆ グランド・ニュー・パッケージ" subtitle="すべてのフル制作プロジェクトに標準装備されるエリート機能一覧。" items={fullFeatureListJp} />

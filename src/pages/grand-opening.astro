@@ -9,43 +9,39 @@ const fullFeatureList = [{ title: 'High-Speed Edge Delivery' }, { title: 'Biling
 <Layout metadata={metadata}>
   <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: 'Culinary' }} />
   
-  <!-- CORE OPTIONS -->
+  <!-- OPTION 1: REFORM -->
   <div id="reform" class="scroll-mt-20">
     <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards while preserving your existing content." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} />
+    
+    <Content isReversed={true} isAfterContent={true} title="Preserving Heritage, Elevating Impact" subtitle="We respect the work you've already done. Our reform process takes your existing text and history and wraps it in a world-class interface. This ensures you maintain your brand identity while finally looking as professional as your physical business." image={{ src: 'https://images.unsplash.com/photo-1667560615919-837fe9001e58?w=1200&auto=format&fit=crop&q=60' }} />
+    
+    <Content isReversed={false} isAfterContent={true} title="Technical Performance Boost" subtitle="A design facelift is only half the battle. We migrate your reformed site to our high-speed edge network, ensuring that your new look loads instantly on any roaming data connection. Speed is the silent signal of luxury and reliability." image={{ src: 'https://images.unsplash.com/photo-1749104953222-9d6ed76e4bf0?w=1200&auto=format&fit=crop&q=60' }} />
   </div>
 
+  <hr class="border-t dark:border-slate-800 my-12" />
+
+  <!-- OPTION 2: NEW -->
   <div id="new" class="scroll-mt-20">
     <Content isReversed={true} tagline="Option 2: Grand NEW" title="02. Total Digital Blueprint" subtitle="A complete from-scratch development of your digital ecosystem. We build your new flagship website with elite infrastructure designed for maximum conversion from day one." items={[{ title: 'Brand New Build', description: 'Custom engineered for your specific niche.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} />
+    
+    <Content isReversed={false} isAfterContent={true} title="Architected for High Conversion" subtitle="When we build from zero, we start with a blueprint for growth. We design your navigation, contact flows, and booking integrations using proprietary conversion logic. Every pixel is placed with the goal of turning a visitor into a high-value customer." image={{ src: 'https://images.unsplash.com/photo-1644072267093-cbbfdb74303c?w=1200&auto=format&fit=crop&q=60' }} />
+    
+    <Content isReversed={true} isAfterContent={true} title="Elite Data Infrastructure" subtitle="Your new flagship is built on the same serverless stack used by world-class tech firms. This provides your business with an unshakeable foundation: sub-second load times, military-grade SSL security, and an automated SEO architecture that ensures you dominate local search results." image={{ src: 'https://images.unsplash.com/photo-1648977555232-99b5a8c8c897?w=1200&auto=format&fit=crop&q=60' }} />
   </div>
 
-  <!-- DEMO PORTFOLIO -->
-  <Content isReversed={false} tagline="Experience Excellence" title="Live Flagship: ZenPod Tokyo" subtitle="Explore our luxury capsule hotel concept to see how we blend premium Japanese aesthetics with high-converting digital flows." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200', alt: 'Hotel' }} />
-  
+  <!-- DEMO PORTFOLIO SECTION -->
+  <div class="py-12 bg-slate-50 dark:bg-transparent border-y dark:border-slate-800 my-16">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold font-heading mb-4">Flagship Demonstrations</h2>
+        <p class="text-xl text-muted">Explore the level of quality we deliver for every industry.</p>
+    </div>
+  </div>
+
+  <Content isReversed={false} title="Live Flagship: ZenPod Tokyo" subtitle="Explore our luxury capsule hotel concept to see how we blend premium Japanese aesthetics with high-converting digital flows." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200', alt: 'Hotel' }} />
   <Content isReversed={true} title="Live Flagship: Azabu Medical" subtitle="A sophisticated medical facility demonstration. Highlights specialized care, physician profiles, and a patient-centric appointment workflow." callToAction={{ variant: 'primary', text: 'Launch Medical Demo', href: '/demos/azabu-medical' }} image={{ src: 'https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=1200', alt: 'Medical' }} />
-  
-  <Content isReversed={false} title="Live Flagship: Omotesando Dental" subtitle="A premium clinic design optimized for international patients. Features bilingual trust signals and advanced medical booking flows." callToAction={{ variant: 'secondary', text: 'Launch Dental Demo', href: '/demos/omotesando-dental' }} image={{ src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200', alt: 'Dental' }} />
-
-  <Content isReversed={true} title="Live Flagship: GINZA KAIZEN" subtitle="A premium hair artistry sanctuary in Ginza. Highlights meticulous Japanese styling, English-speaking staff, and high-conversion booking flows." callToAction={{ variant: 'primary', text: 'Launch Beauty Demo', href: '/demos/ginza-kaizen' }} image={{ src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1200', alt: 'Beauty' }} />
-
-  <Content isReversed={false} title="Live Flagship: Zen Relocations Japan" subtitle="A premium expat-focused moving service demonstration. Showcases high-precision Japanese logistics, meticulous packing standards, and English-speaking support." callToAction={{ variant: 'primary', text: 'Launch Logistics Demo', href: '/demos/zen-relocations-japan-relocations' }} image={{ src: 'https://images.unsplash.com/photo-1722487631997-cf1e0f92c2c4?w=1200', alt: 'Logistics' }} />
-
-  <Content isReversed={true} title="Live Flagship: Kissa & Co. Osaka" subtitle="An elegant demonstration of the modern Kissaten experience. Features seasonal coffee menus, high-resolution visual storytelling, and seamless table booking workflows." callToAction={{ variant: 'primary', text: 'Launch Roastery Demo', href: '/demos/kissa-co-osaka' }} image={{ src: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=1200', alt: 'Roastery' }} />
-
-  <Content isReversed={false} title="Live Flagship: Mizu no Kokoro" subtitle="A premium wellness sanctuary demonstration. Showcases traditional Japanese bathing rituals, modern aesthetic design, and an integrated reservation system for international guests." callToAction={{ variant: 'primary', text: 'Launch Wellness Demo', href: '/demos/mizu-no-kokoro-luxury-sento-wellness-osaka' }} image={{ src: 'https://images.unsplash.com/photo-1764057146162-64aaea28494a?w=1200', alt: 'Wellness' }} />
-
-  <Content isReversed={true} title="Live Flagship: TAKUMI PRECISION TOKYO" subtitle="A high-fidelity industrial engineering demonstration. Showcases precision manufacturing, rapid prototyping, and automated assembly solutions with integrated RFQ workflows for global partners." callToAction={{ variant: 'primary', text: 'Launch Industrial Demo', href: '/demos/takumi-precision-tokyo-engineering-the-future' }} image={{ src: 'https://images.unsplash.com/photo-1757912666361-8c226b7279b9?w=1200', alt: 'Industrial' }} />
-
-  <Content isReversed={false} title="Live Flagship: SHIKA-AN NARA" subtitle="A luxury heritage guesthouse demonstration set in Nara Park. Features traditional architecture, curated guest experiences, and seamless bilingual booking flows for high-end international travelers." callToAction={{ variant: 'primary', text: 'Launch Heritage Demo', href: '/demos/shika-an-nara-luxury-heritage-guesthouse' }} image={{ src: 'https://images.unsplash.com/photo-1530708780517-cc640cf05561?w=1200', alt: 'Heritage' }} />
-
-  <Content isReversed={true} title="Live Flagship: OSAKA UNSEEN" subtitle="An exclusive culinary expedition demonstration. Showcases neon-noir street food crawls, VIP access to hidden Osaka izakayas, and high-conversion booking workflows for luxury travelers." callToAction={{ variant: 'primary', text: 'Launch Expedition Demo', href: '/demos/osaka-unseen-luxury-culinary-expeditions' }} image={{ src: 'https://images.unsplash.com/photo-1605582763781-dff23d0f5d32?w=1200', alt: 'Culinary Expedition' }} />
-
-  <Content isReversed={false} title="Live Flagship: Private Kyoto Temple Expeditions" subtitle="A high-end spiritual travel demonstration. Showcases scholar-led private access to sacred Zen temples, ritual meditation sessions, and bespoke itineraries for luxury travelers." callToAction={{ variant: 'primary', text: 'Launch Temple Demo', href: '/demos/private-kyoto-temple-expeditions' }} image={{ src: 'https://images.unsplash.com/photo-1574236170880-fbbca132d83d?w=1200', alt: 'Temple' }} />
-
-  <Content isReversed={true} title="Live Flagship: KURA TOKYO" subtitle="A high-security luggage and high-value item storage demonstration. Showcases biometric security, climate control, and integrated concierge services for international luxury travelers." callToAction={{ variant: 'primary', text: 'Launch Concierge Demo', href: '/demos/kura-tokyo-premium-luggage-concierge-secure-storage' }} image={{ src: 'https://images.unsplash.com/photo-1756649627237-d367a3e3a311?w=1200', alt: 'Storage Concierge' }} />
-
-  <Content isReversed={false} title="Live Flagship: Tokyo Locker & Storage" subtitle="A premium luggage solutions website. See how we present tiered security services, house rules, and contactless payment flows in a high-converting format." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/tokyo-locker-storage-premium-luggage-solutions' }} image={{ src: 'https://images.unsplash.com/photo-1618438502398-195e47778d6c?w=1200', alt: 'Locker Solution' }} />
-
-  <Content isReversed={true} title="Live Flagship: Kagari Izakaya & Grill" subtitle="A luxury Shinjuku gastronomy destination. Featuring integrated reservation workflows, seasonal omakase menus, and high-contrast night-mode aesthetics." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} image={{ src: 'https://images.unsplash.com/photo-1617870314635-fc819547ec11?w=1200', alt: 'Izakaya Grill' }} />
+  <Content isReversed={false} title="Live Flagship: GINZA KAIZEN" subtitle="A premium hair artistry sanctuary in Ginza. Highlights meticulous Japanese styling, English-speaking staff, and high-conversion booking flows." callToAction={{ variant: 'primary', text: 'Launch Beauty Demo', href: '/demos/ginza-kaizen' }} image={{ src: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=1200', alt: 'Beauty' }} />
+  <Content isReversed={true} title="Live Flagship: Tokyo Locker & Storage" subtitle="A premium luggage solutions website. See how we present tiered security services, house rules, and contactless payment flows in a high-converting format." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/tokyo-locker-storage-premium-luggage-solutions' }} image={{ src: 'https://images.unsplash.com/photo-1618438502398-195e47778d6c?w=1200', alt: 'Locker Solution' }} />
+  <Content isReversed={false} title="Live Flagship: Kagari Izakaya & Grill" subtitle="A luxury Shinjuku gastronomy destination. Featuring integrated reservation workflows, seasonal omakase menus, and high-contrast night-mode aesthetics." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} image={{ src: 'https://images.unsplash.com/photo-1617870314635-fc819547ec11?w=1200', alt: 'Izakaya Grill' }} />
 
   <!-- COMBINED FEATURES TABLE -->
   <FeatureTable title="Grand Reform & Grand NEW Packages" subtitle="Elite standard features included in every professional development project." items={fullFeatureList} />
