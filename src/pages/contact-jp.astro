@@ -6,9 +6,9 @@ import BespokeForm from '~/components/widgets/BespokeForm.astro';
 const metadata = { title: 'お問い合わせ/特殊案件 | Hanei JP' };
 
 const jpLabels = {
-    title: "お問い合わせフォーム",
+    title: "制作・パートナーシップのご相談",
     client_name: "お名前",
-    company_name: "貴社名",
+    company_name: "貴社名・店名",
     email: "メールアドレス",
     address: "所在地・住所",
     request_type: "ご依頼の種別",
@@ -16,11 +16,11 @@ const jpLabels = {
     budget_range: "ご予算感",
     deadline: "希望納期",
     referral: "当社を知ったきっかけ",
-    submit: "送信する"
+    submit: "相談内容を送信する"
 };
 
 const jpOptions = {
-    requests: ["一般的なお問い合わせ", "独自システム開発", "API・外部連携", "レガシー移行", "その他"],
+    requests: ["一般的なお問い合わせ", "独自システム開発", "API・外部連携", "レガシーサイト刷新", "その他"],
     budgets: ["未定・該当なし", "100万円 - 300万円", "300万円 - 500万円", "500万円以上"],
     timelines: ["至急 (最短当日)", "明日まで", "今週中", "1週間以内", "その他"],
     referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
@@ -29,10 +29,11 @@ const jpOptions = {
 
 <Layout metadata={metadata}>
   <Hero2
-    tagline="お問い合わせ"
-    title='ビスポーク・ソリューション & <br/><span class="text-accent">一般お問い合わせ</span>'
-    subtitle="技術的な難題から日常的なご質問まで、幅広く承ります。ブティックならではの柔軟な対応で、お客様の課題解決をサポートします。"
-    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Contact' }}
+    tagline="専属スタジオへのアクセス"
+    title='日本の価値を、<br/><span class="text-accent">デジタルの「正解」へ。</span>'
+    subtitle="迅速な1ページ制作から、複雑な独自インフラの構築まで。Hanei JPは、日本の職人魂と世界基準の技術を繋ぐパートナーです。精密な設計で、貴店の飛躍をサポートします。"
+    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop', alt: 'プロフェッショナルな打ち合わせ' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
   <BespokeForm labels={jpLabels} options={jpOptions} />
 </Layout>

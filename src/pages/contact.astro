@@ -4,17 +4,18 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
 const metadata = { 
-  title: 'Contact | Hanei JP',
-  description: 'Reach out for general inquiries or bespoke digital solutions.'
+  title: 'Contact | Elite Studio Access | Hanei JP',
+  description: 'Reach out for bespoke digital solutions or professional technical consultations.'
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero2
-    tagline="Contact Us"
-    title='Bespoke Solutions & <br/><span class="text-accent">General Inquiries</span>'
-    subtitle="We thrive on complexity and local excellence. Whether you have a simple question or a technical request—we want to hear about it."
-    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=611&h=405&auto=format&fit=crop', alt: 'Contact' }}
+    tagline="Elite Studio Access"
+    title='Let’s Architect Your <br/><span class="text-accent">Digital Future.</span>'
+    subtitle="From rapid 1-page launches to complex custom infrastructure, Hanei JP is your dedicated technical partner. We translate Japanese excellence into world-class digital assets with absolute precision."
+    image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop', alt: 'Professional Collaboration' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
   <BespokeForm />
 </Layout>
