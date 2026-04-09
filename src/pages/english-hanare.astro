@@ -5,8 +5,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = { 
-  title: 'English Hanare | Global Audience Presence | Hanei JP',
-  description: 'A world-class English website for Japanese hospitality, craftsmen, and manufacturers. Professional presence for travelers and partners without touching your existing site.'
+  title: 'English Hanare | Independent English Infrastructure | Hanei JP',
+  description: 'A professional English website for Japanese businesses. Stand-alone digital infrastructure for global reach without asking for your passwords.'
 };
 
 const pricingData = { 
@@ -17,16 +17,16 @@ const pricingData = {
     { description: '10-Page Professional English Site' }, 
     { description: 'Native Technical & Hospitality Copy' }, 
     { description: 'No System Access Required' }, 
-    { description: '3-Day Delivery Guarantee' }
+    { description: 'Zero-Password Deployment' }
   ], 
   callToAction: { target: '_self', text: 'Apply Now', href: '/contact', variant: 'primary' } 
 };
 ---
 <Layout metadata={metadata}>
   <Hero2 
-    tagline="The Detached Pavilion Strategy" 
+    tagline="The Detached Digital Hub Strategy" 
     title='Your Business, Presented <br/><span class="text-accent">to a Global Audience.</span>' 
-    subtitle='Expand your reach to international travelers, partners, and global clients without the risk of modifying your current Japanese site. We build a high-performance English pavilion that stands alone as your professional global flagship.' 
+    subtitle='Expand your reach to international travelers, partners, and global clients without the risk of modifying your current Japanese site. We build a high-performance English infrastructure that stands alone as your professional global flagship.' 
     actions={[{ variant: 'primary', text: 'Get Started', href: '#pricing' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Quality and Precision' }} 
   />
@@ -61,6 +61,14 @@ const pricingData = {
     subtitle="We engineer your site to rank for the specific search terms used by international tourists and global companies seeking your services. By targeting high-intent keywords in English, we ensure your business is discovered by decision-makers and high-net-worth travelers before they even arrive in your city." 
     items={[{ title: 'Market Reach', description: 'Be discovered by international industry leaders.', icon: 'tabler:search' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Search Visibility' }} 
+  />
+
+  <Content 
+    isReversed={false} 
+    title="05. Zero-Access Deployment" 
+    subtitle="We never ask for your passwords or system logins. We build and deploy your English infrastructure entirely on our secure servers. The only step required on your part is a simple one-minute entry in your domain settings (CNAME), and our team will guide you through this effortless process to go live." 
+    items={[{ title: 'Total Data Privacy', description: 'Keep your passwords and internal systems private.', icon: 'tabler:key-off' }]} 
+    image={{ src: 'https://images.unsplash.com/photo-1595476513916-a435d93d1f6a?w=1200&auto=format&fit=crop', alt: 'Modern Japanese Web Setup' }} 
   />
 
   <Pricing id="pricing" title="Global Expansion. Zero Technical Risk." prices={[pricingData]} />
