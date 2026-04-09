@@ -6,6 +6,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Price } from '~/types';
 
 const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.props;
+const currentUrl = Astro.url.href;
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
@@ -15,24 +16,24 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
     {prices.map((price) => (
       <div class="relative overflow-visible flex flex-col rounded-lg border-2 border-primary p-8 text-center shadow-2xl w-full max-w-lg bg-white dark:bg-slate-900">
         
-        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest text-white">
             One-Time CapEx Investment
         </div>
 
-        <h3 class="text-2xl font-bold mt-2">{price.title}</h3>
+        <h3 class="text-2xl font-bold mt-2 text-slate-900 dark:text-white">{price.title}</h3>
         
         <div class="mt-8 flex-1">
           <div class="flex items-end justify-center">
             <span class="text-5xl font-bold tracking-tight text-primary">
                 {typeof price.price === 'number' ? '$' + price.price : price.price}
             </span>
-            <span class="ml-1 text-xl font-medium text-muted">/ once</span>
+            <span class="ml-1 text-xl font-medium text-muted dark:text-slate-400">/ once</span>
           </div>
           <ul role="list" class="mt-8 space-y-4 text-left">
             {price.items.map((item) => (
               <li class="flex items-start">
                 <Icon name="tabler:circle-check" class="w-6 h-6 text-green-500 flex-shrink-0" />
-                <p class="ml-3 text-base text-muted">{item.description}</p>
+                <p class="ml-3 text-base text-muted dark:text-slate-300">{item.description}</p>
               </li>
             ))}
           </ul>
@@ -45,9 +46,11 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
             
-            <!-- REDIRECT AFTER PAYMENT -->
+            <!-- REDIRECT LOGIC -->
             <input type="hidden" name="return" value="https://hanei.jp/thank-you" />
+            <input type="hidden" name="cancel_return" value={currentUrl} />
             
+            <!-- DYNAMIC DATA CAPTURE -->
             <input type="hidden" id="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '') || "19800"} />
             <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
@@ -65,7 +68,7 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
                   id="business-name-input" 
                   name="os0" 
                   required 
-                  class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" 
+                  class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" 
                   placeholder="Enter Business Name" 
                   data-base-title={price.title}
                 />
@@ -76,15 +79,14 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
                   2. Representative Name
                 </label>
                 <input type="hidden" name="on1" value="Representative" />
-                <input type="text" name="os1" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="Full Name" />
+                <input type="text" name="os1" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="Full Name" />
               </div>
 
               <div>
                 <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">
                   3. Primary Email
                 </label>
-                <!-- This field will be passed in the 'custom' metadata field for logging -->
-                <input type="email" id="email-input" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="email@address.com" />
+                <input type="email" id="email-input" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none text-slate-900 dark:text-white" placeholder="email@address.com" />
                 <input type="hidden" id="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
@@ -104,31 +106,31 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
 </WidgetWrapper>
 
 <script is:inline>
-  function initCheckoutLogic() {
+  function initCheckoutResiliency() {
     const bizInput = document.getElementById('business-name-input');
     const emailInput = document.getElementById('email-input');
     const itemHidden = document.getElementById('paypal-item-name');
     const customHidden = document.getElementById('paypal-custom-metadata');
     
-    if (bizInput && itemHidden) {
+    if (bizInput && emailInput && itemHidden) {
       const baseTitle = bizInput.getAttribute('data-base-title') || 'Service Package';
       
-      const updateFields = () => {
+      const syncData = () => {
         const bizVal = bizInput.value.trim();
         const emailVal = emailInput.value.trim();
         
-        // Update visible item name for PayPal Cart
+        // Update visible receipt line item
         itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (${bizVal})` : `Hanei JP: ${baseTitle}`;
         
-        // Update custom logging metadata
-        customHidden.value = `Email: ${emailVal} | Biz: ${bizVal}`;
+        // Update backend custom metadata string
+        customHidden.value = JSON.stringify({ email: emailVal, business: bizVal });
       };
 
-      bizInput.addEventListener('input', updateFields);
-      emailInput.addEventListener('input', updateFields);
+      bizInput.addEventListener('input', syncData);
+      emailInput.addEventListener('input', syncData);
     }
   }
 
-  document.addEventListener('astro:page-load', initCheckoutLogic);
-  initCheckoutLogic();
+  document.addEventListener('astro:page-load', initCheckoutResiliency);
+  initCheckoutResiliency();
 </script>
