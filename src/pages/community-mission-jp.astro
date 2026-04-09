@@ -40,16 +40,17 @@ const jpOptions = {
     subtitle="誰かのために人生を捧げる皆様へ。皆様の素晴らしい活動と想いを社会に届けるために、私たちは自らの技術を公共の利益に資する無料サービスとして捧げます。"
     actions={[{ variant: 'primary', text: '支援を申し込む', href: '#application' }]}
     image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=500&auto=format&fit=crop&q=60', alt: 'Japanese Community' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
   
-  <Content isReversed={true}>
+  <Content isReversed={true} classes={{ container: 'py-8 md:py-12' }}>
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">尊い使命には、最高水準のWebサイトを。</h3>
+      <h3 class="text-3xl font-bold mb-4">日本各地の「志」に、最高水準のWebを。</h3>
       <p class="text-lg text-muted mb-4">
-        東京の喧騒から地方のコミュニティまで、人知れず最前線で汗を流す「真のヒーロー」がいます。動物の命を救う方、高齢者に寄り添う方、子どもたちの未来を導く方々です。
+        大阪、神戸、広島、京都といった都市部から、日本の隅々にある温かなコミュニティまで。地域社会を支えるために、現場で人知れず汗を流す「真のヒーロー」たちがいます。
       </p>
       <p class="text-lg text-muted">
-        Haneiは、社会に最も貢献している方々がデジタル資源の不足によって活動を制限されるべきではないと信じています。公共の利益のため、プロの企業向けと同等のデジタル基盤を無料で提供します。
+        Haneiは、社会に最も貢献している方々がデジタル資源の不足によって活動を制限されるべきではないと信じています。公共の利益のため、プロの企業向けと同等の『デジタルの拠点』を無償で提供します。
       </p>
     </Fragment>
     <Fragment slot="image">
@@ -59,6 +60,7 @@ const jpOptions = {
 
   <Content
     isReversed={false}
+    isAfterContent={true}
     tagline="支援の対象"
     title="公共の利益に資する4つの柱"
     items={[
@@ -68,10 +70,11 @@ const jpOptions = {
         { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト。', icon: 'tabler:accessible' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&auto=format&fit=crop&q=60', alt: 'Animal Care' }}
+    classes={{ container: 'py-8 md:py-12' }}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-6">
-        思いやりのある社会の基盤となる分野に焦点を当てて支援活動を行っています。
+        思いやりのある社会の基盤となる分野に焦点を当て、日本全国の団体を支援しています。
       </p>
     </Fragment>
   </Content>
@@ -88,6 +91,7 @@ const jpOptions = {
       { title: '運用トレーニング', description: '活動報告やニュースをご自身で更新できるようレクチャー。', icon: 'tabler:circle-check' },
       { title: '多言語対応（バイリンガル）', description: '在日外国人コミュニティとの架け橋となるサイト構築。', icon: 'tabler:circle-check' },
     ]}
+    classes={{ container: 'py-8 md:py-12' }}
   />
 
   <div id="application" class="scroll-mt-20">
@@ -96,6 +100,7 @@ const jpOptions = {
       tagline="応募方法"
       title="活動のインパクトを拡大しませんか？"
       image={{ src: 'https://images.unsplash.com/photo-1765193501601-19e2f52bb546?w=500&auto=format&fit=crop&q=60', alt: 'Interaction' }}
+      classes={{ container: 'py-8 md:py-12' }}
     >
       <Fragment slot="content">
         <p class="text-lg text-muted mb-4">全力で向き合うため、1年間に対応できるプロジェクトの数には限りがございます。</p>

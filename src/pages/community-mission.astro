@@ -40,16 +40,17 @@ const npoOptions = {
     subtitle="You dedicate your lives to serving others. We dedicate our craft to ensuring the world sees your impact. Professional-grade digital infrastructure for registered NPOs in Japan."
     actions={[{ variant: 'primary', text: 'Apply for Support', href: '#application' }]}
     image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=500&auto=format&fit=crop&q=60', alt: 'Japanese Community' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
   
-  <Content isReversed={true}>
+  <Content isReversed={true} classes={{ container: 'py-8 md:py-12' }}>
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">World-Class Design for World-Changing Missions.</h3>
+      <h3 class="text-3xl font-bold mb-4">Elite Digital Support for Domestic Japan.</h3>
       <p class="text-lg text-muted mb-4">
-        In the bustling streets of Tokyo and the rural heartlands of Japan, heroes are working in the shadows. You are the animal rescuers, the caregivers for our elderly, and the mentors for our children.
+        From the resilient communities in Kobe and Hiroshima to the bustling social initiatives in Osaka and Kyoto, local heroes are working to strengthen the fabric of Japanese society.
       </p>
       <p class="text-lg text-muted">
-        At Hanei, we believe those who do the most good shouldn’t be held back by a lack of digital resources. Your mission deserves a professional digital home—not a DIY template, but a platform built with corporate precision.
+        At Hanei, we believe those who do the most good shouldn’t be held back by a lack of digital resources. Your regional mission deserves a professional digital home—not a DIY template, but a platform built with absolute precision.
       </p>
     </Fragment>
     <Fragment slot="image">
@@ -59,6 +60,7 @@ const npoOptions = {
 
   <Content
     isReversed={false}
+    isAfterContent={true}
     tagline="Our Focus"
     title="The Pillars of Our Public Good Support"
     items={[
@@ -68,10 +70,11 @@ const npoOptions = {
         { title: 'Disability Advocacy', description: 'Websites built to the highest modern accessibility standards.', icon: 'tabler:accessible' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&auto=format&fit=crop&q=60', alt: 'Animal Care' }}
+    classes={{ container: 'py-8 md:py-12' }}
   >
     <Fragment slot="content">
       <p class="text-lg text-muted mb-6">
-        We focus our efforts on the sectors that form the backbone of a compassionate society in Japan.
+        We focus our efforts on the sectors that form the backbone of a compassionate society across all Japanese prefectures.
       </p>
     </Fragment>
   </Content>
@@ -88,6 +91,7 @@ const npoOptions = {
       { title: 'Content Training', description: 'We teach your team how to update content and post news independently.', icon: 'tabler:circle-check' },
       { title: 'Bilingual Capability', description: 'Helping you bridge the gap between Japanese and international supporters.', icon: 'tabler:circle-check' },
     ]}
+    classes={{ container: 'py-8 md:py-12' }}
   />
 
   <div id="application" class="scroll-mt-20">
@@ -96,6 +100,7 @@ const npoOptions = {
       tagline="How to Apply"
       title="Ready to Scale Your Impact?"
       image={{ src: 'https://images.unsplash.com/photo-1765193501601-19e2f52bb546?w=500&auto=format&fit=crop&q=60', alt: 'Interaction' }}
+      classes={{ container: 'py-8 md:py-12' }}
     >
       <Fragment slot="content">
         <p class="text-lg text-muted mb-4">We accept limited public good projects each year to ensure each one receives our full "white-glove" attention.</p>
