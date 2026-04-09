@@ -5,7 +5,7 @@ const {
     client_name: "Name",
     company_name: "Company Name",
     email: "Email Address",
-    phone: "Phone Number",
+    address: "Your Address",
     request_type: "Request Category",
     project_summary: "Tell us about your inquiry or project",
     budget_range: "Estimated Budget",
@@ -47,8 +47,8 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
         </div>
 
         <div class="flex flex-col">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.phone}</label>
-          <input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.address}</label>
+          <input type="text" name="address" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
         </div>
 
         <div class="flex flex-col">
