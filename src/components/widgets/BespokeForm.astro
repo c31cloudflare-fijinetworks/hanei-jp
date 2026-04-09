@@ -2,6 +2,7 @@
 const { 
   labels = {
     title: "Get in Touch",
+    description: "",
     client_name: "Name",
     company_name: "Company Name",
     email: "Email Address",
@@ -27,7 +28,14 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
-      <h2 class="text-2xl font-bold mb-8 text-center uppercase tracking-widest">{labels.title}</h2>
+      <h2 class="text-2xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white">{labels.title}</h2>
+      
+      {labels.description && (
+        <p class="text-center text-lg text-muted dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          {labels.description}
+        </p>
+      )}
+
       <form action={FORM_ACTION} method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <input type="hidden" name="bot-field" class="hidden" />
 
