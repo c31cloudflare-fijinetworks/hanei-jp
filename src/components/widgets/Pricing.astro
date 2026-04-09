@@ -16,14 +16,16 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
       <div class="relative overflow-visible flex flex-col rounded-lg border-2 border-primary p-8 text-center shadow-2xl w-full max-w-lg bg-white dark:bg-slate-900">
         
         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">
-            Lifetime Digital Address
+            One-Time CapEx Investment
         </div>
 
         <h3 class="text-2xl font-bold mt-2">{price.title}</h3>
         
         <div class="mt-8 flex-1">
           <div class="flex items-end justify-center">
-            <span class="text-5xl font-bold tracking-tight text-primary">${price.price}</span>
+            <span class="text-5xl font-bold tracking-tight text-primary">
+                {typeof price.price === 'number' ? '$' + price.price : price.price}
+            </span>
             <span class="ml-1 text-xl font-medium text-muted">/ once</span>
           </div>
           <ul role="list" class="mt-8 space-y-4 text-left">
@@ -37,66 +39,47 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
         </div>
         
         <div class="mt-10 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-          <form id="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <form id="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
-            <input type="hidden" id="paypal-item-name" name="item_name" value="Hanei JP Professional Vanity URL Setup" />
-            <input type="hidden" name="item_number" value="AHURL99" />
-            <input type="hidden" name="amount" value="99.00" />
-            <input type="hidden" name="currency_code" value="USD" />
+            <input type="hidden" name="item_name" value={`Hanei JP Order: ${price.title}`} />
+            <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '') || "19800"} />
+            <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="1" />
-            <input type="hidden" name="solution_type" value="Sole">
-            <input type="hidden" name="landing_page" value="billing">
             
-            <div class="text-left mb-4">
-              <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-gray-300">
-                1. Choose Your Vanity URL
-              </label>
-              <div class="relative">
-                <input type="hidden" name="on0" value="Vanity URL" />
-                <input 
-                    type="text" 
-                    id="vanity-input" 
-                    name="os0" 
-                    required 
-                    class="w-full px-4 py-3 border-2 border-slate-300 rounded-lg focus:ring-primary focus:border-primary dark:bg-slate-900 dark:border-slate-600 transition-all font-semibold" 
-                    placeholder="yoursalon" 
-                />
+            <div class="text-left space-y-4">
+              <div>
+                <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">
+                  1. Business / Shop Name
+                </label>
+                <input type="hidden" name="on0" value="Business Name" />
+                <input type="text" name="os0" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="Enter Business Name" />
               </div>
-              
-              <!-- ENHANCED PREVIEW UI: Bolder, High Contrast, Attractive Scheme -->
-              <div class="mt-3 p-4 bg-blue-50 dark:bg-primary/10 rounded-lg border-2 border-dashed border-primary/40 flex items-center gap-3 overflow-hidden shadow-sm">
-                <div class="bg-primary rounded-full p-1.5 flex-shrink-0">
-                  <Icon name="tabler:world" class="w-4 h-4 text-white animate-pulse" />
-                </div>
-                <span class="text-base font-mono truncate leading-none">
-                    <span class="text-slate-500 dark:text-slate-400 font-medium">https://</span><span id="vanity-preview" class="text-primary dark:text-blue-400 font-black text-lg underline decoration-accent/30 decoration-2 underline-offset-4">yoursalon</span><span class="text-slate-500 dark:text-slate-400 font-medium">.hanei.jp</span>
-                </span>
+
+              <div>
+                <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">
+                  2. Representative Name
+                </label>
+                <input type="hidden" name="on1" value="Representative" />
+                <input type="text" name="os1" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="Full Name" />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold mb-1.5 text-slate-500 uppercase tracking-widest">
+                  3. Primary Email
+                </label>
+                <input type="hidden" name="on2" value="Contact Email" />
+                <input type="email" name="os2" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="email@address.com" />
               </div>
             </div>
 
-            <div class="text-left mb-6">
-              <label class="block text-sm font-bold mb-2 text-slate-700 dark:text-gray-300">
-                2. Salon Name
-              </label>
-              <input type="hidden" name="on1" value="Salon Name" />
-              <input 
-                type="text" 
-                id="salon-name-input"
-                name="os1" 
-                required 
-                class="w-full px-4 py-3 border-2 border-slate-300 rounded-lg dark:bg-slate-900 dark:border-slate-600 transition-all" 
-                placeholder="Business Name" 
-              />
-            </div>
-
-            <button type="submit" class="w-full py-4 px-4 bg-primary hover:bg-blue-700 text-white font-extrabold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-lg">
-              Secure My URL Today
+            <button type="submit" class="w-full mt-8 py-4 bg-primary hover:bg-blue-700 text-white font-extrabold rounded shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all text-lg uppercase tracking-widest">
+              Secure My Package
             </button>
-            <div class="flex items-center justify-center gap-2 mt-4 text-slate-500">
-                <Icon name="tabler:credit-card" class="w-4 h-4" />
-                <p class="text-xs font-medium uppercase tracking-tighter">Secure Checkout (Card or PayPal)</p>
+            <div class="flex items-center justify-center gap-2 mt-4 text-slate-400">
+                <Icon name="tabler:lock" class="w-3 h-3" />
+                <p class="text-[10px] font-bold uppercase tracking-tighter">Encrypted Checkout (Stripe / PayPal)</p>
             </div>
           </form>
         </div>
@@ -104,31 +87,3 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
     ))}
   </div>
 </WidgetWrapper>
-
-<script is:inline>
-  function initVanityPreview() {
-    const vanityInput = document.getElementById('vanity-input');
-    const vanityPreview = document.getElementById('vanity-preview');
-    const salonInput = document.getElementById('salon-name-input');
-    const paypalItemName = document.getElementById('paypal-item-name');
-    
-    if (vanityInput && vanityPreview && salonInput && paypalItemName) {
-      const update = () => {
-        let vVal = vanityInput.value.toLowerCase().replace(/[^a-z0-9]/g, '');
-        vanityInput.value = vVal;
-        vanityPreview.textContent = vVal || 'yoursalon';
-
-        const salonVal = salonInput.value || 'New Salon';
-        const displayVanity = vVal || 'yoursalon';
-        
-        paypalItemName.value = `Hanei JP: ${displayVanity}.hanei.jp (${salonVal})`;
-      };
-
-      vanityInput.addEventListener('input', update);
-      salonInput.addEventListener('input', update);
-      update();
-    }
-  }
-  document.addEventListener('astro:page-load', initVanityPreview);
-  initVanityPreview();
-</script>

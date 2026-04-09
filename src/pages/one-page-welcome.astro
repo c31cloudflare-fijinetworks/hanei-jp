@@ -1,7 +1,6 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
@@ -11,7 +10,7 @@ const metadata = {
 };
 
 const pricingData = { 
-  title: 'The Professional 1-Page Website', 
+  title: '1-Page Welcome Package', 
   price: '¥19,800', 
   period: 'One-time investment', 
   items: [
@@ -20,8 +19,7 @@ const pricingData = {
     { description: 'High-Speed Mobile Optimization' }, 
     { description: 'Custom QR Code for Shop Display' },
     { description: 'Same-Day Delivery Guarantee' }
-  ], 
-  callToAction: { target: '_self', text: 'Order Now', href: '/contact', variant: 'primary' } 
+  ]
 };
 ---
 <Layout metadata={metadata}>
@@ -57,7 +55,7 @@ const pricingData = {
     title="Portfolio Demo: Kagari Izakaya & Grill" 
     subtitle="A luxury Shinjuku gastronomy destination. Featuring integrated reservation workflows, seasonal omakase menus, and high-contrast night-mode aesthetics." 
     callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} 
-    image={{ src: 'https://images.unsplash.com/photo-1617870314635-fc819547ec11?w=1200', alt: 'Izakaya Grill' }} 
+    image={{ src: 'https://images.unsplash.com/photo-1561535893-bb7a98c7ee45?w=1200&auto=format&fit=crop', alt: 'Izakaya Grill' }} 
   />
   
   <Content 
@@ -84,5 +82,10 @@ const pricingData = {
     image={{ src: 'https://images.unsplash.com/photo-1522623349500-de37a56ea2a5?w=611&h=405&auto=format&fit=crop', alt: 'Rapid Deployment' }} 
   />
 
-  <Pricing id="pricing" title="One Simple Price. Live Today." prices={[pricingData]} />
+  <Pricing 
+    id="pricing" 
+    title="One Simple Price. Live Today." 
+    subtitle="Zero monthly fees. Lifetime ownership of your professional asset."
+    prices={[pricingData]} 
+  />
 </Layout>
