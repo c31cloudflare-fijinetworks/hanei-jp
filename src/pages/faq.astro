@@ -2,29 +2,123 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { title: 'FAQ | Hanei JP' };
+const metadata = { 
+  title: 'FAQ | Comprehensive Support | Hanei JP',
+  description: 'Everything you need to know about our professional website development, review systems, and global expansion services.'
+};
 ---
 <Layout metadata={metadata}>
-  <HeroText tagline="Support" title="Frequently Asked Questions" />
+  <HeroText 
+    tagline="Support Center" 
+    title="Frequently Asked Questions" 
+    subtitle="Clarity and precision for your digital growth. If you cannot find your answer here, our team is ready to assist you directly."
+  />
+
+  <!-- 1-PAGE WELCOME FAQ -->
   <FAQs
+    title="1-Page Business Website"
+    subtitle="The Digital Business Manual for local and global discovery."
+    classes={{ container: 'py-8 md:py-12' }}
     columns={1}
     items={[
-      { title: 'Do I need to speak English to use Hanei?', description: 'No. Our systems communicate in native English to your guests while delivering perfectly structured Japanese briefs to your staff.', icon: 'tabler:messages-off' },
-      { title: 'How long does the setup take?', description: 'We guarantee a 24-hour turnaround for the Welcome Kit and Review Engine, and 48 hours for a full Grand Opening reboot.', icon: 'tabler:clock' },
-      { title: 'Is this a monthly subscription?', description: 'Most of our core products are one-time CapEx investments. Only specific cloud-based tools like the Review Engine carry a small monthly support fee.', icon: 'tabler:coin' },
-      { title: 'Will you touch my existing Japanese website?', description: 'No. Using our "Hanare" architecture, we build your English assets on independent subdomains, keeping your legacy site 100% safe.', icon: 'tabler:lock' },
-      { title: 'How do you improve my Google Maps ranking?', description: 'We perform deep English SEO on your Google Business Profile, using keywords that international tourists actually use in search.', icon: 'tabler:map-pin' },
-      { title: 'What is the "Anxiety of Entry"?', description: 'It is the psychological barrier that stops tourists from entering a shop if they don’t understand the rules, menus, or payment methods. We solve this with visual guidance.', icon: 'tabler:user-check' },
-      { title: 'Can I use my own .com domain?', description: 'Yes. We can link your Hanei assets to any custom domain you own, providing full SSL security.', icon: 'tabler:world' },
-      { title: 'What happens if I want to change my menu later?', description: 'Our support team provides lifetime white-glove updates. Simply send us the new details, and we apply them for you.', icon: 'tabler:settings' },
-      { title: 'How does the "Review Shield" work?', description: 'We provide a custom landing page that guides happy guests to public review sites while routing negative feedback to a private channel.', icon: 'tabler:shield-check' },
-      { title: 'Do you offer support for NPOs?', description: 'Yes! Our Community Mission initiative provides 100% free web development for registered Japanese non-profits.', icon: 'tabler:heart' },
-      { title: 'Is payment secure?', description: 'All transactions are handled via Stripe, ensuring world-class encryption and security for your business.', icon: 'tabler:credit-card' },
-      { title: 'What tech stack do you use?', description: 'We build using high-performance, serverless edge frameworks like Astro and Cloudflare for sub-second loading speeds.', icon: 'tabler:rocket' },
-      { title: 'Can you handle multiple locations?', description: 'Yes. We offer multi-chair or multi-location discounts for salon and restaurant groups.', icon: 'tabler:building-store' },
-      { title: 'Do you provide photography?', description: 'While we can guide you on best practices, we typically use your existing assets or high-end stock imagery to ensure rapid deployment.', icon: 'tabler:camera' },
-      { title: 'Why is speed so important?', description: 'Tourists use roaming data. If a site takes more than 3 seconds to load, 50% of them will leave. We ensure your site loads instantly.', icon: 'tabler:bolt' },
+      { title: 'What exactly is a 1-page business website?', description: 'It is a high-performance digital manual that presents your services, menus, and house rules on a single, professionally designed page optimized for mobile discovery.' },
+      { title: 'Is the "Order by Noon, Live by Afternoon" promise real?', description: 'Yes. For the 1-Page Welcome package, if your info is submitted by 12:00 PM JST, our development team prioritizes your build for a same-day launch.' },
+      { title: 'Can I update my menu or rules later?', description: 'Absolutely. We provide lifetime white-glove updates. Simply send us your changes, and we apply them to your site within 24 hours.' },
+      { title: 'Does it come with a QR code for my shop?', description: 'Yes. Every 1-page site includes a custom, high-resolution QR code kit designed for printing on table stands, windows, or menus.' },
+      { title: 'Is this better than a social media page?', description: 'Yes. Unlike social media, your Hanei site is indexed by Google for local search and doesn’t require your customers to have an account to see your info.' },
+      { title: 'Are there any recurring monthly fees?', description: 'No. The 1-page website is a one-time investment. You own your digital presence forever without ongoing hosting or management bills.' },
     ]}
+  />
+
+  <!-- REVIEW ENGINE FAQ -->
+  <FAQs
+    title="Review Engine"
+    subtitle="Automated trust and Google Maps dominance."
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'How does the QR code review system work?', description: 'Customers scan a code at your shop, which opens a branded page guiding them to leave a 5-star Google review in just 3 clicks.' },
+      { title: 'Do I need to share my Google account password?', description: 'Never. We only need your public Google Business link. Your account remains 100% secure and private at all times.' },
+      { title: 'What is the "Review Shield" feature?', description: 'Our system prompts happy customers to post publicly, while guiding unhappy customers to a private feedback form so you can resolve issues before they hit your public profile.' },
+      { title: 'Can I show these reviews on my existing website?', description: 'Yes. We provide a beautiful, automated widget that syncs your best Google reviews directly onto your current site in real-time.' },
+      { title: 'How does this help my shop appear on Google Maps?', description: 'Google rewards businesses that receive frequent, high-quality reviews. Our system automates this activity, signaling to Google that you are a local leader.' },
+      { title: 'Is there a limit to how many reviews I can collect?', description: 'There are no limits. Whether you serve 10 or 1,000 customers a day, the system is built to handle unlimited traffic for life.' },
+    ]}
+  />
+
+  <!-- ENGLISH HANARE FAQ -->
+  <FAQs
+    title="English Hanare (The Digital Hub)"
+    subtitle="Global expansion without technical risk."
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'Will this affect my existing Japanese website?', description: 'No. We build your English hub on a separate sub-domain. Your original site remains 100% untouched and safe from any technical changes.' },
+      { title: 'Do I need to manage two different systems?', description: 'No. We handle all the technical management of your English hub. You focus on your business while we ensure your global presence stays updated.' },
+      { title: 'What is a "website address record" and is it hard to set up?', description: 'It is a simple domain setting. Our team provides complete, hands-on assistance to apply this change for you. It takes less than 2 minutes.' },
+      { title: 'Who writes the English content for my business?', description: 'Our native English copywriters handle everything. We translate your Japanese craftsmanship into professional English that resonates with global clients.' },
+      { title: 'Is this suitable for manufacturers and B2B?', description: 'Yes. We build hubs for craftsmen, manufacturers, and service providers looking to reach international partners and export markets.' },
+      { title: 'Does it include a contact or inquiry form?', description: 'Yes. We include a professional English-language inquiry form that sends leads directly to your inbox for easy management.' },
+    ]}
+  />
+
+  <!-- GRAND REFORM FAQ -->
+  <FAQs
+    id="reform-faq"
+    title="Grand Reform (Facelift)"
+    subtitle="Modernizing your existing digital home."
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'Can you keep my existing photos and history?', description: 'Yes. A reform is about elevation. We take your current content and wrap it in a modern, luxury interface that matches global standards.' },
+      { title: 'Will my website be offline during the reform?', description: 'No. We build your new design on our staging servers. Your old site stays live until the moment we switch to the new professional design.' },
+      { title: 'Will the new design be faster than my old one?', description: 'Significantly. We migrate your site to a global edge network, which usually results in sub-second loading speeds for every visitor.' },
+      { title: 'Is the design optimized for mobile phones?', description: 'Absolutely. Every Grand Reform project follows a mobile-first philosophy, ensuring your site looks perfect on every smartphone screen.' },
+      { title: 'Do you improve my website security?', description: 'Yes. We implement full SSL encryption and modern security protocols as part of the standard reform package.' },
+      { title: 'How long does a full design refresh take?', description: 'We typically complete a Grand Reform in a single weekend (48-72 hours) from the moment we receive your assets.' },
+    ]}
+  />
+
+  <!-- GRAND NEW FAQ -->
+  <FAQs
+    id="new-faq"
+    title="Grand NEW (New Build)"
+    subtitle="Total digital blueprint and development from scratch."
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'Why build from scratch instead of using a template?', description: 'A custom build allows us to architect your site specifically for your business goals, ensuring higher conversion rates and superior performance.' },
+      { title: 'What technology do you use for the new site?', description: 'We build on a modern, serverless stack (Astro & Cloudflare) that provides the world’s fastest loading times and unshakeable stability.' },
+      { title: 'Will my new site rank well on search engines?', description: 'Yes. We build SEO directly into the technical foundation of your site, ensuring Google can easily find and index your business.' },
+      { title: 'Who owns the website once it is finished?', description: 'You do. We believe in total ownership. There are no proprietary lock-ins; you own your domain, your content, and your code assets.' },
+      { title: 'Does it include integrated booking or contact flows?', description: 'Yes. We design custom reservation and contact flows that integrate seamlessly with your existing business operations.' },
+      { title: 'How long is the development cycle for a new build?', description: 'A standard Grand NEW build is delivered within 4 business days, including testing and SEO optimization.' },
+    ]}
+  />
+
+  <!-- GENERAL QUESTIONS FAQ -->
+  <FAQs
+    title="General Questions"
+    subtitle="Foundational information about the Hanei Standard."
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'Who is Hanei JP?', description: 'We are a boutique digital infrastructure studio dedicated to helping Japanese businesses achieve global-level professional standards online.' },
+      { title: 'What is the "Hanei Standard"?', description: 'It is our commitment to absolute precision: 3:2 visual rhythm, elite edge performance, and zero-risk technical architecture for every client.' },
+      { title: 'How do I pay for my service?', description: 'We accept all major credit cards and local payment methods via Stripe and PayPal. All transactions are fully encrypted and secure.' },
+      { title: 'What if I am not satisfied with the result?', description: 'We offer unlimited revisions. We do not stop working until your digital presence perfectly reflects the heart and craft of your business.' },
+      { title: 'Do you offer ongoing technical support?', description: 'Every package includes 60 days of priority technical support. Beyond that, we provide lifetime white-glove updates for minor content changes.' },
+      { title: 'Can you help me with my social media as well?', description: 'We focus on your core infrastructure (websites), but we integrate your live social feeds directly onto your site so your portfolio stays current automatically.' },
+      { title: 'Why focus on Japanese domestic businesses?', description: 'We believe Japanese craftsmanship is world-class, but the digital barrier often hides that brilliance. We exist to bridge that gap.' },
+      { title: 'How do I get started?', description: 'Choose your package, complete your secure payment, and fill out our simple onboarding form. We handle everything else from there.' },
+    ]}
+  />
+
+  <CallToAction
+    title="Still have questions?"
+    subtitle="Our team is available for bespoke requests and technical inquiries. Reach out to us directly for a professional consultation."
+    actions={[{ variant: 'primary', text: 'Contact Our Team', href: '/contact' }]}
   />
 </Layout>
