@@ -13,11 +13,20 @@ const metadata = {
   <HeroText 
     tagline="Support Center" 
     title="Frequently Asked Questions" 
-    subtitle="Clarity and precision for your digital growth. If you cannot find your answer here, our team is ready to assist you directly."
+    subtitle="Clarity and precision for your digital growth. Jump to a specific service below or browse our common questions."
+    actions={[
+      { text: '1-Page Site', href: '#one-page-faq', variant: 'secondary' },
+      { text: 'Review Engine', href: '#review-engine-faq', variant: 'secondary' },
+      { text: 'English Hub', href: '#english-hanare-faq', variant: 'secondary' },
+      { text: 'Grand Reform', href: '#reform-faq', variant: 'secondary' },
+      { text: 'Grand NEW', href: '#new-faq', variant: 'secondary' },
+      { text: 'General', href: '#general-faq', variant: 'secondary' },
+    ]}
   />
 
   <!-- 1-PAGE WELCOME FAQ -->
   <FAQs
+    id="one-page-faq"
     title="1-Page Business Website"
     subtitle="The Digital Business Manual for local and global discovery."
     classes={{ container: 'py-8 md:py-12' }}
@@ -34,6 +43,7 @@ const metadata = {
 
   <!-- REVIEW ENGINE FAQ -->
   <FAQs
+    id="review-engine-faq"
     title="Review Engine"
     subtitle="Automated trust and Google Maps dominance."
     classes={{ container: 'py-8 md:py-12' }}
@@ -50,6 +60,7 @@ const metadata = {
 
   <!-- ENGLISH HANARE FAQ -->
   <FAQs
+    id="english-hanare-faq"
     title="English Hanare (The Digital Hub)"
     subtitle="Global expansion without technical risk."
     classes={{ container: 'py-8 md:py-12' }}
@@ -100,6 +111,7 @@ const metadata = {
 
   <!-- GENERAL QUESTIONS FAQ -->
   <FAQs
+    id="general-faq"
     title="General Questions"
     subtitle="Foundational information about the Hanei Standard."
     classes={{ container: 'py-8 md:py-12' }}
