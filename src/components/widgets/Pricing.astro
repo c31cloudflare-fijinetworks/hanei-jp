@@ -40,15 +40,14 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
         
         <div class="mt-10 p-6 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           <form id="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <!-- CORE MAPPING -->
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
-            
-            <!-- DIRECT CREDIT CARD LOGIC -->
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
             
-            <input type="hidden" name="item_name" value={`Hanei JP Order: ${price.title}`} />
+            <!-- DYNAMIC ITEM NAME -->
+            <input type="hidden" id="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
+            
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '') || "19800"} />
             <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
             <input type="hidden" name="no_shipping" value="1" />
@@ -60,7 +59,15 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
                   1. Business / Shop Name
                 </label>
                 <input type="hidden" name="on0" value="Business Name" />
-                <input type="text" name="os0" required class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" placeholder="Enter Business Name" />
+                <input 
+                  type="text" 
+                  id="business-name-input" 
+                  name="os0" 
+                  required 
+                  class="w-full px-4 py-3 border border-slate-300 rounded bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" 
+                  placeholder="Enter Business Name" 
+                  data-base-title={price.title}
+                />
               </div>
 
               <div>
@@ -85,7 +92,7 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
             </button>
             <div class="flex items-center justify-center gap-2 mt-4 text-slate-400">
                 <Icon name="tabler:credit-card" class="w-4 h-4" />
-                <p class="text-[10px] font-bold uppercase tracking-tighter">Direct Credit Card Checkout Enabled</p>
+                <p class="text-[10px] font-bold uppercase tracking-tighter">Secure Credit Card Checkout</p>
             </div>
           </form>
         </div>
@@ -93,3 +100,27 @@ const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.p
     ))}
   </div>
 </WidgetWrapper>
+
+<script is:inline>
+  function initCheckoutSync() {
+    const bizInput = document.getElementById('business-name-input');
+    const itemHidden = document.getElementById('paypal-item-name');
+    
+    if (bizInput && itemHidden) {
+      const baseTitle = bizInput.getAttribute('data-base-title') || 'Service Package';
+      
+      bizInput.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        if (val) {
+          itemHidden.value = `Hanei JP: ${baseTitle} (${val})`;
+        } else {
+          itemHidden.value = `Hanei JP: ${baseTitle}`;
+        }
+      });
+    }
+  }
+
+  // Support for both standard load and Astro View Transitions
+  document.addEventListener('astro:page-load', initCheckoutSync);
+  initCheckoutSync();
+</script>
