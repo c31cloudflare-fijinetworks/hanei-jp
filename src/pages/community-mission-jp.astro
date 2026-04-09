@@ -25,7 +25,7 @@ const jpLabels = {
 };
 
 const jpOptions = {
-    requests: ["動物愛護・保護", "高齢者支援・福祉", "子ども・若者支援", "障がい者支援", "その他の公共活動"],
+    requests: ["障がい者支援", "動物愛護・保護", "高齢者支援・福祉", "子ども・若者支援", "その他の公共活動"],
     budgets: ["サイトなし", "古いサイトがある", "SNSのみ運用", "その他"],
     timelines: ["至急", "1ヶ月以内", "時期未定・相談", "その他"],
     referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
@@ -45,7 +45,7 @@ const jpOptions = {
   
   <Content isReversed={true} classes={{ container: 'py-8 md:py-12' }}>
     <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">日本各地の「志」に、最高水準のWebを.</h3>
+      <h3 class="text-3xl font-bold mb-4">日本各地の「志」に、最高水準のWebを。</h3>
       <p class="text-lg text-muted mb-4">
         大阪、神戸、広島、京都といった都市部から、日本の隅々にある温かなコミュニティまで。地域社会を支えるために、現場で人知れず汗を流す「真のヒーロー」たちがいます。
       </p>
@@ -64,10 +64,10 @@ const jpOptions = {
     tagline="支援の対象"
     title="公共の利益に資する4つの柱"
     items={[
+        { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト。', icon: 'tabler:accessible' },
         { title: '動物愛護・保護活動', description: '動物たちの魅力を伝え、里親申し込みや寄付をスムーズにするサイト構築。', icon: 'tabler:paw' },
         { title: '高齢者支援・福祉', description: '文字が読みやすく、地域のリソースを簡単に見つけられるアクセシブルな設計。', icon: 'tabler:old' },
         { title: '子ども・若者支援', description: '子ども食堂や学習支援など、安全で温かみのあるオンライン空間の創造。', icon: 'tabler:school' },
-        { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト。', icon: 'tabler:accessible' },
     ]}
     image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&auto=format&fit=crop&q=60', alt: 'Animal Care' }}
     classes={{ container: 'py-8 md:py-12' }}
@@ -106,7 +106,7 @@ const jpOptions = {
         <p class="text-lg text-muted mb-4">全力で向き合うため、1年間に対応できるプロジェクトの数には限りがございます。</p>
         <ul class="list-disc pl-5 space-y-2 text-muted mb-6">
           <li>日本国内のNPO法人、一般社団法人、または実績のある団体であること。</li>
-          <li>主な活動が「動物」「高齢者」「子ども」「障がい者」支援のいずれか、またはその他の公共の利益に資する重要な取り組みであること。</li>
+          <li>主な活動が「障がい者」「動物」「高齢者」「子ども」支援のいずれか、またはその他の公共の利益に資する重要な取り組みであること。</li>
           <li>地域社会の成長と、社会貢献に対する明確なビジョンがあること。</li>
         </ul>
         <h3 class="text-2xl font-bold mt-8">支援申込（以下のフォームから）</h3>
