@@ -6,7 +6,12 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Price } from '~/types';
 
 const { title, subtitle, tagline, prices = [], classes = {}, ...rest } = Astro.props;
-const currentUrl = Astro.url.href;
+
+// HANEI STANDARD: Hardcode production domain to prevent localhost leaks from build environments
+const SITE_URL = "https://hanei.jp";
+const currentPath = Astro.url.pathname;
+const cancelUrl = `${SITE_URL}${currentPath}`;
+const successUrl = `${SITE_URL}/thank-you`;
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
@@ -46,11 +51,10 @@ const currentUrl = Astro.url.href;
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
             
-            <!-- REDIRECT LOGIC -->
-            <input type="hidden" name="return" value="https://hanei.jp/thank-you" />
-            <input type="hidden" name="cancel_return" value={currentUrl} />
+            <!-- PRODUCTION REDIRECTS -->
+            <input type="hidden" name="return" value={successUrl} />
+            <input type="hidden" name="cancel_return" value={cancelUrl} />
             
-            <!-- DYNAMIC DATA CAPTURE -->
             <input type="hidden" id="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '') || "19800"} />
             <input type="hidden" name="currency_code" value={price.price?.toString().includes('¥') ? "JPY" : "USD"} />
@@ -106,7 +110,7 @@ const currentUrl = Astro.url.href;
 </WidgetWrapper>
 
 <script is:inline>
-  function initCheckoutResiliency() {
+  function initCheckoutLogic() {
     const bizInput = document.getElementById('business-name-input');
     const emailInput = document.getElementById('email-input');
     const itemHidden = document.getElementById('paypal-item-name');
@@ -118,11 +122,7 @@ const currentUrl = Astro.url.href;
       const syncData = () => {
         const bizVal = bizInput.value.trim();
         const emailVal = emailInput.value.trim();
-        
-        // Update visible receipt line item
         itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (${bizVal})` : `Hanei JP: ${baseTitle}`;
-        
-        // Update backend custom metadata string
         customHidden.value = JSON.stringify({ email: emailVal, business: bizVal });
       };
 
@@ -130,7 +130,6 @@ const currentUrl = Astro.url.href;
       emailInput.addEventListener('input', syncData);
     }
   }
-
-  document.addEventListener('astro:page-load', initCheckoutResiliency);
-  initCheckoutResiliency();
+  document.addEventListener('astro:page-load', initCheckoutLogic);
+  initCheckoutLogic();
 </script>
