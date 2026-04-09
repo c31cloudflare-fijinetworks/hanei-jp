@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = { 
@@ -39,6 +40,7 @@ const metadata = {
       { title: 'Is this better than a social media page?', description: 'Yes. Unlike social media, your Hanei site is indexed by Google for local search and doesn’t require your customers to have an account to see your info.' },
       { title: 'Are there any recurring monthly fees?', description: 'No. The 1-page website is a one-time investment. You own your digital presence forever without ongoing hosting or management bills.' },
     ]}
+    callToAction={{ text: 'View 1-Page Package Details', href: '/one-page-welcome', variant: 'primary' }}
   />
 
   <!-- REVIEW ENGINE FAQ -->
@@ -56,6 +58,7 @@ const metadata = {
       { title: 'How does this help my shop appear on Google Maps?', description: 'Google rewards businesses that receive frequent, high-quality reviews. Our system automates this activity, signaling to Google that you are an active local business.' },
       { title: 'Is there a limit to how many reviews I can collect?', description: 'There are no limits. Whether you serve 10 or 1,000 customers a day, the system is built to handle unlimited traffic for life.' },
     ]}
+    callToAction={{ text: 'View Review Engine Details', href: '/review-engine', variant: 'primary' }}
   />
 
   <!-- ENGLISH HANARE FAQ -->
@@ -73,6 +76,7 @@ const metadata = {
       { title: 'Is this suitable for manufacturers and B2B?', description: 'Yes. We build hubs for craftsmen, manufacturers, and service providers looking to reach international partners and export markets.' },
       { title: 'Does it include a contact or inquiry form?', description: 'Yes. We include a professional English-language inquiry form that sends leads directly to your inbox for easy management.' },
     ]}
+    callToAction={{ text: 'View English Hub Details', href: '/english-hanare', variant: 'primary' }}
   />
 
   <!-- GRAND REFORM FAQ -->
@@ -90,6 +94,7 @@ const metadata = {
       { title: 'Do you improve my website security?', description: 'Yes. We implement full SSL encryption and modern security protocols as part of the standard reform package.' },
       { title: 'How long does a full design refresh take?', description: 'We typically complete a Grand Reform within 1 to 2 business days from the moment we receive your assets.' },
     ]}
+    callToAction={{ text: 'View Reform Details', href: '/grand-opening/#reform', variant: 'primary' }}
   />
 
   <!-- GRAND NEW FAQ -->
@@ -107,6 +112,7 @@ const metadata = {
       { title: 'Does it include integrated booking or contact flows?', description: 'Yes. We design custom reservation and contact flows that integrate seamlessly with your existing business operations.' },
       { title: 'How long is the development cycle for a new build?', description: 'A standard Grand NEW build is delivered within 1 business day, including testing and initial optimization.' },
     ]}
+    callToAction={{ text: 'View New Build Details', href: '/grand-opening/#new', variant: 'primary' }}
   />
 
   <!-- GENERAL QUESTIONS FAQ -->
@@ -126,6 +132,53 @@ const metadata = {
       { title: 'Is this a monthly subscription?', description: 'No. Our core services are one-time investments. We prioritize your ownership and long-term stability without recurring monthly fees.' },
       { title: 'How do I get started?', description: 'Choose your package, complete your secure payment, and fill out our simple onboarding form. We handle everything else from there.' },
     ]}
+  />
+
+  <hr class="max-w-7xl mx-auto border-t dark:border-slate-800" />
+
+  <Features2
+    title="Secure Your Elite Digital Asset Today"
+    subtitle="Choose the specific solution your business needs to grow."
+    columns={3}
+    items={[
+      {
+        title: '1-Page Business Website',
+        description: 'The Digital Business Manual. Order by noon, live by the afternoon.',
+        icon: 'tabler:square-number-1',
+        callToAction: { text: 'View Package', href: '/one-page-welcome' },
+      },
+      {
+        title: 'Review Engine',
+        description: 'Automated Trust. Turn happy customers into 5-star Google reviews.',
+        icon: 'tabler:stars',
+        callToAction: { text: 'View Package', href: '/review-engine' },
+      },
+      {
+        title: 'English Language Hub',
+        description: 'Global Expansion. A detached English website without touching your current site.',
+        icon: 'tabler:language',
+        callToAction: { text: 'View Package', href: '/english-hanare' },
+      },
+      {
+        title: 'Grand Reform',
+        description: 'Modern Aesthetic Facelift. Refresh your existing website design.',
+        icon: 'tabler:palette',
+        callToAction: { text: 'View Reform', href: '/grand-opening/#reform' },
+      },
+      {
+        title: 'Grand NEW Build',
+        description: 'Total Digital Blueprint. A complete from-scratch professional development.',
+        icon: 'tabler:rocket',
+        callToAction: { text: 'View New Build', href: '/grand-opening/#new' },
+      },
+      {
+        title: 'Community Mission',
+        description: 'Elite Digital Support. Professional web development for local NPOs, free of charge.',
+        icon: 'tabler:heart',
+        callToAction: { text: 'Learn More', href: '/community-mission' },
+      },
+    ]}
+    classes={{ container: 'py-12 md:py-20' }}
   />
 
   <CallToAction
