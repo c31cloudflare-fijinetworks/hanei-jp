@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -11,16 +12,16 @@ const metadata = { title: 'Order Confirmed | Welcome to Hanei JP' };
     tagline="Order Successful"
     title='Welcome to the <br/><span class="text-accent">Elite Standard.</span>'
     subtitle="Your payment has been secured. We are now ready to architect your digital asset. Please follow the instructions below to complete your onboarding."
-    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop', alt: 'Project Start' }}
+    image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80', alt: 'Project Start' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
 
   <Content
     isReversed={false}
     title="Next Step: Upload Your Assets"
-    subtitle="To deliver your site within the next 24-48 hours, our developers need your high-resolution photos, menu/service lists, and branding assets. Click the button below to access your secure project folder."
-    callToAction={{ text: 'Upload Business Assets', href: '/contact', variant: 'primary' }}
-    image={{ src: 'https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=1200&auto=format&fit=crop', alt: 'Data Upload' }}
+    subtitle="To deliver your site within the next 24-48 hours, our developers need your high-resolution photos, menu/service lists, and branding assets. Click the button below to access our team."
+    callToAction={{ text: 'Continue to Onboarding', href: '/contact', variant: 'primary' }}
+    image={{ src: 'https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=1200&auto=format&fit=crop&q=60', alt: 'Data Upload' }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold mb-4">What happens now?</h3>
