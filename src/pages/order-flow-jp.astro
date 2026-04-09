@@ -3,6 +3,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = { 
   title: '注文の流れ | シンプルな3ステップ | Hanei JP',
@@ -13,7 +14,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero2
     tagline="Haneiの注文メソッド"
-    title='驚くほど、<br/><span class="text-accent">かんたんで、スムーズ。</span>'
+    title='驚くほど、<br/><span class="text-accent">かんたんで、スムーズ.</span>'
     subtitle="オーナー様の貴重な時間を無駄にはしません。長い打ち合わせや複雑な契約書、そして「毎月の月額費用」は一切ありません。"
     image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1024&q=80', alt: '効率的なワークフロー' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
@@ -72,5 +73,46 @@ const metadata = {
       { title: '圧倒的なスピード', description: '情報を受け取ってから最短24〜72時間以内に納品。', icon: 'tabler:bolt' },
     ]}
     classes={{ container: 'py-8 md:py-12' }}
+  />
+
+  <hr class="max-w-7xl mx-auto border-t dark:border-slate-800" />
+
+  <Features2
+    title="今すぐエリート・デジタル資産を確保する"
+    subtitle="ビジネスの成長に最適なソリューションをお選びください。"
+    columns={3}
+    items={[
+      {
+        title: '1ページ・ビジネスサイト',
+        description: 'デジタルの案内板。お昼の注文で夕方には公開。',
+        icon: 'tabler:square-number-1',
+        callToAction: { text: 'プランを見る', href: '/one-page-welcome-jp' },
+      },
+      {
+        title: 'レビューエンジン',
+        description: '信頼の自動化。お客様の声を星5つのGoogle評価へ。',
+        icon: 'tabler:stars',
+        callToAction: { text: 'プランを見る', href: '/review-engine-jp' },
+      },
+      {
+        title: '英語専用デジタル別館',
+        description: '世界進出への離れ。既存サイトをいじらずに英語化。',
+        icon: 'tabler:language',
+        callToAction: { text: 'プランを見る', href: '/english-hanare-jp' },
+      },
+      {
+        title: 'グランド・リフォーム',
+        description: 'デザインの劇的刷新。今のサイトをラグジュアリーに。',
+        icon: 'tabler:palette',
+        callToAction: { text: 'リフォームを見る', href: '/grand-opening-jp/#reform' },
+      },
+      {
+        title: 'グランド・ニュー（新規制作）',
+        description: 'デジタル設計図の完成。ゼロから最強の旗艦店を構築。',
+        icon: 'tabler:rocket',
+        callToAction: { text: '新規制作を見る', href: '/grand-opening-jp/#new' },
+      },
+    ]}
+    classes={{ container: 'py-12 md:py-20' }}
   />
 </Layout>

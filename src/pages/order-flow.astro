@@ -3,6 +3,7 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = { 
   title: 'Order Flow | Simple 3-Step Process | Hanei JP',
@@ -72,5 +73,46 @@ const metadata = {
       { title: 'Record Speed', description: 'Most services delivered within 24 to 72 hours.', icon: 'tabler:bolt' },
     ]}
     classes={{ container: 'py-8 md:py-12' }}
+  />
+
+  <hr class="max-w-7xl mx-auto border-t dark:border-slate-800" />
+
+  <Features2
+    title="Secure Your Elite Digital Asset Today"
+    subtitle="Choose the specific solution your business needs to grow."
+    columns={3}
+    items={[
+      {
+        title: '1-Page Business Website',
+        description: 'The Digital Business Manual. Order by noon, live by the afternoon.',
+        icon: 'tabler:square-number-1',
+        callToAction: { text: 'View Package', href: '/one-page-welcome' },
+      },
+      {
+        title: 'Review Engine',
+        description: 'Automated Trust. Turn happy customers into 5-star Google reviews.',
+        icon: 'tabler:stars',
+        callToAction: { text: 'View Package', href: '/review-engine' },
+      },
+      {
+        title: 'English Language Hub',
+        description: 'Global Expansion. A detached English website without touching your current site.',
+        icon: 'tabler:language',
+        callToAction: { text: 'View Package', href: '/english-hanare' },
+      },
+      {
+        title: 'Grand Reform',
+        description: 'Modern Aesthetic Facelift. Refresh your existing website design.',
+        icon: 'tabler:palette',
+        callToAction: { text: 'View Reform', href: '/grand-opening/#reform' },
+      },
+      {
+        title: 'Grand NEW Build',
+        description: 'Total Digital Blueprint. A complete from-scratch professional development.',
+        icon: 'tabler:rocket',
+        callToAction: { text: 'View New Build', href: '/grand-opening/#new' },
+      },
+    ]}
+    classes={{ container: 'py-12 md:py-20' }}
   />
 </Layout>
