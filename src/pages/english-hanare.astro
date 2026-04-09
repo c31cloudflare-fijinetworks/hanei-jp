@@ -9,31 +9,20 @@ const metadata = {
   description: 'A professional English website for Japanese businesses. Stand-alone digital infrastructure for global reach without asking for your passwords.'
 };
 
+const commonItems = [
+  { description: 'Native English Copywriting' },
+  { description: 'High-Speed Edge Serving' },
+  { description: 'Zero Technical Risk' },
+  { description: 'Mobile-First Design' },
+  { description: 'Global SEO Setup' },
+  { description: '60 Days Tech Support' }
+];
+
 const prices = [
-  { 
-    title: 'Standard (1-3 Pages)', 
-    price: '¥24,500', 
-    callToAction: { text: 'ORDER HANARE' },
-    items: [{ description: 'Native English Copy' }, { description: 'Mobile Optimization' }, { description: 'Zero Technical Risk' }] 
-  },
-  { 
-    title: 'Growth (4-6 Pages)', 
-    price: '¥34,500', 
-    callToAction: { text: 'ORDER HANARE' },
-    items: [{ description: 'Detailed Service Pages' }, { description: 'Full Content Migration' }, { description: 'Global SEO Setup' }] 
-  },
-  { 
-    title: 'Business (7-10 Pages)', 
-    price: '¥44,500', 
-    callToAction: { text: 'ORDER HANARE' },
-    items: [{ description: 'Comprehensive Site Hub' }, { description: 'Inquiry Form Logic' }, { description: 'White-Glove Support' }] 
-  },
-  { 
-    title: 'Enterprise (10+ Pages)', 
-    price: '¥59,500', 
-    callToAction: { text: 'ORDER HANARE' },
-    items: [{ description: 'High-Volume Migration' }, { description: 'Advanced Structure' }, { description: 'Priority Deployment' }] 
-  }
+  { title: 'Standard (1-3 Pages)', price: '¥24,500', callToAction: { text: 'ORDER HANARE' }, items: commonItems },
+  { title: 'Growth (4-6 Pages)', price: '¥34,500', callToAction: { text: 'ORDER HANARE' }, items: commonItems },
+  { title: 'Business (7-10 Pages)', price: '¥44,500', callToAction: { text: 'ORDER HANARE' }, items: commonItems },
+  { title: 'Enterprise (10+ Pages)', price: '¥59,500', callToAction: { text: 'ORDER HANARE' }, items: commonItems }
 ];
 ---
 <Layout metadata={metadata}>
@@ -51,5 +40,5 @@ const prices = [
   <Content isReversed={true} title="04. Total Search Visibility" subtitle="We engineer your site to rank for the specific search terms used by international companies and global clients seeking your services." image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Reach' }} />
   <Content isReversed={false} title="05. Zero-Access Deployment" subtitle="We build and deploy entirely on our secure servers. The only step required to go live is a minor update to your website address record—and we fully assist you." image={{ src: 'https://images.unsplash.com/photo-1595476513916-a435d93d1f6a?w=1200&auto=format&fit=crop', alt: 'Privacy' }} />
 
-  <Pricing id="pricing" title="Global Expansion. Zero Technical Risk." subtitle="Choose the tier that matches your current Japanese website volume." prices={prices} />
+  <Pricing id="pricing" title="Global Expansion. Zero Technical Risk." subtitle="Choose the tier that matches your current Japanese website volume." prices={prices} hasUrlField={true} />
 </Layout>
