@@ -9,6 +9,16 @@ const fullFeatureList = [{ title: 'High-Speed Edge Delivery' }, { title: 'Biling
 <Layout metadata={metadata}>
   <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 4 days." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: 'Culinary' }} />
   
+  <!-- CORE OPTIONS -->
+  <div id="reform" class="scroll-mt-20">
+    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards while preserving your existing content." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} />
+  </div>
+
+  <div id="new" class="scroll-mt-20">
+    <Content isReversed={true} tagline="Option 2: Grand NEW" title="02. Total Digital Blueprint" subtitle="A complete from-scratch development of your digital ecosystem. We build your new flagship website with elite infrastructure designed for maximum conversion from day one." items={[{ title: 'Brand New Build', description: 'Custom engineered for your specific niche.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} />
+  </div>
+
+  <!-- DEMO PORTFOLIO -->
   <Content isReversed={false} tagline="Experience Excellence" title="Live Flagship: ZenPod Tokyo" subtitle="Explore our luxury capsule hotel concept to see how we blend premium Japanese aesthetics with high-converting digital flows." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/capsule-hotel' }} image={{ src: 'https://images.unsplash.com/photo-1539606420556-14c457c45507?w=1200', alt: 'Hotel' }} />
   
   <Content isReversed={true} title="Live Flagship: Azabu Medical" subtitle="A sophisticated medical facility demonstration. Highlights specialized care, physician profiles, and a patient-centric appointment workflow." callToAction={{ variant: 'primary', text: 'Launch Medical Demo', href: '/demos/azabu-medical' }} image={{ src: 'https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=1200', alt: 'Medical' }} />
@@ -32,14 +42,13 @@ const fullFeatureList = [{ title: 'High-Speed Edge Delivery' }, { title: 'Biling
   <Content isReversed={false} title="Live Flagship: Private Kyoto Temple Expeditions" subtitle="A high-end spiritual travel demonstration. Showcases scholar-led private access to sacred Zen temples, ritual meditation sessions, and bespoke itineraries for luxury travelers." callToAction={{ variant: 'primary', text: 'Launch Temple Demo', href: '/demos/private-kyoto-temple-expeditions' }} image={{ src: 'https://images.unsplash.com/photo-1574236170880-fbbca132d83d?w=1200', alt: 'Temple' }} />
 
   <Content isReversed={true} title="Live Flagship: KURA TOKYO" subtitle="A high-security luggage and high-value item storage demonstration. Showcases biometric security, climate control, and integrated concierge services for international luxury travelers." callToAction={{ variant: 'primary', text: 'Launch Concierge Demo', href: '/demos/kura-tokyo-premium-luggage-concierge-secure-storage' }} image={{ src: 'https://images.unsplash.com/photo-1756649627237-d367a3e3a311?w=1200', alt: 'Storage Concierge' }} />
-  
-  <div id="reform" class="scroll-mt-20">
-    <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards while preserving your existing content." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} />
-    <FeatureTable title="Standard Package" subtitle="Fixed price. No extras." items={fullFeatureList} />
-  </div>
 
-  <div id="new" class="scroll-mt-20">
-    <Content isReversed={true} tagline="Option 2: Grand NEW" title="02. Total Digital Blueprint" subtitle="A complete from-scratch development of your digital ecosystem. We build your new flagship website with elite infrastructure designed for maximum conversion from day one." items={[{ title: 'Brand New Build', description: 'Custom engineered for your specific niche.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} />
-    <FeatureTable title="Elite Package" subtitle="Comprehensive build. World-class results." items={fullFeatureList} />
-  </div>
+  <Content isReversed={false} title="Live Flagship: Tokyo Locker & Storage" subtitle="A premium luggage solutions website. See how we present tiered security services, house rules, and contactless payment flows in a high-converting format." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/tokyo-locker-storage-premium-luggage-solutions' }} image={{ src: 'https://images.unsplash.com/photo-1618438502398-195e47778d6c?w=1200', alt: 'Locker Solution' }} />
+
+  <Content isReversed={true} title="Live Flagship: Kagari Izakaya & Grill" subtitle="A luxury Shinjuku gastronomy destination. Featuring integrated reservation workflows, seasonal omakase menus, and high-contrast night-mode aesthetics." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} image={{ src: 'https://images.unsplash.com/photo-1617870314635-fc819547ec11?w=1200', alt: 'Izakaya Grill' }} />
+
+  <!-- FEATURES TABLES -->
+  <FeatureTable title="Grand Reform Package" subtitle="Fixed price. No extras." items={fullFeatureList} />
+  <FeatureTable title="Grand NEW Package" subtitle="Comprehensive build. World-class results." items={fullFeatureList} />
+
 </Layout>
