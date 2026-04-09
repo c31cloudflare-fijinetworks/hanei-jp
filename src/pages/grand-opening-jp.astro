@@ -7,7 +7,16 @@ const metadata = { title: 'グランドオープニング | ホームページ�
 const fullFeatureListJp = [{ title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' }, { title: 'Googleマップ連携' }, { title: 'スマホファースト設計' }, { title: 'SSL暗号化通信' }, { title: 'お問い合わせ・予約フォーム' }, { title: 'プロによるネイティブ執筆' }, { title: 'SNSフィード連携' }, { title: '画像データ最適化' }, { title: '最新ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' }, { title: '修正回数無制限' }, { title: '1営業日でのスピード公開' }, { title: 'プロフェッショナルCDN' }, { title: '自動バックアップ設定' }, { title: 'プライバシーポリシー対応' }, { title: '戦略的UXデザイン' }, { title: '60日間のテクニカルサポート' }];
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: '和食' }} />
+  <Hero2 
+    tagline="グランドオープニング" 
+    title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' 
+    subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短4日でお届けします。" 
+    actions={[
+      { variant: 'primary', text: 'リフォームを見る', href: '#reform' }, 
+      { text: '新規制作を見る', href: '#new', class: '!bg-green-600 !text-white !border-none hover:!bg-green-700 shadow-lg' }
+    ]} 
+    image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: '和食' }} 
+  />
   
   <!-- OPTION 1: REFORM -->
   <div id="reform" class="scroll-mt-20">
