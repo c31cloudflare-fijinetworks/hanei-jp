@@ -14,39 +14,36 @@ const prices = [
     title: 'Starter Hanare', 
     total: '¥45,000',
     price: '¥22,500', 
-    callToAction: { text: 'PAY DEPOSIT' },
     items: [
       { description: 'Up to 3-Page English Hub' },
       { description: 'High-Speed Edge Serving' },
-      { description: 'Mobile-First Design' },
+      { description: 'Mobile-First Global UI' },
       { description: 'Standard English Translation' },
-      { description: 'Secure Hosting Setup' }
+      { description: 'Secure Infrastructure Setup' }
     ] 
   },
   { 
     title: 'Growth Hanare', 
     total: '¥95,000',
     price: '¥47,500', 
-    callToAction: { text: 'PAY DEPOSIT' },
     items: [
       { description: 'Up to 8-Page English Hub' },
       { description: 'NATIVE English Copywriting' },
-      { description: 'Global SEO Optimization' },
+      { description: 'Global SEO Strategy' },
       { description: 'Google Maps Profile Sync' },
-      { description: 'Priority 48-Hour Delivery' }
+      { description: 'Priority 48-Hour Deployment' }
     ] 
   },
   { 
     title: 'Enterprise Hanare', 
     total: '¥195,000',
     price: '¥97,500', 
-    callToAction: { text: 'PAY DEPOSIT' },
     items: [
       { description: 'Full Website Infrastructure' },
       { description: 'Advanced Native Storytelling' },
-      { description: 'Custom Inquiry & Booking Forms' },
+      { description: 'Custom Lead Injection Forms' },
       { description: 'Bespoke Branding Consultation' },
-      { description: 'Lifetime Priority Support' }
+      { description: 'Priority White-Glove Support' }
     ] 
   }
 ];
@@ -55,8 +52,8 @@ const prices = [
   <Hero2 
     tagline="The Detached Digital Hub Strategy" 
     title='Your Business, Presented <br/><span class="text-accent">to a Global Audience.</span>' 
-    subtitle='Expand your reach to international travelers, partners, and global clients without the risk of modifying your current Japanese site. We build a high-performance English infrastructure that stands alone.' 
-    actions={[{ variant: 'primary', text: 'View Premium Packages', href: '#pricing' }]} 
+    subtitle='Expand your reach to international travelers and global partners without the risk of modifying your current Japanese site. We build a high-performance English infrastructure that stands alone.' 
+    actions={[{ variant: 'primary', text: 'View Investment Tiers', href: '#pricing' }]} 
     image={{ src: 'https://images.unsplash.com/photo-1602273660127-a0000560a4c1?w=611&h=405&auto=format&fit=crop', alt: 'Japanese Quality' }} 
   />
   
@@ -66,7 +63,7 @@ const prices = [
   <Content isReversed={true} title="04. Total Search Visibility" subtitle="We engineer your site to rank for the specific search terms used by international companies and global clients seeking your services." image={{ src: 'https://images.unsplash.com/photo-1760895941769-d94899109478?w=611&h=405&auto=format&fit=crop', alt: 'Reach' }} />
   <Content isReversed={false} title="05. Zero-Access Deployment" subtitle="We build and deploy entirely on our secure servers. The only step required to go live is a minor update to your website address record—and we fully assist you." image={{ src: 'https://images.unsplash.com/photo-1595476513916-a435d93d1f6a?w=1200&auto=format&fit=crop', alt: 'Privacy' }} />
 
-  <Pricing id="pricing" title="Global Expansion. Premium Value." subtitle="Secure your professional asset with a 50% initial deposit. Balance due only upon final delivery." prices={prices} hasUrlField={true} />
+  <Pricing id="pricing" title="Premium Value. Transparent Phases." subtitle="Secure your professional asset with a project launch deposit. Balance is due only upon final delivery." prices={prices} hasUrlField={true} />
 
   <!-- BESPOKE SECTION FOR OVER 20 PAGES -->
   <Content
