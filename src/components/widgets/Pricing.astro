@@ -42,7 +42,6 @@ const cardWidthClass = isSingle
                 {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
             </span>
           </div>
-          <!-- DEPOSIT LABEL -->
           <div class="mt-2 mb-8 text-[10px] font-bold text-muted uppercase tracking-widest italic">
             {price.period}
           </div>
@@ -66,7 +65,9 @@ const cardWidthClass = isSingle
             <input type="hidden" name="return" value={successUrl} />
             <input type="hidden" name="cancel_return" value={cancelUrl} />
             
-            <!-- HANEI OVERRIDE: FORCE ZERO SHIPPING/TAX -->
+            <!-- HANEI BRANDING OVERRIDE: স্ট্যান্ডার্ডাইজেড মার্চেন্ট রিটার্ন টেক্সট -->
+            <input type="hidden" name="brand_name" value="Hanei JP" />
+            
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
