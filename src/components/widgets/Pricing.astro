@@ -15,51 +15,54 @@ const successUrl = `${SITE_URL}/thank-you`;
 const isSingle = prices.length === 1;
 const cardWidthClass = isSingle 
   ? "w-full max-w-xl" 
-  : "w-full md:w-[calc(50%-1.5rem)] xl:w-[calc(33%-1.5rem)] min-w-[320px]";
+  : "w-full md:w-[calc(50%-1.5rem)] xl:w-[calc(33%-1.5rem)] min-w-[340px]";
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
-  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-4xl md:text-5xl font-bold tracking-tight text-slate-900' }} />
+  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-6xl font-black tracking-tighter text-slate-950' }} />
   
-  <div class="flex flex-wrap justify-center gap-8">
+  <div class="flex flex-wrap justify-center gap-10">
     {prices.map((price) => (
       <div class:list={[
-        "relative flex flex-col rounded-2xl border border-slate-100 p-8 text-center shadow-xl bg-white dark:bg-slate-900 transition-all hover:shadow-2xl",
+        "relative flex flex-col rounded-3xl border border-slate-200 p-10 text-center shadow-2xl bg-white dark:bg-slate-900 transition-all hover:border-primary/50",
         cardWidthClass
       ]}>
         
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-900 text-white px-5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em]">
-            Boutique Infrastructure
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-6 py-1.5 rounded-full text-[11px] font-black uppercase tracking-[0.25em]">
+            Hanei Standard
         </div>
 
-        <h3 class="text-2xl font-bold mt-4 text-slate-900 dark:text-white font-heading tracking-tight">
+        <h3 class="text-3xl font-black mt-4 text-slate-950 dark:text-white font-heading tracking-tight uppercase">
           {price.title}
         </h3>
         
-        <div class="mt-8 flex-1 flex flex-col border-y border-slate-50 py-10 my-2">
+        <div class="mt-8 flex-1 flex flex-col border-y border-slate-100 py-12 my-2">
           <div class="flex flex-col items-center">
-            <div class="flex items-baseline gap-1">
-                <span class="text-6xl font-bold tracking-tighter text-primary">
+            <div class="flex items-baseline">
+                <span class="text-7xl font-black tracking-tighter text-blue-700">
                     {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
                 </span>
             </div>
-            <span class="mt-3 text-xs font-bold text-slate-900 uppercase tracking-widest">Project Launch Deposit</span>
-            <span class="mt-4 text-[10px] font-medium text-slate-400 uppercase tracking-widest border border-slate-100 px-3 py-1 rounded-full">
-              Total Investment: {price.total}
-            </span>
+            <span class="mt-4 text-sm font-black text-slate-950 uppercase tracking-[0.15em]">Phase 1: Project Deposit</span>
+            
+            <div class="mt-8 bg-slate-950 text-white px-5 py-2 rounded-lg shadow-lg">
+                <span class="text-[11px] font-bold uppercase tracking-widest">Total Investment: {price.total}</span>
+            </div>
           </div>
           
-          <ul role="list" class="mt-12 space-y-4 text-left text-sm flex-grow">
+          <ul role="list" class="mt-14 space-y-5 text-left text-sm flex-grow">
             {price.items.map((item) => (
               <li class="flex items-start">
-                <Icon name="tabler:circle-check" class="w-5 h-5 text-primary flex-shrink-0" />
-                <p class="ml-3 text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{item.description}</p>
+                <div class="bg-blue-50 rounded-full p-1 mr-4">
+                    <Icon name="tabler:check" class="w-4 h-4 text-blue-700 stroke-[3px]" />
+                </div>
+                <p class="text-slate-900 dark:text-slate-100 font-bold leading-tight">{item.description}</p>
               </li>
             ))}
           </ul>
         </div>
         
-        <div class="mt-8">
+        <div class="mt-10">
           <form class="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
@@ -74,28 +77,28 @@ const cardWidthClass = isSingle
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="currency_code" value="JPY" />
             
-            <div class="text-left space-y-5">
-              <div class="group">
-                <label class="block text-[10px] font-bold mb-1.5 text-slate-900 uppercase tracking-[0.15em]">1. Business Identity</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-4 py-3 text-sm border border-slate-200 rounded-md bg-white focus:border-slate-900 focus:ring-0 outline-none transition-colors text-slate-900 font-medium placeholder:text-slate-200" placeholder="e.g. Ginza Aesthetic Studio" data-base-title={price.title} />
+            <div class="text-left space-y-6">
+              <div>
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">1. Business / Shop Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-5 py-4 text-base border border-slate-300 rounded-xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-400" placeholder="e.g. Ginza Aesthetic" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
 
               <div>
-                <label class="block text-[10px] font-bold mb-1.5 text-slate-900 uppercase tracking-[0.15em]">2. Digital Footprint (Optional)</label>
-                <input type="text" name="os1" class="w-full px-4 py-3 text-sm border border-slate-200 rounded-md bg-white focus:border-slate-900 focus:ring-0 outline-none transition-colors text-slate-900 font-medium placeholder:text-slate-200" placeholder="https://existing-site.jp" />
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">2. Current Website (Optional)</label>
+                <input type="text" name="os1" class="w-full px-5 py-4 text-base border border-slate-300 rounded-xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-400" placeholder="https://..." />
                 <input type="hidden" name="on1" value="Current URL" />
               </div>
 
               <div>
-                <label class="block text-[10px] font-bold mb-1.5 text-slate-900 uppercase tracking-[0.15em]">3. Delivery Channel</label>
-                <input type="email" required class="email-input w-full px-4 py-3 text-sm border border-slate-200 rounded-md bg-white focus:border-slate-900 focus:ring-0 outline-none transition-colors text-slate-900 font-medium placeholder:text-slate-200" placeholder="primary-contact@business.com" />
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">3. Master Delivery Email</label>
+                <input type="email" required class="email-input w-full px-5 py-4 text-base border border-slate-300 rounded-xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-400" placeholder="contact@company.jp" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-10 py-4 bg-primary hover:bg-slate-900 text-white font-bold rounded-md shadow-lg transition-all text-xs uppercase tracking-[0.2em]">
-              Initiate Project Phase
+            <button type="submit" class="w-full mt-12 py-5 bg-blue-700 hover:bg-slate-950 text-white font-black rounded-xl shadow-2xl transition-all text-sm uppercase tracking-[0.2em] transform hover:-translate-y-1">
+              Confirm & Pay Deposit
             </button>
           </form>
         </div>
@@ -117,7 +120,7 @@ const cardWidthClass = isSingle
       const sync = () => {
         const bizVal = bizInput.value.trim();
         const emailVal = emailInput.value.trim();
-        itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (Launch Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Launch Deposit)`;
+        itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Deposit)`;
         customHidden.value = JSON.stringify({ email: emailVal, business: bizVal });
       };
 
