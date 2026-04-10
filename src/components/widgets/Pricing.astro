@@ -15,7 +15,7 @@ const successUrl = `${SITE_URL}/thank-you`;
 const isSingle = prices.length === 1;
 const cardWidthClass = isSingle 
   ? "w-full max-w-xl" 
-  : "w-full md:w-[calc(50%-1.5rem)] xl:w-[calc(33%-1.5rem)] min-w-[340px]";
+  : "w-full md:w-[calc(50%-1.5rem)] xl:w-[calc(33%-1.5rem)] min-w-[350px]";
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
@@ -24,35 +24,37 @@ const cardWidthClass = isSingle
   <div class="flex flex-wrap justify-center gap-10">
     {prices.map((price) => (
       <div class:list={[
-        "relative flex flex-col rounded-2xl border border-slate-200 p-10 text-center shadow-2xl bg-white transition-all",
+        "relative flex flex-col rounded-xl border border-slate-200 p-10 text-center shadow-xl bg-white transition-all",
         cardWidthClass
       ]}>
         
-        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-6 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap">
-            Hanei JP
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-5 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] whitespace-nowrap">
+            Official Package
         </div>
 
-        <!-- FIXED HEIGHT TITLE FOR ALIGNMENT -->
-        <h3 class="text-2xl font-black mt-4 text-slate-950 font-heading tracking-tight uppercase min-h-[4rem] flex items-center justify-center">
-          {price.title}
-        </h3>
+        <!-- FIXED HEIGHT TITLE: ALIGNMENT LOCK 1 -->
+        <div class="h-20 flex items-center justify-center mt-4">
+          <h3 class="text-2xl font-black text-slate-950 font-heading tracking-tight uppercase leading-tight">
+            {price.title}
+          </h3>
+        </div>
         
         <div class="mt-8 flex-1 flex flex-col border-y border-slate-100 py-10 my-2">
           <div class="flex flex-col items-center">
-            <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Phase 1 Deposit</span>
+            <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Project Initiation</span>
             <div class="flex items-baseline">
                 <span class="text-7xl font-bold tracking-tighter text-blue-600">
                     {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
                 </span>
             </div>
-            <div class="mt-4">
-                <span class="text-[11px] font-bold text-slate-950 uppercase tracking-widest opacity-60">
-                  Total Project Cost: {price.total}
+            <div class="mt-6 border-2 border-slate-950 px-4 py-1.5 rounded-lg">
+                <span class="text-[11px] font-black text-slate-950 uppercase tracking-widest">
+                  Total Cost: {price.total}
                 </span>
             </div>
           </div>
           
-          <!-- FIXED MIN-HEIGHT FOR FEATURE LIST ALIGNMENT -->
+          <!-- FIXED HEIGHT LIST: ALIGNMENT LOCK 2 -->
           <ul role="list" class="mt-12 space-y-4 text-left text-sm flex-grow min-h-[220px]">
             {price.items.map((item) => (
               <li class="flex items-start">
@@ -74,31 +76,31 @@ const cardWidthClass = isSingle
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
             <input type="hidden" name="shipping" value="0" />
-            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title} (Phase 1)`} />
+            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title} (Deposit)`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="currency_code" value="JPY" />
             
             <div class="text-left space-y-6">
               <div>
-                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">1. Your Business Name</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-5 py-4 text-base border-2 border-slate-100 rounded-xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300" placeholder="e.g. Ginza Aesthetic" data-base-title={price.title} />
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">1. Business Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-5 py-4 text-base border-2 border-slate-100 rounded-none bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-200" placeholder="Business Name" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
 
               <div>
-                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">2. Website (If any)</label>
-                <input type="text" name="os1" class="w-full px-5 py-4 text-base border-2 border-slate-100 rounded-xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300" placeholder="https://..." />
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">2. Website (Optional)</label>
+                <input type="text" name="os1" class="w-full px-5 py-4 text-base border-2 border-slate-100 rounded-none bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-200" placeholder="https://..." />
                 <input type="hidden" name="on1" value="Current URL" />
               </div>
 
               <div>
-                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">3. Your Email</label>
-                <input type="email" required class="email-input w-full px-5 py-4 text-base border-2 border-slate-100 rounded-xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300" placeholder="name@company.com" />
+                <label class="block text-[11px] font-black mb-2 text-slate-950 uppercase tracking-widest">3. Your Primary Email</label>
+                <input type="email" required class="email-input w-full px-5 py-4 text-base border-2 border-slate-100 rounded-none bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-200" placeholder="name@email.com" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-12 py-5 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-xl shadow-2xl transition-all text-sm uppercase tracking-[0.25em] transform hover:-translate-y-1">
+            <button type="submit" class="w-full mt-12 py-5 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-none shadow-2xl transition-all text-sm uppercase tracking-[0.25em] transform hover:-translate-y-1">
               Confirm & Pay Deposit
             </button>
           </form>
@@ -112,21 +114,15 @@ const cardWidthClass = isSingle
   function initTieredCheckout() {
     const forms = document.querySelectorAll('.checkout-form');
     forms.forEach(form => {
-      const bizInput = form.querySelector('.business-name-input');
-      const emailInput = form.querySelector('.email-input');
-      const itemHidden = form.querySelector('.paypal-item-name');
-      const customHidden = form.querySelector('.paypal-custom-metadata');
-      const baseTitle = bizInput?.getAttribute('data-base-title');
-
       const sync = () => {
-        const bizVal = bizInput.value.trim();
-        const emailVal = emailInput.value.trim();
-        itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Deposit)`;
-        customHidden.value = JSON.stringify({ email: emailVal, business: bizVal });
+        const bizVal = form.querySelector('.business-name-input').value.trim();
+        const emailVal = form.querySelector('.email-input').value.trim();
+        const baseTitle = form.querySelector('.business-name-input').getAttribute('data-base-title');
+        form.querySelector('.paypal-item-name').value = bizVal ? `Hanei JP: ${baseTitle} (Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Deposit)`;
+        form.querySelector('.paypal-custom-metadata').value = JSON.stringify({ email: emailVal, business: bizVal });
       };
-
-      if(bizInput) bizInput.addEventListener('input', sync);
-      if(emailInput) emailInput.addEventListener('input', sync);
+      form.querySelector('.business-name-input').addEventListener('input', sync);
+      form.querySelector('.email-input').addEventListener('input', sync);
     });
   }
   document.addEventListener('astro:page-load', initTieredCheckout);

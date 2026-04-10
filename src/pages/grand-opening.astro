@@ -15,10 +15,10 @@ const reformPrices = [
     total: '¥70,000',
     price: '¥35,000', 
     items: [
-      { description: 'A new, modern look for your site' },
-      { description: 'We move your old text and photos' },
-      { description: 'Looks perfect on mobile phones' },
-      { description: 'Super fast loading speed' },
+      { description: 'Fresh, modern design for your site' },
+      { description: 'We move your current text & photos' },
+      { description: 'Works perfectly on all smartphones' },
+      { description: 'Ultra-fast loading speed' },
       { description: 'Ready to launch in 3 days' }
     ] 
   },
@@ -27,11 +27,11 @@ const reformPrices = [
     total: '¥130,000',
     price: '¥65,000', 
     items: [
-      { description: 'Up to 8 pages updated' },
-      { description: 'Professional English rewrite' },
-      { description: 'Help people find you on Google' },
-      { description: 'Google Maps & Review setup' },
-      { description: 'Priority 2 days to launch' }
+      { description: 'Up to 8 pages updated & refreshed' },
+      { description: 'Professional native English rewrite' },
+      { description: 'Setup to help people find you on Google' },
+      { description: 'Google Maps & Reviews integration' },
+      { description: 'Priority 2-day delivery' }
     ] 
   },
   { 
@@ -39,10 +39,10 @@ const reformPrices = [
     total: '¥250,000',
     price: '¥125,000', 
     items: [
-      { description: 'Updating your entire large site' },
-      { description: 'Custom booking & inquiry forms' },
-      { description: 'Personal support for any changes' },
-      { description: 'Complete brand refresh' },
+      { description: 'Full update for large business sites' },
+      { description: 'Custom booking & inquiry systems' },
+      { description: 'Unlimited text and photo updates' },
+      { description: 'Direct 1-on-1 developer support' },
       { description: 'Next-day priority launch' }
     ] 
   }
@@ -54,10 +54,10 @@ const newBuildPrices = [
     total: '¥90,000',
     price: '¥45,000', 
     items: [
-      { description: 'Brand new 3-page business site' },
-      { description: 'Clean, professional boutique design' },
-      { description: 'Mobile phone optimized' },
-      { description: 'Secure, high-speed hosting' },
+      { description: 'Brand new 3-page professional site' },
+      { description: 'Custom boutique look and feel' },
+      { description: 'Optimized for mobile customers' },
+      { description: 'High-security business hosting' },
       { description: 'Ready to launch in 3 days' }
     ] 
   },
@@ -67,10 +67,10 @@ const newBuildPrices = [
     price: '¥90,000', 
     items: [
       { description: 'Elite 8-page business flagship' },
-      { description: 'Custom booking system built-in' },
+      { description: 'Integrated booking & contact flow' },
       { description: 'Advanced Google Search setup' },
-      { description: 'Instagram photo feed sync' },
-      { description: 'Priority 2 days to launch' }
+      { description: 'Live Instagram photo sync' },
+      { description: 'Priority 2-day delivery' }
     ] 
   },
   { 
@@ -78,10 +78,10 @@ const newBuildPrices = [
     total: '¥380,000',
     price: '¥190,000', 
     items: [
-      { description: 'Custom site with no page limits' },
-      { description: 'Unique features for your business' },
-      { description: 'Maximum Google authority setup' },
-      { description: 'Lifetime priority tech support' },
+      { description: 'Fully custom site with no page limits' },
+      { description: 'Bespoke features for your industry' },
+      { description: 'Maximum authority signals on Google' },
+      { description: 'Lifetime priority technical care' },
       { description: 'Next-day priority launch' }
     ] 
   }
@@ -90,24 +90,27 @@ const newBuildPrices = [
 <Layout metadata={metadata}>
   <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 1 business day." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new', class: '!bg-green-600 !text-white hover:!bg-green-700' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: 'Industrial' }} />
   
+  <!-- REFORM SECTION -->
   <div id="reform" class="scroll-mt-20">
     <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards while preserving your existing content." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} classes={{ container: 'pb-0 md:pb-0' }} />
     <Content isReversed={true} isAfterContent={true} title="Preserving Heritage, Elevating Impact" subtitle="We respect the work you've already done. Our reform process takes your existing text and history and wraps it in a world-class interface." image={{ src: 'https://images.unsplash.com/photo-1667560615919-837fe9001e58?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     <Content isReversed={false} isAfterContent={true} title="Technical Performance Boost" subtitle="We migrate your reformed site to our high-speed edge network, ensuring sub-second speeds on any connection." image={{ src: 'https://images.unsplash.com/photo-1749104953222-9d6ed76e4bf0?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="Grand Reform Investment" subtitle="Secure your modernization phase with a 50% deposit. Balance is due only upon final delivery." prices={reformPrices} hasUrlField={true} />
+    <Pricing title="Grand Reform Investment" subtitle="Secure your professional modernization with a 50% deposit. Balance due only upon final delivery." prices={reformPrices} hasUrlField={true} />
   </div>
 
   <hr class="border-t dark:border-slate-800 my-12" />
 
+  <!-- NEW BUILD SECTION -->
   <div id="new" class="scroll-mt-20">
     <Content isReversed={true} tagline="Option 2: Grand NEW" title="02. Total Digital Blueprint" subtitle="A complete from-scratch development of your digital ecosystem designed for maximum conversion from day one." items={[{ title: 'Brand New Build', description: 'Custom engineered for your specific niche.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} classes={{ container: 'pb-0 md:pb-0' }} />
     <Content isReversed={false} isAfterContent={true} title="Architected for High Conversion" subtitle="We design your navigation and booking integrations using proprietary conversion logic to turn visitors into customers." image={{ src: 'https://images.unsplash.com/photo-1644072267093-cbbfdb74303c?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     <Content isReversed={true} isAfterContent={true} title="Elite Data Infrastructure" subtitle="Your new flagship is built on a serverless stack providing unshakeable stability and automated SEO architecture." image={{ src: 'https://images.unsplash.com/photo-1648977555232-99b5a8c8c897?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="Grand NEW Investment" subtitle="Secure your high-performance flagship with a 50% deposit. Balance is due only upon final delivery." prices={newBuildPrices} />
+    <Pricing title="Grand NEW Investment" subtitle="Secure your high-performance flagship with a 50% deposit. Balance due only upon final delivery." prices={newBuildPrices} />
   </div>
 
+  <!-- PORTFOLIO SECTION -->
   <div class="py-8 bg-slate-50 dark:bg-transparent border-y dark:border-slate-800 my-16">
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h2 class="text-3xl md:text-4xl font-bold font-heading mb-2 text-slate-950">Portfolio Demonstrations</h2>
@@ -123,5 +126,5 @@ const newBuildPrices = [
     <Content isReversed={false} title="Portfolio Demo: Kagari Izakaya & Grill" subtitle="Luxury gastronomy destination featuring seasonal omakase reservation workflows." callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} image={{ src: 'https://images.unsplash.com/photo-1617870314635-fc819547ec11?w=1200', alt: 'Izakaya Grill' }} classes={{ container: 'py-8 md:py-12' }} />
   </div>
 
-  <FeatureTable title="Grand Reform & Grand NEW Packages" subtitle="Elite standard features included in every professional development project." items={fullFeatureList} />
+  <FeatureTable title="Grand Packages: standard Features" subtitle="Elite standard features included in every professional project." items={fullFeatureList} />
 </Layout>
