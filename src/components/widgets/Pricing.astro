@@ -29,7 +29,7 @@ const cardWidthClass = isSingle
       ]}>
         
         <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-white px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white whitespace-nowrap shadow-md">
-            Premium Infrastructure
+            Premium Asset
         </div>
 
         <h3 class="text-2xl font-bold mt-4 text-slate-900 dark:text-white leading-tight h-16 flex items-center justify-center border-b border-slate-100 dark:border-slate-800">
@@ -37,12 +37,12 @@ const cardWidthClass = isSingle
         </h3>
         
         <div class="mt-6 flex-1 flex flex-col">
-          <div class="flex items-end justify-center">
+          <div class="flex items-end justify-center mb-2">
             <span class="text-5xl font-bold tracking-tight text-primary">
                 {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
             </span>
           </div>
-          <div class="mt-2 mb-8 text-[10px] font-bold text-muted uppercase tracking-widest italic">
+          <div class="text-[10px] font-bold text-muted uppercase tracking-tighter mb-8 italic">
             {price.period}
           </div>
           
@@ -65,9 +65,13 @@ const cardWidthClass = isSingle
             <input type="hidden" name="return" value={successUrl} />
             <input type="hidden" name="cancel_return" value={cancelUrl} />
             
-            <!-- HANEI BRANDING OVERRIDE: স্ট্যান্ডার্ডাইজেড মার্চেন্ট রিটার্ন টেক্সট -->
+            <!-- IDENTITY & BRANDING OVERRIDES -->
             <input type="hidden" name="brand_name" value="Hanei JP" />
+            <input type="hidden" name="image_url" value="https://hanei.jp/images/logo.webp" />
+            <input type="hidden" name="cpp_header_image" value="https://hanei.jp/images/logo.webp" />
+            <input type="hidden" name="cbt" value="Return to Hanei JP" />
             
+            <!-- FEE SUPPRESSION -->
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
@@ -128,6 +132,7 @@ const cardWidthClass = isSingle
       const sync = () => {
         const bizVal = bizInput.value.trim();
         const emailVal = emailInput.value.trim();
+        // Force inclusion of 50% Deposit label in the item name
         itemHidden.value = bizVal ? `Hanei JP: ${baseTitle} (50% Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (50% Deposit)`;
         customHidden.value = JSON.stringify({ email: emailVal, business: bizVal });
       };
