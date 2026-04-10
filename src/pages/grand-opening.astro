@@ -14,39 +14,36 @@ const reformPrices = [
     title: 'Starter Reform', 
     total: '¥70,000',
     price: '¥35,000', 
-    callToAction: { text: 'START REFORM' },
     items: [
-      { description: 'Modern Aesthetic Facelift' },
-      { description: 'Legacy Content Migration' },
-      { description: 'Mobile UI Optimization' },
-      { description: 'High-Speed Edge Serving' },
-      { description: '72-Hour Delivery' }
+      { description: 'A new, modern look for your site' },
+      { description: 'We move your old text and photos' },
+      { description: 'Looks perfect on mobile phones' },
+      { description: 'Super fast loading speed' },
+      { description: 'Ready to launch in 3 days' }
     ] 
   },
   { 
     title: 'Growth Reform', 
     total: '¥130,000',
     price: '¥65,000', 
-    callToAction: { text: 'START REFORM' },
     items: [
-      { description: 'Detailed Service Hub' },
-      { description: 'Full Brand Value Refresh' },
-      { description: 'Bilingual SEO Setup' },
-      { description: 'Global Performance Boost' },
-      { description: 'Priority 48-Hour Delivery' }
+      { description: 'Up to 8 pages updated' },
+      { description: 'Professional English rewrite' },
+      { description: 'Help people find you on Google' },
+      { description: 'Google Maps & Review setup' },
+      { description: 'Priority 2 days to launch' }
     ] 
   },
   { 
     title: 'Enterprise Reform', 
     total: '¥250,000',
     price: '¥125,000', 
-    callToAction: { text: 'START REFORM' },
     items: [
-      { description: 'Comprehensive Digital Site' },
-      { description: 'Advanced Inquiry Logic' },
-      { description: 'White-Glove Support' },
-      { description: 'Enterprise Volume Content' },
-      { description: 'Priority 24-Hour Deployment' }
+      { description: 'Updating your entire large site' },
+      { description: 'Custom booking & inquiry forms' },
+      { description: 'Personal support for any changes' },
+      { description: 'Complete brand refresh' },
+      { description: 'Next-day priority launch' }
     ] 
   }
 ];
@@ -56,39 +53,36 @@ const newBuildPrices = [
     title: 'Starter Build', 
     total: '¥90,000',
     price: '¥45,000', 
-    callToAction: { text: 'START NEW BUILD' },
     items: [
-      { description: 'New Digital Blueprint' },
-      { description: 'Targeted Conversion UX' },
-      { description: 'High-Speed Infrastructure' },
-      { description: 'Essential Brand Setup' },
-      { description: '72-Hour Initial Launch' }
+      { description: 'Brand new 3-page business site' },
+      { description: 'Clean, professional boutique design' },
+      { description: 'Mobile phone optimized' },
+      { description: 'Secure, high-speed hosting' },
+      { description: 'Ready to launch in 3 days' }
     ] 
   },
   { 
     title: 'Growth Build', 
     total: '¥180,000',
     price: '¥90,000', 
-    callToAction: { text: 'START NEW BUILD' },
     items: [
-      { description: 'Elite Business Flagship' },
-      { description: 'Custom Booking Integration' },
-      { description: 'Global SEO Architecture' },
-      { description: 'Social Feed Automation' },
-      { description: 'Priority 48-Hour Launch' }
+      { description: 'Elite 8-page business flagship' },
+      { description: 'Custom booking system built-in' },
+      { description: 'Advanced Google Search setup' },
+      { description: 'Instagram photo feed sync' },
+      { description: 'Priority 2 days to launch' }
     ] 
   },
   { 
     title: 'Enterprise Build', 
     total: '¥380,000',
     price: '¥190,000', 
-    callToAction: { text: 'START NEW BUILD' },
     items: [
-      { description: 'Advanced Bespoke Stack' },
-      { description: 'High-Scale Performance' },
-      { description: 'Maximum Authority Signals' },
-      { description: 'Unlimited Architecture' },
-      { description: 'White-Glove 24-Hour Deploy' }
+      { description: 'Custom site with no page limits' },
+      { description: 'Unique features for your business' },
+      { description: 'Maximum Google authority setup' },
+      { description: 'Lifetime priority tech support' },
+      { description: 'Next-day priority launch' }
     ] 
   }
 ];
@@ -96,30 +90,27 @@ const newBuildPrices = [
 <Layout metadata={metadata}>
   <Hero2 tagline="Total Digital Transformation" title='Is Your Website Helping You <br/><span class="text-accent">or Holding You Back?</span>' subtitle="An outdated site scares away customers. We deliver a professional digital front door in just 1 business day." actions={[{ variant: 'primary', text: 'Explore Grand Reform', href: '#reform' }, { variant: 'secondary', text: 'Explore Grand New', href: '#new', class: '!bg-green-600 !text-white hover:!bg-green-700' }]} image={{ src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', alt: 'Industrial' }} />
   
-  <!-- OPTION 1: REFORM -->
   <div id="reform" class="scroll-mt-20">
     <Content tagline="Option 1: Grand Reform" title="01. The Modern Aesthetic Facelift" subtitle="We refresh the soul of your design to match international luxury standards while preserving your existing content." items={[{ title: 'Fresh Look', description: 'Built for high-end perception.', icon: 'tabler:palette' }]} image={{ src: 'https://images.unsplash.com/photo-1573416264252-834d212583ab?auto=format&fit=crop&w=1200&q=80', alt: 'Design' }} classes={{ container: 'pb-0 md:pb-0' }} />
     <Content isReversed={true} isAfterContent={true} title="Preserving Heritage, Elevating Impact" subtitle="We respect the work you've already done. Our reform process takes your existing text and history and wraps it in a world-class interface." image={{ src: 'https://images.unsplash.com/photo-1667560615919-837fe9001e58?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     <Content isReversed={false} isAfterContent={true} title="Technical Performance Boost" subtitle="We migrate your reformed site to our high-speed edge network, ensuring sub-second speeds on any connection." image={{ src: 'https://images.unsplash.com/photo-1749104953222-9d6ed76e4bf0?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="Grand Reform Investment" subtitle="Secure your modernization phase with a 50% initiation deposit. Balance is due upon final delivery." prices={reformPrices} hasUrlField={true} />
+    <Pricing title="Grand Reform Investment" subtitle="Secure your modernization phase with a 50% deposit. Balance is due only upon final delivery." prices={reformPrices} hasUrlField={true} />
   </div>
 
   <hr class="border-t dark:border-slate-800 my-12" />
 
-  <!-- OPTION 2: NEW -->
   <div id="new" class="scroll-mt-20">
     <Content isReversed={true} tagline="Option 2: Grand NEW" title="02. Total Digital Blueprint" subtitle="A complete from-scratch development of your digital ecosystem designed for maximum conversion from day one." items={[{ title: 'Brand New Build', description: 'Custom engineered for your specific niche.', icon: 'tabler:rocket' }]} image={{ src: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80', alt: 'New Structure' }} classes={{ container: 'pb-0 md:pb-0' }} />
     <Content isReversed={false} isAfterContent={true} title="Architected for High Conversion" subtitle="We design your navigation and booking integrations using proprietary conversion logic to turn visitors into customers." image={{ src: 'https://images.unsplash.com/photo-1644072267093-cbbfdb74303c?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     <Content isReversed={true} isAfterContent={true} title="Elite Data Infrastructure" subtitle="Your new flagship is built on a serverless stack providing unshakeable stability and automated SEO architecture." image={{ src: 'https://images.unsplash.com/photo-1648977555232-99b5a8c8c897?w=1200&auto=format&fit=crop&q=60' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="Grand NEW Investment" subtitle="Secure your high-performance flagship with a 50% initiation deposit. Balance is due upon final delivery." prices={newBuildPrices} />
+    <Pricing title="Grand NEW Investment" subtitle="Secure your high-performance flagship with a 50% deposit. Balance is due only upon final delivery." prices={newBuildPrices} />
   </div>
 
-  <!-- PORTFOLIO SECTION -->
   <div class="py-8 bg-slate-50 dark:bg-transparent border-y dark:border-slate-800 my-16">
     <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-2">Portfolio Demonstrations</h2>
+        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-2 text-slate-950">Portfolio Demonstrations</h2>
         <p class="text-lg text-muted">Explore the level of quality we deliver for every industry.</p>
     </div>
   </div>
