@@ -12,56 +12,49 @@ const currentPath = Astro.url.pathname;
 const cancelUrl = `${SITE_URL}${currentPath}`;
 const successUrl = `${SITE_URL}/thank-you`;
 
-const isSingle = prices.length === 1;
-const cardWidthClass = isSingle 
-  ? "w-full max-w-2xl" 
-  : "w-full lg:w-[calc(33%-2rem)] min-w-[400px]";
+// ENFORCED GRID STABILITY
+const gridConfig = prices.length === 1 ? "max-w-2xl mx-auto" : "grid grid-cols-1 xl:grid-cols-3 gap-12 max-w-7xl mx-auto";
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
-  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-6xl md:text-8xl font-black tracking-tighter text-slate-950 mb-16' }} />
+  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-7xl font-black tracking-tighter text-slate-950 mb-20' }} />
   
-  <div class="flex flex-wrap justify-center gap-12">
+  <div class={gridConfig}>
     {prices.map((price) => (
-      <div class:list={[
-        "relative flex flex-col rounded-[2.5rem] border-2 border-slate-200 p-12 text-center shadow-2xl bg-white transition-all",
-        cardWidthClass
-      ]}>
+      <div class="relative flex flex-col rounded-[3rem] border-2 border-slate-200 p-10 md:p-14 text-center shadow-2xl bg-white transition-all w-full max-w-[480px] mx-auto">
         
-        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-8 py-2 rounded-full text-sm font-black uppercase tracking-[0.3em] whitespace-nowrap">
-            Hanei Tier
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-8 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] whitespace-nowrap shadow-xl">
+            Hanei Standard
         </div>
 
-        <!-- ALIGNMENT LOCK: TITLE -->
-        <div class="h-32 flex items-center justify-center mt-6">
-          <h3 class="text-4xl md:text-5xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-none">
+        <div class="h-28 flex items-center justify-center mt-6">
+          <h3 class="text-4xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-none">
             {price.title}
           </h3>
         </div>
         
-        <div class="mt-10 flex-1 flex flex-col border-y-2 border-slate-100 py-16 my-2">
+        <div class="mt-10 flex-1 flex flex-col border-y-2 border-slate-100 py-12 my-2">
           <div class="flex flex-col items-center">
-            <span class="text-lg font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Phase 1 Deposit</span>
+            <span class="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Project Initiation</span>
             <div class="flex items-baseline">
-                <span class="text-8xl md:text-9xl font-black tracking-tighter text-blue-600 leading-none">
+                <span class="text-6xl md:text-7xl font-black tracking-tighter text-blue-600 leading-none">
                     {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
                 </span>
             </div>
-            <div class="mt-10 bg-slate-950 text-white px-8 py-3 rounded-xl shadow-xl">
-                <span class="text-base font-black uppercase tracking-widest leading-none">
-                  Total Cost: {price.total}
+            <div class="mt-8 border-2 border-slate-950 px-6 py-2 rounded-xl">
+                <span class="text-sm font-black text-slate-950 uppercase tracking-widest">
+                  Total Investment: {price.total}
                 </span>
             </div>
           </div>
           
-          <!-- ALIGNMENT LOCK: FEATURES -->
-          <ul role="list" class="mt-16 space-y-6 text-left flex-grow min-h-[350px]">
+          <ul role="list" class="mt-16 space-y-6 text-left flex-grow min-h-[300px]">
             {price.items.map((item) => (
               <li class="flex items-start">
-                <div class="bg-blue-600 rounded-full p-1.5 mr-6 mt-1 shadow-lg">
-                    <Icon name="tabler:check" class="w-6 h-6 text-white stroke-[4px]" />
+                <div class="bg-blue-600 rounded-full p-1.5 mr-5 mt-1 shrink-0 shadow-lg">
+                    <Icon name="tabler:check" class="w-5 h-5 text-white stroke-[4px]" />
                 </div>
-                <p class="text-2xl text-slate-900 font-black leading-tight tracking-tight">{item.description}</p>
+                <p class="text-xl text-slate-950 font-black leading-tight tracking-tight">{item.description}</p>
               </li>
             ))}
           </ul>
@@ -78,32 +71,32 @@ const cardWidthClass = isSingle
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
             <input type="hidden" name="shipping" value="0" />
-            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title} (Deposit)`} />
+            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title} (Phase 1)`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="currency_code" value="JPY" />
             
             <div class="text-left space-y-8">
               <div>
-                <label class="block text-sm font-black mb-3 text-slate-950 uppercase tracking-widest">1. Business Name</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-6 py-5 text-2xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="e.g. Ginza Salon" data-base-title={price.title} />
+                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">1. Business Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="Business Identity" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
 
               <div>
-                <label class="block text-sm font-black mb-3 text-slate-950 uppercase tracking-widest">2. Website (Optional)</label>
-                <input type="text" name="os1" class="w-full px-6 py-5 text-2xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="https://..." />
+                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">2. Website (Optional)</label>
+                <input type="text" name="os1" class="w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="https://..." />
                 <input type="hidden" name="on1" value="Current URL" />
               </div>
 
               <div>
-                <label class="block text-sm font-black mb-3 text-slate-950 uppercase tracking-widest">3. Your Delivery Email</label>
-                <input type="email" required class="email-input w-full px-6 py-5 text-2xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="name@email.com" />
+                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">3. Delivery Email</label>
+                <input type="email" required class="email-input w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="Contact Email" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-16 py-8 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] transition-all text-2xl uppercase tracking-[0.2em] transform hover:-translate-y-2">
-              Pay Deposit & Start
+            <button type="submit" class="w-full mt-16 py-8 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] transition-all text-xl uppercase tracking-[0.2em] transform hover:-translate-y-2">
+              Start Project Now
             </button>
           </form>
         </div>
@@ -117,11 +110,9 @@ const cardWidthClass = isSingle
     const forms = document.querySelectorAll('.checkout-form');
     forms.forEach(form => {
       const sync = () => {
-        const bizInput = form.querySelector('.business-name-input');
-        const emailInput = form.querySelector('.email-input');
-        const bizVal = bizInput.value.trim();
-        const emailVal = emailInput.value.trim();
-        const baseTitle = bizInput.getAttribute('data-base-title');
+        const bizVal = form.querySelector('.business-name-input').value.trim();
+        const emailVal = form.querySelector('.email-input').value.trim();
+        const baseTitle = form.querySelector('.business-name-input').getAttribute('data-base-title');
         form.querySelector('.paypal-item-name').value = bizVal ? `Hanei JP: ${baseTitle} (Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Deposit)`;
         form.querySelector('.paypal-custom-metadata').value = JSON.stringify({ email: emailVal, business: bizVal });
       };
