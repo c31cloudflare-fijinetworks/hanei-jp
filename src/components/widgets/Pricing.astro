@@ -12,72 +12,83 @@ const cancelUrl = `${SITE_URL}${currentPath}`;
 ---
 
 <WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl mx-auto px-4', ...classes.container }} hasBackground>
-  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-7xl font-black tracking-tighter text-slate-950 mb-16' }} />
+  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-8xl font-black tracking-tighter text-slate-950 mb-20 px-4' }} />
   
-  <div class:list={["grid gap-8 md:gap-12", prices.length === 1 ? "max-w-2xl mx-auto grid-cols-1" : "grid-cols-1 lg:grid-cols-3"]}>
+  <div class:list={["grid gap-12", prices.length === 1 ? "max-w-2xl mx-auto grid-cols-1" : "grid-cols-1 lg:grid-cols-3"]}>
     {prices.map((price) => (
-      <div class="relative flex flex-col rounded-[2.5rem] border-2 border-slate-950 p-8 md:p-12 text-center shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-white transition-all w-full overflow-hidden">
+      <div class="relative flex flex-col rounded-none border-4 border-slate-950 p-8 md:p-12 text-center shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] bg-white transition-all w-full overflow-hidden">
         
-        <div class="h-24 flex items-center justify-center">
-          <h3 class="text-3xl md:text-4xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-tight">
+        <div class="h-32 flex items-center justify-center">
+          <h3 class="text-4xl md:text-5xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-tight">
             {price.title}
           </h3>
         </div>
         
-        <div class="mt-6 flex-1 flex flex-col border-t-2 border-slate-100 pt-10">
+        <div class="mt-8 flex-1 flex flex-col border-t-4 border-slate-950 pt-12">
           <div class="flex flex-col items-center">
-            <span class="text-2xl md:text-3xl font-black text-slate-950 uppercase tracking-tight mb-2">
-              {price.subTitle || "Project Initiation"}
+            <span class="text-2xl font-black text-slate-950 uppercase tracking-tight mb-4">
+              {price.subTitle || "Phase 1 Deposit"}
             </span>
-            <div class="w-full py-2">
-                <span class="text-2xl md:text-3xl font-black tracking-tight text-blue-600 leading-none block">
+            <div class="w-full py-4">
+                <span class="text-7xl md:text-8xl font-black tracking-tighter text-blue-600 leading-none block">
                     {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
                 </span>
             </div>
             { (price.badge || price.total) && (
-              <div class="mt-8 bg-slate-950 text-white px-6 py-3 rounded-xl inline-block shadow-lg">
-                  <span class="text-base md:text-lg font-black uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
+              <div class="mt-8 bg-slate-950 text-white px-8 py-4 rounded-none inline-block shadow-xl">
+                  <span class="text-lg md:text-xl font-black uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
               </div>
             )}
           </div>
           
-          <ul role="list" class="mt-12 space-y-4 text-left flex-grow border-t border-slate-50 pt-10">
+          <ul role="list" class="mt-16 space-y-6 text-left flex-grow border-t-2 border-slate-100 pt-12">
             {price.items.map((item) => (
               <li class="flex items-start">
-                <Icon name="tabler:circle-check-filled" class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-                <p class="ml-3 text-lg md:text-xl text-slate-950 font-bold leading-snug">{item.description}</p>
+                <Icon name="tabler:circle-check-filled" class="w-8 h-8 text-blue-600 flex-shrink-0 mt-0.5" />
+                <p class="ml-4 text-2xl text-slate-950 font-black leading-tight tracking-tight">{item.description}</p>
               </li>
             ))}
           </ul>
         </div>
         
-        <div class="mt-12 bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+        <div class="mt-16 bg-white p-2">
           <form class="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
             <input type="hidden" name="brand_name" value="Hanei JP" />
             <input type="hidden" name="no_shipping" value="1" />
+            <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
+            <input type="hidden" name="shipping" value="0" />
             <input type="hidden" name="currency_code" value="JPY" />
             <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="return" value={successUrl} />
             <input type="hidden" name="cancel_return" value={cancelUrl} />
             
-            <div class="text-left space-y-6">
+            <div class="text-left space-y-10">
               <div>
-                <label class="block text-[10px] font-black mb-1.5 text-slate-950 uppercase tracking-widest">1. Business Name</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl bg-white focus:border-slate-950 outline-none text-slate-950 font-bold" placeholder="REQUIRED" data-base-title={price.title} />
+                <label class="block text-lg font-black mb-3 text-slate-950 uppercase tracking-widest">1. Business Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-6 py-6 text-2xl border-4 border-slate-950 rounded-none bg-white focus:bg-blue-50 outline-none text-slate-950 font-black placeholder:text-slate-200 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] transition-all" placeholder="Enter Name" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
+
+              {hasUrlField ? (
+                <div>
+                  <label class="block text-lg font-black mb-3 text-slate-950 uppercase tracking-widest">2. Website (If any)</label>
+                  <input type="text" name="os1" class="w-full px-6 py-6 text-2xl border-4 border-slate-950 rounded-none bg-white focus:bg-blue-50 outline-none text-slate-950 font-black placeholder:text-slate-200 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] transition-all" placeholder="https://..." />
+                  <input type="hidden" name="on1" value="Current URL" />
+                </div>
+              ) : null}
+
               <div>
-                <label class="block text-[10px] font-black mb-1.5 text-slate-950 uppercase tracking-widest">2. Your Email</label>
-                <input type="email" required class="email-input w-full px-4 py-4 text-lg border-2 border-slate-200 rounded-xl bg-white focus:border-slate-950 outline-none text-slate-950 font-bold" placeholder="REQUIRED" />
+                <label class="block text-lg font-black mb-3 text-slate-950 uppercase tracking-widest">{hasUrlField ? '3.' : '2.'} Your Email</label>
+                <input type="email" required class="email-input w-full px-6 py-6 text-2xl border-4 border-slate-950 rounded-none bg-white focus:bg-blue-50 outline-none text-slate-950 font-black placeholder:text-slate-200 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] transition-all" placeholder="Enter Email" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-10 py-6 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-xl transition-all text-xl uppercase tracking-widest">
+            <button type="submit" class="w-full mt-16 py-8 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-none shadow-[12px_12px_0px_0px_rgba(0,0,0,0.2)] transition-all text-3xl uppercase tracking-widest transform hover:-translate-y-1">
               Pay & Start
             </button>
           </form>
