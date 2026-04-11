@@ -65,6 +65,8 @@ const gridConfig = prices.length === 1
           <form class="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
+            <input type="hidden" name="solution_type" value="Sole" />
+            <input type="hidden" name="landing_page" value="billing" />
             <input type="hidden" name="brand_name" value="Hanei JP" />
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="1" />
