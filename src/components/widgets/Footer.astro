@@ -9,6 +9,7 @@ const { secondaryLinks = [], links = [], footNote = '' } = Astro.props;
 
 const pathname = Astro.url.pathname;
 const cleanPath = pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+const showPortfolio = !['/demos', '/demos-jp'].includes(cleanPath);
 const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit') || cleanPath.includes('-jp/');
 
 // Standardized Copy
@@ -30,6 +31,7 @@ const portHref = isJp ? "/demos-jp" : "/demos";
 <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose bg-white dark:bg-slate-900">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     
+    {showPortfolio && (
     <!-- GLOBAL PORTFOLIO REDIRECT -->
     <div class="pt-16 pb-8">
       <div class="bg-slate-950 rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-center shadow-2xl relative overflow-hidden">
@@ -48,6 +50,7 @@ const portHref = isJp ? "/demos-jp" : "/demos";
         </div>
       </div>
     </div>
+    )}
 
     <!-- MANDATORY ABOUT HANEI SECTION -->
     <div class="pt-8 md:pt-12 pb-6">
