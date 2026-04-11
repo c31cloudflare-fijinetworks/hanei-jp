@@ -36,7 +36,7 @@ const cancelUrl = `${SITE_URL}${currentPath}`;
             </div>
             { (price.badge || price.total) && (
               <div class="mt-8 bg-slate-950 text-white px-6 py-3 rounded-xl inline-block shadow-lg">
-                  <span class="text-sm font-black uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
+                  <span class="text-base md:text-lg font-black uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
               </div>
             )}
           </div>
