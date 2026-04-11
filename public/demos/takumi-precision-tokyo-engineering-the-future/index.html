@@ -409,6 +409,23 @@
         });
     </script>
     <!-- HANEI OVERLAY -->
-    <a href="/grand-opening" class="fixed bottom-8 left-8 z-[200] bg-obsidian text-architectural px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-2xl border border-architectural/30 hover:bg-steel transition-all flex items-center gap-2 group"><span class="group-hover:-translate-x-1 transition-transform">←</span> Return to Hanei</a>
+    <a href="/demos" class="fixed bottom-8 left-8 z-[200] bg-obsidian text-architectural px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-2xl border border-architectural/30 hover:bg-steel transition-all flex items-center gap-2 group"><span class="group-hover:-translate-x-1 transition-transform">←</span> Return to Hanei</a>
+
+    <script>
+      // Hanei JP Context Detection
+      (function() {
+        const returnLink = document.querySelector('a[href*="hanei.jp"]') || document.querySelector('a[href*="/demos"]');
+        if (returnLink) {
+          // Normalize to base demos link
+          returnLink.href = "/demos"; 
+          
+          // Detect Japanese context from referrer
+          if (document.referrer.includes("-jp")) {
+            returnLink.href = "/demos-jp";
+            returnLink.innerHTML = "← Haneiに戻る";
+          }
+        }
+      })();
+    </script>
 </body>
 </html>

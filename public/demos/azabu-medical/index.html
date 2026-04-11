@@ -22,7 +22,7 @@
     </style>
 </head>
 <body class="font-sans antialiased overflow-x-hidden selection:bg-medHighlight selection:text-white relative">
-    <a href="/grand-opening" class="fixed bottom-8 left-8 z-[100] bg-medDark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-2xl border border-medHighlight/30 hover:bg-medHighlight transition-all flex items-center gap-2 group"><span class="group-hover:-translate-x-1 transition-transform">←</span> Return to Hanei</a>
+    <a href="/demos" class="fixed bottom-8 left-8 z-[100] bg-medDark text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-2xl border border-medHighlight/30 hover:bg-medHighlight transition-all flex items-center gap-2 group"><span class="group-hover:-translate-x-1 transition-transform">←</span> Return to Hanei</a>
     
     <header class="fixed w-full top-0 z-50 glass-header"><div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"><a href="#" class="font-serif text-2xl tracking-wide text-medDark flex items-center gap-3"><svg class="w-6 h-6 text-medHighlight" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>AZABU MEDICAL</a><nav class="hidden md:flex space-x-8 items-center text-xs uppercase tracking-widest text-medAccent"><a href="#services" class="hover:text-medHighlight transition-colors">Specialties</a><a href="#gallery" class="hover:text-medHighlight transition-colors">Facilities</a><a href="#reviews" class="hover:text-medHighlight transition-colors">Patients</a></nav><a href="#booking" class="hidden md:inline-block bg-medDark text-white px-6 py-3 text-xs uppercase tracking-widest hover:bg-medHighlight transition-colors duration-300">Book Appointment</a></div></header>
     
@@ -37,5 +37,22 @@
     
     <footer class="bg-white text-medDark py-12 text-center border-t border-gray-100 text-[10px] tracking-widest uppercase font-bold"><p>&copy; 2026 Azabu Premium Medical. Designed by HANEI.JP</p></footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init({once:true,duration:800});</script>
+
+    <script>
+      // Hanei JP Context Detection
+      (function() {
+        const returnLink = document.querySelector('a[href*="hanei.jp"]') || document.querySelector('a[href*="/demos"]');
+        if (returnLink) {
+          // Normalize to base demos link
+          returnLink.href = "/demos"; 
+          
+          // Detect Japanese context from referrer
+          if (document.referrer.includes("-jp")) {
+            returnLink.href = "/demos-jp";
+            returnLink.innerHTML = "← Haneiに戻る";
+          }
+        }
+      })();
+    </script>
 </body>
 </html>
