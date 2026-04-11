@@ -16,12 +16,40 @@ const aboutTitle = isJp ? "Haneiについて" : "About Hanei";
 const aboutText = isJp 
   ? "Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。" 
   : "Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier.";
+
+// Portfolio Block Copy
+const portTag = isJp ? "至高のギャラリー" : "Gallery of Excellence";
+const portTitle = isJp ? "制作実績<br/>デモ一覧。" : "Portfolio <br/><span class='italic font-light text-slate-400 uppercase tracking-normal'>Demos.</span>";
+const portText = isJp 
+  ? "ラグジュアリーな宿泊施設、高級レストラン、医療機関から、工業エンジニアリング、ロースタリー、物流システムまで。Haneiスタンダードで構築された美しいウェブサイトをご覧ください。"
+  : "From luxury hospitality, fine dining, and medical excellence to industrial engineering, roasteries, and secure logistics. Explore our beautiful websites built to the Hanei Standard.";
+const portBtn = isJp ? "デモ一覧を見る" : "View Portfolio Demos";
+const portHref = isJp ? "/demos-jp" : "/demos";
 ---
 
 <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose bg-white dark:bg-slate-900">
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     
-    <!-- MANDATORY ABOUT HANEI SECTION - REDUCED SPACING -->
+    <!-- GLOBAL PORTFOLIO REDIRECT -->
+    <div class="pt-16 pb-8">
+      <div class="bg-slate-950 rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-20 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200" class="w-full h-full object-cover" alt="Hanei Backdrop" />
+        </div>
+        <div class="relative z-10">
+          <p class="text-blue-500 uppercase tracking-[0.4em] font-black text-[10px] md:text-xs mb-6">{portTag}</p>
+          <h2 class="text-4xl md:text-7xl font-black text-white tracking-tighter mb-8 leading-none" set:html={portTitle}></h2>
+          <p class="text-lg md:text-2xl text-slate-400 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
+            {portText}
+          </p>
+          <a href={portHref} class="inline-block bg-white text-slate-950 px-10 py-5 md:px-16 md:py-6 rounded-2xl text-xl md:text-2xl font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all transform hover:-translate-y-1 shadow-2xl">
+            {portBtn}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANDATORY ABOUT HANEI SECTION -->
     <div class="pt-8 md:pt-12 pb-6">
       <div class="max-w-3xl mx-auto text-center p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-50/50 dark:bg-slate-800/30">
         <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
