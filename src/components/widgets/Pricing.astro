@@ -1,102 +1,86 @@
-<span class="text-lg md:text-xl font-black uppercase tracking-widest leading-tight" set:html={price.badge || `Total Investment: ${price.total}`}></span>---
+---
 import { Icon } from 'astro-icon/components';
-import Button from '~/components/ui/Button.astro';
-import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import type { Price } from '~/types';
+import Headline from '~/components/ui/Headline.astro';
 
 const { title, subtitle, tagline, prices = [], hasUrlField = false, classes = {}, ...rest } = Astro.props;
 
 const SITE_URL = "https://hanei.jp";
 const currentPath = Astro.url.pathname;
-const cancelUrl = `${SITE_URL}${currentPath}`;
 const successUrl = `${SITE_URL}/thank-you`;
+const cancelUrl = `${SITE_URL}${currentPath}`;
 
-// ENFORCED GRID STABILITY
-const gridConfig = prices.length === 1 ? "max-w-2xl mx-auto" : "grid grid-cols-1 xl:grid-cols-3 gap-12 max-w-7xl mx-auto";
+const gridConfig = prices.length === 1 
+  ? "max-w-2xl mx-auto" 
+  : "grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto";
 ---
 
-<WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl scroll-mt-16', ...classes.container }} hasBackground>
-  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-7xl font-black tracking-tighter text-slate-950 mb-20' }} />
+<WidgetWrapper {...rest} id="pricing" classes={{ container: 'max-w-7xl mx-auto px-4', ...classes.container }} hasBackground>
+  <Headline {title} {subtitle} {tagline} classes={{ title: 'text-5xl md:text-8xl font-black tracking-tighter text-slate-950 mb-20 px-4' }} />
   
   <div class={gridConfig}>
     {prices.map((price) => (
-      <div class="relative flex flex-col rounded-[3rem] border-2 border-slate-200 p-10 md:p-14 text-center shadow-2xl bg-white transition-all w-full max-w-[480px] mx-auto">
+      <div class="relative flex flex-col rounded-[3rem] border-4 border-slate-950 p-8 md:p-14 text-center shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] bg-white transition-all w-full max-w-[520px] mx-auto">
         
-        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-slate-950 text-white px-8 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] whitespace-nowrap shadow-xl">
-            Hanei Standard
-        </div>
-
-        <div class="h-28 flex items-center justify-center mt-6">
-          <h3 class="text-4xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-none">
+        <div class="h-32 flex items-center justify-center">
+          <h3 class="text-4xl md:text-5xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-tight">
             {price.title}
           </h3>
         </div>
         
-        <div class="mt-10 flex-1 flex flex-col border-y-2 border-slate-100 py-12 my-2">
+        <div class="mt-8 flex-1 flex flex-col border-t-4 border-slate-950 pt-12">
           <div class="flex flex-col items-center">
-            <span class="text-sm font-black text-slate-950 uppercase tracking-[0.2em] mb-4">Project Initiation</span>
-            <div class="flex items-baseline">
-                <span class="text-6xl md:text-7xl font-black tracking-tighter text-blue-600 leading-none">
+            <span class="text-xl font-black text-slate-900 uppercase tracking-widest mb-4">
+              {price.subTitle || "Phase 1 Deposit"}
+            </span>
+            <div class="w-full py-4">
+                <span class="text-7xl md:text-9xl font-black tracking-tighter text-blue-600 leading-none block">
                     {typeof price.price === 'number' ? '¥' + price.price.toLocaleString() : price.price}
                 </span>
             </div>
-            <div class="mt-8 border-2 border-slate-950 px-6 py-2 rounded-xl">
-                <span class="text-sm font-black text-slate-950 uppercase tracking-widest">
-                  Total Investment: {price.total}
-                </span>
+            <div class="mt-8 bg-slate-950 text-white px-8 py-4 rounded-2xl shadow-xl">
+                <span class="text-lg md:text-xl font-black uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
             </div>
           </div>
           
-          <ul role="list" class="mt-16 space-y-6 text-left flex-grow min-h-[300px]">
+          <ul role="list" class="mt-16 space-y-6 text-left flex-grow border-t border-slate-100 pt-12">
             {price.items.map((item) => (
               <li class="flex items-start">
-                <div class="bg-blue-600 rounded-full p-1.5 mr-5 mt-1 shrink-0 shadow-lg">
-                    <Icon name="tabler:check" class="w-5 h-5 text-white stroke-[4px]" />
-                </div>
-                <p class="text-xl text-slate-950 font-black leading-tight tracking-tight">{item.description}</p>
+                <Icon name="tabler:circle-check-filled" class="w-8 h-8 text-blue-600 flex-shrink-0 mt-0.5" />
+                <p class="ml-4 text-2xl text-slate-950 font-black leading-tight">{item.description}</p>
               </li>
             ))}
           </ul>
         </div>
         
-        <div class="mt-12">
+        <div class="mt-16 bg-slate-50 p-8 rounded-3xl border-2 border-slate-200">
           <form class="checkout-form" action="https://www.paypal.com/cgi-bin/webscr" method="get" target="_blank">
             <input type="hidden" name="cmd" value="_xclick" />
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
             <input type="hidden" name="brand_name" value="Hanei JP" />
-            <input type="hidden" name="cbt" value="Return to Hanei JP" />
-            <input type="hidden" name="image_url" value="https://hanei.jp/images/logo.webp" />
             <input type="hidden" name="no_shipping" value="1" />
-            <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
-            <input type="hidden" name="shipping" value="0" />
-            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title} (Phase 1)`} />
-            <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="currency_code" value="JPY" />
+            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei JP: ${price.title}`} />
+            <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
+            <input type="hidden" name="return" value={successUrl} />
+            <input type="hidden" name="cancel_return" value={cancelUrl} />
             
             <div class="text-left space-y-8">
               <div>
-                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">1. Business Name</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="Business Identity" data-base-title={price.title} />
+                <label class="block text-sm font-black mb-2 text-slate-950 uppercase tracking-widest">1. Business Name</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-6 py-5 text-2xl border-4 border-slate-950 rounded-xl bg-white focus:bg-blue-50 outline-none text-slate-950 font-black" placeholder="REQUIRED" data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
-
               <div>
-                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">2. Website (Optional)</label>
-                <input type="text" name="os1" class="w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="https://..." />
-                <input type="hidden" name="on1" value="Current URL" />
-              </div>
-
-              <div>
-                <label class="block text-xs font-black mb-3 text-slate-950 uppercase tracking-widest">3. Delivery Email</label>
-                <input type="email" required class="email-input w-full px-6 py-6 text-xl border-2 border-slate-200 rounded-2xl bg-slate-50 focus:bg-white focus:border-slate-950 outline-none transition-all text-slate-950 font-black placeholder:text-slate-300 shadow-inner" placeholder="Contact Email" />
+                <label class="block text-sm font-black mb-2 text-slate-950 uppercase tracking-widest">2. Email Address</label>
+                <input type="email" required class="email-input w-full px-6 py-5 text-2xl border-4 border-slate-950 rounded-xl bg-white focus:bg-blue-50 outline-none text-slate-950 font-black" placeholder="REQUIRED" />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
-            <button type="submit" class="w-full mt-16 py-8 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-[0_20px_50px_rgba(37,99,235,0.3)] transition-all text-xl uppercase tracking-[0.2em] transform hover:-translate-y-2">
-              Start Project Now
+            <button type="submit" class="w-full mt-12 py-8 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-2xl transition-all text-3xl uppercase tracking-widest transform hover:scale-105">
+              Pay & Start
             </button>
           </form>
         </div>
@@ -106,20 +90,19 @@ const gridConfig = prices.length === 1 ? "max-w-2xl mx-auto" : "grid grid-cols-1
 </WidgetWrapper>
 
 <script is:inline>
-  function initTieredCheckout() {
-    const forms = document.querySelectorAll('.checkout-form');
-    forms.forEach(form => {
+  function initCheckoutSync() {
+    document.querySelectorAll('.checkout-form').forEach(form => {
+      const biz = form.querySelector('.business-name-input');
+      const mail = form.querySelector('.email-input');
       const sync = () => {
-        const bizVal = form.querySelector('.business-name-input').value.trim();
-        const emailVal = form.querySelector('.email-input').value.trim();
-        const baseTitle = form.querySelector('.business-name-input').getAttribute('data-base-title');
-        form.querySelector('.paypal-item-name').value = bizVal ? `Hanei JP: ${baseTitle} (Deposit) (${bizVal})` : `Hanei JP: ${baseTitle} (Deposit)`;
-        form.querySelector('.paypal-custom-metadata').value = JSON.stringify({ email: emailVal, business: bizVal });
+        const base = biz.getAttribute('data-base-title');
+        form.querySelector('.paypal-item-name').value = `Hanei JP: ${base} (${biz.value})`;
+        form.querySelector('.paypal-custom-metadata').value = JSON.stringify({ email: mail.value, business: biz.value });
       };
-      form.querySelector('.business-name-input').addEventListener('input', sync);
-      form.querySelector('.email-input').addEventListener('input', sync);
+      biz.addEventListener('input', sync);
+      mail.addEventListener('input', sync);
     });
   }
-  document.addEventListener('astro:page-load', initTieredCheckout);
-  initTieredCheckout();
+  document.addEventListener('astro:page-load', initCheckoutSync);
+  initCheckoutSync();
 </script>
