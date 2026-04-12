@@ -1,6 +1,18 @@
 ---
-const { labels = {}, options = {} } = Astro.props;
-const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
+const { 
+  labels = {}, 
+  options = {}, 
+  formAction = "https://docs.google.com/forms/d/e/1FAIpQLSetNa1Mq_nYvkKp5h2fUIPZFRCvfFs5hvcYoawFk1eX0p6t3w/formResponse",
+  ids = {
+    name: "entry.1770250121",
+    company: "entry.1744957567",
+    email: "entry.434821435",
+    category: "entry.491532461",
+    budget: "entry.1285777990",
+    timeline: "entry.1375463449",
+    summary: "entry.1193708562"
+  }
+} = Astro.props;
 ---
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -8,45 +20,44 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
       <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white">{labels.title}</h2>
       {labels.description && <p class="text-center text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">{labels.description}</p>}
 
-      <form action={FORM_ACTION} method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form action={formAction} method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.client_name} *</label>
-          <input type="text" name="entry.1" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
+          <input type="text" name={ids.name} required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.company_name}</label>
-          <input type="text" name="entry.2" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
+          <input type="text" name={ids.company} class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.email} *</label>
-          <input type="email" name="entry.3" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
+          <input type="email" name={ids.email} required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
         
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.request_type} *</label>
-          <select name="entry.5" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
+          <select name={ids.category} required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.requests.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="flex flex-col">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.budget_range}</label>
-          <select name="entry.6" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
+          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.budget_range || 'ESTIMATED BUDGET'}</label>
+          <select name={ids.budget} class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.budgets.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
-        <!-- TIMELINE MOVED TO PAIR WITH BUDGET -->
         <div class="flex flex-col">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.deadline}</label>
-          <select name="entry.8" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
+          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.deadline || 'DESIRED TIMELINE'}</label>
+          <select name={ids.timeline} class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.timelines.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="flex flex-col md:col-span-2">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.project_summary} *</label>
-          <textarea name="entry.7" required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
+          <textarea name={ids.summary} required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
         </div>
 
         <div class="md:col-span-2 pt-6">
