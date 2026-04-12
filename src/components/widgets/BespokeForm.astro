@@ -16,84 +16,84 @@ const {
   },
   options = {
     requests: ["General Inquiry", "Custom System", "API / Integration", "Legacy Migration", "Other"],
-    budgets: ["Not Applicable", "¥1,000,000 - ¥3,000,000", "¥3,000,000 - ¥5,000,000", "¥5,000,000+"],
+    budgets: ["Not Applicable", "¥100k - ¥300k", "¥300k - ¥500k", "¥500k - ¥1M", "¥1M+"],
     timelines: ["Today / ASAP", "By Tomorrow", "This Week", "Within 1 week", "Other"],
     referrals: ["Google Search", "Social Media", "Friend / Colleague", "Other"]
   }
 } = Astro.props;
 
+// GOOGLE FORMS INTEGRATION POINT
 const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
 ---
 
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
-      <h2 class="text-2xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white">{labels.title}</h2>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white">{labels.title}</h2>
       
       {labels.description && (
-        <p class="text-center text-lg text-muted dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p class="text-center text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
           {labels.description}
         </p>
       )}
 
       <form action={FORM_ACTION} method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <input type="hidden" name="bot-field" class="hidden" />
-
+        <!-- Fields must use the entry.ID format for Google Forms -->
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.client_name} *</label>
-          <input type="text" name="client_name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+          <input type="text" name="entry.123456789" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.company_name}</label>
-          <input type="text" name="company_name" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+          <input type="text" name="entry.234567890" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.email} *</label>
-          <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+          <input type="email" name="entry.345678901" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.address}</label>
-          <input type="text" name="address" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none" />
+          <input type="text" name="entry.456789012" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.request_type} *</label>
-          <select name="request_type" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none">
+          <select name="entry.567890123" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.requests.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.budget_range}</label>
-          <select name="budget_range" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none">
+          <select name="entry.678901234" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.budgets.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="flex flex-col md:col-span-2">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.project_summary} *</label>
-          <textarea name="project_summary" required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none"></textarea>
+          <textarea name="entry.789012345" required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.deadline}</label>
-          <select name="deadline" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none">
+          <select name="entry.890123456" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.timelines.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.referral}</label>
-          <select name="referral" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none">
+          <select name="entry.901234567" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.referrals.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
 
         <div class="md:col-span-2 pt-6">
-          <button type="submit" class="w-full py-4 bg-primary hover:bg-secondary text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest">
+          <button type="submit" class="w-full py-5 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest">
             {labels.submit}
           </button>
         </div>

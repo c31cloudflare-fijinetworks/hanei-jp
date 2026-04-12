@@ -9,47 +9,47 @@ const labels = isJp ? {
     rep_name: "代表者名",
     contact: "連絡用ID (LINE/WhatsApp/電話)",
     sec2: "2. コンテンツ詳細",
-    services: "提供サービス・メニュー内容 (価格含む)",
-    rules: "お店のルール (禁煙、予約制、お通し代など)",
+    services: "提供サービス・メニュー内容",
+    rules: "お店のルール",
     hours: "営業時間・定休日",
     sec3: "3. 素材とビジュアル",
-    assets: "写真・ロゴの共有URL (Google Drive/Dropbox等)",
-    social: "Instagram / SNSハンドル",
-    vibe: "デザインの希望 (ラグジュアリー、ミニマル、和風等)",
+    assets: "素材URL (Drive/Dropbox等)",
+    social: "Instagramハンドル",
+    vibe: "デザインの希望",
     sec4: "4. テクニカル設定",
-    url: "既存サイトまたは希望ドメイン",
-    google_maps: "GoogleマップのURL (レビューエンジン用)",
+    url: "希望ドメイン",
+    google_maps: "GoogleマップURL",
     submit: "オンボーディングを完了する"
 } : {
-    title: "Business Onboarding Form",
+    title: "BUSINESS ONBOARDING FORM",
     subtitle: "Provide your details below. We start production immediately upon submission.",
-    sec1: "1. Business Identity",
-    biz_name: "Business / Shop Name",
-    rep_name: "Representative Name",
-    contact: "Primary Contact (Line/WhatsApp/Phone)",
-    sec2: "2. Core Content",
-    services: "Service List & Price Points (Menus)",
-    rules: "House Rules (Smoking policy, cover charges, etc.)",
-    hours: "Operating Hours & Holidays",
-    sec3: "3. Assets & Visuals",
-    assets: "Link to Photos/Logos (Drive, Dropbox, etc.)",
-    social: "Instagram / Social Media Handles",
-    vibe: "Brand Vibe (Luxury, Minimal, Traditional, etc.)",
-    sec4: "4. Technical Details",
-    url: "Existing Website or Desired Domain",
-    google_maps: "Google Business Profile Link",
-    submit: "Complete Onboarding"
+    sec1: "1. BUSINESS IDENTITY",
+    biz_name: "BUSINESS / SHOP NAME",
+    rep_name: "REPRESENTATIVE NAME",
+    contact: "PRIMARY CONTACT (LINE/WHATSAPP/PHONE)",
+    sec2: "2. CORE CONTENT",
+    services: "SERVICE LIST & PRICE POINTS (MENUS)",
+    rules: "HOUSE RULES",
+    hours: "OPERATING HOURS & HOLIDAYS",
+    sec3: "3. ASSETS & VISUALS",
+    assets: "LINK TO ASSETS (DRIVE/DROPBOX)",
+    social: "INSTAGRAM HANDLE",
+    vibe: "BRAND VIBE",
+    sec4: "4. TECHNICAL DETAILS",
+    url: "DESIRED DOMAIN",
+    google_maps: "GOOGLE MAPS LINK",
+    submit: "COMPLETE ONBOARDING"
 };
 
 const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
 ---
 
-<section class="py-12 bg-white dark:bg-slate-900">
+<section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4">
-    <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 md:p-12 shadow-2xl border border-slate-200 dark:border-slate-700">
+    <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
-        <p class="text-lg text-muted dark:text-slate-400">{labels.subtitle}</p>
+        <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">{labels.subtitle}</p>
       </div>
 
       <form action={FORM_ACTION} method="POST" class="space-y-12">
@@ -57,17 +57,17 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
           <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.biz_name} *</label>
-              <input type="text" name="entry.biz_name" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.biz_name} *</label>
+              <input type="text" name="entry.111111111" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
             </div>
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.rep_name} *</label>
-              <input type="text" name="entry.rep_name" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.rep_name} *</label>
+              <input type="text" name="entry.222222222" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
             </div>
-            <div class="md:col-span-2">
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.contact} *</label>
-              <input type="text" name="entry.contact" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+            <div class="md:col-span-2 flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.contact} *</label>
+              <input type="text" name="entry.333333333" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
             </div>
           </div>
         </div>
@@ -76,18 +76,18 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec2}</h3>
           <div class="space-y-6">
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.services} *</label>
-              <textarea name="entry.services" rows="4" required class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.services} *</label>
+              <textarea name="entry.444444444" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.rules}</label>
-                <textarea name="entry.rules" rows="3" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+              <div class="flex flex-col">
+                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.rules}</label>
+                <textarea name="entry.555555555" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
               </div>
-              <div>
-                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.hours}</label>
-                <textarea name="entry.hours" rows="3" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary"></textarea>
+              <div class="flex flex-col">
+                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.hours}</label>
+                <textarea name="entry.666666666" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
               </div>
             </div>
           </div>
@@ -97,18 +97,18 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec3}</h3>
           <div class="space-y-6">
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.assets} (Important for speed)</label>
-              <input type="text" name="entry.assets" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="https://..." />
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.assets}</label>
+              <input type="text" name="entry.777777777" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="https://..." />
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.social}</label>
-                <input type="text" name="entry.social" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="@handle" />
+              <div class="flex flex-col">
+                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.social}</label>
+                <input type="text" name="entry.888888888" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="@handle" />
               </div>
-              <div>
-                <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.vibe}</label>
-                <input type="text" name="entry.vibe" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" />
+              <div class="flex flex-col">
+                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.vibe}</label>
+                <input type="text" name="entry.999999999" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
               </div>
             </div>
           </div>
@@ -118,18 +118,18 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec4}</h3>
           <div class="grid md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.url}</label>
-              <input type="text" name="entry.url" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="https://..." />
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.url}</label>
+              <input type="text" name="entry.000000000" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="https://..." />
             </div>
-            <div>
-              <label class="block text-[10px] font-bold mb-1.5 uppercase text-slate-500">{labels.google_maps}</label>
-              <input type="text" name="entry.google_maps" class="w-full px-4 py-3 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 outline-none focus:ring-2 focus:ring-primary" placeholder="Google Maps link" />
+            <div class="flex flex-col">
+              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.google_maps}</label>
+              <input type="text" name="entry.101010101" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Google Maps link" />
             </div>
           </div>
         </div>
 
-        <button type="submit" class="w-full py-5 bg-primary hover:bg-blue-700 text-white font-extrabold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
+        <button type="submit" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
           {labels.submit}
         </button>
       </form>
