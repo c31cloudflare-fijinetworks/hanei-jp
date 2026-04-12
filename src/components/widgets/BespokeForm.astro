@@ -22,29 +22,21 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
           <input type="email" name="entry.3" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
         </div>
         
-        {labels.address && (
-        <div class="flex flex-col">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.address}</label>
-          <input type="text" name="entry.4" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all" />
-        </div>
-        )}
-
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.request_type} *</label>
           <select name="entry.5" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.requests.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
+
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.budget_range}</label>
           <select name="entry.6" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
             {options.budgets.map(opt => <option value={opt}>{opt}</option>)}
           </select>
         </div>
-        <div class="flex flex-col md:col-span-2">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.project_summary} *</label>
-          <textarea name="entry.7" required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
-        </div>
+
+        <!-- TIMELINE MOVED TO PAIR WITH BUDGET -->
         <div class="flex flex-col">
           <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.deadline}</label>
           <select name="entry.8" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
@@ -52,14 +44,10 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
           </select>
         </div>
 
-        {labels.referral && (
-        <div class="flex flex-col">
-          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.referral}</label>
-          <select name="entry.9" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all">
-            {options.referrals.map(opt => <option value={opt}>{opt}</option>)}
-          </select>
+        <div class="flex flex-col md:col-span-2">
+          <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.project_summary} *</label>
+          <textarea name="entry.7" required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
         </div>
-        )}
 
         <div class="md:col-span-2 pt-6">
           <button type="submit" class="w-full py-5 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest">
