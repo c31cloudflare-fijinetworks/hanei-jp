@@ -1,5 +1,6 @@
 ---
 const { isJp = false } = Astro.props;
+const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
 
 const labels = isJp ? {
     title: "ビジネス・オンボーディング形式",
@@ -12,12 +13,9 @@ const labels = isJp ? {
     services: "提供サービス・メニュー内容",
     rules: "お店のルール",
     hours: "営業時間・定休日",
-    sec3: "3. 素材とビジュアル",
-    assets: "素材URL (Drive/Dropbox等)",
+    sec3: "3. ソーシャルメディア",
     social: "Instagramハンドル",
-    vibe: "デザインの希望",
     sec4: "4. テクニカル設定",
-    url: "希望ドメイン",
     google_maps: "GoogleマップURL",
     submit: "オンボーディングを完了する"
 } : {
@@ -31,19 +29,13 @@ const labels = isJp ? {
     services: "SERVICE LIST & PRICE POINTS (MENUS)",
     rules: "HOUSE RULES",
     hours: "OPERATING HOURS & HOLIDAYS",
-    sec3: "3. ASSETS & VISUALS",
-    assets: "LINK TO ASSETS (DRIVE/DROPBOX)",
+    sec3: "3. SOCIAL MEDIA",
     social: "INSTAGRAM HANDLE",
-    vibe: "BRAND VIBE",
     sec4: "4. TECHNICAL DETAILS",
-    url: "DESIRED DOMAIN",
     google_maps: "GOOGLE MAPS LINK",
     submit: "COMPLETE ONBOARDING"
 };
-
-const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/formResponse";
 ---
-
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4">
     <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
@@ -53,80 +45,42 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
       </div>
 
       <form action={FORM_ACTION} method="POST" class="space-y-12">
-        <!-- SECTION 1 -->
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
           <div class="grid md:grid-cols-2 gap-6">
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.biz_name} *</label>
-              <input type="text" name="entry.111111111" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
-            </div>
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.rep_name} *</label>
-              <input type="text" name="entry.222222222" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
-            </div>
-            <div class="md:col-span-2 flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.contact} *</label>
-              <input type="text" name="entry.333333333" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
-            </div>
+            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.biz_name} *</label>
+            <input type="text" name="entry.10" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
+            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.rep_name} *</label>
+            <input type="text" name="entry.11" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
+            <div class="md:col-span-2 flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.contact} *</label>
+            <input type="text" name="entry.12" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
           </div>
         </div>
 
-        <!-- SECTION 2 -->
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec2}</h3>
           <div class="space-y-6">
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.services} *</label>
-              <textarea name="entry.444444444" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
-            </div>
+            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.services} *</label>
+            <textarea name="entry.13" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
             <div class="grid md:grid-cols-2 gap-6">
-              <div class="flex flex-col">
-                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.rules}</label>
-                <textarea name="entry.555555555" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
-              </div>
-              <div class="flex flex-col">
-                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.hours}</label>
-                <textarea name="entry.666666666" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all"></textarea>
-              </div>
+              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.rules}</label>
+              <textarea name="entry.14" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
+              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.hours}</label>
+              <textarea name="entry.15" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
             </div>
           </div>
         </div>
 
-        <!-- SECTION 3 -->
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec3}</h3>
-          <div class="space-y-6">
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.assets}</label>
-              <input type="text" name="entry.777777777" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="https://..." />
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="flex flex-col">
-                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.social}</label>
-                <input type="text" name="entry.888888888" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="@handle" />
-              </div>
-              <div class="flex flex-col">
-                <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.vibe}</label>
-                <input type="text" name="entry.999999999" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" />
-              </div>
-            </div>
-          </div>
+          <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.social} *</label>
+          <input type="text" name="entry.16" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="@handle" /></div>
         </div>
 
-        <!-- SECTION 4 -->
         <div class="space-y-6">
           <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec4}</h3>
-          <div class="grid md:grid-cols-2 gap-6">
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.url}</label>
-              <input type="text" name="entry.000000000" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="https://..." />
-            </div>
-            <div class="flex flex-col">
-              <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.google_maps}</label>
-              <input type="text" name="entry.101010101" class="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Google Maps link" />
-            </div>
-          </div>
+          <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.google_maps} *</label>
+          <input type="text" name="entry.17" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="Google Maps link" /></div>
         </div>
 
         <button type="submit" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
