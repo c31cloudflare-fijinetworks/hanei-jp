@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import OnboardingForm from '~/components/widgets/OnboardingForm.astro';
 
 const metadata = { 
     title: '注文完了 | Hanei JPへようこそ',
@@ -13,10 +12,20 @@ const metadata = {
   <Hero2
     tagline="お支払いが完了しました"
     title='デジタルの「正解」へ、<br/><span class="text-accent">ようこそ。</span>'
-    subtitle="決済が正常に完了しました。最短24〜72時間でのスピード納品を維持するため、以下のオンボーディングフォームの入力をお願いいたします。送信後、すぐに制作チームが稼働いたします。"
+    subtitle="決済が正常に完了しました。最短24〜72時間でのスピード納品を維持するため、直ちに制作情報の提供をお願いいたします。"
     image={{ src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80', alt: 'プロジェクト開始' }}
-    classes={{ inner: 'pb-4 md:pb-6' }}
   />
 
-  <OnboardingForm isJp={true} />
+  <div class="py-24 text-center">
+    <div class="max-w-4xl mx-auto bg-white border-4 border-slate-950 rounded-[3rem] p-12 md:p-24 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+      <h2 class="text-4xl md:text-5xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">最終ステップ:<br/>プロジェクトの有効化</h2>
+      <p class="text-xl md:text-2xl text-slate-600 mb-16 font-bold leading-relaxed">
+        Googleオンボーディングフォームに詳細をご記入ください。送信後、制作チームが直ちに稼働を開始します。
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYve08KUkZAj3c-Oz-wUX2xyNiDSH3lueA/viewform" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl text-2xl font-black uppercase tracking-widest hover:bg-slate-950 transition-all transform hover:-translate-y-1 shadow-2xl">
+        オンボーディングフォームを開く
+      </a>
+      <p class="mt-12 text-sm font-black text-slate-400 uppercase tracking-widest italic">新しいセキュアなタブで開きます</p>
+    </div>
+  </div>
 </Layout>
