@@ -56,13 +56,15 @@ const labels = isJp ? {
         <p class="text-xl text-slate-600 font-medium leading-relaxed">{labels.success_p}</p>
       </div>
 
-      <div id="onboard-wrapper">
+      <div id="onboard-ui-wrapper">
         <div class="text-center mb-12">
           <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
           <p class="text-lg text-slate-600 dark:text-slate-400">{labels.subtitle}</p>
         </div>
 
-        <form action={FORM_ACTION} method="POST" id="onboarding-js-form" class="space-y-12">
+        <iframe name="onboard_iframe_target" id="onboard_iframe_target" style="display:none;"></iframe>
+
+        <form action={FORM_ACTION} method="POST" target="onboard_iframe_target" id="onboarding-google-form" class="space-y-12">
           <div class="space-y-6">
             <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
             <div class="grid md:grid-cols-2 gap-6">
@@ -109,7 +111,7 @@ const labels = isJp ? {
             <input type="text" name="entry.17" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="Google Maps link" /></div>
           </div>
 
-          <button type="submit" id="onboard-btn-js" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
+          <button type="submit" id="onboard-submit-btn" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
             {labels.submit}
           </button>
         </form>
@@ -119,34 +121,23 @@ const labels = isJp ? {
 </section>
 
 <script is:inline>
-  const oForm = document.getElementById('onboarding-js-form');
-  if (oForm) {
-    oForm.addEventListener('submit', function(e) {
-      e.preventDefault(); // CRITICAL: Stop the redirect
-      
-      const btn = document.getElementById('onboard-btn-js');
-      const wrapper = document.getElementById('onboard-wrapper');
+  const onboardForm = document.getElementById('onboarding-google-form');
+  if (onboardForm) {
+    onboardForm.addEventListener('submit', function() {
+      const btn = document.getElementById('onboard-submit-btn');
+      const ui = document.getElementById('onboard-ui-wrapper');
       const success = document.getElementById('onboard-success-ui');
       const shell = document.getElementById('onboard-shell');
 
       btn.innerHTML = "DISPATCHING...";
-      btn.disabled = true;
       btn.style.opacity = "0.5";
+      btn.style.pointerEvents = "none";
 
-      fetch(oForm.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new FormData(oForm)
-      }).then(() => {
-        wrapper.classList.add('hidden');
+      setTimeout(() => {
+        ui.classList.add('hidden');
         success.classList.remove('hidden');
         window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
-      }).catch(() => {
-        alert('Communication error. Please try again.');
-        btn.innerHTML = "RETRY";
-        btn.disabled = false;
-        btn.style.opacity = "1";
-      });
+      }, 1000);
     });
   }
 </script>
