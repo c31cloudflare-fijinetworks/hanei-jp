@@ -48,7 +48,6 @@ const labels = isJp ? {
   <div class="max-w-4xl mx-auto px-4">
     <div id="onboard-shell" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
       
-      <!-- SUCCESS UI -->
       <div id="onboard-success-ui" class="hidden text-center py-20">
         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
@@ -57,14 +56,13 @@ const labels = isJp ? {
         <p class="text-xl text-slate-600 font-medium leading-relaxed">{labels.success_p}</p>
       </div>
 
-      <!-- FORM UI -->
-      <div id="onboard-ui-wrapper">
+      <div id="onboard-wrapper">
         <div class="text-center mb-12">
           <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
           <p class="text-lg text-slate-600 dark:text-slate-400">{labels.subtitle}</p>
         </div>
 
-        <form action={FORM_ACTION} method="POST" id="onboarding-google-form" class="space-y-12">
+        <form action={FORM_ACTION} method="POST" id="onboarding-js-form" class="space-y-12">
           <div class="space-y-6">
             <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
             <div class="grid md:grid-cols-2 gap-6">
@@ -111,7 +109,7 @@ const labels = isJp ? {
             <input type="text" name="entry.17" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="Google Maps link" /></div>
           </div>
 
-          <button type="submit" id="onboard-btn-trigger" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
+          <button type="submit" id="onboard-btn-js" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
             {labels.submit}
           </button>
         </form>
@@ -121,33 +119,33 @@ const labels = isJp ? {
 </section>
 
 <script is:inline>
-  const oForm = document.getElementById('onboarding-google-form');
+  const oForm = document.getElementById('onboarding-js-form');
   if (oForm) {
     oForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const btn = document.getElementById('onboard-btn-trigger');
-      const ui = document.getElementById('onboard-ui-wrapper');
+      e.preventDefault(); // CRITICAL: Stop the redirect
+      
+      const btn = document.getElementById('onboard-btn-js');
+      const wrapper = document.getElementById('onboard-wrapper');
       const success = document.getElementById('onboard-success-ui');
       const shell = document.getElementById('onboard-shell');
 
       btn.innerHTML = "DISPATCHING...";
+      btn.disabled = true;
       btn.style.opacity = "0.5";
-      btn.style.pointerEvents = "none";
 
-      const formData = new FormData(oForm);
       fetch(oForm.action, {
         method: 'POST',
         mode: 'no-cors',
-        body: formData
+        body: new FormData(oForm)
       }).then(() => {
-        ui.classList.add('hidden');
+        wrapper.classList.add('hidden');
         success.classList.remove('hidden');
         window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
-      }).catch((err) => {
-        console.error('Dispatch failed', err);
-        btn.innerHTML = "RETRY REGISTRATION";
+      }).catch(() => {
+        alert('Communication error. Please try again.');
+        btn.innerHTML = "RETRY";
+        btn.disabled = false;
         btn.style.opacity = "1";
-        btn.style.pointerEvents = "auto";
       });
     });
   }
