@@ -3,7 +3,6 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Button from '~/components/ui/Button.astro';
 
 const metadata = { 
   title: 'Community Mission | Free Website Development for the Public Good', 
@@ -16,8 +15,8 @@ const metadata = {
     tagline="Community Mission"
     title='Empowering the Heart of Japan: <br/><span class="text-accent">Professional Web, Free for the Public Good.</span>'
     subtitle="You dedicate your lives to serving others. We dedicate our craft to ensuring the world sees your impact. Professional-grade digital infrastructure for registered NPOs in Japan."
-    actions={[{ variant: 'primary', text: 'Inquire for Support', href: 'mailto:webmaster@fijinetworks.com?subject=Community Mission Inquiry' }]}
-    image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=500&auto=format&fit=crop&q=60', alt: 'Japanese Community' }}
+    actions={[{ variant: 'primary', text: 'Inquire for Support', href: 'mailto:webmaster@fijinetworks.com?subject=Community Mission Inquiry', target: '_blank' }]}
+    image={{ src: 'https://images.unsplash.com/photo-1665562011653-e8bfc3ca6602?w=800&auto=format&fit=crop&q=60', alt: 'Japanese Community' }}
   />
   
   <Content isReversed={true} classes={{ container: 'py-8 md:py-12' }}>
@@ -27,11 +26,32 @@ const metadata = {
         From the resilient communities in Kobe and Hiroshima to the bustling social initiatives in Osaka and Kyoto, local heroes are working to strengthen the fabric of Japanese society.
       </p>
       <p class="text-lg text-slate-600 font-medium">
-        At Hanei, we believe those who do the most good shouldn’t be held back by a lack of digital resources. Your regional mission deserves a professional digital home built with absolute precision.
+        At Hanei, we believe those who do the most good shouldn’t be held back by a lack of digital resources. Your regional mission deserves a professional digital home—not a DIY template, but a platform built with absolute precision.
       </p>
     </Fragment>
     <Fragment slot="image">
        <img src="https://images.unsplash.com/photo-1555126417-38de941cba37?w=800&auto=format&fit=crop&q=60" alt="Traditional Japan" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed={false}
+    isAfterContent={true}
+    tagline="Our Focus"
+    title="The Pillars of Our Public Good Support"
+    items={[
+        { title: 'Disability Advocacy', description: 'Websites built to the highest modern accessibility standards.', icon: 'tabler:accessible' },
+        { title: 'Animal Welfare', description: 'Showcasing rescues in the best light and facilitating adoption applications.', icon: 'tabler:paw' },
+        { title: 'Senior Citizens', description: 'Accessible, high-contrast sites to connect seniors with local resources.', icon: 'tabler:old' },
+        { title: 'Youth Services', description: 'Safe online spaces for Kodomo Shokudo and educational support.', icon: 'tabler:school' },
+    ]}
+    image={{ src: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=800&auto=format&fit=crop&q=60', alt: 'Animal Care' }}
+    classes={{ container: 'py-8 md:py-12' }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg text-muted mb-6">
+        We focus our efforts on the sectors that form the backbone of a compassionate society across all Japanese prefectures.
+      </p>
     </Fragment>
   </Content>
 
@@ -49,13 +69,13 @@ const metadata = {
     ]}
   />
 
-  <div id="application" class="scroll-mt-20 py-24 text-center">
+  <div id="application" class="scroll-mt-20 py-24 text-center px-4">
     <div class="max-w-4xl mx-auto bg-slate-50 rounded-[3rem] p-12 md:p-24 border-2 border-slate-100 shadow-2xl">
-      <h3 class="text-4xl md:text-6xl font-black text-slate-950 uppercase tracking-tighter mb-8">Ready to Scale <br/>Your Impact?</h3>
+      <h3 class="text-4xl md:text-6xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">Ready to Scale <br/>Your Impact?</h3>
       <p class="text-xl md:text-2xl text-slate-600 mb-12 font-bold leading-relaxed">
         We accept limited public good projects each year. If you are a registered NPO or verified community group, please email our mission desk directly.
       </p>
-      <a href="mailto:webmaster@fijinetworks.com?subject=Community Mission Support Request" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl text-2xl font-black uppercase tracking-widest hover:bg-slate-950 transition-all transform hover:-translate-y-1 shadow-2xl">
+      <a href="mailto:webmaster@fijinetworks.com?subject=Community Mission Support Request" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl text-2xl font-black uppercase tracking-widest hover:bg-slate-950 transition-all transform hover:-translate-y-1 shadow-2xl">
         Email the Mission Desk
       </a>
     </div>
