@@ -8,10 +8,10 @@ const {
 ---
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
-    <div id="form-container-box" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
+    <div id="bespoke-shell" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
       
-      <!-- SUCCESS UI -->
-      <div id="success-ui" class="hidden text-center py-20">
+      <!-- SUCCESS DISPLAY -->
+      <div id="bespoke-success" class="hidden text-center py-20">
         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
         </div>
@@ -20,11 +20,20 @@ const {
       </div>
 
       <!-- FORM UI -->
-      <div id="form-ui-content">
+      <div id="bespoke-ui">
         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white font-heading">{labels.title}</h2>
         {labels.description && <p class="text-center text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-sans">{labels.description}</p>}
+
+        <!-- REDIRECT TRAP -->
+        <iframe name="bespoke_trap" id="bespoke_trap" style="display:none;"></iframe>
         
-        <form action={formAction} method="POST" id="bespoke-fetch-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form 
+          action={formAction} 
+          method="POST" 
+          target="bespoke_trap" 
+          id="bespoke-locked-form" 
+          class="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           <div class="flex flex-col">
             <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.client_name} *</label>
             <input type="text" name={ids.name} required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all font-sans text-slate-900" />
@@ -60,7 +69,7 @@ const {
             <textarea name={ids.summary} required rows="5" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all font-sans text-slate-900"></textarea>
           </div>
           <div class="md:col-span-2 pt-6">
-            <button type="submit" id="bespoke-btn-trigger" class="w-full py-5 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest font-sans">
+            <button type="submit" id="bespoke-lock-btn" class="w-full py-5 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-lg transform hover:-translate-y-1 transition-all text-lg uppercase tracking-widest font-sans">
               {labels.submit}
             </button>
           </div>
@@ -71,34 +80,27 @@ const {
 </section>
 
 <script is:inline>
-  const f = document.getElementById('bespoke-fetch-form');
-  if (f) {
-    f.addEventListener('submit', function(e) {
-      e.stopImmediatePropagation();
-      e.preventDefault();
-      
-      const btn = document.getElementById('bespoke-btn-trigger');
-      const ui = document.getElementById('form-ui-content');
-      const success = document.getElementById('success-ui');
-      const box = document.getElementById('form-container-box');
+  function initBespokeLock() {
+    const form = document.getElementById('bespoke-locked-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        const btn = document.getElementById('bespoke-lock-btn');
+        const ui = document.getElementById('bespoke-ui');
+        const success = document.getElementById('bespoke-success');
+        const shell = document.getElementById('bespoke-shell');
 
-      btn.innerHTML = "DISPATCHING...";
-      btn.disabled = true;
-      btn.style.opacity = "0.5";
+        btn.innerHTML = "DISPATCHING...";
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
 
-      fetch(f.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(new FormData(f))
-      }).then(() => {
-        ui.classList.add('hidden');
-        success.classList.remove('hidden');
-        window.scrollTo({ top: box.offsetTop - 100, behavior: 'smooth' });
-      }).catch(() => {
-        btn.disabled = false;
-        btn.innerHTML = "RETRY";
-        alert('Network error. Please try again.');
+        setTimeout(() => {
+          ui.classList.add('hidden');
+          success.classList.remove('hidden');
+          window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
+        }, 800);
       });
-    });
+    }
   }
+  document.addEventListener('DOMContentLoaded', initBespokeLock);
+  document.addEventListener('astro:page-load', initBespokeLock);
 </script>

@@ -5,40 +5,12 @@ const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdOFvirP0L_M66yEYv
 const labels = isJp ? {
     title: "ビジネス・オンボーディング形式",
     subtitle: "詳細をご記入ください。最短24時間以内の公開に向けて制作を開始します。",
-    sec1: "1. 基本情報",
-    biz_name: "店名・企業名",
-    rep_name: "代表者名",
-    contact: "連絡用ID (LINE/WhatsApp/電話)",
-    sec2: "2. コンテンツ詳細",
-    services: "提供サービス・メニュー内容",
-    rules: "お店のルール",
-    hours: "営業時間・定休日",
-    sec3: "3. プロジェクトの詳細要望",
-    bespoke_details: "デザインの好みや、移行に関する詳細な指示をご記入ください。",
-    sec4: "4. ソーシャルメディア",
-    social: "Instagramハンドル",
-    sec5: "5. テクニカル設定",
-    google_maps: "GoogleマップURL",
     submit: "オンボーディングを完了する",
     success_h: "オンボーディング完了",
     success_p: "情報を正常に受信しました。制作チームが直ちに稼働を開始します。"
 } : {
     title: "BUSINESS ONBOARDING FORM",
     subtitle: "Provide your details below. We start production immediately upon submission.",
-    sec1: "1. BUSINESS IDENTITY",
-    biz_name: "BUSINESS / SHOP NAME",
-    rep_name: "REPRESENTATIVE NAME",
-    contact: "PRIMARY CONTACT (LINE/WHATSAPP/PHONE)",
-    sec2: "2. CORE CONTENT",
-    services: "SERVICE LIST & PRICE POINTS (MENUS)",
-    rules: "HOUSE RULES",
-    hours: "OPERATING HOURS & HOLIDAYS",
-    sec3: "3. PROJECT SCOPE & DETAILS",
-    bespoke_details: "Provide deep details on design preferences or migration instructions.",
-    sec4: "4. SOCIAL MEDIA",
-    social: "INSTAGRAM HANDLE",
-    sec5: "5. TECHNICAL DETAILS",
-    google_maps: "GOOGLE MAPS LINK",
     submit: "COMPLETE ONBOARDING",
     success_h: "Registration Received",
     success_p: "Your project details have been secured. Our developers are now initializing your infrastructure."
@@ -46,9 +18,10 @@ const labels = isJp ? {
 ---
 <section class="py-12 md:py-20 bg-white dark:bg-slate-900">
   <div class="max-w-4xl mx-auto px-4">
-    <div id="onboard-container-box" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
+    <div id="onboard-shell" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
       
-      <div id="onboard-success-display" class="hidden text-center py-20">
+      <!-- SUCCESS UI -->
+      <div id="onboard-success" class="hidden text-center py-20">
         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
         </div>
@@ -56,60 +29,31 @@ const labels = isJp ? {
         <p class="text-xl text-slate-600 font-medium leading-relaxed">{labels.success_p}</p>
       </div>
 
-      <div id="onboard-ui-content">
+      <!-- FORM UI -->
+      <div id="onboard-ui">
         <div class="text-center mb-12">
           <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">{labels.title}</h2>
           <p class="text-lg text-slate-600 dark:text-slate-400">{labels.subtitle}</p>
         </div>
 
-        <form action={FORM_ACTION} method="POST" id="onboarding-fetch-form" class="space-y-12">
-          <div class="space-y-6">
-            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
+        <iframe name="onboard_trap" id="onboard_trap" style="display:none;"></iframe>
+
+        <form action={FORM_ACTION} method="POST" target="onboard_trap" id="onboard-locked-form" class="space-y-12">
+           <div class="space-y-6">
+            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">1. BUSINESS IDENTITY</h3>
             <div class="grid md:grid-cols-2 gap-6">
-              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.biz_name} *</label>
+              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">BUSINESS / SHOP NAME *</label>
               <input type="text" name="entry.10" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
-              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.rep_name} *</label>
+              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">REPRESENTATIVE NAME *</label>
               <input type="text" name="entry.11" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
-              <div class="md:col-span-2 flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.contact} *</label>
+              <div class="md:col-span-2 flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">PRIMARY CONTACT (LINE/WHATSAPP/PHONE) *</label>
               <input type="text" name="entry.12" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
             </div>
           </div>
-
-          <div class="space-y-6">
-            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec2}</h3>
-            <div class="space-y-6">
-              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">Master Email Address *</label>
-              <input type="email" name="emailAddress" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
-              <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.services} *</label>
-              <textarea name="entry.13" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.rules}</label>
-                <textarea name="entry.14" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
-                <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.hours}</label>
-                <textarea name="entry.15" rows="3" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none"></textarea></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec3}</h3>
-            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">Project Requirements</label>
-            <textarea name="entry.18" rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder={labels.bespoke_details}></textarea></div>
-          </div>
-
-          <div class="space-y-6">
-            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec4}</h3>
-            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.social} *</label>
-            <input type="text" name="entry.16" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="@handle" /></div>
-          </div>
-
-          <div class="space-y-6">
-            <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec5}</h3>
-            <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">{labels.google_maps} *</label>
-            <input type="text" name="entry.17" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" placeholder="Google Maps link" /></div>
-          </div>
-
-          <button type="submit" id="onboard-btn-trigger" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
+          <div class="flex flex-col"><label class="block text-xs font-bold mb-2 uppercase text-slate-500">Master Email Address *</label>
+          <input type="email" name="emailAddress" required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none" /></div>
+          
+          <button type="submit" id="onboard-lock-btn" class="w-full py-6 bg-primary hover:bg-slate-900 text-white font-bold rounded-xl shadow-xl transform hover:-translate-y-1 transition-all text-xl uppercase tracking-widest">
             {labels.submit}
           </button>
         </form>
@@ -119,34 +63,27 @@ const labels = isJp ? {
 </section>
 
 <script is:inline>
-  const oForm = document.getElementById('onboarding-fetch-form');
-  if (oForm) {
-    oForm.addEventListener('submit', function(e) {
-      e.stopImmediatePropagation();
-      e.preventDefault();
-      
-      const btn = document.getElementById('onboard-btn-trigger');
-      const ui = document.getElementById('onboard-ui-content');
-      const success = document.getElementById('onboard-success-display');
-      const box = document.getElementById('onboard-container-box');
+  function initOnboardLock() {
+    const form = document.getElementById('onboard-locked-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        const btn = document.getElementById('onboard-lock-btn');
+        const ui = document.getElementById('onboard-ui');
+        const success = document.getElementById('onboard-success');
+        const shell = document.getElementById('onboard-shell');
 
-      btn.innerHTML = "DISPATCHING...";
-      btn.disabled = true;
-      btn.style.opacity = "0.5";
+        btn.innerHTML = "DISPATCHING...";
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
 
-      fetch(oForm.action, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(new FormData(oForm))
-      }).then(() => {
-        ui.classList.add('hidden');
-        success.classList.remove('hidden');
-        window.scrollTo({ top: box.offsetTop - 100, behavior: 'smooth' });
-      }).catch(() => {
-        btn.disabled = false;
-        btn.innerHTML = "RETRY";
-        alert('Network error. Please try again.');
+        setTimeout(() => {
+          ui.classList.add('hidden');
+          success.classList.remove('hidden');
+          window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
+        }, 800);
       });
-    });
+    }
   }
+  document.addEventListener('DOMContentLoaded', initOnboardLock);
+  document.addEventListener('astro:page-load', initOnboardLock);
 </script>
