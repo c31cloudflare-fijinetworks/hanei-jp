@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">    const links = document.querySelectorAll('.mobile-link'); links.forEach(l => l.addEventListener('click', () => { overlay.classList.add('translate-x-full'); document.body.classList.remove('overflow-hidden'); }));
+    </script>
     <script>
         tailwind.config = {
             theme: {
