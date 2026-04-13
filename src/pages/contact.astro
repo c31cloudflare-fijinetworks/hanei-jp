@@ -14,26 +14,15 @@ const enLabels = {
     client_name: "Name",
     company_name: "Company Name",
     email: "Email Address",
-    
     request_type: "Request Category",
     project_summary: "Tell us about your inquiry or project",
     budget_range: "Estimated Budget",
     deadline: "Desired Timeline",
-    
     submit: "Send Message"
 };
 
 const enOptions = {
-    requests: [
-      "1-Page Business Website", 
-      "Review Engine", 
-      "English Hanare", 
-      "Grand Reform (Facelift)", 
-      "Grand NEW (New Build)", 
-      "General Inquiry", 
-      "Custom System / API", 
-      "Other"
-    ],
+    requests: ["1-Page Business Website", "Review Engine", "English Hanare", "Grand Reform (Facelift)", "Grand NEW (New Build)", "General Inquiry", "Custom System / API", "Other"],
     budgets: ["Not Applicable", "¥100k - ¥300k", "¥300k - ¥500k", "¥500k - ¥1M", "¥1M+"],
     timelines: ["Today / ASAP", "Within this week", "Within 1 month", "Flexible", "Other"],
     referrals: ["Google Search", "Social Media", "Friend / Colleague", "Other"]
@@ -48,14 +37,18 @@ const enOptions = {
     image={{ src: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&auto=format&fit=crop', alt: 'Professional Collaboration' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
-  <BespokeForm labels={enLabels} options={enOptions} formAction="https://docs.google.com/forms/d/e/1FAIpQLSetNa1Mq_nYvkKp5h2fUIPZFRCvfFs5hvcYoawFk1eX0p6t3w/formResponse"
+  
+  <BespokeForm 
+    labels={enLabels} 
+    options={enOptions} 
+    formAction="https://docs.google.com/forms/d/e/1FAIpQLSetNa1Mq_nYvkKp5h2fUIPZFRCvfFs5hvcYoawFk1eX0p6t3w/formResponse"
     ids={{
       name: "entry.1770250121",
       company: "entry.1744957567",
-      email: "entry.434821435",
       category: "entry.491532461",
       budget: "entry.1285777990",
       timeline: "entry.1375463449",
       summary: "entry.1193708562"
-    }} />
+    }}
+  />
 </Layout>
