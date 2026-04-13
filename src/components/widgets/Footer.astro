@@ -13,7 +13,7 @@ const showPortfolio = !['/demos', '/demos-jp'].includes(cleanPath);
 const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit') || cleanPath.includes('-jp/');
 
 // Standardized Copy
-const aboutTitle = isJp ? "Haneiについて" : "About Hanei";
+const aboutTitle = isJp ? `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> Hanei JPについて` : `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> About Hanei JP`;
 const aboutText = isJp 
   ? "Haneiは、日本の地域ビジネスを支援することに全力を注いでいます。私たちは、日本の地域文化こそが最大の資産であると信じています。テクノロジーを活用することで、言葉の壁によるストレスを感じることなく、世界中の人々がその素晴らしさを体験できる未来を目指しています。" 
   : "Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier.";
@@ -56,7 +56,7 @@ const portHref = isJp ? "/demos-jp" : "/demos";
     <div class="pt-8 md:pt-12 pb-6">
       <div class="max-w-3xl mx-auto text-center p-8 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-50/50 dark:bg-slate-800/30">
         <h2 class="text-3xl md:text-4xl font-bold font-heading mb-4 text-gray-900 dark:text-white">
-          {aboutTitle}
+          <Fragment set:html={aboutTitle} />
         </h2>
         <p class="text-xl text-muted dark:text-slate-400 leading-relaxed">
           {aboutText}
