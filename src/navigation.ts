@@ -57,7 +57,7 @@ export const footerDataEn = {
     { text: 'Terms of Service', href: getPermalink('/terms') },
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
-  footNote: '© 2026. All rights reserved.',
+  footNote: '<img src="/images/logo_main.png" class="inline-block h-4 w-auto mr-1.5 align-middle rounded-sm shadow-sm" /> © 2026. Hanei Inbound Digital. All rights reserved.',
 };
 
 export const footerDataJp = {
@@ -79,7 +79,7 @@ export const footerDataJp = {
     { text: '利用規約', href: getPermalink('/terms-jp') },
     { text: 'プライバシーポリシー', href: getPermalink('/privacy-jp') },
   ],
-  footNote: '© 2026. 無断転載を禁じます。',
+  footNote: '<img src="/images/logo_main.png" class="inline-block h-4 w-auto mr-1.5 align-middle rounded-sm shadow-sm" /> © 2026. Hanei Inbound Digital. 無断転載を禁じます。',
 };
 
 export const headerData = headerDataEn;
