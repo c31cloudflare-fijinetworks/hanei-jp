@@ -10,7 +10,7 @@ const {
   <div class="max-w-4xl mx-auto px-4 sm:px-6">
     <div id="form-outer-shell" class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 md:p-12 shadow-xl border border-slate-200 dark:border-slate-700">
       
-      <!-- SUCCESS UI -->
+      <!-- SUCCESS DISPLAY -->
       <div id="success-display" class="hidden text-center py-20">
         <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
           <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
@@ -24,9 +24,7 @@ const {
         <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center uppercase tracking-widest text-slate-900 dark:text-white font-heading">{labels.title}</h2>
         {labels.description && <p class="text-center text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed font-sans">{labels.description}</p>}
 
-        <iframe name="silent_post" id="silent_post" style="display:none;"></iframe>
-        
-        <form action={formAction} method="POST" target="silent_post" id="bespoke-google-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form action={formAction} method="POST" id="bespoke-google-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="flex flex-col">
             <label class="block text-xs font-bold mb-2 uppercase tracking-wide text-slate-500">{labels.client_name} *</label>
             <input type="text" name={ids.name} required class="w-full px-4 py-3 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-primary outline-none transition-all font-sans text-slate-900" />
@@ -75,7 +73,8 @@ const {
 <script is:inline>
   const form = document.getElementById('bespoke-google-form');
   if (form) {
-    form.addEventListener('submit', function() {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
       const btn = document.getElementById('bespoke-btn');
       const ui = document.getElementById('form-ui-wrapper');
       const success = document.getElementById('success-display');
@@ -85,11 +84,21 @@ const {
       btn.style.opacity = "0.5";
       btn.style.pointerEvents = "none";
 
-      setTimeout(() => {
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
         ui.classList.add('hidden');
         success.classList.remove('hidden');
         window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
-      }, 1000);
+      }).catch((err) => {
+        console.error('Submission failed', err);
+        btn.innerHTML = "RETRY SUBMISSION";
+        btn.style.opacity = "1";
+        btn.style.pointerEvents = "auto";
+      });
     });
   }
 </script>

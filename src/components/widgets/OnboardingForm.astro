@@ -64,9 +64,7 @@ const labels = isJp ? {
           <p class="text-lg text-slate-600 dark:text-slate-400">{labels.subtitle}</p>
         </div>
 
-        <iframe name="onboard_post" id="onboard_post" style="display:none;"></iframe>
-
-        <form action={FORM_ACTION} method="POST" target="onboard_post" id="onboarding-google-form" class="space-y-12">
+        <form action={FORM_ACTION} method="POST" id="onboarding-google-form" class="space-y-12">
           <div class="space-y-6">
             <h3 class="text-primary font-black uppercase tracking-tighter text-sm border-b border-primary/20 pb-2">{labels.sec1}</h3>
             <div class="grid md:grid-cols-2 gap-6">
@@ -123,20 +121,34 @@ const labels = isJp ? {
 </section>
 
 <script is:inline>
-  document.getElementById('onboarding-google-form').addEventListener('submit', function() {
-    const btn = document.getElementById('onboard-btn-trigger');
-    const ui = document.getElementById('onboard-ui-wrapper');
-    const success = document.getElementById('onboard-success-ui');
-    const shell = document.getElementById('onboard-shell');
+  const oForm = document.getElementById('onboarding-google-form');
+  if (oForm) {
+    oForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('onboard-btn-trigger');
+      const ui = document.getElementById('onboard-ui-wrapper');
+      const success = document.getElementById('onboard-success-ui');
+      const shell = document.getElementById('onboard-shell');
 
-    btn.innerHTML = "DISPATCHING...";
-    btn.style.opacity = "0.5";
-    btn.style.pointerEvents = "none";
+      btn.innerHTML = "DISPATCHING...";
+      btn.style.opacity = "0.5";
+      btn.style.pointerEvents = "none";
 
-    setTimeout(() => {
-      ui.classList.add('hidden');
-      success.classList.remove('hidden');
-      window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
-    }, 1200);
-  });
+      const formData = new FormData(oForm);
+      fetch(oForm.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+      }).then(() => {
+        ui.classList.add('hidden');
+        success.classList.remove('hidden');
+        window.scrollTo({ top: shell.offsetTop - 100, behavior: 'smooth' });
+      }).catch((err) => {
+        console.error('Dispatch failed', err);
+        btn.innerHTML = "RETRY REGISTRATION";
+        btn.style.opacity = "1";
+        btn.style.pointerEvents = "auto";
+      });
+    });
+  }
 </script>
