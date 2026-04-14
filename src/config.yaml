@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Hanei JP - Effortless Salon Testimonials
+    default: "Hanei Inbound Digital | Bridging Japan to the World"
     template: '%s — Hanei JP'
-  description: "Capture salon client reviews instantly. Turn happy clients into powerful testimonials before they leave."
+  description: "Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
   robots:
     index: true
     follow: true
