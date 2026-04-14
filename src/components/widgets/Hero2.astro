@@ -44,7 +44,13 @@ const poster = posterProp || (isUrl ? image : image.src ? image.src : null);
         </div>
 
         <div class="relative w-full">
+          
           <div class="relative rounded-lg overflow-hidden shadow-2xl w-full aspect-[3/2] border-4 border-white dark:border-slate-800 group">
+            <!-- HANEI WATERMARK OVERLAY -->
+            <div class="absolute bottom-[8%] right-[5%] z-20 w-[15%] max-w-[80px] opacity-90 pointer-events-none drop-shadow-md">
+              <img src="/images/logo_main.png" alt="Hanei JP" class="w-full h-auto rounded-md" />
+            </div>
+
             {video ? (
               <div class="w-full h-full cursor-pointer" id="video-container">
                 <video id="hero-video" src={video} class="w-full h-full object-cover block" controls playsinline preload="metadata" poster={poster}></video>
