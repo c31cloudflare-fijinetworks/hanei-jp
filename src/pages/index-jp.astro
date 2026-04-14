@@ -2,90 +2,89 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
-import Button from '~/components/ui/Button.astro';
 
-const metadata = { title: 'Hanei JP | インバウンド集客・支援ソリューション' };
+const metadata = { title: 'Hanei Inbound Digital | 日本と世界をデジタルで繋ぐ' };
 ---
 <Layout metadata={metadata}>
   
   <Hero2
-    tagline="インバウンド集客・デジタル基盤構築の専門家"
-    title='日本の「おもてなし」を、<br/><span class="text-accent dark:text-white">世界が選ぶ「正解」へ。</span>'
-    subtitle="インバウンド集客の『見えない壁』を壊し、高単価な外国人観光客を惹きつけるデジタルインフラを最短48時間で構築します。"
-    actions={[{ variant: 'primary', text: '無料インバウンド診断を申し込む', href: '/contact-jp' }, { text: 'サービス一覧を見る', href: '#features' }]}
-    image={{ src: '/images/hanei-media/033.webp', alt: 'Japanese Street' }}
+    tagline="日本企業のデジタルプレゼンスを世界水準へ"
+    title='日本の「価値」を、<br/><span class="text-accent dark:text-white">国内・海外双方の顧客へ。</span>'
+    subtitle="ビジネスの成長を加速させ、信頼を構築する高品質なウェブサイトを提供します。最短48時間で、貴社のデジタル店舗を世界に向けて公開可能です。"
+    actions={[
+      { variant: 'primary', text: 'サービス一覧', href: '#services' },
+      { text: '特別案件のご相談', href: '/contact-jp', class: '!bg-orange-600 !text-white !border-none hover:!bg-orange-700' },
+    ]}
+    image={{ src: '/images/hanei-media/033.webp', alt: '日本の街並み' }}
+    classes={{ inner: 'pb-4 md:pb-6' }}
   />
 
   <Stats
+    classes={{ container: 'pt-0 md:pt-0 pb-12' }}
     stats={[
-      { title: '設定・制作の丸投げ', amount: '100%' },
-      { title: '必要なIT・英語の知識', amount: '0' },
-      { title: '最長セットアップ時間', amount: '48時間' },
-      { title: '月額費用', amount: '¥0' },
-    ]}
+      { title: '設定・制作の丸投げ', amount: '100%' }, 
+      { title: '専門知識不要', amount: '0' }, 
+      { title: '最短公開時間', amount: '48時間' }, 
+      { title: '月額費用', amount: '¥0' }
+    ]} 
   />
 
-  <Features
-    id="features"
-    title="インバウンド・サービスキット"
-    subtitle="現場の負担を減らし、収益を最大化するための専門ソリューション。"
+  <Content 
+    id="services"
+    tagline="サービス：1ページ・ビジネスサイト" 
+    title="新規顧客が貴社を「見つけやすく、選びやすく」なる仕組み。" 
+    subtitle="店舗のルール、メニュー、サービスを明確に伝えるデジタルガイドを構築します。これにより、地域住民も旅行者も安心して貴社の扉を叩けるようになります。不透明さを排除することが、集客の第一歩です。" 
+    callToAction={{ text: '1ページ制作の詳細', href: '/one-page-welcome-jp' }} 
+    image={{ src: '/images/demos/capsule-hotel.webp', alt: 'ウェルカム・デモ' }} 
+  />
+
+  <Content 
+    isReversed={true} 
+    tagline="サービス：カスタマー・レビュー・システム" 
+    title="自動更新されるレビュー・ウォールで、即座に信頼を構築。" 
+    subtitle="最高の顧客体験をウェブサイト上に直接表示し、品質を証明します。満足度の高いお客様がGoogleで星5つの評価を残しやすい環境を整えます。肯定的な口コミは、新規客の来店を促す最強の武器です。" 
+    callToAction={{ text: 'レビューエンジンの詳細', href: '/review-engine-jp' }} 
+    image={{ src: '/images/review_engine/testimonial-6.webp', alt: 'レビュー・デモ' }} 
+  />
+
+  <Content 
+    isReversed={false} 
+    tagline="サービス：英語専用デジタル別館" 
+    title="既存サイトはそのまま。プロ仕様の英語セクションを追加。" 
+    subtitle="日本語サイトに手を加えることなく、海外顧客専用の領域を構築します。既存資産の安全を守りつつ、グローバルな顧客層を惹きつける最速の方法です。翻訳から設定まで、すべてお任せください。" 
+    callToAction={{ text: '英語専用別館の詳細', href: '/english-hanare-jp' }} 
+    image={{ src: '/images/demos/azabu-medical.webp', alt: 'デジタル別館デモ' }} 
+  />
+
+  <Content 
+    isReversed={true} 
+    tagline="サービス：サイトの劇的リフォーム / 新規制作" 
+    title="最新のデザインで、貴社のプレゼンスを再定義。" 
+    subtitle="既存サイトの刷新、またはゼロからの新規構築を週末の間に完了させます。スマートフォンでの表示に最適化されたモダンなデザインで、競合他社に圧倒的な差をつけます。成約率の高いデジタル拠点を提供します。" 
+    callToAction={{ text: '制作オプションを見る', href: '/grand-opening-jp' }} 
+    image={{ src: '/images/hanei-media/021.webp', alt: 'リブート・デモ' }} 
+  />
+
+  <Content 
+    isReversed={false} 
+    tagline="地域貢献活動" 
+    title="国内の慈善団体・NPOへのプロフェッショナル支援。" 
+    subtitle="日本国内のNPO法人や不可欠な地域サービスに対し、高品質なウェブ制作を無償で提供しています。地域社会に貢献する方々の活動を、デジタルの力で支えることが私たちの使命です。" 
+    callToAction={{ text: '私たちのミッション', href: '/community-mission-jp' }} 
+    image={{ src: '/images/hanei-media/031.webp', alt: 'NPO支援' }} 
+  />
+
+  <FAQs 
+    title="よくあるご質問" 
+    classes={{ container: 'pt-8 md:pt-12' }} 
     items={[
-        { title: '1ページ・ウェルカム', description: 'Googleマップ英語SEOと、視覚的ガイダンスの統合パッケージ。', icon: 'tabler:map-pin', callToAction: { text: '詳細を見る', href: '/one-page-welcome-jp' } },
-        { title: 'レビューエンジン', description: 'お客様の満足を「星5つの評価」に。専用ページで口コミ投稿を促進。', icon: 'tabler:message-star', callToAction: { text: '詳細を見る', href: '/review-engine-jp' } },
-        { title: '英語専用デジタル別館', description: '既存の日本語サイトはそのまま。最高水準の英語資産を構築します。', icon: 'tabler:layers-intersect', callToAction: { text: '詳細を見る', href: '/english-hanare-jp' } },
-        { title: 'グランド・リブート', description: '既存サイトの高速リフォーム、またはゼロから構築するバイリンガル店。', icon: 'tabler:rocket', callToAction: { text: '詳細を見る', href: '/grand-opening-jp' } },
-    ]}
-  />
-
-  <Content
-    isReversed={false}
-    tagline="サービス1"
-    title="「見えない壁」を壊し、外国人客を呼び込む。"
-    subtitle="店舗ルールやメニューを視覚的に伝え、外国人客の心理的障壁をゼロにします。"
-    callToAction={{ text: '詳細を見る', href: '/one-page-welcome-jp' }}
-    image={{ src: '/images/hanei-media/036.webp', alt: 'Welcome' }}
-  />
-
-  <Content
-    isReversed={true}
-    tagline="サービス2"
-    title="信頼を自動化。最強の営業資産を構築。"
-    subtitle="スマホをかざすだけで簡単にGoogleや自社サイトへ口コミを投稿できる仕組みを提供します。"
-    callToAction={{ text: '詳細を見る', href: '/review-engine-jp' }}
-    image={{ src: '/images/hanei-media/018.webp', alt: 'Review' }}
-  />
-
-  <div id="process" class="scroll-mt-20">
-    <Steps2
-      title="ご利用の流れ"
-      subtitle="ITの知識は不要です。世界へ進出するまでのシンプルな手順です。"
-      items={[
-        { title: '01. プランを選ぶ', description: 'お店に合ったプランを選び注文。', icon: 'tabler:number-1' },
-        { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '02. 情報を送る', description: '簡単なフォームに入力するだけ。', icon: 'tabler:number-2' },
-        { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '03. お任せ制作', description: '最短24時間〜48時間で完成させます。', icon: 'tabler:number-3' },
-        { title: '', description: '', icon: 'tabler:arrow-down' },
-        { title: '04. 集客スタート', description: '届いたQRコードを店頭に置くだけ。', icon: 'tabler:number-4' }
-      ]}
-      image={{ src: '/images/hanei-media/035.webp', alt: 'Success' }}
-    />
-  </div>
-
-  <FAQs
-    title="よくあるご質問"
-    classes={{ container: 'pt-8 md:pt-12' }}
-    items={[
-        { title: '英語を話せなくても導入できますか？', description: 'はい。システムがゲストには英語で、スタッフには正確な日本語で指示を伝えるため安心です。' },
-        { title: '導入までにどのくらいの期間がかかりますか？', description: '最短当日、フルリニューアルであっても48時間以内のデプロイを保証しています。' },
-        { title: '既存のサイトが壊れる心配はない？', description: '「離れ」方式を採用しているため、既存サイトのコードを一切変更せずに安全に構築できます。' },
-        { title: 'NPO向けの支援はありますか？', description: 'はい。地域貢献活動として、登録NPO法人等へは完全無料でWeb制作を提供しています。' },
-    ]}
-    callToAction={{ variant: 'primary', text: 'よくあるご質問をもっと見る', href: '/faq-jp' }}
+      { title: '英語を話せなくても導入できますか？', description: 'はい。システムがゲストには完璧な英語で、貴社スタッフには正確な日本語で指示を伝えるため、語学力は不要です。' }, 
+      { title: '制作期間はどのくらいですか？', description: 'パッケージプランは24時間以内、フルリニューアルでも最短48時間以内での納品を標準としています。' }, 
+      { title: '隠れた月額費用はありますか？', description: 'いいえ。主要なサービスのほとんどは一括投資（買い切り）モデルです。継続的なサブスクリプション費用なしでサイトを所有いただけます。' }, 
+      { title: '既存のサイトに悪影響はありませんか？', description: '「離れ（独立システム）」方式を採用できるため、現在のサイトを一切変更せずに新しい機能を追加することが可能です。' }
+    ]} 
+    callToAction={{ variant: 'primary', text: 'すべてのFAQを見る', href: '/faq-jp' }} 
   />
 </Layout>

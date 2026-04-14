@@ -2,29 +2,146 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = { title: 'よくあるご質問 | Hanei JP' };
+const metadata = { 
+  title: 'FAQ | 総合サポート | Hanei JP',
+  description: 'デジタル開発サービスに関するプロフェッショナル・サポートとよくあるご質問。'
+};
 ---
 <Layout metadata={metadata}>
-  <HeroText tagline="サポート" title="よくあるご質問 (FAQ)" />
+  <HeroText 
+    tagline="サポートセンター" 
+    title="よくあるご質問 (FAQ)" 
+    subtitle="デジタルの成長に向けた明確さと正確性を。各サービスの詳細、または共通の質問をご覧ください。"
+    actions={[
+      { text: '1ページ制作', href: '#one-page-faq', variant: 'secondary' },
+      { text: 'レビューエンジン', href: '#review-engine-faq', variant: 'secondary' },
+      { text: '英語別館', href: '#english-hanare-faq', variant: 'secondary' },
+      { text: '劇的リフォーム', href: '#reform-faq', variant: 'secondary' },
+      { text: '新規制作', href: '#new-faq', variant: 'secondary' },
+      { text: '全般', href: '#general-faq', variant: 'secondary' },
+    ]}
+  />
+
   <FAQs
+    id="one-page-faq"
+    title="1ページ・ビジネスサイト"
+    subtitle="国内・海外双方に向けたデジタルのビジネス・マニュアル。"
+    classes={{ container: 'py-8 md:py-12' }}
     columns={1}
     items={[
-      { title: '英語を話せなくても大丈夫ですか？', description: 'はい。システムがゲストにはネイティブ英語で、スタッフには正確な日本語指示書で伝えるため、特別な語学力は不要です。', icon: 'tabler:messages-off' },
-      { title: '導入までどのくらいかかりますか？', description: 'ウェルカムキットやレビューエンジンは24時間以内、フルリニューアルでも48時間以内のスピード導入を保証しています。', icon: 'tabler:clock' },
-      { title: '月額費用はかかりますか？', description: '主要なインフラ構築は一括投資（買い切り）モデルです。レビューエンジン等のクラウド機能を利用する場合のみ、少額の月額費用が発生します。', icon: 'tabler:coin' },
-      { title: '既存の日本語サイトが壊れる心配はありませんか？', description: '「離れ（Hanare）」アーキテクチャにより、既存サイトには一切触れず独立して構築するため、技術的リスクはゼロです。', icon: 'tabler:lock' },
-      { title: 'Googleマップでどのように表示されますか？', description: '外国人観光客が実際に検索する英語キーワードでプロフィールを最適化し、検索結果の上位表示（MEO）を狙います。', icon: 'tabler:map-pin' },
-      { title: '「入店前の不安」とは何ですか？', description: 'ルールやメニュー、支払い方法が不明な際、外国人客が感じる心理的障壁です。これを視覚的ガイダンスで解消します。', icon: 'tabler:user-check' },
-      { title: '独自のドメイン（.com等）は使えますか？', description: 'はい。お客様がお持ちのドメインを当システムに紐づけ、安全なSSL通信で公開することが可能です。', icon: 'tabler:world' },
-      { title: '後からメニューを変更したい場合は？', description: 'サポートチームが継続的に対応します。新しい情報をいただければ、迅速にアップデートを反映いたします。', icon: 'tabler:settings' },
-      { title: '口コミ管理はどのように行いますか？', description: '満足したお客様を高評価レビューへ導き、不満のある声はネット公開前に非公開でキャッチする仕組みを提供します。', icon: 'tabler:shield-check' },
-      { title: 'NPO向けの支援はありますか？', description: 'はい。「地域貢献活動」として、国内の登録NPO法人等に対して完全無料でWeb制作を提供しています。', icon: 'tabler:heart' },
-      { title: '支払いは安全ですか？', description: '世界標準の決済システム「Stripe」を採用しており、暗号化された安全な取引をお約束します。', icon: 'tabler:credit-card' },
-      { title: '使用している技術は何ですか？', description: 'AstroやCloudflare等の最新フレームワークを使用し、モバイル回線でも1秒未満で表示される高速環境を構築します。', icon: 'tabler:rocket' },
-      { title: '複数店舗での導入は可能ですか？', description: 'はい。複数店舗やグループ店向けの割引プランもご用意しております。', icon: 'tabler:building-store' },
-      { title: '写真は用意する必要がありますか？', description: '既存の写真、または高品質なストックフォトを組み合わせて、プロフェッショナルな見栄えを最短で作り上げます。', icon: 'tabler:camera' },
-      { title: 'なぜ表示速度が重要なのですか？', description: '旅行者はローミング回線を使います。表示に3秒以上かかると半数が離脱するため、瞬時の表示が不可欠です。', icon: 'tabler:bolt' },
+      { title: '1ページ・ビジネスサイトとは何ですか？', description: '貴社のサービス、メニュー、利用ルールを一枚の洗練されたページに集約した、モバイル最適化済みの高機能デジタルマニュアルです。' },
+      { title: '「正午までの注文で即日公開」は本当ですか？', description: 'はい。1ページ・ウェルカム・パッケージでは、正午までに情報をいただければ、制作チームが最優先で構築し、その日のうちに公開します。' },
+      { title: '後からメニューを更新できますか？', description: 'もちろんです。私たちは生涯サポートを提供しています。更新内容をメール等で送っていただければ、24時間以内に反映いたします。' },
+      { title: '店頭用のQRコードは付属しますか？', description: 'はい。各サイトには、卓上や店頭にそのまま掲示できる高解像度のカスタムQRコードキットが付属します。' },
+      { title: 'SNSのページよりも優れている点は？', description: 'SNSとは異なり、Google検索の対象（インデックス）となるため、アカウントを持たない新規顧客も貴社の情報をすぐに見つけることができます。' },
+      { title: '月額費用は発生しますか？', description: 'いいえ。1ページサイトは一括払い（買い切り）モデルです。月々の維持管理費なしで永久に所有いただけます。' },
     ]}
+    callToAction={{ text: '1ページ制作の詳細を見る', href: '/one-page-welcome-jp', variant: 'primary' }}
+  />
+
+  <FAQs
+    id="review-engine-faq"
+    title="レビューエンジン"
+    subtitle="信頼の自動化とGoogleマップでの視認性向上。"
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'QRコード・レビューシステムはどのように機能しますか？', description: '顧客がコードをスキャンすると、専用ページが開き、わずか3クリックでGoogleの星5つレビューを投稿できるよう誘導します。' },
+      { title: 'Googleアカウントのパスワードを教える必要がありますか？', description: 'いいえ。公開されているGoogleビジネスのリンクのみを使用します。アカウントの安全性は100%保証されます。' },
+      { title: '自社のブランドに合わせたデザインにできますか？', description: 'はい。貴社のロゴやイメージに合わせたプロフェッショナルなレビュー収集画面を提供し、ブランドイメージを維持します。' },
+      { title: '届いたレビューを自社サイトに表示できますか？', description: 'はい。最高評価の口コミを自動的に取得し、自社サイト上に美しく表示するウィジェットを提供します。' },
+      { title: 'Googleマップの順位にどう影響しますか？', description: 'Googleは頻繁に質の高いレビューを得ているビジネスを高く評価します。このシステムはその活動を自動化し、上位表示（MEO）を促します。' },
+      { title: '収集できるレビューの数に制限はありますか？', description: '制限はありません。一日の来客数に関わらず、システムは生涯にわたり無制限のトラフィックに対応します。' },
+    ]}
+    callToAction={{ text: 'レビューエンジンの詳細を見る', href: '/review-engine-jp', variant: 'primary' }}
+  />
+
+  <FAQs
+    id="english-hanare-faq"
+    title="英語専用デジタル別館（Hanare）"
+    subtitle="技術的リスクを伴わない、グローバル市場への進出。"
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: '既存の日本語サイトに影響はありますか？', description: 'いいえ。専用のサブドメイン（en.yourdomain.com等）に構築するため、既存のサイトは100%安全なまま、一切変更を加えません。' },
+      { title: '2つの異なるシステムを管理する必要がありますか？', description: 'いいえ。英語別館の技術的な管理はすべて私たちが代行します。お客様は本業に集中いただけます。' },
+      { title: '誰が英語のコンテンツを書きますか？', description: '私たちのネイティブ・コピーライターが担当します。単なる翻訳ではなく、海外顧客に響くプロフェッショナルな英文を作成します。' },
+      { title: 'B2Bや製造業にも適していますか？', description: 'はい。海外パートナーや輸出市場を狙う職人、メーカー、サービスプロバイダー向けの拠点として最適です。' },
+      { title: '問い合わせフォームは含まれますか？', description: 'はい。海外からのリードを直接メールで受け取れる、プロフェッショナルな英語問い合わせフォームを完備しています。' },
+    ]}
+    callToAction={{ text: '英語別館の詳細を見る', href: '/english-hanare-jp', variant: 'primary' }}
+  />
+
+  <FAQs
+    id="reform-faq"
+    title="劇的リフォーム（既存サイト刷新）"
+    subtitle="現在お持ちのデジタル拠点を最新の姿へ。"
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: '既存の写真やこれまでの歴史を維持できますか？', description: 'はい。リフォームの目的は格上げです。現在のコンテンツを活かしつつ、世界基準のモダンでラグジュアリーなインターフェースで包み込みます。' },
+      { title: 'リフォーム中、サイトは見られなくなりますか？', description: 'いいえ。私たちのサーバー上で新デザインを構築し、お客様が最終承認された瞬間に切り替えるため、ダウンタイムはありません。' },
+      { title: '読み込み速度は改善されますか？', description: '劇的に改善されます。最新のエッジネットワークへ移行するため、すべての訪問者に対して瞬時の表示が可能になります。' },
+      { title: 'スマートフォンに最適化されますか？', description: 'もちろんです。すべてのリフォームプロジェクトはモバイルファーストの哲学に基づき、あらゆる画面サイズで完璧に表示されます。' },
+      { title: 'リフォームの期間はどのくらいですか？', description: '通常、必要な素材を受け取ってから1〜2営業日以内にすべてのデザイン刷新を完了します。' },
+    ]}
+    callToAction={{ text: 'リフォームの詳細を見る', href: '/grand-opening-jp/#reform', variant: 'primary' }}
+  />
+
+  <FAQs
+    id="new-faq"
+    title="グランド・ニュー（新規サイト制作）"
+    subtitle="ゼロから構築する、最高のデジタル設計図。"
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'なぜオーダーメイドの制作が良いのですか？', description: '貴社のビジネス目標に合わせて、最高のパフォーマンスと独自のアイデンティティをゼロから設計できるからです。' },
+      { title: 'どのような技術を使用しますか？', description: '世界最速の読み込み時間と堅牢な安定性を誇る、最新のサーバーレス・インフラ上に構築します。' },
+      { title: 'SEO対策は含まれますか？', description: 'はい。Googleが貴社を正しく見つけ、インデックスできるよう、技術的なSEO基盤を構築段階から組み込みます。' },
+      { title: '完成後の所有権はどうなりますか？', description: 'すべてお客様のものです。ドメイン、コンテンツ、コードの資産を100%所有いただけます。' },
+      { title: '予約システムや問い合わせフローの統合は可能ですか？', description: 'はい。貴社の業務フローに合わせたカスタムメイドの予約・問い合わせ導線を設計します。' },
+    ]}
+    callToAction={{ text: '新規制作の詳細を見る', href: '/grand-opening-jp/#new', variant: 'primary' }}
+  />
+
+  <FAQs
+    id="general-faq"
+    title="全般的なご質問"
+    subtitle="運営基準とコミュニケーションについて。"
+    classes={{ container: 'py-8 md:py-12' }}
+    columns={1}
+    items={[
+      { title: 'Haneiとのやり取りはどうすればよいですか？', description: '私たちはメールおよびチャットベースのサービスを提供しています。これにより記録を残し、最高速度と正確性で結果をお届けします。' },
+      { title: '「Haneiスタンダード」とは何ですか？', description: '絶対的な精度へのこだわりです。超高速パフォーマンス、洗練された視覚的リズム、そしてリスクゼロの技術設計を全クライアントにお約束します。' },
+      { title: '支払方法は何がありますか？', description: '主要なクレジットカード、およびStripe、PayPalを通じた決済に対応しています。すべての取引は暗号化され安全です。' },
+      { title: '継続的なテクニカルサポートはありますか？', description: 'すべてのパッケージに60日間の優先技術サポートが付属します。その後も、軽微な修正については生涯ホワイトグローブ・サポートを提供します。' },
+      { title: 'どうすれば開始できますか？', description: 'パッケージを選択し、決済を完了させてください。その後お送りする簡単なフォームに入力いただければ、私たちがすべてを開始します。' },
+    ]}
+  />
+
+  <hr class="max-w-7xl mx-auto border-t dark:border-slate-800" />
+
+  <Features2
+    title="今すぐエリート・デジタル資産を確保する"
+    subtitle="ビジネスの成長に最適なソリューションをお選びください。"
+    columns={3}
+    items={[
+      { title: '1ページ・ビジネスサイト', description: 'デジタルの案内板。お昼の注文で夕方には公開。', icon: 'tabler:square-number-1', callToAction: { text: 'プランを見る', href: '/one-page-welcome-jp' } },
+      { title: 'レビューエンジン', description: '信頼の自動化。お客様の声を星5つのGoogle評価へ。', icon: 'tabler:stars', callToAction: { text: 'プランを見る', href: '/review-engine-jp' } },
+      { title: '英語専用デジタル別館', description: '世界進出への離れ。既存サイトをいじらずに英語化。', icon: 'tabler:language', callToAction: { text: 'プランを見る', href: '/english-hanare-jp' } },
+      { title: 'グランド・リフォーム', description: 'デザインの劇的刷新。今のサイトをラグジュアリーに。', icon: 'tabler:palette', callToAction: { text: 'リフォームを見る', href: '/grand-opening-jp/#reform' } },
+      { title: 'グランド・ニュー制作', description: 'デジタル設計図。ゼロから最強の旗艦店を構築。', icon: 'tabler:rocket', callToAction: { text: '新規制作を見る', href: '/grand-opening-jp/#new' } },
+      { title: '地域貢献活動', description: 'デジタルの力で日本を支える。NPO法人等へ無償提供。', icon: 'tabler:heart', callToAction: { text: '詳細を見る', href: '/community-mission-jp' } },
+    ]}
+    classes={{ container: 'py-12 md:py-20' }}
+  />
+
+  <CallToAction
+    title="まだご不明な点がありますか？"
+    subtitle="個別のご要望や技術的な相談も承っております。お気軽にお問い合わせください。"
+    actions={[{ variant: 'primary', text: 'チームに相談する', href: '/contact-jp' }]}
   />
 </Layout>

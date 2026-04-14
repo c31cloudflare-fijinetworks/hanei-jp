@@ -1,8 +1,49 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-const metadata = { title: '利用規約 | Hanei JP' };
+
+const metadata = { 
+  title: '利用規約 | Hanei JP',
+  description: 'Hanei JP プロジェクトの詳細な法的枠組みとサービス合意書。'
+};
 ---
 <Layout metadata={metadata}>
-  <HeroText title="利用規約" subtitle="現在準備中です。詳細は直接お問い合わせください。" />
+  <HeroText title="利用規約" subtitle="バージョン 2.0 | 最終更新：2026年4月" />
+  
+  <section class="px-4 py-12 sm:px-6 mx-auto lg:py-20 max-w-4xl">
+    <div class="prose prose-lg dark:prose-invert max-w-none text-muted dark:text-slate-400">
+      
+      <h2 class="text-slate-900 dark:text-white">1. はじめに</h2>
+      <p>本利用規約（以下「本規約」）は、Hanei JP（以下「当スタジオ」）が提供するサービスへのアクセスおよび利用について規定するものです。サービスの購入、オンボーディングフォームの完了、または当スタジオのデジタル資産を利用することにより、お客様（以下「クライアント」）は本規約に法的拘束されることに同意したものとみなされます。</p>
+
+      <h2 class="text-slate-900 dark:text-white">2. サービスの詳細</h2>
+      <p>当スタジオは、デジタルインフラの迅速な導入を専門としています。主要サービスには、1ページ・ビジネスサイト、自動レビューエンジン、英語専用デジタル別館（Hanare）、およびサイトのフルリニューアルが含まれます。</p>
+
+      <h2 class="text-slate-900 dark:text-white">3. 財務条件と CapEx モデル</h2>
+      <p>当スタジオは資本支出（CapEx）モデルで運営されています。一度の投資で生涯利用可能なデジタル資産を提供することを目的としています。StripeまたはPayPalによる支払いが確認されるまで、制作は開始されません。注文後直ちにリソースが割り当てられるため、オンボーディング開始後の返金には応じかねます。</p>
+
+      <h2 class="text-slate-900 dark:text-white">4. 技術デプロイとゼロアクセス・セキュリティ</h2>
+      <p>セキュリティは当スタジオの根幹です。「ゼロアクセス」モデルを採用しており、ドメイン管理画面やメールアカウントのパスワードを求めることはありません。公開には特定のDNSレコードの更新が必要ですが、当スタジオがその手順を全面的にサポートします。</p>
+
+      <h2 class="text-slate-900 dark:text-white">5. 納品保証とクライアント資産</h2>
+      <p>業界をリードするスピード（24〜72時間）を約束していますが、これはクライアントの協力が前提です。指定された正午までの素材提供がない場合、当日納品は適用されません。提供されるメディアの合法性についてはクライアントが責任を負うものとします。</p>
+
+      <h2 class="text-slate-900 dark:text-white">6. 知的財産権</h2>
+      <p>商標、ロゴ、オリジナル原稿の所有権はクライアントに帰属します。当スタジオは、ソフトウェアロジック、サーバー設定、および独自のプログラムコードに関する権利を保持します。納品後、クライアントには当該デジタル資産を利用する永久的かつ譲渡不能なライセンスが付与されます。</p>
+
+      <h2 class="text-slate-900 dark:text-white">7. 責任の制限</h2>
+      <p>日本の法律が許容する最大範囲において、当スタジオは間接的損害や利益の損失について責任を負いません。Google、Instagram、Stripe等の第三者プラットフォームの障害による影響についても責任を負いかねます。</p>
+
+      <h2 class="text-slate-900 dark:text-white">8. 保証とサポート</h2>
+      <p>すべてのパッケージには、バグ修正を含む60日間の優先技術サポートが付属します。軽微な更新は生涯サポートポリシーの下で提供されます。特定の検索順位や財務的成果を保証するものではありません。</p>
+
+      <h2 class="text-slate-900 dark:text-white">9. 準拠法</h2>
+      <p>本合意は日本法に準拠します。法的紛争が生じた場合は、当スタジオの主たる拠点所在地を管轄する裁判所を専属的合意管轄裁判所とします。</p>
+    </div>
+
+    <div class="mt-20 pt-10 border-t border-gray-200 dark:border-slate-800 text-center">
+      <p class="text-xl font-bold text-slate-900 dark:text-white mb-2">規約に関するご質問はありますか？</p>
+      <a href="/contact-jp" class="text-primary hover:text-accent font-black text-2xl underline decoration-2 underline-offset-8 transition-colors">お問い合わせはこちら</a>
+    </div>
+  </section>
 </Layout>

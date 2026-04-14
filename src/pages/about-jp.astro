@@ -3,18 +3,65 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-const metadata = { title: '戦略的意図 | Hanei JP' };
+const metadata = { 
+  title: '戦略的意図 | Hanei JP', 
+  description: '日本の卓越した技術と、世界の消費心理のギャップを埋める私たちのミッション。' 
+};
 ---
 <Layout metadata={metadata}>
   <Hero2
-    tagline="Strategic Intent"
-    title='日本の価値を、<br/><span class="text-accent">世界水準の「正解」</span>へ。'
-    subtitle="私たちは単なる翻訳者ではありません。欧米富裕層の消費心理に基づいた「選ばれる理由」へと変換する戦略的パートナーです。"
+    tagline="戦略的意図"
+    title='貴社の価値を、<br/><span class="text-accent">世界の富裕層へ「翻訳」する。</span>'
+    subtitle="私たちは単なる翻訳者ではありません。日本の「おもてなし」と、海外富裕層の「期待値」の間にあるギャップを埋める専門家です。国内の卓越性を、世界に通用する権威へと変換します。"
     actions={[{ variant: 'primary', text: 'ソリューションを見る', href: '/pricing-jp' }]}
-    image={{ src: '/images/hanei-media/006.webp' }}
+    image={{ src: '/images/hanei-media/006.webp', alt: 'グローバル戦略' }}
   />
+  
   <Content
-    title="心理的リスクの排除"
-    items={[{ title: '信頼の構築', description: '独自のロジックを用い、貴社を信頼できる目的地として提示します。', icon: 'tabler:shield-check' }]}
-  />
+    isReversed={false}
+    items={[
+        { 
+          title: '心理的リスクの排除', 
+          description: '海外旅行者は、不慣れな環境において極めて慎重です。ルールや予約フローが不明瞭な場合、彼らは「リスク」を感じて立ち去ります。独自の心理ロジックを用い、貴社を安全で世界水準の目的地として提示します。', 
+          icon: 'tabler:shield-check' 
+        },
+        { 
+          title: '信頼のアーキテクチャ', 
+          description: '信頼は言葉ではなく、インフラによって構築されます。高速で安全な英語資産を構築することで、貴社が技術的に洗練され、安定した運営を行っていることを顧客に確信させます。', 
+          icon: 'tabler:building-bridge' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">グローバル・ゲストの心理学</h3>
+      <p class="text-lg text-muted">現代のインバウンド市場において、「汎用的」なものは「ラグジュアリー」の敵です。単なる直訳を超え、貴社を地域リーダーとして確立させるクリーンで権威あるデジタルプレゼンスを提供します。Hanei JPは、オンライン・インフラこそが最強の営業担当者であるべきだという信念に基づいています。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="/images/hanei-media/002.webp" alt="戦略プランニング" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed={true}
+    items={[
+        { 
+          title: 'データに基づく可視化', 
+          description: '貴社の技術は世界の舞台に立つべきです。欧米やオーストラリアの富裕層が使用する特定のキーワードや意図に焦点を当て、アルゴリズム上で優先される検索結果を実現します。', 
+          icon: 'tabler:chart-arrows-vertical' 
+        },
+        { 
+          title: '現場の摩擦をゼロに', 
+          description: '現場スタッフを言語の混乱から守ります。私たちのシステムは正確なデータ連携を行い、スタッフには日本語で、顧客にはネイティブの体験を提供するため、追加の英語研修は不要です。', 
+          icon: 'tabler:user-check' 
+        },
+    ]}
+  >
+    <Fragment slot="content">
+      <h3 class="text-3xl font-bold mb-4">卓越性の継承</h3>
+      <p class="text-lg text-muted">ブティック・サービスであれ大規模施設であれ、デジタル・インフラは貴社の最も貴重な資産です。そこから世界的な評判が生まれます。私たちはその責任を重く受け止め、高速、安全、かつ戦略的に正しいサイトを構築します。</p>
+    </Fragment>
+    <Fragment slot="image">
+       <img src="/images/hanei-media/013.webp" alt="高機能システム" class="rounded-lg shadow-xl w-full" />
+    </Fragment>
+  </Content>
 </Layout>
