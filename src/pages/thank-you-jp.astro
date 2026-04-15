@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 
 const metadata = { 
-    title: '注文完了 | Hanei JPへようこそ',
+    title: 'ご注文ありがとうございます | Hanei JPへようこそ',
     robots: { index: false }
 };
 ---
@@ -11,21 +11,21 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero2
     tagline="お支払いが完了しました"
-    title='デジタルの「正解」へ、<br/><span class="text-accent">ようこそ。</span>'
-    subtitle="決済が正常に完了しました。最短24〜72時間でのスピード納品を維持するため、直ちに制作情報の提供をお願いいたします。"
-    image={{ src: '/images/hanei-media/012.webp', alt: 'プロジェクト開始' }}
+    title='Haneiスタンダードへ、<br/><span class="text-accent">ようこそ。</span>'
+    subtitle="Haneiをお選びいただき、誠にありがとうございます。決済が正常に完了いたしました。最短24〜72時間での納品基準を維持するため、直ちに制作情報の提供をお願いいたします。"
+    image={{ src: '/images/demos/azabu-medical.webp', alt: 'プロジェクトの有効化' }}
   />
 
-  <div class="py-24 text-center">
+  <div class="py-24 text-center px-4">
     <div class="max-w-4xl mx-auto bg-white border-4 border-slate-950 rounded-[3rem] p-12 md:p-24 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-      <h2 class="text-4xl md:text-5xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">最終ステップ:<br/>プロジェクトの有効化</h2>
+      <h2 class="text-4xl md:text-6xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">最終ステップ：<br/> プロジェクトの有効化</h2>
       <p class="text-xl md:text-2xl text-slate-600 mb-16 font-bold leading-relaxed">
-        Googleオンボーディングフォームに詳細をご記入ください。送信後、制作チームが直ちに稼働を開始します。
+        制作情報の入力をお願いいたします。Googleの「オンボーディングフォーム」を完了してください。受領後、直ちに弊社の開発チームが制作を開始します。
       </p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScm1dnWCyPE6UfJ2tk9Hvkbwq1ffRhUnruqMtHOtRFeC16DbQ/viewform" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl text-2xl font-black uppercase tracking-widest hover:bg-slate-950 transition-all transform hover:-translate-y-1 shadow-2xl">
         オンボーディングフォームを開く
       </a>
-      <p class="mt-12 text-sm font-black text-slate-400 uppercase tracking-widest italic">新しいセキュアなタブで開きます</p>
+      <p class="mt-12 text-sm font-black text-slate-400 uppercase tracking-widest italic">リンクは新しいセキュアなタブで開きます</p>
     </div>
   </div>
 </Layout>
