@@ -27,6 +27,7 @@ const labels = {
   labelEmail: texts.labelEmail || (hasUrlField ? "3. Your Email" : "2. Your Email"),
   phEmail: texts.phEmail || "Enter Email",
   submit: texts.submit || "Pay & Start Now",
+  totalInv: texts.totalInv || "Total Investment",
 };
 
 const gridConfig = prices.length === 1 
@@ -45,8 +46,9 @@ const gridConfig = prices.length === 1
             Hanei Standard
         </div>
 
-        <div class="min-h-[100px] flex items-center justify-center">
-          <h3 class="text-4xl md:text-5xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-tight">
+        <!-- FIX: Added min-h and adjusted font size for better Japanese line-balance -->
+        <div class="min-h-[120px] flex items-center justify-center">
+          <h3 class="text-3xl md:text-4xl font-black text-slate-950 font-heading tracking-tighter uppercase leading-tight">
             {price.title}
           </h3>
         </div>
@@ -63,7 +65,7 @@ const gridConfig = prices.length === 1
             </div>
             { (price.badge || price.total) && (
               <div class="mt-8 bg-slate-950 text-white px-8 py-5 rounded-2xl inline-block shadow-lg">
-                  <span class="text-sm md:text-base font-bold uppercase tracking-widest leading-tight block" set:html={price.badge || `Total Investment: ${price.total}`}></span>
+                  <span class="text-sm md:text-base font-bold uppercase tracking-widest leading-tight block" set:html={price.badge || `${labels.totalInv}: ${price.total}`}></span>
               </div>
             )}
           </div>
