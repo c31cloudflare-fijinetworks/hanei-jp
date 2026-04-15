@@ -3,12 +3,31 @@ import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
 
-const { title, subtitle, tagline, prices = [], hasUrlField = false, classes = {}, ...rest } = Astro.props;
+const { 
+  title, 
+  subtitle, 
+  tagline, 
+  prices = [], 
+  hasUrlField = false, 
+  classes = {}, 
+  texts = {}, 
+  ...rest 
+} = Astro.props;
 
 const SITE_URL = "https://hanei.jp";
 const currentPath = Astro.url.pathname;
 const successUrl = `${SITE_URL}/thank-you`;
 const cancelUrl = `${SITE_URL}${currentPath}`;
+
+const labels = {
+  labelBiz: texts.labelBiz || "1. Business Name",
+  phBiz: texts.phBiz || "Enter Name",
+  labelWeb: texts.labelWeb || "2. Website (If any)",
+  phWeb: texts.phWeb || "https://...",
+  labelEmail: texts.labelEmail || (hasUrlField ? "3. Your Email" : "2. Your Email"),
+  phEmail: texts.phEmail || "Enter Email",
+  submit: texts.submit || "Pay & Start Now",
+};
 
 const gridConfig = prices.length === 1 
   ? "max-w-2xl mx-auto" 
@@ -80,28 +99,28 @@ const gridConfig = prices.length === 1
             
             <div class="text-left space-y-8">
               <div>
-                <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">1. Business Name</label>
-                <input type="text" name="os0" required class="business-name-input w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder="Enter Name" data-base-title={price.title} />
+                <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">{labels.labelBiz}</label>
+                <input type="text" name="os0" required class="business-name-input w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder={labels.phBiz} data-base-title={price.title} />
                 <input type="hidden" name="on0" value="Business Name" />
               </div>
 
               {hasUrlField ? (
                 <div>
-                  <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">2. Website (If any)</label>
-                  <input type="text" name="os1" class="w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder="https://..." />
+                  <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">{labels.labelWeb}</label>
+                  <input type="text" name="os1" class="w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder={labels.phWeb} />
                   <input type="hidden" name="on1" value="Current URL" />
                 </div>
               ) : null}
 
               <div>
-                <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">{hasUrlField ? '3.' : '2.'} Your Email</label>
-                <input type="email" required class="email-input w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder="Enter Email" />
+                <label class="block text-xs font-black mb-2 text-slate-950 uppercase tracking-widest">{labels.labelEmail}</label>
+                <input type="email" required class="email-input w-full px-6 py-5 text-xl border border-slate-300 rounded-2xl bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-50 outline-none transition-all text-slate-950 font-bold placeholder:text-slate-300 shadow-sm" placeholder={labels.phEmail} />
                 <input type="hidden" class="paypal-custom-metadata" name="custom" value="" />
               </div>
             </div>
 
             <button type="submit" class="w-full mt-12 py-7 bg-blue-600 hover:bg-slate-950 text-white font-black rounded-2xl shadow-xl transition-all text-2xl uppercase tracking-widest transform hover:-translate-y-1">
-              Pay & Start Now
+              {labels.submit}
             </button>
           </form>
         </div>
