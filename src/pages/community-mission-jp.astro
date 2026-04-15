@@ -6,7 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = { 
   title: '地域貢献活動 | 公共の利益のための無料Web制作支援 | Hanei JP', 
-  description: '日本のNPOやコミュニティ団体へ、プロフェッショナルなWeb制作を完全無料で提供します。',
+  description: '日本のNPO法人や地域コミュニティに対し、プロフェッショナルなウェブサイトを完全無償で提供します。',
 };
 ---
 
@@ -14,19 +14,19 @@ const metadata = {
   <Hero2
     tagline="地域貢献活動（コミュニティ・ミッション）"
     title='日本の地域社会を支える皆様へ。<br/><span class="text-accent">公共の利益のため、Web制作を無料で提供。</span>'
-    subtitle="皆様の素晴らしい活動と想いを社会に届けるために、私たちは自らの技術を公共の利益に資する無料サービスとして提供します。"
+    subtitle="皆様の素晴らしい活動と想いを社会に届けるために。私たちは自らの技術を公共の利益に資する無料サービスとして提供します。日本国内の登録NPO法人等に向けた、企業グレードのデジタル・インフラ支援です。"
     actions={[{ variant: 'primary', text: '支援について問い合わせる', href: 'mailto:webmaster@fijinetworks.com?subject=Community Mission Inquiry (JP)', target: '_blank' }]}
     image={{ src: '/images/hanei-media/031.webp', alt: 'Japanese Community' }}
   />
-
+  
   <Content isReversed={true} classes={{ container: 'py-8 md:py-12' }}>
     <Fragment slot="content">
       <h3 class="text-3xl font-bold mb-4 text-slate-950">日本各地の「志」に、最高水準のWebを。</h3>
       <p class="text-lg text-slate-600 mb-4 font-medium">
-        大阪、神戸、広島、京都といった都市部から、日本の隅々にある温かなコミュニティまで。地域社会を支えるために、現場で人知れず汗を流す「真のヒーロー」たちがいます。
+        神戸や広島の強靭なコミュニティから、大阪や京都での活発な社会的取り組みまで。日本社会の基盤を強化するために、現場で人知れず汗を流す「地域のヒーロー」たちがいます。
       </p>
       <p class="text-lg text-slate-600 font-medium">
-        Haneiは、社会に最も貢献している方々がデジタル資源の不足によって活動を制限されるべきではないと信じています。公共の利益のため、プロの企業向けと同等の『デジタルの拠点』を無償で提供します。
+        Haneiは、社会に最も貢献している方々が、デジタル資源の不足によってその活動を制限されるべきではないと信じています。皆様の地域でのミッションには、手作りのテンプレートではなく、絶対的な精度で作られたプロフェッショナルなデジタルの拠点が必要です。
       </p>
     </Fragment>
     <Fragment slot="image">
@@ -40,16 +40,16 @@ const metadata = {
     tagline="支援の対象"
     title="公共の利益に資する4つの柱"
     items={[
-        { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト。', icon: 'tabler:accessible' },
-        { title: '動物愛護・保護活動', description: '動物たちの魅力を伝え、里親申し込みや寄付をスムーズにするサイト構築。', icon: 'tabler:paw' },
-        { title: '高齢者支援・福祉', description: '文字が読みやすく、地域のリソースを簡単に見つけられるアクセシブルな設計。', icon: 'tabler:old' },
+        { title: '障がい者支援', description: '最新のWebアクセシビリティ基準に準拠した、誰もが平等に使えるサイト構築。', icon: 'tabler:accessible' },
+        { title: '動物愛護・保護活動', description: '動物たちの魅力を最大限に伝え、里親申し込みや寄付をスムーズにする設計。', icon: 'tabler:paw' },
+        { title: '高齢者支援・福祉', description: '文字が読みやすく、高齢者と地域のリソースを繋ぐアクセシブルなデザイン。', icon: 'tabler:old' },
         { title: '子ども・若者支援', description: '子ども食堂や学習支援など、安全で温かみのあるオンライン空間の創造。', icon: 'tabler:school' },
     ]}
     image={{ src: '/images/hanei-media/007.webp', alt: 'Animal Care' }}
     classes={{ container: 'py-8 md:py-12' }}
   >
     <Fragment slot="content">
-      <p class="text-lg text-slate-600 mb-6 font-medium">
+      <p class="text-lg text-muted mb-6">
         思いやりのある社会の基盤となる分野に焦点を当て、日本全国の団体を支援しています。
       </p>
     </Fragment>
@@ -57,23 +57,23 @@ const metadata = {
 
   <Features2
     title='公共の利益のための <br/><span class="text-accent">「Haneiスタンダード」：</span>'
-    subtitle="企業クライアントへ提供するものと全く同じエリート・インフラを提供します。"
+    subtitle="企業クライアントへ提供するものと全く同じエリート・インフラを無償提供します。"
     columns={3}
     items={[
-      { title: 'プロによる完全オリジナルデザイン', description: '団体のビジョンを反映した独自のデザイン。', icon: 'tabler:circle-check' },
-      { title: 'モバイル最適化', description: 'スマートフォンで最も快適に閲覧できる設計。', icon: 'tabler:circle-check' },
+      { title: 'プロによる完全オリジナルデザイン', description: '団体のビジョンと想いを反映した独自のデザイン。', icon: 'tabler:circle-check' },
+      { title: 'モバイル最適化', description: 'スマートフォンで最も快適に閲覧・操作できる設計。', icon: 'tabler:circle-check' },
       { title: 'SEO（検索エンジン最適化）', description: '地域の皆様がネット検索から確実に団体を見つけられる仕組み。', icon: 'tabler:circle-check' },
-      { title: '安全なサーバー設定', description: '個人情報を守るための、最も安全な環境構築。', icon: 'tabler:circle-check' },
-      { title: '運用トレーニング', description: '活動報告やニュースをご自身で更新できるようレクチャー。', icon: 'tabler:circle-check' },
-      { title: '多言語対応（バイリンガル）', description: '在日外国人コミュニティとの架け橋となるサイト構築。', icon: 'tabler:circle-check' },
+      { title: '安全なサーバー・ホスティング', description: '個人情報を守るための、最も安全なサイト運営と環境構築。', icon: 'tabler:circle-check' },
+      { title: '運用トレーニング', description: '活動報告やニュースをご自身で更新できるよう、スタッフへレクチャーします。', icon: 'tabler:circle-check' },
+      { title: '多言語対応（バイリンガル）', description: '在日外国人コミュニティや海外の支援者との架け橋となるサイト構築。', icon: 'tabler:circle-check' },
     ]}
   />
 
   <div id="application" class="scroll-mt-20 py-24 text-center px-4">
     <div class="max-w-4xl mx-auto bg-slate-50 rounded-[3rem] p-12 md:p-24 border-2 border-slate-100 shadow-2xl">
-      <h3 class="text-4xl md:text-5xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">支援のお申し込み</h3>
+      <h3 class="text-4xl md:text-5xl font-black text-slate-950 uppercase tracking-tighter mb-8 leading-tight">皆様の活動を、<br/>デジタルの力で支援します</h3>
       <p class="text-xl md:text-2xl text-slate-600 mb-12 font-bold leading-relaxed">
-        日本国内のNPO法人、一般社団法人、または実績のある団体を対象としています。詳細はメールにて事務局へ直接お問い合わせください。
+        日本国内のNPO法人、一般社団法人、または実績のある地域コミュニティ団体を対象としています。（※年間の支援枠には上限がございます。）詳細はメールにて直接お問い合わせください。
       </p>
       <a href="mailto:webmaster@fijinetworks.com?subject=Community Mission Support Request (JP)" target="_blank" class="inline-block bg-blue-600 text-white px-12 py-6 rounded-2xl text-2xl font-black uppercase tracking-widest hover:bg-slate-950 transition-all transform hover:-translate-y-1 shadow-2xl">
         事務局へメールを送る
