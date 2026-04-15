@@ -26,6 +26,9 @@ const portText = isJp
   : "From luxury hospitality, fine dining, and medical excellence to industrial engineering, roasteries, and secure logistics. Explore our beautiful websites built to the Hanei Standard.";
 const portBtn = isJp ? "デモ一覧を見る" : "View Portfolio Demos";
 const portHref = isJp ? "/demos-jp" : "/demos";
+
+// Slogan Logic
+const slogan = isJp ? "日本の優れた価値を、世界へと繋ぐ 🌏" : "Bridging Japan's Finest to the World 🌏";
 ---
 
 <footer class="relative border-t border-gray-200 dark:border-slate-800 not-prose bg-white dark:bg-slate-900">
@@ -69,7 +72,7 @@ const portHref = isJp ? "/demos-jp" : "/demos";
         <div class="text-center md:text-left">
           <span class="text-xl font-bold">Hanei JP</span>
           <p class="text-sm italic text-gray-500 font-medium whitespace-pre-line">
-            Bridging Japan's Finest to the World 🌏
+            {slogan}
           </p>
         </div>
 
