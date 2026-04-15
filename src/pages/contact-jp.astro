@@ -3,10 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
-const metadata = { 
-  title: 'お問い合わせ | Hanei JP',
-  description: 'オーダーメイドのデジタルソリューションに関するご相談。すべてのお問い合わせに対し、当日中の返信を保証しております。'
-};
+const metadata = { title: 'お問い合わせ | Hanei JP' };
 
 const jpLabels = {
     title: "制作・パートナーシップのご相談",
@@ -26,18 +23,29 @@ const jpLabels = {
 
 const jpOptions = {
     requests: [
-      "1ページ・ビジネスサイト", 
-      "レビューエンジン", 
-      "英語専用デジタル別館", 
-      "グランド・リフォーム (既存サイト刷新)", 
-      "グランド・ニュー (新規サイト制作)", 
-      "一般的なお問い合わせ", 
-      "独自システム開発 / API", 
-      "その他"
+      { label: "1ページ・ビジネスサイト", value: "1-Page Business Website" },
+      { label: "レビューエンジン", value: "Review Engine" },
+      { label: "英語専用デジタル別館", value: "English Hanare" },
+      { label: "グランド・リフォーム", value: "Grand Reform (Facelift)" },
+      { label: "グランド・ニュー制作", value: "Grand NEW (New Build)" },
+      { label: "一般的なお問い合わせ", value: "General Inquiry" },
+      { label: "独自システム開発 / API", value: "Custom System / API" },
+      { label: "その他", value: "Other" }
     ],
-    budgets: ["該当なし・未定", "10万円 - 30万円", "30万円 - 50万円", "50万円 - 100万円", "100万円以上"],
-    timelines: ["至急 (最短当日)", "今週中", "1ヶ月以内", "時期未定・相談", "その他"],
-    referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
+    budgets: [
+      { label: "該当なし・未定", value: "Not Applicable" },
+      { label: "10万円 - 30万円", value: "¥100k - ¥300k" },
+      { label: "30万円 - 50万円", value: "¥300k - ¥500k" },
+      { label: "50万円 - 100万円", value: "¥500k - ¥1M" },
+      { label: "100万円以上", value: "¥1M+" }
+    ],
+    timelines: [
+      { label: "至急 (最短当日)", value: "Today / ASAP" },
+      { label: "今週中", value: "Within this week" },
+      { label: "1ヶ月以内", value: "Within 1 month" },
+      { label: "時期未定・相談", value: "Flexible" },
+      { label: "その他", value: "Other" }
+    ]
 };
 ---
 
