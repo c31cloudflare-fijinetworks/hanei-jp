@@ -1,173 +1,73 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
 const metadata = { 
-  title: 'レビューエンジン | 口コミ収集・Googleマップ対策 | Hanei JP', 
-  description: 'お客様の「ありがとう」を「星5つの評価」に変える。Googleマップの口コミを自動で増やし、信頼を形にするシステム。',
+  title: 'レビューエンジン | 星5つの評価と信頼を自動化 | Hanei JP',
+  description: 'お客様の満足を最強のマーケティング資産へ。QRコードを用いた専用システムにより、Googleでの高評価レビュー収集を驚くほど簡単にします。'
 };
 
-const pricingData = {
-  title: 'レビューエンジン導入プラン',
-  subtitle: '信頼を築き、新しいお客様を呼び込む最強のツール。',
-  price: '22,500',
-  period: '一括払い（追加費用なし）',
+const pricingData = { 
+  title: 'レビューエンジン・パッケージ', 
+  price: '¥19,800', 
+  subTitle: '今すぐ導入',
+  badge: '一括払い（買い切り） <br/> 永続的な成長を。',
   items: [
-    { description: 'お店専用のレビュー収集ページ制作' },
-    { description: 'Googleマップ直接投稿機能' },
-    { description: '自社サイトへの口コミ自動表示機能' },
-    { description: '当日納品（正午までの注文）' },
-    { description: 'ご満足いただけるまで修正無制限' },
-  ],
-  callToAction: { target: '_self', text: '今すぐ導入する', href: '/contact-jp', variant: 'primary' },
+    { description: 'ブランド専用レビューポータルの構築' }, 
+    { description: 'Googleマップへの直接投稿機能' }, 
+    { description: '自動更新レビューウィジェット' }, 
+    { description: '超高速エッジサーバー配信' },
+    { description: '24時間以内のスピード公開' }
+  ]
 };
 ---
-
 <Layout metadata={metadata}>
-  
-  <!-- HERO SECTION -->
-  <Hero2
-    tagline="口コミ収集を、もっとスマートに。"
-    title='お客様の「ありがとう」を、<br/><span class="text-accent">「星5つの評価」に変えませんか？</span>'
-    subtitle="満足したお客様が何も書かずに帰ってしまうのは、大きな損失です。スマホをかざすだけで、簡単にGoogleや自社サイトへ口コミを投稿できる仕組みを提供します。"
-    actions={[{ variant: 'primary', text: 'レビューエンジンを導入する', href: '#pricing' }]}
-    image={{ src: '/images/review_engine/testimonial-1.webp', alt: '5つ星評価' }}
+  <Hero2 
+    tagline="評判管理のオートメーション" 
+    title='お客様の「ありがとう」を、<br/><span class="text-accent">「星5つの評価」に変える。</span>' 
+    subtitle='満足されたお客様が何も言わずに帰ってしまう機会損失を防ぎましょう。私たちが構築・管理するシンプルなQRコードシステムにより、Googleマップでの高評価収集を最小限の労力で実現します。' 
+    actions={[{ variant: 'primary', text: '今すぐ開始する', href: '#pricing' }]} 
+    image={{ src: '/images/review_engine/testimonial-1.webp', alt: 'レビュー' }} 
   />
   
-  <!-- SECTION 1: THE PROBLEM -->
-  <Content
-    isReversed={false}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">「満足しているお客様」ほど、<br/>実は何も言わずに帰っています。</h3>
-      <p class="text-lg text-muted mb-4">
-        最高のサービスを提供し、お客様も笑顔で「ありがとう」と言ってくれる。しかし、ネットで検索すると口コミが少ない…あるいは、一部の不満な声だけが目立ってしまっていませんか？
-      </p>
-      <p class="text-lg text-muted mb-6">
-        多くのお客様は「応援したい」と思っていますが、自分で検索して投稿するのは手間がかかります。その「手間」を私たちがゼロにします。
-      </p>
-      <p class="text-lg font-bold text-gray-900 dark:text-white">
-        Haneiのレビューエンジンは、QRコードを読み取るだけで、即座に評価を投稿できる仕組みです。
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/review_engine/testimonial-2.webp" alt="カフェの風景" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- SECTION 2: THE SOLUTION -->
-  <Content
-    isReversed={true}
-    items={[
-        { 
-          title: 'お店専用のデザイン', 
-          description: 'お店の雰囲気に合わせた、プロ仕様のレビューページ。お客様が迷わず直感的に感想を伝えられる設計です。', 
-          icon: 'tabler:palette' 
-        },
-        { 
-          title: 'Googleマップへ直結', 
-          description: 'ワンタップでGoogleの投稿画面へ。検索順位アップに欠かせない「新鮮な口コミ」を効率よく集めます。', 
-          icon: 'tabler:brand-google' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">プロフェッショナルな<br/>評判管理を自動化</h3>
-      <p class="text-lg text-muted">
-        難しい設定はすべてお任せください。あなたは店頭にQRコードを置くだけ。接客に集中している間に、お店の資産となる高評価が積み上がっていきます。
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/review_engine/testimonial-3.webp" alt="日本のカフェでの接客" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- SECTION 3: WIDGET -->
-  <Content
-    isReversed={false}
-    items={[
-        { 
-          title: 'ホームページに自動表示', 
-          description: "届いた高評価を自社サイトにリアルタイムで表示。初めての訪問者に、今すぐ安心感を与えます。", 
-          icon: 'tabler:refresh' 
-        },
-        { 
-          title: 'ストレスフリーな体験', 
-          description: "検索不要。ログイン不要。スキャンして、タップする。それだけで完了です。", 
-          icon: 'tabler:qrcode' 
-        },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">リアルタイムの証明で、<br/>信頼を最大化する</h3>
-      <p class="text-lg text-muted mb-6">
-        あなたのホームページを、常に「新しいお客様の声」で溢れる活気ある場所に変えましょう。
-      </p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/review_engine/testimonial-4.webp" alt="カフェの内装" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <!-- STEPS -->
-  <Steps2
-    title="最短24時間で運用開始"
-    subtitle="導入に時間はかかりません。私たちが即座に構築します。"
-    items={[
-      { title: 'STEP 1: かんたん注文', description: '店名とロゴを送るだけ。お店専用のシステムを構築します。', icon: 'tabler:shopping-cart' },
-      { title: 'STEP 2: 最短当日納品', description: '正午までの注文で即日、それ以降でも翌日には完成。', icon: 'tabler:bolt' },
-      { title: 'STEP 3: 口コミを集める', description: 'QRコードを置くだけ。評価が増える喜びを実感してください。', icon: 'tabler:star' },
-    ]}
-    image={{ 
-      src: '/images/review_engine/testimonial-5.webp', 
-      alt: 'バリスタ',
-    }}
+  <Content 
+    isReversed={false} 
+    title="01. ブランド専用レビューポータル" 
+    subtitle="お客様を迎えるプレミアムな「デジタルのレッドカーペット」を構築します。貴社のブランドに合わせたクリーンで魅力的なデザイン。グローバル・エッジネットワークでホスティングされるため、通信環境を問わず瞬時に読み込まれます。" 
+    items={[{ title: '視覚的な信頼性', description: '複雑な入力は不要。直感的なインターフェース。', icon: 'tabler:palette' }]} 
+    image={{ src: '/images/review_engine/testimonial-2.webp', alt: 'ポータル' }} 
+  />
+  
+  <Content 
+    isReversed={true} 
+    title="02. 信頼を証明する「レビュー・ウォール」" 
+    subtitle="届いたばかりの最高評価を自社サイトへ自動的に表示。このリアルタイムの「社会的証明」が、貴社の品質を即座に証明します。地域で信頼できる店を探している新規訪問者に対し、圧倒的な安心感を与えます。" 
+    items={[{ title: '社会的証明', description: '検証済みの満足度をリアルタイムで可視化。', icon: 'tabler:stars' }]} 
+    image={{ src: '/images/review_engine/testimonial-3.webp', alt: 'レビュー表示' }} 
+  />
+  
+  <Content 
+    isReversed={false} 
+    title="03. ストレスフリーな3クリック・フロー" 
+    subtitle="専用アプリのインストールは不要です。スマートフォンでの投稿体験を徹底的に最適化し、わずか15秒でレビューが完了する動線を設計。お客様の満足度が最も高まっている「その瞬間」を逃さずキャッチします。" 
+    items={[{ title: 'スピードこそ正義', description: '感動が冷めないうちに評価を蓄積。', icon: 'tabler:pointer' }]} 
+    image={{ src: '/images/review_engine/testimonial-4.webp', alt: 'クリックフロー' }} 
+  />
+  
+  <Content 
+    isReversed={true} 
+    title="04. SEO（検索順位）向上エンジン" 
+    subtitle="新鮮な口コミが継続的に集まることは、Googleに対し「貴社が地域で最も活発で、選ばれているビジネスである」という強力な信号を送ります。この自動成長サイクルが、地域検索（MEO）での上位表示を維持させます。" 
+    items={[{ title: '検索順位の向上', description: 'Googleは新しい活動のあるビジネスを優遇します。', icon: 'tabler:trending-up' }]} 
+    image={{ src: '/images/review_engine/testimonial-5.webp', alt: 'SEO効果' }} 
   />
 
-  <!-- FEATURES -->
-  <Features2
-    title="Haneiの安心約束"
-    subtitle="オーナー様にご満足いただけるまで、妥協しません。"
-    columns={3}
-    items={[
-      { title: '当日スピード納品', description: '正午までの注文で即日、それ以降でも翌日には確実に納品。', icon: 'tabler:clock' },
-      { title: '修正は何度でも無料', description: 'デザインや内容が100%気に入るまで、無制限に調整。', icon: 'tabler:thumb-up' },
-      { title: '明朗会計 ¥22,500', description: '一括払いのみ。隠れた費用や月額コストはゼロ。', icon: 'tabler:coin-yen' },
-      { title: 'お店専用デザイン', description: 'テンプレートではない、お店のブランドに合うデザイン。', icon: 'tabler:brush' },
-      { title: 'Google MEO対策', description: 'Googleマップの順位向上に直結する口コミ収集を支援。', icon: 'tabler:external-link' },
-      { title: 'Web自動表示', description: '自社サイトに高評価を自動表示。信頼をその場で証明。', icon: 'tabler:device-laptop' },
-    ]}
-  />
-
-  <!-- TOURIST READY SUITE -->
-  <Features2
-    title='すべてのプランに含まれる「インバウンド対応スイート」'
-    subtitle="インバウンド集客を即座に開始するための必須インフラが標準で付属しています。"
-    columns={3}
-    items={[
-      { title: 'GoogleマップSEO（MEO）', description: '外国人観光客が「近くの〇〇」と検索した際に上位表示させる、1ページの完全英語SEO設定。', icon: 'tabler:circle-check' },
-      { title: 'カスタムQRレビューPOP', description: '卓上に置いてGoogleの星5つレビューを促進する、印刷用PDFデータ。', icon: 'tabler:circle-check' },
-      { title: '「How-To」ランディングページ', description: '禁煙、お通し、靴を脱ぐルールなどを説明し、入店前の不安を解消するカスタムコンテンツ。', icon: 'tabler:circle-check' },
-      { title: 'プロの英語コピーライティング', description: '単なる翻訳ではなく、予約・来店につながる魅力的なビジネス説明文を執筆。', icon: 'tabler:circle-check' },
-      { title: '超高速ページ配信ネットワーク', description: 'ローミング通信を利用するモバイルユーザー向けに最適化された高速表示。', icon: 'tabler:circle-check' },
-      { title: '最短即日の超高速デプロイ', description: '午前中のご注文で、本日中にWebサイトを公開・稼働させます！', icon: 'tabler:bolt' },
-    ]}
-  />
-
-  <!-- PRICING -->
   <Pricing 
-    id="pricing"
-    title="価格のご案内" 
+    id="pricing" 
+    title="明朗な一括料金。生涯続く成長。" 
+    subtitle="今すぐ評判管理を自動化しましょう。追加の月額費用は一切発生しません。"
     prices={[pricingData]} 
   />
-
-  <!-- ABOUT HANEI -->
-  
-  
-  
 </Layout>
