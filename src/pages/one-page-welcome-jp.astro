@@ -1,116 +1,92 @@
 ---
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Content from '~/components/widgets/Content.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = { 
-  title: '外国人観光客の集客・英語ページ制作 | Hanei JP', 
-  description: '看板を見て通り過ぎる外国人客を、今日から「お客様」に変えませんか？19,800円でプロ品質の英語ページを制作。',
+  title: '1ページ・ビジネスサイト | プロ品質 × 最速納品 | Hanei JP',
+  description: '貴社のビジネスを凝縮した1ページ完結のウェブサイト。サービス、メニュー、店舗ルールを魅力的に提示し、集客を最大化します。'
 };
 
-const pricingData = {
-  title: 'インバウンド対策・1ページ制作プラン',
-  subtitle: '外国人観光客を迷わせない、集客に必要なすべてを。',
-  price: '19,800',
-  period: '一括払い（追加費用なし）',
+const pricingData = { 
+  title: '1ページ・ウェルカム・パッケージ', 
+  price: '¥19,800', 
+  subTitle: '今すぐ申し込む',
+  badge: '一括払い（買い切り） <br/> 最短本日公開！',
   items: [
-    { description: 'プロによる英語Webページ制作' },
-    { description: 'Googleマップ英語検索対策（MEO）' },
-    { description: '店頭用・注文用QRコード作成' },
-    { description: '当日納品（正午までの注文）' },
-    { description: 'ご満足いただけるまで修正無制限' },
-  ],
-  callToAction: { target: '_self', text: '今すぐ申し込む', href: '/contact-jp', variant: 'primary' },
+    { description: 'ブティック品質の1ページデザイン' }, 
+    { description: 'サービス・メニュー構成案' }, 
+    { description: '高速モバイル最適化' }, 
+    { description: '店頭用カスタムQRコード' },
+    { description: '24時間以内のスピード納品' }
+  ]
 };
 ---
-
 <Layout metadata={metadata}>
-  
-  <Hero2
-    tagline="シンプル。最速。確かな効果。"
-    title='看板を見て通り過ぎる外国人客を<br/><span class="text-accent">「常連客」に変えませんか？</span>'
-    subtitle='スマホを見ながらお店の前を通り過ぎてしまう外国人。その原因は「英語の情報がない不安」です。最短24時間で、あなたのお店を「外国人歓迎」の場所に変えます。'
-    actions={[{ variant: 'primary', text: '今すぐ英語ページを作る', href: '#pricing' }]}
-    image={{ src: '/images/hanei-media/008.webp', alt: '賑わう日本の商店街' }}
+  <Hero2 
+    tagline="シンプル。最速。確かな効果。" 
+    title='貴社の魅力を、<br/><span class="text-accent">プロ品質の1ページに凝縮。</span>' 
+    subtitle='オンラインでプロフェッショナルな姿を提示する最速の方法。メニュー、サービス、ハウスルールを美しく見せる高品質なサイトを構築します。正午までの注文で、夕方には公開可能です。' 
+    actions={[{ variant: 'primary', text: 'パッケージ料金を見る', href: '#pricing' }]} 
+    image={{ src: '/images/hanei-media/008.webp', alt: 'プロフェッショナルな店舗入口' }} 
   />
   
-  <Content
-    isReversed={false}
-    items={[
-        { title: '英語が話せなくても大丈夫', description: 'スタッフが英語を話す必要はありません。メニュー、ルール、サービス内容をスマホで完璧に伝えることで、接客のストレスをゼロにします。', icon: 'tabler:mood-smile' },
-        { title: 'Googleマップで発見される', description: '外国人が英語で「Cafe」「Dentist」と検索した際、あなたのお店が上位に表示されるよう設定。競合店に流れている客層をしっかりキャッチします。', icon: 'tabler:map-search' },
-        { title: 'トラブルや誤解を未然に防ぐ', description: '料金体系やお店独自のルールを正しい英語で明文化。言葉の壁による誤解や、不本意な低評価レビューを防ぎます。', icon: 'tabler:thumb-up' },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">インバウンドの波を逃すのは、<br/>もう終わりにしましょう。</h3>
-      <p class="text-lg text-muted mb-4">カフェ、レストラン、ショップ、歯科医院… 外国人観光客はあなたのサービスを求めています。しかし、日本語の情報しかないと「入ってもいいのかな？」と躊躇してしまいます。</p>
-      <p class="text-lg text-muted mb-6"><strong>Haneiの「1ページ・ウェルカム」</strong>は、その不安を取り除きます。難しいことはすべてお任せください。あなたは普段通り、日本のおもてなしに集中するだけです。</p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/hanei-media/017.webp" alt="日本の観光客" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed={true}
-    items={[
-        { title: 'ITの知識は不要です', description: 'LINEが使えれば準備は完了です。サーバーの契約や難しい設定、英語の翻訳作業はすべて私たちが代行します。', icon: 'tabler:device-mobile-check' },
-        { title: '驚きのスピード納品', description: 'お昼の12時までにご注文いただければ、その日の夜までに公開。明日からインバウンド客の受け入れを開始できます。', icon: 'tabler:bolt' },
-        { title: 'リスクゼロの修正保証', description: '修正回数に制限はありません。内容やデザインに100%ご納得いただけるまで、何度でも無料で調整いたします。', icon: 'tabler:shield-check' },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold mb-4">忙しいオーナー様のための<br/>「丸投げ」プラン。</h3>
-      <p class="text-lg text-muted">「何から始めたらいいかわからない」という悩みは不要です。私たちがこれまでの実績に基づき、最も効果的な構成であなたのビジネスを英語化します。</p>
-    </Fragment>
-    <Fragment slot="image">
-       <img src="/images/hanei-media/010.webp" alt="日本の店舗" class="rounded-lg shadow-xl w-full" />
-    </Fragment>
-  </Content>
-
-  <Steps2
-    title="導入までの3ステップ"
-    subtitle="難しい打ち合わせに時間をかける必要はありません。最短で結果を出します。"
-    items={[
-      { title: 'STEP 1: 情報の送付', description: '店名やメニュー、伝えたいルールなど、現在の日本語情報を送るだけ。', icon: 'tabler:send' },
-      { title: 'STEP 2: 制作・英語化', description: 'プロがネイティブに通じる自然な英語でページを構築。Googleマップの英語対策も行います。', icon: 'tabler:tool' },
-      { title: 'STEP 3: 運用開始', description: '完成したページに飛ぶQRコードを店頭に置くだけ。スマホひとつで「おもてなし」が始まります。', icon: 'tabler:door-enter' },
-    ]}
+  <Content 
+    isReversed={false} 
+    title="01. デジタルのビジネス・マニュアル" 
+    subtitle="「不透明さ」を「明快さ」へ。サービス内容、価格リスト、店舗独自のルールを顧客がスマートフォンで即座に確認できる環境を整えます。初めてのお客様一人ひとりへ繰り返す説明のストレスを解消します。" 
+    items={[{ title: 'すべてを一つの場所に', description: '利用ルール、メニュー、決済方法を網羅。', icon: 'tabler:clipboard-list' }]} 
+    image={{ src: '/images/demos/ginza-kaizen.webp', alt: 'スマートフォン上のデジタルメニュー' }} 
   />
 
-  <Features2
-    title='19,800円に含まれるすべてのサービス'
-    subtitle="追加料金や月額費用は一切ありません。明朗会計です。"
-    columns={3}
-    items={[
-      { title: 'Googleマップ英語化', description: '英語で検索された際に店舗が表示されるよう最適化。', icon: 'tabler:map-pin' },
-      { title: 'プロの英語ライティング', description: '機械翻訳ではない、心に響く自然な英語で紹介。', icon: 'tabler:writing' },
-      { title: 'スマホ最適化', description: '旅行中のゲストが外でもサクサク見られる高速表示。', icon: 'tabler:device-mobile' },
-      { title: '専用QRコード作成', description: '店頭やメニュー表に貼れる高品質なQRコードを提供。', icon: 'tabler:qrcode' },
-      { title: '最短当日納品', description: '正午までの注文で当日、それ以降でも翌日にはお届け。', icon: 'tabler:clock' },
-      { title: '無制限の修正', description: '100%満足いただけるまで、何度でも無料で修正対応。', icon: 'tabler:user-check' },
-    ]}
+  <Content 
+    id="flagship"
+    isReversed={true} 
+    tagline="卓越性の体験" 
+    title="制作デモ: Tokyo Locker & Storage" 
+    subtitle="プレミアムな手荷物預かりサービスの事例。セキュリティ基準、ハウスルール、非接触決済フローを、成約率の高い1ページ形式でどのように提示するかをご確認ください。" 
+    callToAction={{ variant: 'primary', text: 'デモサイトを起動', href: '/demos/tokyo-locker-storage-premium-luggage-solutions' }} 
+    image={{ src: '/images/hanei-media/026.webp', alt: 'ロッカー・ソリューション' }} 
+  />
+
+  <Content 
+    isReversed={false} 
+    tagline="卓越性の体験" 
+    title="制作デモ: Kagari Izakaya & Grill" 
+    subtitle="新宿の高級ガストロノミーの事例。予約ワークフローの統合、季節のおまかせメニュー、そして夜の街に映えるハイコントラストな美学を体験してください。" 
+    callToAction={{ variant: 'primary', text: 'デモサイトを起動', href: '/demos/kagari-izakaya-grill-shinjuku-tokyo-gastronomy' }} 
+    image={{ src: '/images/hanei-media/016.webp', alt: '高級居酒屋デモ' }} 
+  />
+  
+  <Content 
+    isReversed={true} 
+    title="02. 国内・海外双方からの「発見」" 
+    subtitle="正しいターゲットに貴社を見つけてもらいましょう。Google検索を通じて、地域住民も海外旅行者も貴社のビジネスを発見できるよう最適化。プロ仕様の1ページサイトが初見の信頼を勝ち取ります。" 
+    items={[{ title: 'プロフェッショナルな信頼', description: '公開初日から、確立されたモダンな印象を与えます。', icon: 'tabler:search' }]} 
+    image={{ src: '/images/hanei-media/010.webp', alt: '店舗を探す顧客' }} 
+  />
+  
+  <Content 
+    isReversed={false} 
+    title="03. 視覚重視のサービス提示" 
+    subtitle="言葉以上に雄弁な視覚的アプローチ。高解像度の画像を用い、貴社のサービスや商品の「こだわり」を直感的に伝えます。視覚的な訴求は言語の壁を越え、顧客の来店意欲を刺激します。" 
+    items={[{ title: 'インパクトのある視覚効果', description: 'プロフェッショナルなレイアウトで技術を披露。', icon: 'tabler:camera' }]} 
+    image={{ src: '/images/demos/tokyo-locker-storage-premium-luggage-solutions.webp', alt: 'サービスショーケース' }} 
+  />
+  
+  <Content 
+    isReversed={true} 
+    title="04. 圧倒的なスピード公開" 
+    subtitle="私たちは貴社の時間を尊重します。正午までに必要な情報をいただければ、当日のディナー営業開始までにサイトを構築・公開。長い打ち合わせや開発の遅延なしに、高精度な実行をお約束します。" 
+    items={[{ title: '正午までの注文で即日', description: '夕方、または遅くとも翌営業日には公開。', icon: 'tabler:bolt' }]} 
+    image={{ src: '/images/hanei-media/008.webp', alt: '迅速なデプロイ' }} 
   />
 
   <Pricing 
-    id="pricing"
-    title="価格のご案内" 
+    id="pricing" 
+    title="明朗な一括料金。<br/> 本日、公開。" 
+    subtitle="月額費用ゼロ。貴社のプロフェッショナルな資産として永久に所有いただけます。"
     prices={[pricingData]} 
   />
-
-  <CallToAction
-    title="インバウンド客を「チャンス」に変えましょう"
-    subtitle="言葉の壁でチャンスを逃すのは今日で終わりです。あなたの素晴らしいサービスを、世界中の人々に届けませんか？"
-    actions={[{ variant: 'primary', text: '注文する - 19,800円', href: '/contact-jp' }]}
-  />
-
-  <!-- ABOUT HANEI -->
-  
-  
-  
 </Layout>
