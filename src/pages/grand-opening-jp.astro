@@ -5,59 +5,85 @@ import Layout from '~/layouts/PageLayout.astro';
 import FeatureTable from '~/components/widgets/FeatureTable.astro';
 import Pricing from '~/components/widgets/Pricing.astro';
 
-const metadata = { title: 'グランドオープニング | ホームページ制作 | Hanei JP' };
+const metadata = { title: 'グランドオープニング | プロフェッショナルなウェブサイト制作 | Hanei JP' };
 
-const fullFeatureListJp = [{ title: '超高速エッジ配信' }, { title: '日英バイリンガル・ナビ' }, { title: 'Googleマップ連携' }, { title: 'スマホファースト設計' }, { title: 'SSL暗号化通信' }, { title: 'お問い合わせ・予約フォーム' }, { title: 'プロによるネイティブ執筆' }, { title: 'SNSフィード連携' }, { title: '画像データ最適化' }, { title: '最新ブラウザ互換対応' }, { title: 'ダウンタイムなしの移行' }, { title: '修正回数無制限' }, { title: '1営業日でのスピード公開' }, { title: 'プロフェッショナルCDN' }, { title: '自動バックアップ設定' }, { title: 'プライバシーポリシー対応' }, { title: '戦略的UXデザイン' }, { title: '60日間のテクニカルサポート' }];
+const fullFeatureList = [
+  { title: '超高速エッジ配信' }, 
+  { title: '日英バイリンガル・ナビ' }, 
+  { title: 'Googleマップ連携' }, 
+  { title: 'モバイルファースト設計' }, 
+  { title: 'SSL暗号化通信' }, 
+  { title: 'お問い合わせ・予約フォーム' }, 
+  { title: 'ネイティブによる執筆' }, 
+  { title: 'SNSフィード連携' }, 
+  { title: '画像データの最適化' }, 
+  { title: '最新ブラウザ互換対応' }, 
+  { title: 'ダウンタイムなしの移行' }, 
+  { title: '修正回数無制限' }, 
+  { title: '1営業日でのスピード公開' }, 
+  { title: 'プロフェッショナルCDN' }, 
+  { title: '自動バックアップ設定' }, 
+  { title: 'プライバシーポリシー対応' }, 
+  { title: '戦略的UXデザイン' }, 
+  { title: '60日間のテクニカルサポート' }
+];
 
 const reformPrices = [
-  { title: '1-3 ページ', price: '¥24,500', callToAction: { text: 'リフォームを注文' }, items: [{ description: 'モダンなデザイン刷新' }, { description: '既存コンテンツの移行' }, { description: '超高速エッジ配信' }] },
-  { title: '4-6 ページ', price: '¥34,500', callToAction: { text: 'リフォームを注文' }, items: [{ description: '詳細なサービス紹介' }, { description: 'ブランド価値の再定義' }, { description: '世界基準のパフォーマンス' }] },
-  { title: '7-10 ページ', price: '¥44,500', callToAction: { text: 'リフォームを注文' }, items: [{ description: '包括的なデジタル拠点' }, { description: '高度な問い合わせフロー' }, { description: '手厚いサポート' }] },
-  { title: '11-20 ページ', price: '¥59,500', callToAction: { text: 'リフォームを注文' }, items: [{ description: '大規模移行対応' }, { description: '高度な情報設計' }, { description: '優先デプロイ' }] }
+  { title: 'スターター・リフォーム', total: '¥70,000', price: '¥35,000', items: [{ description: 'サイトをモダンなデザインへ刷新' }, { description: '既存のテキストと写真を移行' }, { description: 'スマホ表示に完全対応' }, { description: '超高速な読み込み速度' }, { description: '最短3日でのスピード公開' }] },
+  { title: 'グロース・リフォーム', total: '¥130,000', price: '¥65,000', items: [{ description: '最大8ページのデザイン刷新' }, { description: 'プロのネイティブによる英語執筆' }, { description: 'Google検索での視認性向上' }, { description: 'Googleマップ＆レビュー連携' }, { description: '優先2営業日デリバリー' }] },
+  { title: 'エンタープライズ・リフォーム', total: '¥250,000', price: '¥125,000', items: [{ description: '大規模サイトのフルリニューアル' }, { description: 'カスタム予約・問い合わせシステム' }, { description: 'テキスト・写真の無制限更新' }, { description: '専属開発者による1対1サポート' }, { description: '翌営業日の最優先公開' }] }
 ];
 
 const newBuildPrices = [
-  { title: '1-3 ページ', price: '¥30,600', callToAction: { text: '新規制作を注文' }, items: [{ description: '新規設計図の作成' }, { description: 'ターゲット特化型' }, { description: '超高速エッジ配信' }] },
-  { title: '4-6 ページ', price: '¥43,100', callToAction: { text: '新規制作を注文' }, items: [{ description: 'ブランド基盤の構築' }, { description: 'モバイルファースト設計' }, { description: 'グローバルSEO設定' }] },
-  { title: '7-10 ページ', price: '¥55,600', callToAction: { text: '新規制作を注文' }, items: [{ description: 'エリート・ビジネス拠点' }, { description: 'カスタム予約導線' }, { description: '盤石なインフラ' }] },
-  { title: '11-20 ページ', price: '¥74,400', callToAction: { text: '新規制作を注文' }, items: [{ description: '高成長・大規模対応' }, { description: 'オーダーメイド設計' }, { description: '地域No.1ブランド構築' }] }
+  { title: 'スターター・ビルド', total: '¥90,000', price: '¥45,000', items: [{ description: '3ページのプロ仕様サイトを新規制作' }, { description: 'カスタムメイドの洗練されたデザイン' }, { description: 'モバイルユーザーに完全最適化' }, { description: '高度なセキュリティのビジネスホスティング' }, { description: '最短3日でのスピード公開' }] },
+  { title: 'グロース・ビルド', total: '¥180,000', price: '¥90,000', items: [{ description: '8ページの最高級ビジネス旗艦サイト' }, { description: '予約・問い合わせ導線の統合' }, { description: '高度なGoogle検索対策設定' }, { description: 'Instagram投稿のリアルタイム同期' }, { description: '優先2営業日デリバリー' }] },
+  { title: 'エンタープライズ・ビルド', total: '¥380,000', price: '¥190,000', items: [{ description: 'ページ無制限の完全カスタム制作' }, { description: '業界特化のオーダーメイド機能' }, { description: 'Googleでの最大級の権威性構築' }, { description: '生涯優先テクニカルケア' }, { description: '翌営業日の最優先公開' }] }
 ];
 ---
 <Layout metadata={metadata}>
-  <Hero2 tagline="グランドオープニング" title='あなたのホームページは、<br/><span class="text-accent">「集客」に貢献していますか？</span>' subtitle="古いデザインは、お客様を逃します。プロ品質のサイトを最短1営業日でお届けします。" actions={[{ variant: 'primary', text: 'リフォームを見る', href: '#reform' }, { variant: 'secondary', text: '新規制作を見る', href: '#new', class: '!bg-green-600 !text-white hover:!bg-green-700' }]} image={{ src: '/images/hanei-media/005.webp&q=80', alt: '和食' }} />
+  <Hero2 
+    tagline="デジタルトランスフォーメーションの完遂" 
+    title='貴社のウェブサイトは、<br/><span class="text-accent">集客に貢献していますか？</span>' 
+    subtitle="時代遅れのサイトは、顧客を遠ざけます。私たちは貴社の「デジタルの玄関口」を、わずか1営業日でプロフェッショナルな姿へと変貌させます。" 
+    actions={[
+      { variant: 'primary', text: '「劇的リフォーム」を見る', href: '#reform' }, 
+      { variant: 'secondary', text: '「グランド・ニュー」を見る', href: '#new', class: '!bg-green-600 !text-white hover:!bg-green-700' }
+    ]} 
+    image={{ src: '/images/demos/private-kyoto-temple-expeditions.webp', alt: 'インダストリアル' }} 
+  />
   
-  <!-- OPTION 1: REFORM -->
   <div id="reform" class="scroll-mt-20">
-    <Content tagline="グランド・リフォーム" title="01. 劇的リフォーム" subtitle="今の情報を活かしつつ、国際的なラグジュアリー基準に合わせてデザインを刷新します。" items={[{ title: '劇的リフォーム', description: '見た目と機能を最新に。', icon: 'tabler:palette' }]} image={{ src: '/images/hanei-media/027.webp', alt: '寿司' }} classes={{ container: 'pb-0 md:pb-0' }} />
-    <Content isReversed={true} isAfterContent={true} title="ブランド価値の再定義" subtitle="貴店のアイデンティティを保ちながら、プロフェッショナルな「顔」へとリフォームします。" image={{ src: '/images/hanei-media/032.webp' }} classes={{ container: 'py-8 md:py-12' }} />
-    <Content isReversed={false} isAfterContent={true} title="超高速・次世代インフラへの移行" subtitle="世界最速水準のエッジネットワークへ移行することで、モバイル環境でも瞬時の表示を実現します。" image={{ src: '/images/hanei-media/034.webp' }} classes={{ container: 'py-8 md:py-12' }} />
+    <Content 
+        tagline="Option 1: グランド・リフォーム" 
+        title="01. モダンな美学への刷新" 
+        subtitle="既存のコンテンツを尊重しつつ、デザインの魂を国際的なラグジュアリー基準へとアップデートします。" 
+        items={[{ title: '洗練された外観', description: 'ハイエンドな認知を獲得するための設計。', icon: 'tabler:palette' }]} 
+        image={{ src: '/images/demos/mizu-no-kokoro-luxury-sento-wellness-osaka.webp', alt: 'デザイン' }} 
+        classes={{ container: 'pb-0 md:pb-0' }} 
+    />
+    <Content isReversed={true} isAfterContent={true} title="伝統を継承し、影響力を高める" subtitle="これまでの歩みを尊重します。リフォームプロセスでは、既存のテキストや歴史を継承しつつ、それを世界水準のインターフェースで包み込みます。" image={{ src: '/images/hanei-media/032.webp' }} classes={{ container: 'py-8 md:py-12' }} />
+    <Content isReversed={false} isAfterContent={true} title="技術的パフォーマンスの向上" subtitle="リフォームされたサイトを高速エッジネットワークへ移行。あらゆる通信環境において、1秒未満の表示速度を実現します。" image={{ src: '/images/demos/kura-tokyo-premium-luggage-concierge-secure-storage.webp' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="グランド・リフォーム投資額" subtitle="既存サイトを最新のラグジュアリー基準へ。" prices={reformPrices} hasUrlField={true} />
+    <Pricing title="グランド・リフォーム投資額" subtitle="プロフェッショナルな近代化を、50%の着手金で開始。残金は納品後のお支払いです。" prices={reformPrices} hasUrlField={true} />
   </div>
 
   <hr class="border-t dark:border-slate-800 my-12" />
 
-  <!-- OPTION 2: NEW -->
   <div id="new" class="scroll-mt-20">
-    <Content isReversed={true} tagline="グランド・ニュー" title="02. 完全新規制作" subtitle="ゼロからデジタル・エコシステムを構築します。最高のコンバージョンを生むための旗艦店を制作します。" items={[{ title: '新規ブランド構築', description: '市場に合わせたカスタムエンジニアリング。', icon: 'tabler:rocket' }]} image={{ src: '/images/hanei-media/003.webp', alt: 'New Structure' }} classes={{ container: 'pb-0 md:pb-0' }} />
-    <Content isReversed={false} isAfterContent={true} title="成約率を最大化する設計" subtitle="予約導線や問い合わせフローに独自のロジックを組み込み、訪問者を優良顧客へと変えます。" image={{ src: '/images/hanei-media/029.webp' }} classes={{ container: 'py-8 md:py-12' }} />
-    <Content isReversed={true} isAfterContent={true} title="世界水準のデータ基盤" subtitle="最新のテクノロジーを採用し、検索結果での優位性を確保するデジタル資産を提供します。" image={{ src: '/images/hanei-media/030.webp' }} classes={{ container: 'py-8 md:py-12' }} />
+    <Content 
+        isReversed={true} 
+        tagline="Option 2: グランド・ニュー" 
+        title="02. 完全新規のデジタル設計図" 
+        subtitle="初日から最大のコンバージョンを生むように設計された、貴社のデジタル・エコシステムをゼロから構築します。" 
+        items={[{ title: '完全新規構築', description: '貴社の特定のニッチ市場に合わせてカスタムエンジニアリング。', icon: 'tabler:rocket' }]} 
+        image={{ src: '/images/hanei-media/003.webp', alt: '新規構築' }} 
+        classes={{ container: 'pb-0 md:pb-0' }} 
+    />
+    <Content isReversed={false} isAfterContent={true} title="成約率を追求した設計" subtitle="訪問者を確実に顧客へと変えるため、独自のコンバージョン・ロジックに基づいたナビゲーションと予約機能を設計します。" image={{ src: '/images/hanei-media/029.webp' }} classes={{ container: 'py-8 md:py-12' }} />
+    <Content isReversed={true} isAfterContent={true} title="エリート・データ・インフラ" subtitle="貴社の新たな旗艦店は、揺るぎない安定性と自動化されたSEOアーキテクチャを提供するサーバーレススタック上に構築されます。" image={{ src: '/images/demos/kissa-co-osaka.webp' }} classes={{ container: 'py-8 md:py-12' }} />
     
-    <Pricing title="グランド・ニュー投資額" subtitle="ゼロから最強の旗艦サイトを構築します。" prices={newBuildPrices} />
+    <Pricing title="グランド・ニュー投資額" subtitle="高パフォーマンスな旗艦サイトを、50%の着手金で確保。残金は納品後のお支払いです。" prices={newBuildPrices} />
   </div>
 
-  <div class="py-8 bg-slate-50 dark:bg-transparent border-y dark:border-slate-800 my-10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-2">Portfolio Demo</h2>
-        <p class="text-lg text-muted">各業界で私たちが提供している最高水準のクオリティをご覧ください。</p>
-    </div>
-  </div>
-
-  <div class="space-y-4">
-    <Content isReversed={false} title="Portfolio Demo: ZenPod Tokyo" subtitle="日本の美意識と高い成約率を両立させたカプセルホテルのデモ。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/capsule-hotel' }} image={{ src: '/images/hanei-media/011.webp', alt: 'ホテル' }} classes={{ container: 'py-8 md:py-12' }} />
-    <Content isReversed={true} title="Portfolio Demo: 麻布プレミアムメディカル" subtitle="洗練された医療施設向けのデモ. スムーズな予約フローを体験してください。" callToAction={{ variant: 'secondary', text: 'デモサイトを見る', href: '/demos/azabu-medical' }} image={{ src: '/images/hanei-media/028.webp', alt: '医療' }} classes={{ container: 'py-8 md:py-12' }} />
-    <Content isReversed={false} title="Portfolio Demo: GINZA KAIZEN" subtitle="銀座の高級ヘアサロン向けデモ。完全英語対応の接客動線を体験できます。" callToAction={{ variant: 'primary', text: 'デモサイトを見る', href: '/demos/ginza-kaizen' }} image={{ src: '/images/hanei-media/015.webp', alt: '美容' }} classes={{ container: 'py-8 md:py-12' }} />
-  </div>
-
-  <FeatureTable title="グランド・リフォーム ＆ グランド・ニュー・パッケージ" subtitle="すべてのフル制作プロジェクトに標準装備されるエリート機能一覧。" items={fullFeatureListJp} />
+  <FeatureTable title="グランド・パッケージ：標準機能" subtitle="すべてのプロフェッショナル・プロジェクトに含まれるエリート機能の一覧です。" items={fullFeatureList} />
 </Layout>
