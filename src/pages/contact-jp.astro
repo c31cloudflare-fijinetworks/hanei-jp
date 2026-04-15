@@ -3,20 +3,21 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
-const metadata = { title: 'お問い合わせ/特殊案件 | Hanei JP' };
+const metadata = { 
+  title: 'お問い合わせ | Hanei JP',
+  description: 'オーダーメイドのデジタルソリューションに関するご相談。すべてのお問い合わせに対し、当日中の返信を保証しております。'
+};
 
 const jpLabels = {
     title: "制作・パートナーシップのご相談",
-    description: "プロジェクトのご相談、技術的なアドバイスなど、お気軽にお問い合わせください。すべてのお問い合わせに対し、当日中の返信を保証しております。",
+    description: "プロジェクトのご相談や技術的なアドバイスなど、お気軽にお問い合わせください。プロフェッショナルなお問い合わせに対し、当日中の返信を保証しております。",
     client_name: "お名前",
     company_name: "貴社名・店名",
     email: "メールアドレス",
-    address: "所在地・住所",
     request_type: "ご依頼の種別",
     project_summary: "お問い合わせ・ご依頼内容の詳細",
     budget_range: "ご予算感",
     deadline: "希望納期",
-    referral: "当社を知ったきっかけ",
     submit: "相談内容を送信する"
 };
 
@@ -25,13 +26,13 @@ const jpOptions = {
       "1ページ・ビジネスサイト", 
       "レビューエンジン", 
       "英語専用デジタル別館", 
-      "グランド・リフォーム", 
-      "グランド・ニュー（新規制作）", 
+      "グランド・リフォーム (既存サイト刷新)", 
+      "グランド・ニュー (新規サイト制作)", 
       "一般的なお問い合わせ", 
       "独自システム開発 / API", 
       "その他"
     ],
-    budgets: ["未定・該当なし", "10万円 - 30万円", "30万円 - 50万円", "50万円 - 100万円", "100万円以上"],
+    budgets: ["該当なし・未定", "10万円 - 30万円", "30万円 - 50万円", "50万円 - 100万円", "100万円以上"],
     timelines: ["至急 (最短当日)", "今週中", "1ヶ月以内", "時期未定・相談", "その他"],
     referrals: ["Google検索", "SNS", "知人の紹介", "その他"]
 };
@@ -40,10 +41,23 @@ const jpOptions = {
 <Layout metadata={metadata}>
   <Hero2
     tagline="Contact Hanei Today"
-    title='日本の価値を、<br/><span class="text-accent">デジタルの「正解」へ。</span>'
+    title='貴社のデジタルの未来を、<br/><span class="text-accent">共に構築しましょう。</span>'
     subtitle="迅速な1ページ制作から、複雑な独自インフラの構築まで。すべてのお問い合わせに対し、当日中の返信を保証しております。"
-    image={{ src: '/images/hanei-media/013.webp', alt: 'プロフェッショナルな打ち合わせ' }}
+    image={{ src: '/images/demos/capsule-hotel.webp', alt: 'プロフェッショナルな打ち合わせ' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
-  <BespokeForm labels={jpLabels} options={jpOptions} />
+  
+  <BespokeForm 
+    labels={jpLabels} 
+    options={jpOptions} 
+    formAction="https://docs.google.com/forms/d/e/1FAIpQLSetNa1Mq_nYvkKp5h2fUIPZFRCvfFs5hvcYoawFk1eX0p6t3w/formResponse"
+    ids={{
+      name: "entry.1770250121",
+      company: "entry.1744957567",
+      category: "entry.491532461",
+      budget: "entry.1285777990",
+      timeline: "entry.1375463449",
+      summary: "entry.1193708562"
+    }}
+  />
 </Layout>
