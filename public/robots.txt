@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hanei.jp/sitemap.xml
+Sitemap: https://hanei.jp/sitemap_v2.xml
