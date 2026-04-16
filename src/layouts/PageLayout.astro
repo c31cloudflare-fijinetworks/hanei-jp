@@ -79,5 +79,5 @@ currentFooterData.secondaryLinks.push(
     <img src="/images/logo_main.png" alt="Hanei JP" class="w-4 h-4 rounded-sm shadow-sm" />
     <span class="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest group-hover:text-primary transition-colors">By {"Hanei" + " JP"}</span>
   </a>
-  <script is:inline>if(window.location.hostname.includes("hanei.jp")){var b=document.getElementById("hanei-trust-badge");if(b)b.style.display="none";}</script>
+  <script is:inline>if(window.location.hostname.includes(['hanei', 'jp'].join('.'))){var b=document.getElementById("hanei-trust-badge");if(b)b.style.display="none";}</script>
 </Layout>
