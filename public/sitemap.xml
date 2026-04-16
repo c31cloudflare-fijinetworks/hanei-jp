@@ -1,83 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- STUDIO HOME -->
   <url>
     <loc>https://hanei.jp/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/index-jp"/>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hanei.jp/index-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/index-jp"/>
     <priority>1.0</priority>
   </url>
+
+  <!-- 1-PAGE WELCOME -->
   <url>
     <loc>https://hanei.jp/one-page-welcome</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/one-page-welcome"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/one-page-welcome-jp"/>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hanei.jp/one-page-welcome-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/one-page-welcome"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/one-page-welcome-jp"/>
     <priority>0.9</priority>
   </url>
+
+  <!-- REVIEW ENGINE -->
   <url>
     <loc>https://hanei.jp/review-engine</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/review-engine"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/review-engine-jp"/>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hanei.jp/review-engine-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/review-engine"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/review-engine-jp"/>
     <priority>0.9</priority>
   </url>
+
+  <!-- ENGLISH HANARE -->
   <url>
     <loc>https://hanei.jp/english-hanare</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/english-hanare"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/english-hanare-jp"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hanei.jp/english-hanare-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/english-hanare"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/english-hanare-jp"/>
     <priority>0.8</priority>
   </url>
+
+  <!-- GRAND OPENING -->
   <url>
     <loc>https://hanei.jp/grand-opening</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/grand-opening"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/grand-opening-jp"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hanei.jp/grand-opening-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/grand-opening"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/grand-opening-jp"/>
     <priority>0.8</priority>
   </url>
+
+  <!-- PORTFOLIO DEMOS -->
   <url>
     <loc>https://hanei.jp/demos</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/demos"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/demos-jp"/>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hanei.jp/demos-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/demos"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/demos-jp"/>
     <priority>0.7</priority>
   </url>
+
+  <!-- ORDER FLOW -->
   <url>
     <loc>https://hanei.jp/order-flow</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/order-flow"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/order-flow-jp"/>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hanei.jp/order-flow-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/order-flow"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/order-flow-jp"/>
     <priority>0.6</priority>
   </url>
+
+  <!-- COMMUNITY MISSION -->
   <url>
     <loc>https://hanei.jp/community-mission</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/community-mission"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/community-mission-jp"/>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://hanei.jp/community-mission-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/community-mission"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/community-mission-jp"/>
     <priority>0.5</priority>
   </url>
+
+  <!-- CONTACT -->
   <url>
     <loc>https://hanei.jp/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/contact"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/contact-jp"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hanei.jp/contact-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/contact"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/contact-jp"/>
     <priority>0.8</priority>
   </url>
+
+  <!-- FAQ -->
   <url>
     <loc>https://hanei.jp/faq</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/faq-jp"/>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://hanei.jp/faq-jp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/faq"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/faq-jp"/>
     <priority>0.5</priority>
   </url>
 </urlset>
