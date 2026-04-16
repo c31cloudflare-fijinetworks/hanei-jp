@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hanei.jp/</loc><priority>1.0</priority></url>
+  <url><loc>https://hanei.jp/index-jp</loc><priority>1.0</priority></url>
+  <url><loc>https://hanei.jp/one-page-welcome</loc><priority>0.9</priority></url>
+  <url><loc>https://hanei.jp/one-page-welcome-jp</loc><priority>0.9</priority></url>
+  <url><loc>https://hanei.jp/review-engine</loc><priority>0.9</priority></url>
+  <url><loc>https://hanei.jp/review-engine-jp</loc><priority>0.9</priority></url>
+  <url><loc>https://hanei.jp/english-hanare</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/english-hanare-jp</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/grand-opening</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/grand-opening-jp</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/demos</loc><priority>0.7</priority></url>
+  <url><loc>https://hanei.jp/demos-jp</loc><priority>0.7</priority></url>
+  <url><loc>https://hanei.jp/order-flow</loc><priority>0.6</priority></url>
+  <url><loc>https://hanei.jp/order-flow-jp</loc><priority>0.6</priority></url>
+  <url><loc>https://hanei.jp/community-mission</loc><priority>0.5</priority></url>
+  <url><loc>https://hanei.jp/community-mission-jp</loc><priority>0.5</priority></url>
+  <url><loc>https://hanei.jp/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/contact-jp</loc><priority>0.8</priority></url>
+  <url><loc>https://hanei.jp/faq</loc><priority>0.5</priority></url>
+  <url><loc>https://hanei.jp/faq-jp</loc><priority>0.5</priority></url>
+</urlset>
