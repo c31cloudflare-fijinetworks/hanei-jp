@@ -39,7 +39,7 @@ const demos = [
         isReversed={index % 2 !== 0}
         title={`制作デモ: ${demo.title}`}
         subtitle={demo.sub}
-        callToAction={{ variant: 'primary', text: 'デモを起動', href: demo.link }}
+        callToAction={{ variant: 'primary', text: 'デモを起動', href: demo.link, target: '_blank' }}
         image={{ src: demo.img, alt: demo.title }}
         classes={{ container: 'py-12 md:py-20' }}
       />

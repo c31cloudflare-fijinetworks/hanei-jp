@@ -39,7 +39,7 @@ const demos = [
         isReversed={index % 2 !== 0}
         title={`Portfolio Demo: ${demo.title}`}
         subtitle={demo.sub}
-        callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: demo.link }}
+        callToAction={{ variant: 'primary', text: 'Launch Live Demo', href: demo.link, target: '_blank' }}
         image={{ src: demo.img, alt: demo.title }}
         classes={{ container: 'py-12 md:py-20' }}
       />
