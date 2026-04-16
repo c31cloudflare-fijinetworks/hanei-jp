@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
-const { title, subtitle, items = [] } = Astro.props;
+const { title, subtitle, items = [], footerText = 'Delivered within 1 business day' } = Astro.props;
 ---
 
 <section class="py-12 md:py-20 bg-slate-50 dark:bg-slate-900/50">
@@ -32,7 +32,7 @@ const { title, subtitle, items = [] } = Astro.props;
       
       <!-- Footer Note -->
       <div class="p-4 bg-slate-50 dark:bg-slate-800/50 text-center border-t border-slate-200 dark:border-slate-700">
-         <span class="text-sm font-bold text-primary uppercase tracking-widest italic">Delivered within 1 business day</span>
+         <span class="text-sm font-bold text-primary uppercase tracking-widest italic">{footerText}</span>
       </div>
     </div>
   </div>
