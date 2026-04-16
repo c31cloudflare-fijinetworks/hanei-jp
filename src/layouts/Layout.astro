@@ -44,7 +44,7 @@ const { language, textDirection } = I18N;
     <slot />
 
     <script is:inline type="module">
-      import { loadDefaultJapaneseParser } from "https://unpkg.com/budoux/dist/budoux.esm.js";
+      import { loadDefaultJapaneseParser } from "https://esm.sh/budoux";
       const parser = loadDefaultJapaneseParser();
       const handleBudouX = () => {
         if (document.documentElement.lang === "ja") {
