@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+import type { APIRoute } from 'astro';
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://hanei.jp/</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/"/><xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/index-jp"/><priority>1.0</priority></url>
   <url><loc>https://hanei.jp/index-jp</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/"/><xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/index-jp"/><priority>1.0</priority></url>
@@ -20,4 +22,14 @@
   <url><loc>https://hanei.jp/contact-jp</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/contact"/><xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/contact-jp"/><priority>0.8</priority></url>
   <url><loc>https://hanei.jp/faq</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/faq"/><xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/faq-jp"/><priority>0.5</priority></url>
   <url><loc>https://hanei.jp/faq-jp</loc><xhtml:link rel="alternate" hreflang="en" href="https://hanei.jp/faq"/><xhtml:link rel="alternate" hreflang="ja" href="https://hanei.jp/faq-jp"/><priority>0.5</priority></url>
-</urlset>
+</urlset>`;
+
+export const GET: APIRoute = async () => {
+  return new Response(sitemap, {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/xml',
+      'X-Content-Type-Options': 'nosniff',
+    },
+  });
+};

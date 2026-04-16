@@ -1,7 +1,5 @@
+/sitemap-hanei.xml
+  Content-Type: application/xml
+  X-Content-Type-Options: nosniff
 /*
   X-Robots-Tag: index, follow
-
-/sitemap-hanei.xml
-  Content-Type: text/xml; charset=UTF-8
-  X-Content-Type-Options: nosniff
-  Cache-Control: no-store, no-cache, max-age=0, must-revalidate
