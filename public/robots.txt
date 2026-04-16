@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
 
-# Host
-Host: https://hanei.jp
-
-# Sitemap location
 Sitemap: https://hanei.jp/sitemap.xml
