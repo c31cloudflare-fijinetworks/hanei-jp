@@ -6,14 +6,14 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = { 
-  title: 'Order Flow | Simple 3-Step Process | Hanei JP',
-  description: 'From order to launch in record time. See how easy it is to start your professional digital expansion with zero monthly fees.'
+  title: 'Inbound Journey | Simple 3-Step Process | Hanei JP',
+  description: 'From order to launch in record time. See how easy it is to start your professional inbound digital expansion with zero monthly fees.'
 };
 ---
 
 <Layout metadata={metadata}>
   <Hero2
-    tagline="The Hanei Process"
+    tagline="The Strategic Inbound Process"
     title='Fast, Simple, and <br/><span class="text-accent">Stress-Free.</span>'
     subtitle="We know you're busy running your business. That's why we’ve eliminated long meetings, complicated contracts, and recurring monthly fees. Get started in minutes."
     image={{ src: '/images/demos/zen-relocations-japan-relocations.webp', alt: 'Efficient Workflow' }}
@@ -23,9 +23,9 @@ const metadata = {
   <Content
     isReversed={false}
     tagline="Step 01"
-    title="Choose Your Service Package"
-    subtitle="Select the plan that fits your business needs. Every package is a simple one-time investment—meaning no hidden monthly subscriptions or ongoing maintenance fees ever. Complete your secure payment instantly via Stripe or PayPal to begin."
-    items={[{ title: 'One-Time Payment', description: 'Own your digital infrastructure forever with zero recurring costs.', icon: 'tabler:coin' }]}
+    title="Choose Your Marketing Package"
+    subtitle="Select the plan that fits your brand needs. Every package is a simple one-time marketing investment—meaning no hidden monthly subscriptions or ongoing maintenance fees ever. Complete your secure payment instantly via Stripe or PayPal to begin."
+    items={[{ title: 'One-Time Payment', description: 'Own your marketing assets forever with zero recurring costs.', icon: 'tabler:coin' }]}
     image={{ src: '/images/hanei-media/020.webp' }}
     classes={{ container: 'py-8 md:py-12' }}
   />
@@ -34,8 +34,8 @@ const metadata = {
     isReversed={true}
     isAfterContent={true}
     tagline="Step 02"
-    title="Share Your Business Details"
-    subtitle="Fill out our streamlined onboarding form. Simply provide your basic shop info, services, and high-resolution photos. No technical skills or system passwords are required—we handle the complexity while you focus on your customers."
+    title="Share Your Brand Details"
+    subtitle="Fill out our streamlined onboarding form. Simply provide your basic shop info, services, and high-resolution photos. No programming skills or complex technical setup are required—we handle the complexity while you focus on your customers."
     items={[{ title: 'Guided Onboarding', description: 'Our team assists you in gathering the right details.', icon: 'tabler:file-description' }]}
     image={{ src: '/images/hanei-media/009.webp' }}
     classes={{ container: 'py-8 md:py-12' }}
@@ -45,8 +45,8 @@ const metadata = {
     isReversed={false}
     isAfterContent={true}
     tagline="Step 03"
-    title="Professional Build & Review"
-    subtitle="Our developers and writers construct your high-performance site within 24 to 72 hours. You will receive a private preview link to review the design and copy. We offer unlimited revisions until the final result perfectly reflects your craft."
+    title="Creative Strategy & Review"
+    subtitle="Our creative strategists and writers construct your high-visibility hub within 24 to 72 hours. You will receive a private preview link to review the design and copy. We offer unlimited revisions until the final result perfectly reflects your craft."
     items={[{ title: 'Absolute Precision', description: 'We polish every detail until you are 100% satisfied.', icon: 'tabler:tool' }]}
     image={{ src: '/images/hanei-media/022.webp' }}
     classes={{ container: 'py-8 md:py-12' }}
@@ -57,7 +57,7 @@ const metadata = {
     isAfterContent={true}
     tagline="Step 04"
     title="Launch and Global Reach"
-    subtitle="Once you love the result, we go live! Your business is now connected to our high-speed global edge network. We provide you with your custom QR kits and digital assets so you can start welcoming new customers immediately."
+    subtitle="Once you love the result, we go live! Your brand is now connected to our high-visibility global network. We provide you with your custom QR kits and marketing assets so you can start welcoming new customers immediately."
     items={[{ title: 'Record Launch Speed', description: 'Go from zero to live in as little as one business day.', icon: 'tabler:rocket' }]}
     image={{ src: '/images/hanei-media/004.webp' }}
     classes={{ container: 'py-8 md:py-12' }}
@@ -68,8 +68,8 @@ const metadata = {
     subtitle="We handle the heavy lifting so you don't have to."
     columns={3}
     items={[
-      { title: 'Zero Monthly Fees', description: 'Lifetime ownership. No SaaS taxes, hosting bills, or hidden costs.', icon: 'tabler:circle-check' },
-      { title: 'Zero Tech Talk', description: 'We communicate in plain language. No "coding talk" or jargon.', icon: 'tabler:message-circle' },
+      { title: 'Zero Monthly Fees', description: 'Lifetime ownership. No fees, hosting bills, or hidden costs.', icon: 'tabler:circle-check' },
+      { title: 'Easy Setup', description: 'We communicate in plain language so it is easy for you to understand.', icon: 'tabler:message-circle' },
       { title: 'Record Speed', description: 'Most services delivered within 24 to 72 hours.', icon: 'tabler:bolt' },
     ]}
     classes={{ container: 'py-8 md:py-12' }}
@@ -78,43 +78,43 @@ const metadata = {
   <hr class="max-w-7xl mx-auto border-t dark:border-slate-800" />
 
   <Features2
-    title="Secure Your Elite Digital Asset Today"
+    title="Secure Your Elite Brand Asset Today"
     subtitle="Choose the specific solution your business needs to grow."
     columns={3}
     items={[
       {
-        title: '1-Page Business Website',
-        description: 'The Digital Business Manual. Order by noon, live by the afternoon.',
+        title: 'Inbound Welcome Page',
+        description: 'The Digital Brand Guide. Order by noon, live by the afternoon.',
         icon: 'tabler:square-number-1',
         callToAction: { text: 'View Package', href: '/one-page-welcome' },
       },
       {
-        title: 'Review Engine',
+        title: 'Reputation Engine',
         description: 'Automated Trust. Turn happy customers into 5-star Google reviews.',
         icon: 'tabler:stars',
         callToAction: { text: 'View Package', href: '/review-engine' },
       },
       {
-        title: 'English Hanare',
-        description: 'Global Expansion. A detached English website without touching your current site.',
+        title: 'Global Reach Hub',
+        description: 'Global Expansion. A detached English hub without touching your current site.',
         icon: 'tabler:language',
         callToAction: { text: 'View Package', href: '/english-hanare' },
       },
       {
-        title: 'Grand Reform',
-        description: 'Modern Aesthetic Facelift. Refresh your existing website design.',
+        title: 'Brand Modernization',
+        description: 'Modern Aesthetic Facelift. Refresh your existing brand presence.',
         icon: 'tabler:palette',
         callToAction: { text: 'View Reform', href: '/grand-opening/#reform' },
       },
       {
-        title: 'Grand NEW Build',
-        description: 'Total Digital Blueprint. A complete from-scratch professional development.',
+        title: 'Flagship Digital Launch',
+        description: 'Total Brand Blueprint. A complete from-scratch professional launch.',
         icon: 'tabler:rocket',
         callToAction: { text: 'View New Build', href: '/grand-opening/#new' },
       },
       {
         title: 'Community Mission',
-        description: 'Elite Digital Support. Professional web development for local NPOs, free of charge.',
+        description: 'Elite Strategic Support. Professional brand support for local NPOs, free of charge.',
         icon: 'tabler:heart',
         callToAction: { text: 'Learn More', href: '/community-mission' },
       },
