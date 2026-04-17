@@ -5,17 +5,17 @@ import Stats from '~/components/widgets/Stats.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 
-const metadata = { title: 'Hanei Inbound Digital | Bridging Japan to the World' };
+const metadata = { title: 'Hanei Inbound Digital | High-Visibility Marketing for Japan' };
 ---
 <Layout metadata={metadata}>
   
   <Hero2
-    tagline="Hanei Inbound Digital Web For Japanese Businesses"
+    tagline="Hanei Inbound Marketing Hubs"
     title='Connect Your Business with <br/><span class="text-accent dark:text-white">Local and Global Customers.</span>'
-    subtitle="We build Premium Sites and Customer Review Systems that help your business grow and look professional. Get your new digital identity ready to welcome customers in just 24~48 hours."
+    subtitle="We deploy Premium Marketing Hubs and Reputation Engines that drive customer growth and establish authority. Get your new digital identity ready to attract new guests in just 24~48 hours."
     actions={[
-      { variant: 'primary', text: 'Services', href: '#services' },
-      { text: 'Custom Request', href: '/contact', class: '!bg-orange-600 !text-white !border-none hover:!bg-orange-700' },
+      { variant: 'primary', text: 'View Marketing Tiers', href: '#services' },
+      { text: 'Custom Strategy', href: '/contact', class: '!bg-orange-600 !text-white !border-none hover:!bg-orange-700' },
     ]}
     image={{ src: '/images/hanei-media/033.webp', alt: 'Japanese Street' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
@@ -23,50 +23,55 @@ const metadata = { title: 'Hanei Inbound Digital | Bridging Japan to the World' 
 
   <Stats
     classes={{ container: 'pt-0 md:pt-0 pb-12' }}
-    stats={[{ title: 'Complete Setup', amount: '100%' }, { title: 'No Coding Needed', amount: '0' }, { title: 'Launch Time', amount: '48 Hrs' }, { title: 'Monthly Fees', amount: '$0' }]} 
+    stats={[
+      { title: 'Full Brand Setup', amount: '100%' }, 
+      { title: 'Zero Programming Needed', amount: '0' }, 
+      { title: 'Launch Speed', amount: '48 Hrs' }, 
+      { title: 'Subscription Fees', amount: '$0' }
+    ]} 
   />
 
   <Content 
     id="services"
-    tagline="Service: 1-Page Business Website" 
+    tagline="Service: Inbound Welcome Page" 
     title="Make it Easy for New Customers to Find and Choose You." 
-    subtitle="We create a simple digital guide that explains your shop rules, menus, and services clearly. This helps both local residents and travelers feel comfortable walking through your door. A clear website removes the confusion that often stops people from entering a new shop." 
+    subtitle="We create a high-conversion digital guide that explains your shop rules, menus, and services clearly. This strategic asset helps both local residents and travelers feel comfortable walking through your door. Clear marketing removes the confusion that stops people from entering a new shop." 
     callToAction={{ text: 'View 1-Page Package', href: '/one-page-welcome' }} 
     image={{ src: '/images/demos/capsule-hotel.webp', alt: 'Welcome' }} 
   />
 
   <Content 
     isReversed={true} 
-    tagline="Service: Customer Review System" 
+    tagline="Service: Reputation & Visibility Engine" 
     title="Build Instant Trust with an Automated Wall of Reviews." 
-    subtitle="Showcase your best customer feedback directly on your website to prove your quality. We build an easy system that encourages your happy guests to leave 5-star reviews on Google. Positive reviews are the most powerful way to convince new people to visit your business." 
-    callToAction={{ text: 'View Review System', href: '/review-engine' }} 
+    subtitle="Showcase your best customer feedback directly on your site to prove your quality. We deploy an automated system that encourages happy guests to leave 5-star reviews on Google. Inbound reputation is the most powerful way to convince new people to visit your business." 
+    callToAction={{ text: 'View Reputation Engine', href: '/review-engine' }} 
     image={{ src: '/images/review_engine/testimonial-6.webp', alt: 'Review' }} 
   />
 
   <Content 
     isReversed={false} 
-    tagline="Service: English Language Add-on" 
-    title="Add a Professional English Section to Your Current Site." 
-    subtitle="Build a dedicated area for your international guests without changing your existing Japanese website. This is the safest and fastest way to attract global customers while keeping your current site 100% safe. We handle all the translation and setup so you can focus on your craft." 
+    tagline="Service: Global Reach Expansion" 
+    title="Add a Professional English Section to Your Current Presence." 
+    subtitle="Build a dedicated marketing hub for international guests without changing your existing Japanese content. This is the fastest way to attract global customers while keeping your current assets safe. We handle all translation and strategic layout so you can focus on your craft." 
     callToAction={{ text: 'View English Package', href: '/english-hanare' }} 
     image={{ src: '/images/demos/azabu-medical.webp', alt: 'Hanare' }} 
   />
 
   <Content 
     isReversed={true} 
-    tagline="Service: Full Website Refresh / NEW" 
-    title="Modernize Your Presence with a Total Reboot or New Build." 
-    subtitle="We either reboot your existing presence or create a brand new professional website from scratch in a single weekend. A modern, high-quality design ensures your business looks perfect on mobile phones and stands out from local competition. Whether you need a fresh start or a total replacement, we deliver a digital home that wins more customers." 
-    callToAction={{ text: 'View Website Options', href: '/grand-opening' }} 
+    tagline="Service: Brand Modernization & Launch" 
+    title="Modernize Your Presence with a Total Brand Reboot." 
+    subtitle="We reboot your existing presence or deploy a brand new professional marketing site in a single weekend. A modern, high-quality design ensures your business looks perfect on mobile phones and stands out from competition. We deliver a digital home designed to win more customers." 
+    callToAction={{ text: 'View Launch Options', href: '/grand-opening' }} 
     image={{ src: '/images/hanei-media/021.webp', alt: 'Reboot' }} 
   />
 
   <Content 
     isReversed={false} 
     tagline="Community Mission" 
-    title="Professional Web Support for Local Japanese Charities." 
-    subtitle="We provide high-quality website development for local NPOs and essential community services in Japan, free of charge. Our goal is to help those who are helping our local neighborhoods look professional online. Your mission deserves a great website, and we are proud to build it for you." 
+    title="Strategic Support for Local Japanese Charities." 
+    subtitle="We provide high-quality creative marketing support for local NPOs and essential community services in Japan, free of charge. Our goal is to help those helping our neighborhoods look professional online. Your mission deserves a great digital presence, and we are proud to deploy it for you." 
     callToAction={{ text: 'Learn About Our Mission', href: '/community-mission' }} 
     image={{ src: '/images/hanei-media/031.webp', alt: 'NPO' }} 
   />
@@ -75,10 +80,10 @@ const metadata = { title: 'Hanei Inbound Digital | Bridging Japan to the World' 
     title="Common Questions" 
     classes={{ container: 'pt-8 md:pt-12' }} 
     items={[
-      { title: 'Do I need to speak English?', description: 'No. Our systems are designed to communicate perfectly to global guests while giving you and your staff clear instructions in Japanese.' }, 
-      { title: 'How long does the setup take?', description: 'We offer a 24-hour turnaround for small packages and 48 hours for full business website reboots.' }, 
-      { title: 'Are there hidden monthly fees?', description: 'No. Most of our services are one-time investments. We believe in helping you own your website without ongoing subscription costs.' }, 
-      { title: 'Will you change my existing website?', description: 'No. We can build your new pages as a detached system. This keeps your current website safe while adding new professional features.' }
+      { title: 'Do I need to be a technical expert?', description: 'No. Our marketing hubs are designed to communicate perfectly to guests while giving you and your staff clear results without needing any IT knowledge.' }, 
+      { title: 'How long does deployment take?', description: 'We offer a 24-hour turnaround for small packages and 48 hours for full brand reboots.' }, 
+      { title: 'Are there hidden monthly fees?', description: 'No. Our services are one-time marketing investments. We believe in helping you own your digital presence without ongoing subscription costs.' }, 
+      { title: 'Will you change my existing website code?', description: 'No. We deploy your new pages as a detached marketing system. This keeps your current site safe while adding new high-visibility features.' }
     ]} 
     callToAction={{ variant: 'primary', text: 'View All FAQs', href: '/faq' }} 
   />
