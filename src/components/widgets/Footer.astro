@@ -13,10 +13,10 @@ const showPortfolio = !['/demos', '/demos-jp'].includes(cleanPath);
 const isJp = cleanPath.endsWith('-jp') || cleanPath.includes('trust-kit') || cleanPath.includes('-jp/');
 
 // Standardized Copy
-const aboutTitle = isJp ? `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> Hanei: Premium Inbound English Digital Marketing` : `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> Hanei: Premium Inbound English Digital Marketing`;
+const aboutTitle = isJp ? `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> Hanei: Beautiful English Marketing` : `<img src="/images/logo_main.png" class="inline-block h-8 md:h-10 w-auto mr-3 align-middle rounded-md shadow-sm" /> Hanei: Beautiful English Marketing`;
 const aboutText = isJp
-  ? "私たちは、ブランドのグローバルな認知度を高めることに特化しています。戦略的なストーリーテリングこそが国際的な顧客を惹きつける鍵であると確信し、国境を越えてメッセージを届けるための高度なデジタルマーケティングを展開。文化の壁を排除し、集客を最大化します。"
-  : "We are dedicated to amplifying global brand visibility. We believe that strategic storytelling is the ultimate driver for attracting international guests, and we deploy elite digital marketing assets to ensure your message resonates worldwide—maximizing customer reach while eliminating cultural barriers.";
+  ? "私たちは、ブランドのグローバルな認知度を高めることに特化しています。戦略的なストーリーテリングこそが国際的な顧客を惹きつける鍵であると確信し、文化の壁を排除して集客を最大化します。<br /><br /><span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">クライアントへのフォーカス</span><br />私たちは、高度な英語マーケティングと日本の地域特性を熟知したパートナーを必要とする組織に最適です。<br /><br /><span class="italic font-semibold text-primary">国際企業：</span><br />海外資本の企業が国内でのブランドポジショニングを研ぎ澄まし、メッセージを洗練させ、質の高いリードを継続的に獲得できるよう支援します。<br /><br /><span class="italic font-semibold text-primary">地域ビジネスおよび在住外国人市場：</span><br />外国人居住者やプロフェッショナルなコミュニティをターゲットとするブランドに対し、文化的な共鳴を生むコンテンツと最適化されたセールスファンネルを通じてサポートを提供します。"
+  : "We are dedicated to amplifying global brand visibility. We believe that strategic storytelling is the ultimate driver for attracting international guests, and we deploy elite digital marketing assets to ensure your message resonates worldwide—maximizing customer reach while eliminating cultural barriers.<br /><br /><span class="font-bold text-slate-900 dark:text-white uppercase tracking-wider">Our Client Focus</span><br />We are the ideal match for organizations that require a dual-perspective partner: someone who masters high-growth English marketing while navigating the unique local landscape.<br /><br /><span class="italic font-semibold text-primary">International Entities:</span><br />We empower overseas-owned companies to sharpen their local brand positioning, refine their messaging, and build a consistent pipeline of high-quality leads.<br /><br /><span class="italic font-semibold text-primary">The Local Business and Local Expat Market:</span><br />We provide specialized support for brands targeting international residents and professional communities through culturally resonant content and optimized sales funnels.";
 
 // Portfolio Block Copy
 const portTag = isJp ? "至高のギャラリー" : "Gallery of Excellence";
@@ -62,7 +62,7 @@ const slogan = isJp ? "日本の優れた価値を、世界へと繋ぐ 🌏" : 
           <Fragment set:html={aboutTitle} />
         </h2>
         <p class="text-xl text-muted dark:text-slate-400 leading-relaxed">
-          {aboutText}
+          <Fragment set:html={aboutText} />
         </p>
       </div>
     </div>
