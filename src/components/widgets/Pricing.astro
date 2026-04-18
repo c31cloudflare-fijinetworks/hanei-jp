@@ -88,13 +88,13 @@ const gridConfig = prices.length === 1
             <input type="hidden" name="business" value="ZFG89TK2KESFG" />
             <input type="hidden" name="solution_type" value="Sole" />
             <input type="hidden" name="landing_page" value="billing" />
-            <input type="hidden" name="brand_name" value="Hanei Prosperity" />
+            <input type="hidden" name="brand_name" value="Hanei Inbound" />
             <input type="hidden" name="no_shipping" value="1" />
             <input type="hidden" name="no_note" value="1" />
             <input type="hidden" name="tax" value="0" />
             <input type="hidden" name="shipping" value="0" />
             <input type="hidden" name="currency_code" value="JPY" />
-            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei Prosperity: ${price.title}`} />
+            <input type="hidden" class="paypal-item-name" name="item_name" value={`Hanei Inbound: ${price.title}`} />
             <input type="hidden" name="amount" value={price.price?.toString().replace(/[^0-9.]/g, '')} />
             <input type="hidden" name="return" value={successUrl} />
             <input type="hidden" name="cancel_return" value={cancelUrl} />
@@ -139,7 +139,7 @@ const gridConfig = prices.length === 1
       if (!biz || !mail) return;
       const sync = () => {
         const base = biz.getAttribute('data-base-title');
-        form.querySelector('.paypal-item-name').value = `Hanei Prosperity: ${base} (${biz.value})`;
+        form.querySelector('.paypal-item-name').value = `Hanei Inbound: ${base} (${biz.value})`;
         form.querySelector('.paypal-custom-metadata').value = JSON.stringify({ email: mail.value, business: biz.value });
       };
       biz.addEventListener('input', sync);
