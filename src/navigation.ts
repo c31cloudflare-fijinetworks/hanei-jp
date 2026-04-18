@@ -5,8 +5,8 @@ export const headerDataEn = {
     {
       text: 'Inbound Service Suite',
       links: [
-        { text: '1-Page Welcome', href: getPermalink('/one-page-welcome') },
-        { text: 'Review Engine', href: getPermalink('/review-engine') },
+        { text: 'Inbound English Welcome', href: getPermalink('/one-page-welcome') },
+        { text: 'Review Marketing', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
         { text: 'Portfolio Demos', href: getPermalink('/demos') },
@@ -42,8 +42,8 @@ export const footerDataEn = {
   links: [
     {
       links: [
-        { text: '1-Page Welcome', href: getPermalink('/one-page-welcome') },
-        { text: 'Review Engine', href: getPermalink('/review-engine') },
+        { text: 'Inbound English Welcome', href: getPermalink('/one-page-welcome') },
+        { text: 'Review Marketing', href: getPermalink('/review-engine') },
         { text: 'English Hanare', href: getPermalink('/english-hanare') },
         { text: 'Grand Opening', href: getPermalink('/grand-opening') },
         { text: 'Community Mission', href: getPermalink('/community-mission') },
