@@ -22,18 +22,18 @@ export const headerDataEn = {
 export const headerDataJp = {
   links: [
     {
-      text: 'サービス一覧',
+      text: 'インバウンド英語スイート',
       links: [
-        { text: '1ページ・ウェルカム', href: getPermalink('/one-page-welcome-jp') },
-        { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
-        { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
+        { text: 'インバウンド英語ウェルカム', href: getPermalink('/one-page-welcome-jp') },
+        { text: 'レビュー・マーケティング', href: getPermalink('/review-engine-jp') },
+        { text: '英語専用デジタル別館 (Hanare)', href: getPermalink('/english-hanare-jp') },
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },
         { text: '制作実績デモ', href: getPermalink('/demos-jp') },
       ],
     },
     { text: '制作の流れ', href: getPermalink('/order-flow-jp') },
     { text: '地域貢献活動', href: getPermalink('/community-mission-jp') },
-    { text: 'お問い合わせ/特殊案件', href: getPermalink('/contact-jp') },
+    { text: 'お問い合わせ / 戦略リクエスト', href: getPermalink('/contact-jp') },
   ],
   actions: [],
 };
@@ -64,14 +64,14 @@ export const footerDataJp = {
   links: [
     {
       links: [
-        { text: '1ページ・ウェルカム', href: getPermalink('/one-page-welcome-jp') },
-        { text: 'レビューエンジン', href: getPermalink('/review-engine-jp') },
-        { text: '英語専用デジタル別館', href: getPermalink('/english-hanare-jp') },
+        { text: 'インバウンド英語ウェルカム', href: getPermalink('/one-page-welcome-jp') },
+        { text: 'レビュー・マーケティング', href: getPermalink('/review-engine-jp') },
+        { text: '英語専用デジタル別館 (Hanare)', href: getPermalink('/english-hanare-jp') },
         { text: 'グランドオープン', href: getPermalink('/grand-opening-jp') },
         { text: '地域貢献活動', href: getPermalink('/community-mission-jp') },
         { text: '制作の流れ', href: getPermalink('/order-flow-jp') },
-        { text: 'よくあるご質問', href: getPermalink('/faq-jp') },
-        { text: 'お問い合わせ/特殊案件', href: getPermalink('/contact-jp') },
+        { text: 'よくあるご質問 (FAQ)', href: getPermalink('/faq-jp') },
+        { text: 'お問い合わせ / 戦略リクエスト', href: getPermalink('/contact-jp') },
       ],
     },
   ],
