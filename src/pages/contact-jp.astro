@@ -3,18 +3,21 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import BespokeForm from '~/components/widgets/BespokeForm.astro';
 
-const metadata = { title: 'お問い合わせ | Hanei Inbound' };
+const metadata = { 
+  title: 'お問い合わせ | 戦略的インバウンド・マーケティング | Hanei Inbound',
+  description: 'ブティック・インバウンド・マーケティングと高視認性デジタル拠点構築。Hanei Inboundへのお問い合わせ。'
+};
 
 const jpLabels = {
     title: "制作・パートナーシップのご相談",
-    description: "プロジェクトのご相談や技術的なアドバイスなど、お気軽にお問い合わせください。プロフェッショナルなお問い合わせに対し、当日中の返信を保証しております。",
+    description: "ブランドの視認性と戦略的なクリエイティブ・ガイダンスについて、お気軽にお問い合わせください。プロフェッショナルなお問い合わせに対し、当日中の返信を保証しております。",
     client_name: "お名前",
     company_name: "貴社名・店名",
     email: "メールアドレス",
-    request_type: "ご依頼の種別",
-    project_summary: "お問い合わせ・ご依頼内容の詳細",
-    budget_range: "ご予算感",
-    deadline: "希望納期",
+    request_type: "戦略カテゴリ",
+    project_summary: "ブランドの目標・プロジェクトの詳細",
+    budget_range: "マーケティング投資レベル",
+    deadline: "希望公開時期",
     submit: "相談内容を送信する",
     sending: "送信中...",
     success_title: "送信が完了しました",
@@ -23,13 +26,13 @@ const jpLabels = {
 
 const jpOptions = {
     requests: [
-      { label: "1ページ・ビジネスサイト", value: "1-Page Business Website" },
-      { label: "レビューエンジン", value: "Review Engine" },
-      { label: "英語専用デジタル別館", value: "English Hanare" },
-      { label: "グランド・リフォーム", value: "Grand Reform (Facelift)" },
-      { label: "グランド・ニュー制作", value: "Grand NEW (New Build)" },
-      { label: "一般的なお問い合わせ", value: "General Inquiry" },
-      { label: "独自システム開発 / API", value: "Custom System / API" },
+      { label: "インバウンド英語ウェルカム", value: "Inbound English Welcome" },
+      { label: "レピュテーション・レビュー・マーケティング", value: "Reputation Review Marketing" },
+      { label: "英語専用デジタル別館（Hanare）", value: "Global Reach Hub (Hanare)" },
+      { label: "ブランド・リフォーム（刷新）", value: "Brand Modernization" },
+      { label: "フラッグシップ・デジタル公開（新規）", value: "Flagship Digital Launch" },
+      { label: "一般的なマーケティング相談", value: "General Marketing Inquiry" },
+      { label: "カスタム・マーケティング・ロジック / API", value: "Custom Marketing Logic / API" },
       { label: "その他", value: "Other" }
     ],
     budgets: [
@@ -51,9 +54,9 @@ const jpOptions = {
 
 <Layout metadata={metadata}>
   <Hero2
-    tagline="Hanei Inboundへのお問い合わせ"
-    title='貴社のデジタルの未来を、<br/><span class="text-accent">共に構築しましょう。</span>'
-    subtitle="迅速な1ページ制作から、複雑な独自インフラの構築まで。すべてのお問い合わせに対し、当日中の返信を保証しております。"
+    tagline="インバウンド・マーケティング・コンサルテーション"
+    title='貴社のデジタル・プレゼンスを、<br/><span class="text-accent">共に構築しましょう。</span>'
+    subtitle="迅速なマーケティング資産から、オーダーメイドの高視認性ハブまで。すべてのお問い合わせに対し、当日中の返信を保証しております。"
     image={{ src: '/images/demos/capsule-hotel.webp', alt: 'プロフェッショナルな打ち合わせ' }}
     classes={{ inner: 'pb-4 md:pb-6' }}
   />
