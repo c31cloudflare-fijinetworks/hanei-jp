@@ -3,7 +3,7 @@ import { getPermalink } from './utils/permalinks';
 export const headerDataEn = {
   links: [
     {
-      text: 'Inbound Service Suite',
+      text: 'Inbound English Suite',
       links: [
         { text: 'Inbound English Welcome', href: getPermalink('/one-page-welcome') },
         { text: 'Review Marketing', href: getPermalink('/review-engine') },
