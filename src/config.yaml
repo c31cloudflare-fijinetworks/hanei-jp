@@ -9,9 +9,9 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: "Hanei Inbound Digital | Bridging Japan to the World"
+    default: "Hanei English Inbound Digital | High-Visibility English Marketing Hubs for Local Business"
     template: '%s — Hanei Inbound'
-  description: "Hanei is dedicated to empowering Japanese local businesses. We believe that Japan’s local culture is its greatest asset, and we use modern technology to ensure that the world can experience it—without the stress of the language barrier."
+  description: "Attract English-speaking customers with Hanei Inbound. We build high-visibility English digital inbound marketing hubs designed to grow your local business."
   robots:
     index: true
     follow: true
