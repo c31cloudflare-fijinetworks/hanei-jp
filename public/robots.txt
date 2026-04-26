@@ -1,4 +1,10 @@
 User-agent: *
+Disallow: /private/
+Content-Signal: ai-train=no, ai-input=yes, search=yes
+Sitemap: https://hanei.jp/sitemap-hanei.xml
+
+User-agent: GPTBot
 Allow: /
 
-Sitemap: https://hanei.jp/sitemap-hanei.xml
+User-agent: Claude-Web
+Allow: /
