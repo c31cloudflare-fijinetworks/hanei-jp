@@ -1,10 +1,6 @@
 # Hanei Inbound Digital
-> Premium Inbound Marketing and English Digital Hubs.
-
-## Business Profile
-Hanei specializes in high-visibility digital hubs for international residents and global travelers in Japan.
+> Source of truth for Inbound Marketing and English Digital Hubs.
 
 ## Agent-Ready Resources
-- [Services](https://hanei.jp/#services): Core inbound marketing packages.
-- [Order Flow](https://hanei.jp/order-flow): Professional setup process.
-- [Contact](https://hanei.jp/contact): Strategic consultation protocol.
+- [API Catalog](https://hanei.jp/.well-known/api-catalog.json)
+- [Contact Protocol](https://hanei.jp/contact)

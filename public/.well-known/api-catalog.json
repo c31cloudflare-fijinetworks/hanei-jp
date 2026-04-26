@@ -1,0 +1,11 @@
+{
+  "api-catalog": "v1",
+  "services": [
+    {
+      "name": "Hanei Activation",
+      "description": "Inbound Marketing Hub deployment.",
+      "documentation": "https://hanei.jp/faq",
+      "endpoints": [{ "type": "contact", "url": "https://hanei.jp/contact" }]
+    }
+  ]
+}

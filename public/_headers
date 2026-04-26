@@ -1,4 +1,7 @@
 /*
-  Link: <https://hanei.jp/llms.txt>; rel="help"
+  Link: </.well-known/api-catalog.json>; rel="api-catalog"
+  Link: </llms.txt>; rel="service-doc"
   X-Agent-Ready: true
-  X-GEO-Status: Optimized
+  Vary: Accept
+/index.md
+  Content-Type: text/markdown; charset=utf-8
